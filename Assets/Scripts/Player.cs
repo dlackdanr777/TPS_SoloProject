@@ -11,7 +11,9 @@ public class Player : MonoBehaviour
 
     [SerializeField] private GameObject _centerCamera;
 
-    [SerializeField] private float _moveSpeed;
+    [SerializeField] private float _horizontalSpeed;
+    [SerializeField] private float _verticalSpeed;
+    [SerializeField] private float _runSpeedMul;
     [SerializeField] private float _rotateSpeed;
 
     private bool _runEnable;
@@ -27,24 +29,32 @@ public class Player : MonoBehaviour
     {
         Movement();
         PlayerRotate();
-        Attack();
     }
+
+
 
     private void Movement()
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        _runEnable = Input.GetKey(KeyCode.LeftShift);
+        _runEnable = Input.GetKey(KeyCode.LeftShift) && vertical > 0.1f;
 
+        Vector3 horizontalMoveDir = new Vector3(horizontal, 0, 0);
+        horizontalMoveDir = transform.TransformDirection(horizontalMoveDir).normalized;
+        horizontalMoveDir *= _horizontalSpeed;
+        _myController.Move(horizontalMoveDir * Time.deltaTime);
+
+        Vector3 verticalMoveDir = new Vector3(0, 0, vertical);
+        verticalMoveDir = transform.TransformDirection(verticalMoveDir);
+        verticalMoveDir *= _verticalSpeed;
+        if (_runEnable) { verticalMoveDir *= _runSpeedMul; }
+        _myController.Move(verticalMoveDir * Time.deltaTime);
+
+        //_myAnimator.SetFloat("Horizontal", horizontal);
         _myAnimator.SetFloat("Vertical", vertical);
-        _myAnimator.SetFloat("SpeedMul", _moveSpeed);
         _myAnimator.SetBool("IsRun", _runEnable);
     }
 
-    private void Attack()
-    {
-        _myAnimator.SetBool("AttackReddy", Input.GetKey(KeyCode.Mouse1));
-    }
 
     private void PlayerRotate()
     {
