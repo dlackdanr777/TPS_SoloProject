@@ -65,25 +65,43 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform _target;
     [SerializeField] private Transform _muzzle;
     private Transform _spine;
-    private bool _aimMode;
+    public bool _aimMode;
 
 
-   /* private void LateUpdate()
+    private void LateUpdate()
     {
         if (Input.GetMouseButtonDown(1))
         {
-            _aimMode = true;
+            _myAnimator.SetBool("AimMode", true);
+            StartCoroutine(AimModeStart());
         }
-        else if(Input.GetMouseButtonUp(1))
+        else if (Input.GetMouseButtonUp(1))
         {
-*//*            _aimMode = false;*//*
+            _myAnimator.SetBool("AimMode", false);
+            StartCoroutine(AimModeEnd());
         }
         if (_aimMode)
         {
             _spine.LookAt(_target.position);
-            _spine.rotation = _spine.rotation * Quaternion.Euler(new Vector3(0, 90, -60));
+            _spine.rotation = _spine.rotation * Quaternion.Euler(new Vector3(0, 108.77f, -66.17f));
         }
-    }*/
+    }
+
+    private IEnumerator AimModeStart()
+    {
+        _aimMode = true;
+        _centerCamera.GetComponent<PlayerCamera>().CameraAimModeStartFunc();
+        yield return new WaitForSeconds(0.02f);
+
+    }
+
+    private IEnumerator AimModeEnd()
+    {
+        _centerCamera.GetComponent<PlayerCamera>().CameraAimModeEndFunc();
+        yield return new WaitForSeconds(1f);
+        _aimMode = false;
+
+    }
 
 
     private void PlayerRotate()
