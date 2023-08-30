@@ -18,6 +18,7 @@ public class PlayerCamera : MonoBehaviour
     private Vector3 _tempCameraPos;
     private Vector3 _aimModeCameraPos;
     private float _cameraDistance;
+
     private void Awake()
     {
         _mainCamera = Camera.main;
@@ -30,7 +31,8 @@ public class PlayerCamera : MonoBehaviour
     {
         _tempPos = transform.position;
         _tempCameraPos = _mainCamera.transform.localPosition;
-        _aimModeCameraPos = new Vector3(0.7f, 0.26f, -1f);
+        _aimModeCameraPos = _tempCameraPos;
+        _aimModeCameraPos.z = -0.7f;
         _cameraDistance = Vector3.Distance(transform.position, _mainCamera.transform.position);
     }
 
@@ -53,68 +55,58 @@ public class PlayerCamera : MonoBehaviour
         transform.localEulerAngles = new Vector3(-_mouseY, _mouseX, 0);
     }
 
-    RaycastHit hit;
+
     private void CameraCorrection()
     {
         if (!_player._aimMode)
         {
+            RaycastHit hit;
             Vector3 dir = (_mainCamera.transform.position - transform.position).normalized;
             Debug.DrawRay(transform.position, dir * _cameraDistance, Color.yellow);
 
             if (Physics.Raycast(transform.position, dir, out hit, _cameraDistance))
             {
-                _mainCamera.transform.position = hit.point;
+                Vector3 hitPos = hit.point;
+                _mainCamera.transform.position = hitPos;
             }
             else
             {
+
                 _mainCamera.transform.localPosition = _tempCameraPos;
             }
         }
     }
 
-    private Coroutine CameraAimModeStartRoutine;
-    private Coroutine CameraAimModeEndRoutine;
-
-
-    public void CameraAimModeStartFunc()
+    private bool isRoutineStart = false;
+    public IEnumerator CameraAimModeStart()
     {
-        if(CameraAimModeStartRoutine != null)
-        {StopCoroutine(CameraAimModeStartRoutine);}
-
-        if (CameraAimModeEndRoutine != null)
-        { StopCoroutine(CameraAimModeEndRoutine); }
-
-        CameraAimModeStartRoutine = StartCoroutine(CameraAimModeStart());
-    }
-
-    public void CameraAimModeEndFunc()
-    {
-        if (CameraAimModeStartRoutine != null)
-        { StopCoroutine(CameraAimModeStartRoutine); }
-
-        if (CameraAimModeEndRoutine != null)
-        { StopCoroutine(CameraAimModeEndRoutine); }
-
-        CameraAimModeEndRoutine = StartCoroutine(CameraAimModeEnd());
-    }
-
-    private IEnumerator CameraAimModeStart()
-    {
-        while(Vector3.Distance(_mainCamera.transform.localPosition, _aimModeCameraPos) > 0.5f)
+        if (!isRoutineStart)
         {
+            isRoutineStart = true;
+            while (Vector3.Distance(_mainCamera.transform.localPosition, _aimModeCameraPos) > 0.1f)
+            {
+
+                _mainCamera.transform.localPosition = Vector3.Lerp(_mainCamera.transform.localPosition, _aimModeCameraPos, 0.1f);
+                yield return new WaitForSeconds(0.01f);
+            }
             Debug.Log("스타트");
-            _mainCamera.transform.localPosition = Vector3.Lerp(_mainCamera.transform.localPosition, _aimModeCameraPos, 0.1f);
-            yield return new WaitForSeconds(0.01f);
+            isRoutineStart = false;
         }
     }
 
-    private IEnumerator CameraAimModeEnd()
+    public IEnumerator CameraAimModeEnd()
     {
-        while (Vector3.Distance(_mainCamera.transform.localPosition, _tempCameraPos) > 0.5f)
+        if (!isRoutineStart)
         {
+            isRoutineStart = true;
+            while (Vector3.Distance(_mainCamera.transform.localPosition, _tempCameraPos) > 0.1f)
+            {
+
+                _mainCamera.transform.localPosition = Vector3.Lerp(_mainCamera.transform.localPosition, _tempCameraPos, 0.1f);
+                yield return new WaitForSeconds(0.01f);
+            }
             Debug.Log("엔드");
-            _mainCamera.transform.localPosition = Vector3.Lerp(_mainCamera.transform.localPosition, _tempCameraPos, 0.1f);
-            yield return new WaitForSeconds(0.01f);
+            isRoutineStart = false;
         }
     }
 }
