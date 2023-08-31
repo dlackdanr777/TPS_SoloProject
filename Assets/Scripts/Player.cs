@@ -21,8 +21,10 @@ public class Player : MonoBehaviour
     [SerializeField] private float _runSpeedMul;
     [SerializeField] private float _rotateSpeed;
 
-    public bool _aimMode;
-    private bool isAimModeChanged;
+    public bool AimMode = false;
+    private bool _isFire;
+    private bool _isAimModeChanged;
+    
 
     private float _horizontalInput;
     private float _verticalInput;
@@ -50,28 +52,33 @@ public class Player : MonoBehaviour
     {
         _horizontalInput = Input.GetAxis("Horizontal");
         _verticalInput = Input.GetAxis("Vertical");
-        _runEnable = Input.GetKey(KeyCode.LeftShift) && _verticalInput > 0.1f;
+        _runEnable = Input.GetKey(KeyCode.LeftShift) && _verticalInput > 0.1f && !AimMode;
 
         Vector3 horizontalMoveDir = new Vector3(_horizontalInput, 0, 0);
         horizontalMoveDir = transform.TransformDirection(horizontalMoveDir).normalized;
         horizontalMoveDir *= _horizontalSpeed;
+        if (_verticalInput < 0)
+        { horizontalMoveDir *= 0.3f; }
         horizontalMoveDir.y = Physics.gravity.y;
         _myController.Move(horizontalMoveDir * Time.deltaTime);
 
         Vector3 verticalMoveDir = new Vector3(0, 0, _verticalInput);
         verticalMoveDir = transform.TransformDirection(verticalMoveDir);
         verticalMoveDir *= _verticalSpeed;
+        if (_verticalInput < 0)
+        { verticalMoveDir *= 0.8f; }
         if (_runEnable) { verticalMoveDir *= _runSpeedMul; }
         _myController.Move(verticalMoveDir * Time.deltaTime);
 
         //_myAnimator.SetFloat("Horizontal", horizontal);
         _myAnimator.SetFloat("Vertical", _verticalInput);
+        _myAnimator.SetFloat("Horizontal", _horizontalInput);
         _myAnimator.SetBool("IsRun", _runEnable);
     }
 
     private void PlayerRotate()
     {
-        if (_horizontalInput != 0 || _verticalInput != 0 || _aimMode)
+        if (_horizontalInput != 0 || _verticalInput != 0 || AimMode)
         {
             Vector3 cameraRotation = new Vector3(0, _myCamera.transform.eulerAngles.y, 0);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(cameraRotation), Time.deltaTime * _rotateSpeed);
@@ -102,7 +109,6 @@ public class Player : MonoBehaviour
     {
         if (Input.GetMouseButton(1))
         {
-            _myAnimator.SetBool("AimMode", true);
             StartCoroutine(AimModeStart());
         }
 
@@ -111,7 +117,7 @@ public class Player : MonoBehaviour
 
             StartCoroutine(AimModeEnd());
         }
-        if (_aimMode)
+        if (AimMode)
         {
             _spine.LookAt(_crossHair.position);
             _spine.rotation = _spine.rotation * Quaternion.Euler(new Vector3(0, 109.15f, -67.3f));
@@ -120,25 +126,31 @@ public class Player : MonoBehaviour
 
     private IEnumerator AimModeStart()
     {
-        if(!_aimMode && !isAimModeChanged)
+        if(!AimMode && !_isAimModeChanged && !_runEnable)
         {
-            isAimModeChanged = true;
-            _aimMode = true;
+            _myAnimator.SetBool("AimMode", true);
+            _isAimModeChanged = true;
+            AimMode = true;
             yield return StartCoroutine(_centerCamera.GetComponent<PlayerCamera>().CameraAimModeStart());
-            isAimModeChanged = false;
+            _isAimModeChanged = false;
         }
     }
 
     private IEnumerator AimModeEnd()
     {
-        if(_aimMode && !isAimModeChanged)
+        if(AimMode && !_isAimModeChanged)
         {
-            isAimModeChanged = true;
+            _isAimModeChanged = true;
             yield return StartCoroutine(_centerCamera.GetComponent<PlayerCamera>().CameraAimModeEnd());
-            _aimMode = false;
+            AimMode = false;
             _myAnimator.SetBool("AimMode", false);
-            isAimModeChanged = false;
+            _isAimModeChanged = false;
         }
     }
 
+    public void StartTryFireAnime(bool value)
+    {
+        _isFire = value;
+        _myAnimator.SetBool("Fire", value);
+    }
 }

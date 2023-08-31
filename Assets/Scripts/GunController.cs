@@ -24,10 +24,15 @@ public class GunController : MonoBehaviour
         TryReload();
     }
 
-    private void GunFireRateCalc()    {
+    private void GunFireRateCalc()  
+    {
         if(_currentFireRate > 0)
         {
             _currentFireRate -= Time.deltaTime;
+        }
+        else
+        {
+            GameManager.Instance.Player.StartTryFireAnime(false);
         }
     }
 
@@ -35,7 +40,8 @@ public class GunController : MonoBehaviour
     {
         if(Input.GetButton("Fire1") && _currentFireRate <= 0 && !_isReload)
         {
-            Fire();
+            if(GameManager.Instance.Player.AimMode)
+                Fire();
         }
     }
 
@@ -60,6 +66,7 @@ public class GunController : MonoBehaviour
         _currentFireRate = _currentGun.FireRate;
         _currentGun.CurrentBulletCount--; //탄약 감소
         PlaySound(_currentGun.FireSound);
+        GameManager.Instance.Player.StartTryFireAnime(true);
         //_currentGun.MuzzleFlash.Emit(1);
         Debug.Log("총알 발사");
     }

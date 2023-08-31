@@ -34,7 +34,7 @@ public class PlayerCamera : MonoBehaviour
         _tempPos = transform.position;
         _tempCameraPos = _mainCamera.transform.localPosition;
         _aimModeCameraPos = _tempCameraPos;
-        _aimModeCameraPos.z = -0.7f;
+        _aimModeCameraPos.z = -1f;
         _cameraDistance = Vector3.Distance(transform.position, _mainCamera.transform.position);
     }
 
@@ -60,7 +60,7 @@ public class PlayerCamera : MonoBehaviour
 
     private void CameraCorrection()
     {
-        if (!_player._aimMode)
+        if (!_player.AimMode)
         {
             RaycastHit hit;
             Vector3 dir = (_mainCamera.transform.position - transform.position).normalized; //ī ޶  ߽        ī ޶            ִ´ .
