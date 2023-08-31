@@ -63,7 +63,7 @@ public class PlayerCamera : MonoBehaviour
         if (!_player._aimMode)
         {
             RaycastHit hit;
-            Vector3 dir = (_mainCamera.transform.position - transform.position).normalized; //카메라중심점에서 카메라의 방향을 넣는다.
+            Vector3 dir = (_mainCamera.transform.position - transform.position).normalized; //카 牝  颯        카 牝            獵쨈 .
 
             Debug.DrawRay(transform.position, dir * _cameraDistance, Color.yellow);
 

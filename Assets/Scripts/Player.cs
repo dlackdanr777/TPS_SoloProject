@@ -10,22 +10,16 @@ public class Player : MonoBehaviour
     private Camera _myCamera;
     private Transform _spine;
 
-    [Header("¿ÀºêÁ§Æ® ³Ö´Â °÷")]
+    [Header("ì˜¤ë¸Œì íŠ¸ ë„£ëŠ” ê³³")]
     [SerializeField] private GameObject _centerCamera;
     [SerializeField] private Transform _crossHair;
     [SerializeField] private Transform _muzzle;
 
-    [Header("ÀÌµ¿ °ü·Ã º¯¼ö")]
+    [Header("ì´ë™ ê´€ë ¨ ë³€ìˆ˜")]
     [SerializeField] private float _horizontalSpeed;
     [SerializeField] private float _verticalSpeed;
     [SerializeField] private float _runSpeedMul;
     [SerializeField] private float _rotateSpeed;
-
-    [Header("°ø°İ °ü·Ã º¯¼ö")]
-    [SerializeField] private float _rpm; //ºĞ´ç ¹ß»ç¼Óµµ
-    private float _fireInterval; //¸î ÃÊ¸¶´Ù °ø°İÇÏ³ª?
-    [SerializeField]  private int _maxAmmo; //ÃÖ´ë ÀåÅº¼ö
-    private int _ammo; //ÇöÀç ÀåÅº¼ö
 
     public bool _aimMode;
     private bool isAimModeChanged;
@@ -42,18 +36,12 @@ public class Player : MonoBehaviour
         _spine = _myAnimator.GetBoneTransform(HumanBodyBones.Spine);
     }
 
-    private void Start()
-    {
-        _fireInterval = 1 / (_rpm / 60);
-        _ammo = _maxAmmo;
-    }
 
     private void Update()
     {
         Movement();
         PlayerRotate();
         PostionCrossHair();
-        Fire();
         Debug.DrawRay(_muzzle.position, _muzzle.forward * 100, Color.red);
     }
 
@@ -90,33 +78,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    float _fireTimer;
-    private void Fire()
-    {
-        if (Input.GetMouseButton(0))
-        {
-            _fireTimer += Time.deltaTime;
-
-            if (_fireTimer > _fireInterval)
-            {
-                _fireTimer = 0;
-                if (_ammo > 0)
-                {
-                    _ammo--;
-                    Debug.Log("¹ß»ç");
-                }
-                else
-                {
-                    Debug.Log("ÀçÀåÀü ÇÊ¿ä");
-                }
-            }
-        }
-    }
-
     private void PostionCrossHair()
     {
         RaycastHit hit;
-        Ray ray = _myCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f)); //Ä«¸Ş¶ó Á¤Áß¾Ó¿¡ ·¹ÀÌ¸¦ À§Ä¡½ÃÅ²´Ù
+        Ray ray = _myCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f)); //ì¹´ë©”ë¼ ì •ì¤‘ì•™ì— ë ˆì´ë¥¼ ìœ„ì¹˜ì‹œí‚¨ë‹¤
         float distance = 50f;
         int layerMask = (1 << LayerMask.NameToLayer("Player"));
         layerMask = ~layerMask;
