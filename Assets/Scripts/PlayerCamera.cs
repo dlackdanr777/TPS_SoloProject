@@ -1,4 +1,6 @@
 using System.Collections;
+using Unity.Burst.CompilerServices;
+using UnityEditor.Rendering;
 using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
 using Cursor = UnityEngine.Cursor;
@@ -61,7 +63,8 @@ public class PlayerCamera : MonoBehaviour
         if (!_player._aimMode)
         {
             RaycastHit hit;
-            Vector3 dir = (_mainCamera.transform.position - transform.position).normalized;
+            Vector3 dir = (_mainCamera.transform.position - transform.position).normalized; //카메라중심점에서 카메라의 방향을 넣는다.
+
             Debug.DrawRay(transform.position, dir * _cameraDistance, Color.yellow);
 
             if (Physics.Raycast(transform.position, dir, out hit, _cameraDistance))
@@ -71,11 +74,11 @@ public class PlayerCamera : MonoBehaviour
             }
             else
             {
-
                 _mainCamera.transform.localPosition = _tempCameraPos;
             }
         }
     }
+
 
     private bool isRoutineStart = false;
     public IEnumerator CameraAimModeStart()
@@ -85,11 +88,9 @@ public class PlayerCamera : MonoBehaviour
             isRoutineStart = true;
             while (Vector3.Distance(_mainCamera.transform.localPosition, _aimModeCameraPos) > 0.1f)
             {
-
-                _mainCamera.transform.localPosition = Vector3.Lerp(_mainCamera.transform.localPosition, _aimModeCameraPos, 0.1f);
+                _mainCamera.transform.localPosition = Vector3.Lerp(_mainCamera.transform.localPosition, _aimModeCameraPos, 0.2f);
                 yield return new WaitForSeconds(0.01f);
             }
-            Debug.Log("스타트");
             isRoutineStart = false;
         }
     }
@@ -102,10 +103,9 @@ public class PlayerCamera : MonoBehaviour
             while (Vector3.Distance(_mainCamera.transform.localPosition, _tempCameraPos) > 0.1f)
             {
 
-                _mainCamera.transform.localPosition = Vector3.Lerp(_mainCamera.transform.localPosition, _tempCameraPos, 0.1f);
+                _mainCamera.transform.localPosition = Vector3.Lerp(_mainCamera.transform.localPosition, _tempCameraPos, 0.2f);
                 yield return new WaitForSeconds(0.01f);
             }
-            Debug.Log("엔드");
             isRoutineStart = false;
         }
     }
