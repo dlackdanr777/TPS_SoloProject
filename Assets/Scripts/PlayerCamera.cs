@@ -42,7 +42,6 @@ public class PlayerCamera : MonoBehaviour
     {
         transform.position = _tempPos + _targetCharacter.transform.position;
         CameraRotate();
-        CameraCorrection();
     }
 
 
@@ -60,54 +59,43 @@ public class PlayerCamera : MonoBehaviour
     }
 
 
-    private void CameraCorrection()
+    public void CameraCorrection()
     {
-        if (!_player.AimMode && !_player.IsAimModeChanged)
+        RaycastHit hit;
+        Vector3 dir = (_mainCamera.transform.position - transform.position).normalized;
+
+        Debug.DrawRay(transform.position, dir * _cameraDistance, Color.yellow);
+
+        if (Physics.Raycast(transform.position, dir, out hit, _cameraDistance))
         {
-            RaycastHit hit;
-            Vector3 dir = (_mainCamera.transform.position - transform.position).normalized; //ī ޶  ߽        ī ޶            ִ´ .
-
-            Debug.DrawRay(transform.position, dir * _cameraDistance, Color.yellow);
-
-            if (Physics.Raycast(transform.position, dir, out hit, _cameraDistance))
-            {
-                Vector3 hitPos = hit.point;
-                _mainCamera.transform.position = hitPos;
-            }
-            else
-            {
-                _mainCamera.transform.localPosition = _tempCameraPos;
-            }
+            Vector3 hitPos = hit.point;
+            _mainCamera.transform.position = hitPos;
+        }
+        else
+        {
+            _mainCamera.transform.localPosition = _tempCameraPos;
         }
     }
 
-
-    private bool isRoutineStart = false;
-    public IEnumerator CameraAimModeStart()
+    public bool ZoomIn()
     {
-        if (!isRoutineStart)
+        if (Vector3.Distance(_mainCamera.transform.localPosition, _aimModeCameraPos) > 0.1f)
         {
-            isRoutineStart = true;
-            while (Vector3.Distance(_mainCamera.transform.localPosition, _aimModeCameraPos) > 0.1f)
-            {
-                _mainCamera.transform.localPosition = Vector3.Lerp(_mainCamera.transform.localPosition, _aimModeCameraPos, 0.15f);
-                yield return new WaitForSeconds(0.01f);
-            }
-            isRoutineStart = false;
+            _mainCamera.transform.localPosition = Vector3.Lerp(_mainCamera.transform.localPosition, _aimModeCameraPos, Time.deltaTime * 10f);
+            return false;
         }
+
+        return true;
     }
 
-    public IEnumerator CameraAimModeEnd()
+    public bool ZoomOut()
     {
-        if (!isRoutineStart)
+        if (Vector3.Distance(_mainCamera.transform.localPosition, _tempCameraPos) > 0.1f)
         {
-            isRoutineStart = true;
-            while (Vector3.Distance(_mainCamera.transform.localPosition, _tempCameraPos) > 0.1f)
-            {
-                _mainCamera.transform.localPosition = Vector3.Lerp(_mainCamera.transform.localPosition, _tempCameraPos, 0.15f);
-                yield return new WaitForSeconds(0.01f);
-            }
-            isRoutineStart = false;
+            _mainCamera.transform.localPosition = Vector3.Lerp(_mainCamera.transform.localPosition, _tempCameraPos, Time.deltaTime * 10f);
+            return false;
         }
+        return true;
     }
+
 }

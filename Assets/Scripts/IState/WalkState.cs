@@ -2,23 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AimModeState : IState
+public class WalkState : IState
 {
     private Player _player;
 
-    public AimModeState(Player player)
+    public WalkState(Player player)
     {
         _player = player;
     }
 
     public void OnStart()
     {
+ 
     }
 
     public void OnUpdate()
     {
-        _player.Movement();
+        _player.WalkMovement();
         _player.PlayerRotate();
+
+        _player.PlayerCamera.CameraCorrection();
     }
 
     public void OnFixedUpdate()
@@ -29,5 +32,12 @@ public class AimModeState : IState
     public void OnExit()
     {
 
+    }
+
+    public void OnStateUpdate()
+    {
+        _player.ChangeToIdleState();
+        _player.ChangeToRunState();
+        _player.ChangeToAimModeState();
     }
 }

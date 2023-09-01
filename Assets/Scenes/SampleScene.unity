@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -818,7 +818,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0.4, z: -2.5}
+  m_LocalPosition: {x: 0.3, y: 0.4, z: -2.785}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1530,7 +1530,7 @@ MonoBehaviour:
   Range: 50
   Accuracy: 0
   RPM: 700
-  ReloadTime: 1.6
+  ReloadTime: 2
   Damage: 10
   MaxBulletCount: 30
   ReloadBulletCount: 30
@@ -1666,6 +1666,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MyAnimator: {fileID: 0}
+  GunController: {fileID: 0}
+  PlayerCamera: {fileID: 1105646046}
   _centerCamera: {fileID: 1105646045}
   _crossHair: {fileID: 7123929}
   _muzzle: {fileID: 620245749}
@@ -1674,11 +1676,9 @@ MonoBehaviour:
   _verticalSpeed: 1.5
   _runSpeedMul: 3
   _rotateSpeed: 5
-  AimMode: 0
-  IsAimModeChanged: 0
-  IsFire: 0
-  IsReload: 0
+  AimModeEnable: 0
   RunEnable: 0
+  IsReload: 0
 --- !u!143 &1649217757
 CharacterController:
   m_ObjectHideFlags: 0

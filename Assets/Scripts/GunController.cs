@@ -5,6 +5,7 @@ using UnityEngine;
 public class GunController : MonoBehaviour
 {
     [SerializeField] private Gun _currentGun; //현재 들고있는 총
+
     private Player _player;
 
     private float _currentFireRate; // 이값이 0이어야 총 발사 가능
@@ -22,7 +23,6 @@ public class GunController : MonoBehaviour
     private void Update()
     {
         GunFireRateCalc();
-        TryFire();
         TryReload();
     }
 
@@ -32,18 +32,13 @@ public class GunController : MonoBehaviour
         {
             _currentFireRate -= Time.deltaTime;
         }
-        else
-        {
-            GameManager.Instance.Player.StartTryFireAnime(false);
-        }
     }
 
-    private void TryFire() //발사 입력을 받는 함수
+    public void TryFire() //발사 입력을 받는 함수
     {
-        if(Input.GetButton("Fire1") && _currentFireRate <= 0 && !_isReload)
+        if (Input.GetButton("Fire1") && _currentFireRate <= 0 && !_isReload)
         {
-            if(GameManager.Instance.Player.AimMode)
-                Fire();
+            Fire();
         }
     }
 
@@ -68,14 +63,13 @@ public class GunController : MonoBehaviour
         _currentFireRate = _currentGun.FireRate;
         _currentGun.CurrentBulletCount--; //탄약 감소
         PlaySound(_currentGun.FireSound);
-        GameManager.Instance.Player.StartTryFireAnime(true);
         //_currentGun.MuzzleFlash.Emit(1);
         Debug.Log("총알 발사");
     }
 
-    private void TryReload()
+    public void TryReload()
     {
-        if (Input.GetKeyDown(KeyCode.R) && !_isReload &&  !_player.RunEnable &&_currentGun.CurrentBulletCount < _currentGun.ReloadBulletCount)
+        if (Input.GetKeyDown(KeyCode.R) && !_isReload &&_currentGun.CurrentBulletCount < _currentGun.ReloadBulletCount)
         {
 
             StartCoroutine(ReloadRoutine());

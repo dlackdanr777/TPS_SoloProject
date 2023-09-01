@@ -5,4 +5,5 @@ public interface IState
     public void OnExit();
     public void OnUpdate();
     public void OnFixedUpdate();
+    public void OnStateUpdate();
 }

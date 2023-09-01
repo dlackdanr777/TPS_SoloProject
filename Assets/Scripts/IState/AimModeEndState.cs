@@ -2,23 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleState : IState
+public class AimModeEndState : IState
 {
     private Player _player;
 
-    public IdleState(Player player)
+    public AimModeEndState(Player player)
     {
         _player = player;
     }
 
     public void OnStart()
     {
-
+        _player.MyAnimator.SetBool("AimMode", false);
+        _player.CrossHairDisable();
     }
 
     public void OnUpdate()
     {
-        _player.PlayerCamera.CameraCorrection();
+        _player.WalkMovement();
+        _player.PlayerRotate();
     }
 
     public void OnFixedUpdate()
@@ -28,14 +30,11 @@ public class IdleState : IState
 
     public void OnExit()
     {
-
     }
 
     public void OnStateUpdate()
     {
-        _player.ChangeToWalkState();
-        _player.ChangeToRunState();
-        _player.ChangeToAimModeState();
+        if (_player.PlayerCamera.ZoomOut()) _player.ChangeState(_player.IdleState);
+        
     }
-
 }

@@ -2,23 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementState : IState
+public class AimModeStartState : IState
 {
     private Player _player;
-
-    public MovementState(Player player)
+    public AimModeStartState(Player player)
     {
         _player = player;
     }
 
     public void OnStart()
     {
-
+        _player.MyAnimator.SetBool("AimMode", true);
     }
 
     public void OnUpdate()
     {
-        _player.Movement();
+        _player.WalkMovement();
         _player.PlayerRotate();
     }
 
@@ -30,5 +29,10 @@ public class MovementState : IState
     public void OnExit()
     {
 
+    }
+
+    public void OnStateUpdate()
+    {
+        if (_player.PlayerCamera.ZoomIn()) _player.ChangeState(_player.AimModeLoopState);
     }
 }
