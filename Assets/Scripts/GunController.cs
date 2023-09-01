@@ -5,6 +5,7 @@ using UnityEngine;
 public class GunController : MonoBehaviour
 {
     [SerializeField] private Gun _currentGun; //현재 들고있는 총
+    private Player _player;
 
     private float _currentFireRate; // 이값이 0이어야 총 발사 가능
 
@@ -15,6 +16,7 @@ public class GunController : MonoBehaviour
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
+        _player = GetComponent<Player>();
     }
 
     private void Update()
@@ -73,7 +75,7 @@ public class GunController : MonoBehaviour
 
     private void TryReload()
     {
-        if (Input.GetKeyDown(KeyCode.R) && !_isReload && _currentGun.CurrentBulletCount < _currentGun.ReloadBulletCount)
+        if (Input.GetKeyDown(KeyCode.R) && !_isReload &&  !_player.RunEnable &&_currentGun.CurrentBulletCount < _currentGun.ReloadBulletCount)
         {
 
             StartCoroutine(ReloadRoutine());
@@ -86,8 +88,9 @@ public class GunController : MonoBehaviour
         {
             Debug.Log("재장전중");
             _isReload = true;
+            _player.IsReload = true;
             //_currentGun.Anim.SetTrigger("Reload"); 애니실행
-
+            _player.MyAnimator.SetTrigger("Reload");
             _currentGun.CarryBulletCount += _currentGun.CurrentBulletCount;
             _currentGun.CurrentBulletCount = 0;
 
@@ -103,8 +106,9 @@ public class GunController : MonoBehaviour
                 _currentGun.CurrentBulletCount = _currentGun.CarryBulletCount;
                 _currentGun.CarryBulletCount = 0;
             }
-
+            Debug.Log("재장전 끝");
             _isReload = false;
+            _player.IsReload = false;
         }
         else
         {

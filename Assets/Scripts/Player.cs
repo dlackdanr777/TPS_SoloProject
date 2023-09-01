@@ -6,9 +6,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private CharacterController _myController;
-    private Animator _myAnimator;
+    [HideInInspector] public Animator MyAnimator;
     private Camera _myCamera;
-    private Transform _spine;
 
     [Header("오브젝트 넣는 곳")]
     [SerializeField] private GameObject _centerCamera;
@@ -16,26 +15,31 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform _muzzle;
 
     [Header("이동 관련 변수")]
+    [SerializeField] private float _moveSpeed;
     [SerializeField] private float _horizontalSpeed;
     [SerializeField] private float _verticalSpeed;
     [SerializeField] private float _runSpeedMul;
     [SerializeField] private float _rotateSpeed;
 
     public bool AimMode = false;
-    private bool _isFire;
-    private bool _isAimModeChanged;
-    
+    public bool IsAimModeChanged;
+    public bool IsFire;
+    public bool IsReload;
 
     private float _horizontalInput;
     private float _verticalInput;
-    private bool _runEnable;
+    public bool RunEnable;
+
+    private IState _currentState;
+    private IState _idleState;
+    private IState _movementState;
+    private IState _aimModeState;
 
     private void Awake()
     {
         _myController = GetComponent<CharacterController>();
-        _myAnimator = GetComponent<Animator>();
+        MyAnimator = GetComponent<Animator>();
         _myCamera = Camera.main;
-        _spine = _myAnimator.GetBoneTransform(HumanBodyBones.Spine);
     }
 
 
@@ -47,36 +51,37 @@ public class Player : MonoBehaviour
         Debug.DrawRay(_muzzle.position, _muzzle.forward * 100, Color.red);
     }
 
+    private void ComponentInit()
+    {
 
-    private void Movement()
+    }
+
+    private void StateInit()
+    {
+        _idleState = new IdleState(this);
+        _movementState = new MovementState(this);
+        _aimModeState = new AimModeState(this);
+    }
+
+    public void Movement()
     {
         _horizontalInput = Input.GetAxis("Horizontal");
         _verticalInput = Input.GetAxis("Vertical");
-        _runEnable = Input.GetKey(KeyCode.LeftShift) && _verticalInput > 0.1f && !AimMode;
+        RunEnable = Input.GetKey(KeyCode.LeftShift) && _verticalInput > 0.1f && !AimMode && !IsReload;
 
-        Vector3 horizontalMoveDir = new Vector3(_horizontalInput, 0, 0);
-        horizontalMoveDir = transform.TransformDirection(horizontalMoveDir).normalized;
-        horizontalMoveDir *= _horizontalSpeed;
-        if (_verticalInput < 0)
-        { horizontalMoveDir *= 0.3f; }
-        horizontalMoveDir.y = Physics.gravity.y;
-        _myController.Move(horizontalMoveDir * Time.deltaTime);
+        Vector3 moveDir = new Vector3(_horizontalInput, 0, _verticalInput).normalized;
+        moveDir = transform.TransformDirection(moveDir) * _moveSpeed;
+        if( RunEnable ) { moveDir *= _runSpeedMul; }
+        moveDir.y = Physics.gravity.y * 0.6f;
 
-        Vector3 verticalMoveDir = new Vector3(0, 0, _verticalInput);
-        verticalMoveDir = transform.TransformDirection(verticalMoveDir);
-        verticalMoveDir *= _verticalSpeed;
-        if (_verticalInput < 0)
-        { verticalMoveDir *= 0.8f; }
-        if (_runEnable) { verticalMoveDir *= _runSpeedMul; }
-        _myController.Move(verticalMoveDir * Time.deltaTime);
+        _myController.Move(moveDir * Time.deltaTime);
 
-        //_myAnimator.SetFloat("Horizontal", horizontal);
-        _myAnimator.SetFloat("Vertical", _verticalInput);
-        _myAnimator.SetFloat("Horizontal", _horizontalInput);
-        _myAnimator.SetBool("IsRun", _runEnable);
+        MyAnimator.SetFloat("Vertical", _verticalInput);
+        MyAnimator.SetFloat("Horizontal", _horizontalInput);
+        MyAnimator.SetBool("IsRun", RunEnable);
     }
 
-    private void PlayerRotate()
+    public void PlayerRotate() //캐릭터를 마우스회전에 따라 회전시키는 함수
     {
         if (_horizontalInput != 0 || _verticalInput != 0 || AimMode)
         {
@@ -87,70 +92,75 @@ public class Player : MonoBehaviour
 
     private void PostionCrossHair()
     {
-        RaycastHit hit;
-        Ray ray = _myCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f)); //카메라 정중앙에 레이를 위치시킨다
-        float distance = 50f;
-        int layerMask = (1 << LayerMask.NameToLayer("Player"));
-        layerMask = ~layerMask;
-        if (Physics.Raycast(ray, out hit, distance, layerMask))
+        if (AimMode)
         {
-            Vector3 hitPos = hit.point;
-            _crossHair.position = hitPos;
-            _crossHair.LookAt(_myCamera.transform.position);
+            if (!_crossHair.gameObject.activeSelf)
+                _crossHair.gameObject.SetActive(true);
+
+            RaycastHit hit;
+            Ray ray = _myCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f)); //카메라 정중앙에 레이를 위치시킨다
+
+            float distance = 50f;
+            int layerMask = (1 << LayerMask.NameToLayer("Player"));
+            layerMask = ~layerMask;
+            if (Physics.Raycast(ray, out hit, distance, layerMask))
+            {
+                Vector3 hitPos = hit.point;
+                _crossHair.position = hitPos;
+                _crossHair.LookAt(_myCamera.transform.position);
+            }
+            else
+            {
+                _crossHair.position = _myCamera.transform.position + _myCamera.transform.forward * distance;
+                _crossHair.LookAt(_myCamera.transform.position);
+            }
         }
         else
         {
-            _crossHair.position = _myCamera.transform.position + _myCamera.transform.forward * distance;
-            _crossHair.LookAt(_myCamera.transform.position);
+            if(_crossHair.gameObject.activeSelf)
+                _crossHair.gameObject.SetActive(false);
         }
     }
 
     private void LateUpdate()
     {
-        if (Input.GetMouseButton(1))
+        if(!IsAimModeChanged && !RunEnable)
         {
-            StartCoroutine(AimModeStart());
-        }
+            if (Input.GetMouseButton(1) && !AimMode)
+            {
+                StartCoroutine(AimModeStart());
+            }
 
-        else if (Input.GetMouseButtonUp(1))
-        {
-
-            StartCoroutine(AimModeEnd());
-        }
-        if (AimMode)
-        {
-            _spine.LookAt(_crossHair.position);
-            _spine.rotation = _spine.rotation * Quaternion.Euler(new Vector3(0, 109.15f, -67.3f));
+            else if (Input.GetMouseButtonUp(1) && AimMode)
+            {
+                StartCoroutine(AimModeEnd());
+            }
         }
     }
 
     private IEnumerator AimModeStart()
     {
-        if(!AimMode && !_isAimModeChanged && !_runEnable)
-        {
-            _myAnimator.SetBool("AimMode", true);
-            _isAimModeChanged = true;
-            AimMode = true;
-            yield return StartCoroutine(_centerCamera.GetComponent<PlayerCamera>().CameraAimModeStart());
-            _isAimModeChanged = false;
-        }
+
+        AimMode = true;
+        IsAimModeChanged = true;
+        MyAnimator.SetBool("AimMode", true);
+        yield return StartCoroutine(_centerCamera.GetComponent<PlayerCamera>().CameraAimModeStart());
+        IsAimModeChanged = false;
     }
 
     private IEnumerator AimModeEnd()
     {
-        if(AimMode && !_isAimModeChanged)
-        {
-            _isAimModeChanged = true;
-            yield return StartCoroutine(_centerCamera.GetComponent<PlayerCamera>().CameraAimModeEnd());
-            AimMode = false;
-            _myAnimator.SetBool("AimMode", false);
-            _isAimModeChanged = false;
-        }
+
+        AimMode = false;
+        IsAimModeChanged = true;
+        MyAnimator.SetBool("AimMode", false);
+        yield return StartCoroutine(_centerCamera.GetComponent<PlayerCamera>().CameraAimModeEnd());
+        IsAimModeChanged = false;
     }
 
     public void StartTryFireAnime(bool value)
     {
-        _isFire = value;
-        _myAnimator.SetBool("Fire", value);
+        IsFire = value;
+        //MyAnimator.SetBool("Fire", value);
     }
 }

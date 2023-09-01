@@ -55,12 +55,14 @@ public class PlayerCamera : MonoBehaviour
 
         _mouseY = Mathf.Clamp(_mouseY, _minXRotateClamp, _maxXRotateClamp);
         transform.localEulerAngles = new Vector3(-_mouseY, _mouseX, 0);
+
+        _player.MyAnimator.SetFloat("MouseY", _mouseY);
     }
 
 
     private void CameraCorrection()
     {
-        if (!_player.AimMode)
+        if (!_player.AimMode && !_player.IsAimModeChanged)
         {
             RaycastHit hit;
             Vector3 dir = (_mainCamera.transform.position - transform.position).normalized; //ī ޶  ߽        ī ޶            ִ´ .
@@ -88,7 +90,7 @@ public class PlayerCamera : MonoBehaviour
             isRoutineStart = true;
             while (Vector3.Distance(_mainCamera.transform.localPosition, _aimModeCameraPos) > 0.1f)
             {
-                _mainCamera.transform.localPosition = Vector3.Lerp(_mainCamera.transform.localPosition, _aimModeCameraPos, 0.2f);
+                _mainCamera.transform.localPosition = Vector3.Lerp(_mainCamera.transform.localPosition, _aimModeCameraPos, 0.15f);
                 yield return new WaitForSeconds(0.01f);
             }
             isRoutineStart = false;
@@ -102,8 +104,7 @@ public class PlayerCamera : MonoBehaviour
             isRoutineStart = true;
             while (Vector3.Distance(_mainCamera.transform.localPosition, _tempCameraPos) > 0.1f)
             {
-
-                _mainCamera.transform.localPosition = Vector3.Lerp(_mainCamera.transform.localPosition, _tempCameraPos, 0.2f);
+                _mainCamera.transform.localPosition = Vector3.Lerp(_mainCamera.transform.localPosition, _tempCameraPos, 0.15f);
                 yield return new WaitForSeconds(0.01f);
             }
             isRoutineStart = false;
