@@ -466,7 +466,7 @@ AnimatorController:
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
   - serializedVersion: 5
-    m_Name: AimMode
+    m_Name: Upper Layer
     m_StateMachine: {fileID: 2929656768797631888}
     m_Mask: {fileID: 31900000, guid: 537c51836b2ed9f4894bb21ee4bfd98a, type: 2}
     m_Motions: []
@@ -600,7 +600,7 @@ AnimatorStateMachine:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AimMode
+  m_Name: Upper Layer
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -7393261422678647745}
