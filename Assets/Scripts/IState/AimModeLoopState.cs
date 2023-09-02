@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AimModeLoopState : IState
+public class AimModeLoopState : IUpperState
 {
     private Player _player;
+    private PlayerStateMachine _machine;
 
-    public AimModeLoopState(Player player)
+    public AimModeLoopState(Player player, PlayerStateMachine machine)
     {
         _player = player;
+        _machine = machine;
     }
 
     public void OnStart()
@@ -18,7 +20,6 @@ public class AimModeLoopState : IState
 
     public void OnUpdate()
     {
-        _player.WalkMovement();
         _player.PlayerRotate();
         _player.CrossHairEnable();
 
@@ -37,6 +38,6 @@ public class AimModeLoopState : IState
 
     public void OnStateUpdate()
     {
-        if (!_player.AimModeEnable) _player.ChangeState(_player.AimModeEndState);
+        if (!_machine.AimModeEnable) _machine.ChangeState(_machine.AimModeEndState);
     }
 }

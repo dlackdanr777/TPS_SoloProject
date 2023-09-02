@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleState : ILowerState
+public class CrouchState : IState
 {
     private Player _player;
-    private PlayerStateMachine _machine;
 
-    public IdleState(Player player, PlayerStateMachine machine)
+    public CrouchState(Player player)
     {
         _player = player;
-        _machine = machine;
     }
 
     public void OnStart()
@@ -20,6 +18,7 @@ public class IdleState : ILowerState
 
     public void OnUpdate()
     {
+        _player.PlayerCamera.CameraCorrection();
     }
 
     public void OnFixedUpdate()
@@ -34,8 +33,5 @@ public class IdleState : ILowerState
 
     public void OnStateUpdate()
     {
-        _machine.ChangeToWalkState();
-        _machine.ChangeToRunState();
     }
-
 }

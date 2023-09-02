@@ -7,3 +7,13 @@ public interface IState
     public void OnFixedUpdate();
     public void OnStateUpdate();
 }
+
+public interface IUpperState : IState
+{
+
+}
+
+public interface ILowerState : IState
+{
+
+}

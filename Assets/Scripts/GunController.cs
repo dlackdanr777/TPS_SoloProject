@@ -83,7 +83,7 @@ public class GunController : MonoBehaviour
         {
             Debug.Log("재장전중");
             _isReload = true;
-            _player.IsReload = true;
+            //_player.IsReload = true;
             //_currentGun.Anim.SetTrigger("Reload"); 애니실행
             _player.MyAnimator.SetTrigger("Reload");
             _currentGun.CarryBulletCount += _currentGun.CurrentBulletCount;
@@ -103,7 +103,7 @@ public class GunController : MonoBehaviour
             }
             Debug.Log("재장전 끝");
             _isReload = false;
-            _player.IsReload = false;
+            //_player.IsReload = false;
         }
         else
         {

@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class RunState : IState
+public class RunState : ILowerState
 {
     private Player _player;
+    private PlayerStateMachine _machine;
 
-    public RunState(Player player)
+    public RunState(Player player, PlayerStateMachine machine)
     {
         _player = player;
+        _machine = machine;
     }
 
     public void OnStart()
@@ -18,10 +21,9 @@ public class RunState : IState
 
     public void OnUpdate()
     {
-        _player.RunMovement();
+        _player.RunMovement(_machine.HorizontalInput, _machine.VerticalInput);
         _player.PlayerRotate();
 
-        _player.PlayerCamera.CameraCorrection();
     }
 
     public void OnFixedUpdate()
@@ -35,8 +37,7 @@ public class RunState : IState
 
     public void OnStateUpdate()
     {
-        _player.ChangeToIdleState();
-        _player.ChangeToWalkState();
-        _player.ChangeToAimModeState();
+        _machine.ChangeToIdleState();
+        _machine.ChangeToWalkState();
     }
 }

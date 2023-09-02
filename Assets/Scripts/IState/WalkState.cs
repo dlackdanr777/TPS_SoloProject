@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WalkState : IState
+public class WalkState : ILowerState
 {
     private Player _player;
+    private PlayerStateMachine _machine;
 
-    public WalkState(Player player)
+    public WalkState(Player player, PlayerStateMachine machine)
     {
         _player = player;
+        _machine = machine;
     }
 
     public void OnStart()
@@ -18,10 +20,8 @@ public class WalkState : IState
 
     public void OnUpdate()
     {
-        _player.WalkMovement();
+        _player.WalkMovement(_machine.HorizontalInput, _machine.VerticalInput);
         _player.PlayerRotate();
-
-        _player.PlayerCamera.CameraCorrection();
     }
 
     public void OnFixedUpdate()
@@ -36,8 +36,7 @@ public class WalkState : IState
 
     public void OnStateUpdate()
     {
-        _player.ChangeToIdleState();
-        _player.ChangeToRunState();
-        _player.ChangeToAimModeState();
+        _machine.ChangeToIdleState();
+        _machine.ChangeToRunState();
     }
 }

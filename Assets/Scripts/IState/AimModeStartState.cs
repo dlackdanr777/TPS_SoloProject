@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
-public class AimModeStartState : IState
+public class AimModeStartState : IUpperState
 {
     private Player _player;
-    public AimModeStartState(Player player)
+    private PlayerStateMachine _machine;
+    public AimModeStartState(Player player, PlayerStateMachine machine)
     {
         _player = player;
+        _machine = machine;
     }
 
     public void OnStart()
@@ -18,7 +20,7 @@ public class AimModeStartState : IState
 
     public void OnUpdate()
     {
-        _player.WalkMovement();
+        _player.WalkMovement(_machine.HorizontalInput, _machine.VerticalInput);
         _player.PlayerRotate();
         _player.CrossHairEnable();
         _player.SetRiggingWeight(1.1f);
@@ -36,6 +38,6 @@ public class AimModeStartState : IState
 
     public void OnStateUpdate()
     {
-        if (_player.PlayerCamera.ZoomIn()) _player.ChangeState(_player.AimModeLoopState);
+        if (_player.PlayerCamera.ZoomIn()) _machine.ChangeState(_machine.AimModeLoopState);
     }
 }

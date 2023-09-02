@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AimModeEndState : IUpperState
+public class BasicUpperState : IUpperState
 {
     private Player _player;
     private PlayerStateMachine _machine;
-
-    public AimModeEndState(Player player, PlayerStateMachine machine)
+    public BasicUpperState(Player player, PlayerStateMachine machine)
     {
         _player = player;
         _machine = machine;
@@ -15,15 +14,11 @@ public class AimModeEndState : IUpperState
 
     public void OnStart()
     {
-        _player.MyAnimator.SetBool("AimMode", false);
-
-        _player.CrossHairDisable();
     }
 
     public void OnUpdate()
     {
-        _player.PlayerRotate();
-        _player.SetRiggingWeight(-0.1f);
+        _player.PlayerCamera.CameraCorrection();
     }
 
     public void OnFixedUpdate()
@@ -33,11 +28,11 @@ public class AimModeEndState : IUpperState
 
     public void OnExit()
     {
+
     }
 
     public void OnStateUpdate()
     {
-        if (_player.PlayerCamera.ZoomOut()) _machine.ChangeState(_machine.BasicUpperState);
-        
+        _machine.ChangeToAimModeState();
     }
 }
