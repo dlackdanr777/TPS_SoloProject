@@ -13,6 +13,7 @@ public class AimModeLoopState : IState
 
     public void OnStart()
     {
+
     }
 
     public void OnUpdate()
@@ -31,6 +32,7 @@ public class AimModeLoopState : IState
 
     public void OnExit()
     {
+
     }
 
     public void OnStateUpdate()

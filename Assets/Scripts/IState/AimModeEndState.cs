@@ -14,6 +14,7 @@ public class AimModeEndState : IState
     public void OnStart()
     {
         _player.MyAnimator.SetBool("AimMode", false);
+
         _player.CrossHairDisable();
     }
 
@@ -21,6 +22,7 @@ public class AimModeEndState : IState
     {
         _player.WalkMovement();
         _player.PlayerRotate();
+        _player.SetRiggingWeight(-0.1f);
     }
 
     public void OnFixedUpdate()

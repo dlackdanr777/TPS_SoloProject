@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
 public class AimModeStartState : IState
 {
@@ -19,6 +20,8 @@ public class AimModeStartState : IState
     {
         _player.WalkMovement();
         _player.PlayerRotate();
+        _player.CrossHairEnable();
+        _player.SetRiggingWeight(1.1f);
     }
 
     public void OnFixedUpdate()

@@ -1,3 +1,4 @@
+using UnityEngine.Animations.Rigging;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -13,6 +14,12 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject _centerCamera;
     [SerializeField] private Transform _crossHair;
     [SerializeField] private Transform _muzzle;
+
+    [Header("애니메이션 리깅")]
+    public MultiAimConstraint SpineAim1;
+    public MultiAimConstraint SpineAim2;
+    public MultiAimConstraint SpineAim3;
+    public MultiAimConstraint HeadAim;
 
     [Header("이동 관련 변수")]
     [SerializeField] private float _moveSpeed;
@@ -145,6 +152,18 @@ public class Player : MonoBehaviour
     public void CrossHairDisable() //크로스헤어를 비활성화 시키는 함수
     {
         _crossHair.gameObject.SetActive(false);
+    }
+
+    public void SetRiggingWeight(float weight) //조준선을 추적하는 뼈대의 가중치를 설정하는 함수
+    {
+        if(SpineAim1.weight != weight)
+        {
+            float weightLerp = Mathf.Lerp(SpineAim1.weight, weight, Time.deltaTime * 10);
+            SpineAim1.weight = weightLerp;
+            SpineAim2.weight = weightLerp;
+            SpineAim3.weight = weightLerp;
+            HeadAim.weight = weightLerp;
+        }
     }
 
     public void ChangeState(IState nextState) //상태를 변환하는 함수(꼭이걸로 상태를 변화해야함)

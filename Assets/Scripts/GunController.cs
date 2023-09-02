@@ -64,6 +64,7 @@ public class GunController : MonoBehaviour
         _currentGun.CurrentBulletCount--; //탄약 감소
         PlaySound(_currentGun.FireSound);
         //_currentGun.MuzzleFlash.Emit(1);
+        _player.MyAnimator.SetTrigger("Fire");
         Debug.Log("총알 발사");
     }
 
