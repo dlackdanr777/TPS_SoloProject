@@ -16,8 +16,7 @@ public class AimModeEndState : IUpperState
     public void OnStart()
     {
         _player.MyAnimator.SetBool("AimMode", false);
-
-        _player.CrossHairDisable();
+        _player.PlayerCamera.CrossHairDisable();
     }
 
     public void OnUpdate()

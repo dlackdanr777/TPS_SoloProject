@@ -21,7 +21,7 @@ public class AimModeLoopState : IUpperState
     public void OnUpdate()
     {
         _player.PlayerRotate();
-        _player.CrossHairEnable();
+        _player.PlayerCamera.CrossHairEnable();
 
         _player.GunController.TryFire();
     }

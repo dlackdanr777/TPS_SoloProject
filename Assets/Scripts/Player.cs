@@ -8,13 +8,12 @@ public class Player : MonoBehaviour
     [Header("컴포넌트")]
     private CharacterController _myController;
     private Camera _myCamera;
+    public PlayerCamera PlayerCamera;
     [HideInInspector] public Animator MyAnimator;
     [HideInInspector] public GunController GunController;
-    public PlayerCamera PlayerCamera;
+
 
     [Header("오브젝트")]
-    [SerializeField] private GameObject _centerCamera;
-    [SerializeField] private Transform _crossHair;
     [SerializeField] private Transform _muzzle;
 
     [Header("애니메이션 리깅")]
@@ -78,39 +77,6 @@ public class Player : MonoBehaviour
     {
         Vector3 cameraRotation = new Vector3(0, _myCamera.transform.eulerAngles.y, 0);
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(cameraRotation), Time.deltaTime * _rotateSpeed);
-    }
-
-    public void CrossHairEnable() //크로스헤어를 활성화시키는 함수
-    {
-        if (!_crossHair.gameObject.activeSelf)
-            _crossHair.gameObject.SetActive(true);
-
-        RaycastHit hit;
-        Ray ray = _myCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f)); //카메라 정중앙에 레이를 위치시킨다
-        float distance = 50f;
-        int layerMask = (1 << LayerMask.NameToLayer("Player"));
-        layerMask = ~layerMask;
-
-        if (Physics.Raycast(ray, out hit, distance, layerMask))
-        {
-            Vector3 hitPos = hit.point;
-            float hitDistance = Vector3.Distance(_myCamera.transform.position, hit.point);
-            _crossHair.position = hitPos;
-            _crossHair.localScale = Vector3.one * (hitDistance / distance);
-            _crossHair.LookAt(_myCamera.transform.position);
-
-        }
-        else
-        {
-            _crossHair.position = _myCamera.transform.position + _myCamera.transform.forward * distance;
-            _crossHair.localScale = Vector3.one;
-            _crossHair.LookAt(_myCamera.transform.position);
-        }
-    }
-
-    public void CrossHairDisable() //크로스헤어를 비활성화 시키는 함수
-    {
-        _crossHair.gameObject.SetActive(false);
     }
 
     public void SetRiggingWeight(float weight) //조준선을 추적하는 뼈대의 가중치를 설정하는 함수

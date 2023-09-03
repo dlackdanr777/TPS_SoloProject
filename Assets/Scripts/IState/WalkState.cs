@@ -20,11 +20,13 @@ public class WalkState : ILowerState
 
     public void OnUpdate()
     {
-        if(_machine.UpperCurrentState == _machine.AimModeStartState 
-            || _machine.UpperCurrentState == _machine.AimModeLoopState || _machine.UpperCurrentState == _machine.AimModeEndState)
+        if(_machine.UpperCurrentState == _machine.AimModeLoopState)
             _player.Movement(_machine.HorizontalInput, _machine.VerticalInput, 0.5f);
         else
             _player.Movement(_machine.HorizontalInput, _machine.VerticalInput);
+
+        if (_machine.UpperCurrentState == _machine.AimModeLoopState)
+            _player.PlayerCamera.ZoomIn();
 
         _player.PlayerRotate();
     }

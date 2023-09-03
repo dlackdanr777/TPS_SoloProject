@@ -8,7 +8,8 @@ using Cursor = UnityEngine.Cursor;
 public class PlayerCamera : MonoBehaviour
 {
     [SerializeField] private GameObject _targetCharacter;
-    private Player _player;
+    [SerializeField] private Transform _crossHair;
+    [SerializeField] private Transform _zoomPos;
     private Camera _mainCamera;
 
     [SerializeField] private float _rotateSpeed;
@@ -24,7 +25,6 @@ public class PlayerCamera : MonoBehaviour
     private void Awake()
     {
         _mainCamera = Camera.main;
-        _player = _targetCharacter.GetComponent<Player>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -55,6 +55,38 @@ public class PlayerCamera : MonoBehaviour
         transform.localEulerAngles = new Vector3(-_mouseY, _mouseX, 0);
     }
 
+    public void CrossHairEnable() //크로스헤어를 활성화시키는 함수
+    {
+        if (!_crossHair.gameObject.activeSelf)
+            _crossHair.gameObject.SetActive(true);
+
+        RaycastHit hit;
+        Ray ray = _mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f)); //카메라 정중앙에 레이를 위치시킨다
+        float distance = 50f;
+        int layerMask = (1 << LayerMask.NameToLayer("Player"));
+        layerMask = ~layerMask;
+
+        if (Physics.Raycast(ray, out hit, distance, layerMask))
+        {
+            Vector3 hitPos = hit.point;
+            float hitDistance = Vector3.Distance(_mainCamera.transform.position, hit.point);
+            _crossHair.position = hitPos;
+            _crossHair.localScale = Vector3.one * (hitDistance / distance);
+            _crossHair.LookAt(_mainCamera.transform.position);
+
+        }
+        else
+        {
+            _crossHair.position = _mainCamera.transform.position + _mainCamera.transform.forward * distance;
+            _crossHair.localScale = Vector3.one;
+            _crossHair.LookAt(_mainCamera.transform.position);
+        }
+    }
+
+    public void CrossHairDisable() //크로스헤어를 비활성화 시키는 함수
+    {
+        _crossHair.gameObject.SetActive(false);
+    }
 
     public void CameraCorrection()
     {
@@ -76,9 +108,9 @@ public class PlayerCamera : MonoBehaviour
 
     public bool ZoomIn()
     {
-        if (Vector3.Distance(_mainCamera.transform.localPosition, _aimModeCameraPos) > 0.05f)
+        if (Vector3.Distance(_mainCamera.transform.position, _zoomPos.position) > 0.05f)
         {
-            _mainCamera.transform.localPosition = Vector3.Lerp(_mainCamera.transform.localPosition, _aimModeCameraPos, Time.deltaTime * 10f);
+            _mainCamera.transform.position = Vector3.Lerp(_mainCamera.transform.position, _zoomPos.position, Time.deltaTime * 10f);
             return false;
         }
 
