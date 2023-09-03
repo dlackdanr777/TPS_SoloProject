@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class GunController : MonoBehaviour
 {
@@ -66,6 +67,7 @@ public class GunController : MonoBehaviour
         //float verticalRand = Random.Range(0.2f, 0.5f); 
         //_player.PlayerCamera.CameraRotate(0, verticalRand);
         //_currentGun.MuzzleFlash.Emit(1);
+        _currentGun.MuzzleFlash.Play();
         _player.MyAnimator.SetTrigger("Fire");
         Debug.Log("총알 발사");
     }

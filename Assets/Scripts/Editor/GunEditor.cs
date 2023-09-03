@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.VFX;
 
 [CanEditMultipleObjects]
 [CustomEditor(typeof(Gun), true)]
@@ -35,7 +36,7 @@ public class GunEditor : Editor
         _gun.RetroActionFineSightForce = EditorGUILayout.FloatField("¡§¡∂¡ÿ π›µø ºº±‚", _gun.RetroActionFineSightForce);
 
         EditorGUILayout.Space();
-        _gun.MuzzleFlash = (ParticleSystem)EditorGUILayout.ObjectField("√—±∏ »≠ø∞ ¿Ã∆Â∆Æ", _gun.MuzzleFlash, typeof(ParticleSystem), true);
+        _gun.MuzzleFlash = (VisualEffect)EditorGUILayout.ObjectField("√—±∏ »≠ø∞ ¿Ã∆Â∆Æ", _gun.MuzzleFlash, typeof(VisualEffect), true);
         _gun.FireSound = (AudioClip)EditorGUILayout.ObjectField("πﬂªÁ ªÁøÓµÂ", _gun.FireSound, typeof(AudioClip), true);
 
         EditorGUILayout.LabelField("≈∫æ‡ºˆ: " + _gun.CurrentBulletCount);

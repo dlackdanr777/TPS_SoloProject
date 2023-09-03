@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class Gun : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class Gun : MonoBehaviour
     public float RetroActionFineSightForce; //정조준의 반동 세기
 
     public Animator Anim;
-    public ParticleSystem MuzzleFlash; //총구 화염 이펙트
+    public VisualEffect MuzzleFlash; //총구 화염 이펙트
     public AudioClip FireSound; //총 발사 소리
 
     public float FireRate; //총알 발사 간격
