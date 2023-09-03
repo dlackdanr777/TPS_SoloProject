@@ -33,8 +33,7 @@ public class PlayerCamera : MonoBehaviour
     {
         _tempPos = transform.position;
         _tempCameraPos = _mainCamera.transform.localPosition;
-        _aimModeCameraPos = _tempCameraPos;
-        _aimModeCameraPos.z = -1f;
+        _aimModeCameraPos = new Vector3(0.65f, 0.45f, -0.8f);
         _cameraDistance = Vector3.Distance(transform.position, _mainCamera.transform.position);
     }
 
@@ -54,8 +53,6 @@ public class PlayerCamera : MonoBehaviour
 
         _mouseY = Mathf.Clamp(_mouseY, _minXRotateClamp, _maxXRotateClamp);
         transform.localEulerAngles = new Vector3(-_mouseY, _mouseX, 0);
-
-        _player.MyAnimator.SetFloat("MouseY", _mouseY);
     }
 
 
@@ -79,7 +76,7 @@ public class PlayerCamera : MonoBehaviour
 
     public bool ZoomIn()
     {
-        if (Vector3.Distance(_mainCamera.transform.localPosition, _aimModeCameraPos) > 0.1f)
+        if (Vector3.Distance(_mainCamera.transform.localPosition, _aimModeCameraPos) > 0.05f)
         {
             _mainCamera.transform.localPosition = Vector3.Lerp(_mainCamera.transform.localPosition, _aimModeCameraPos, Time.deltaTime * 10f);
             return false;
@@ -90,7 +87,7 @@ public class PlayerCamera : MonoBehaviour
 
     public bool ZoomOut()
     {
-        if (Vector3.Distance(_mainCamera.transform.localPosition, _tempCameraPos) > 0.1f)
+        if (Vector3.Distance(_mainCamera.transform.localPosition, _tempCameraPos) > 0.05f)
         {
             _mainCamera.transform.localPosition = Vector3.Lerp(_mainCamera.transform.localPosition, _tempCameraPos, Time.deltaTime * 10f);
             return false;

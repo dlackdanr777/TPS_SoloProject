@@ -1,29 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class CrouchState : IState
+public class CrouchIdleState : ILowerState
 {
     private Player _player;
+    private PlayerStateMachine _machine;
 
-    public CrouchState(Player player)
+    public CrouchIdleState(Player player, PlayerStateMachine machine)
     {
         _player = player;
+        _machine = machine;
     }
 
     public void OnStart()
     {
-
+        _player.MyAnimator.SetBool("Crouch", true);
     }
 
     public void OnUpdate()
     {
-        _player.PlayerCamera.CameraCorrection();
+
     }
 
     public void OnFixedUpdate()
     {
-
     }
 
     public void OnExit()
@@ -33,5 +35,15 @@ public class CrouchState : IState
 
     public void OnStateUpdate()
     {
+
+        if ((_machine.HorizontalInput != 0 || _machine.VerticalInput != 0))
+            _machine.ChangeState(_machine.CrouchWalkState);
+
+        if (_machine.CrouchKeyPressed)
+        {
+            _machine.ChangeState(_machine.IdleState);
+            _player.MyAnimator.SetBool("Crouch", false);
+        }
+
     }
 }

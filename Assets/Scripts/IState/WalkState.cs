@@ -20,7 +20,12 @@ public class WalkState : ILowerState
 
     public void OnUpdate()
     {
-        _player.WalkMovement(_machine.HorizontalInput, _machine.VerticalInput);
+        if(_machine.UpperCurrentState == _machine.AimModeStartState 
+            || _machine.UpperCurrentState == _machine.AimModeLoopState || _machine.UpperCurrentState == _machine.AimModeEndState)
+            _player.Movement(_machine.HorizontalInput, _machine.VerticalInput, 0.5f);
+        else
+            _player.Movement(_machine.HorizontalInput, _machine.VerticalInput);
+
         _player.PlayerRotate();
     }
 
@@ -38,5 +43,6 @@ public class WalkState : ILowerState
     {
         _machine.ChangeToIdleState();
         _machine.ChangeToRunState();
+        _machine.ChangeToCrouchState();
     }
 }

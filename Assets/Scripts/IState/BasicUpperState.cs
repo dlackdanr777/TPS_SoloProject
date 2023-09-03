@@ -34,5 +34,6 @@ public class BasicUpperState : IUpperState
     public void OnStateUpdate()
     {
         _machine.ChangeToAimModeState();
+        if (_machine.IsReload) _machine.ChangeState(_machine.ReloadState);
     }
 }

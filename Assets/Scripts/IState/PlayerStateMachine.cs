@@ -15,6 +15,8 @@ public class PlayerStateMachine
     public ILowerState LowerCurrentState { get; private set; }
     public ILowerState IdleState { get; private set; }
     public ILowerState WalkState { get; private set; }
+    public ILowerState CrouchIdleState { get; private set; }
+    public ILowerState CrouchWalkState { get; private set; }
     public ILowerState RunState { get; private set; }
 
 
@@ -23,7 +25,7 @@ public class PlayerStateMachine
     public IUpperState AimModeStartState { get; private set; }
     public IUpperState AimModeLoopState { get; private set; }
     public IUpperState AimModeEndState { get; private set; }
-    public IState ReloadState { get; private set; }
+    public IUpperState ReloadState { get; private set; }
 
     public void OnUpdate()
     {
@@ -51,6 +53,8 @@ public class PlayerStateMachine
     {
         IdleState = new IdleState(_player, this);
         WalkState = new WalkState(_player, this);
+        CrouchIdleState = new CrouchIdleState(_player, this);
+        CrouchWalkState = new CrouchWalkState(_player, this);
         RunState = new RunState(_player, this);
 
 
@@ -58,6 +62,7 @@ public class PlayerStateMachine
         AimModeStartState = new AimModeStartState(_player, this);
         AimModeLoopState = new AimModeLoopState(_player, this);
         AimModeEndState = new AimModeEndState(_player, this);
+        ReloadState = new ReloadState(_player, this);
         
         LowerCurrentState = IdleState;
         UpperCurrentState = BasicUpperState;
@@ -68,8 +73,9 @@ public class PlayerStateMachine
         HorizontalInput = Input.GetAxis("Horizontal");
         VerticalInput = Input.GetAxis("Vertical");
         CrouchKeyPressed = Input.GetKeyDown(KeyCode.LeftControl);
-        RunEnable = Input.GetKey(KeyCode.LeftShift) && VerticalInput > 0.1f;
-        AimModeEnable = Input.GetMouseButton(1);
+        RunEnable = Input.GetKey(KeyCode.LeftShift) && VerticalInput > 0.1f && UpperCurrentState != ReloadState
+            && LowerCurrentState != CrouchIdleState && LowerCurrentState != CrouchWalkState; 
+        AimModeEnable = Input.GetMouseButton(1) && LowerCurrentState != RunState && UpperCurrentState != ReloadState;
     }
     public void ChangeState(ILowerState nextState) //상태를 변환하는 함수(꼭이걸로 상태를 변화해야함)
     {
@@ -118,7 +124,8 @@ public class PlayerStateMachine
 
     public void ChangeToCrouchState()
     {
-
+        if (CrouchKeyPressed)
+            ChangeState(CrouchIdleState);
     }
 
     public void ChangeToAimModeState()

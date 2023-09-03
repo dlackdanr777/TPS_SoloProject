@@ -20,7 +20,7 @@ public class AimModeStartState : IUpperState
 
     public void OnUpdate()
     {
-        _player.WalkMovement(_machine.HorizontalInput, _machine.VerticalInput);
+        _player.Movement(_machine.HorizontalInput, _machine.VerticalInput);
         _player.PlayerRotate();
         _player.CrossHairEnable();
         _player.SetRiggingWeight(1.1f);

@@ -37,7 +37,10 @@ public class AimModeEndState : IUpperState
 
     public void OnStateUpdate()
     {
-        if (_player.PlayerCamera.ZoomOut()) _machine.ChangeState(_machine.BasicUpperState);
-        
+        if (_player.PlayerCamera.ZoomOut())
+        {
+            if (_machine.IsReload) _machine.ChangeState(_machine.ReloadState);
+            else  _machine.ChangeState(_machine.BasicUpperState); 
+        }         
     }
 }

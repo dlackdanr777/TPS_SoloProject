@@ -21,7 +21,7 @@ public class RunState : ILowerState
 
     public void OnUpdate()
     {
-        _player.RunMovement(_machine.HorizontalInput, _machine.VerticalInput);
+        _player.Movement(_machine.HorizontalInput, _machine.VerticalInput, _player.RunSpeedMul);
         _player.PlayerRotate();
 
     }
@@ -39,5 +39,6 @@ public class RunState : ILowerState
     {
         _machine.ChangeToIdleState();
         _machine.ChangeToWalkState();
+        _machine.ChangeToCrouchState();
     }
 }

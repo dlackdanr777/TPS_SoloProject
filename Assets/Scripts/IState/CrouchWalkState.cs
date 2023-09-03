@@ -20,10 +20,8 @@ public class CrouchWalkState : ILowerState
 
     public void OnUpdate()
     {
-        _player.WalkMovement(_machine.HorizontalInput * 0.5f, _machine.VerticalInput * 0.5f);
+        _player.Movement(_machine.HorizontalInput, _machine.VerticalInput, 0.5f);
         _player.PlayerRotate();
-
-        _player.PlayerCamera.CameraCorrection();
     }
 
     public void OnFixedUpdate()
@@ -38,5 +36,13 @@ public class CrouchWalkState : ILowerState
 
     public void OnStateUpdate()
     {
+        if (_machine.HorizontalInput == 0 && _machine.VerticalInput == 0)
+            _machine.ChangeState(_machine.CrouchIdleState);
+
+        if (_machine.CrouchKeyPressed)
+        {
+            _machine.ChangeState(_machine.IdleState);
+            _player.MyAnimator.SetBool("Crouch", false);
+        }
     }
 }

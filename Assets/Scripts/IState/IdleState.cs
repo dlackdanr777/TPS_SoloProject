@@ -36,6 +36,7 @@ public class IdleState : ILowerState
     {
         _machine.ChangeToWalkState();
         _machine.ChangeToRunState();
+        _machine.ChangeToCrouchState();
     }
 
 }

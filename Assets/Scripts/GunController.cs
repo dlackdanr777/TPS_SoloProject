@@ -63,6 +63,8 @@ public class GunController : MonoBehaviour
         _currentFireRate = _currentGun.FireRate;
         _currentGun.CurrentBulletCount--; //탄약 감소
         PlaySound(_currentGun.FireSound);
+        //float verticalRand = Random.Range(0.2f, 0.5f); 
+        //_player.PlayerCamera.CameraRotate(0, verticalRand);
         //_currentGun.MuzzleFlash.Emit(1);
         _player.MyAnimator.SetTrigger("Fire");
         Debug.Log("총알 발사");
@@ -83,8 +85,7 @@ public class GunController : MonoBehaviour
         {
             Debug.Log("재장전중");
             _isReload = true;
-            //_player.IsReload = true;
-            //_currentGun.Anim.SetTrigger("Reload"); 애니실행
+            _player.Machine.IsReload = true;
             _player.MyAnimator.SetTrigger("Reload");
             _currentGun.CarryBulletCount += _currentGun.CurrentBulletCount;
             _currentGun.CurrentBulletCount = 0;
@@ -103,7 +104,7 @@ public class GunController : MonoBehaviour
             }
             Debug.Log("재장전 끝");
             _isReload = false;
-            //_player.IsReload = false;
+            _player.Machine.IsReload = false;
         }
         else
         {

@@ -1,5 +1,7 @@
 using UnityEngine.Animations.Rigging;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
+using Unity.VisualScripting;
 
 public class Player : MonoBehaviour
 {
@@ -25,28 +27,28 @@ public class Player : MonoBehaviour
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _horizontalSpeed;
     [SerializeField] private float _verticalSpeed;
-    [SerializeField] private float _runSpeedMul;
+    public float RunSpeedMul;
     [SerializeField] private float _rotateSpeed;
 
-    private PlayerStateMachine _machine;
+    public PlayerStateMachine Machine;
 
     private void Awake()
     {
         ComponentInit();
-        _machine = new PlayerStateMachine(this);
+        Machine = new PlayerStateMachine(this);
     }
 
 
     private void Update()
     {
         GravityEnable();
-        _machine.OnUpdate();
+        Machine.OnUpdate();
         Debug.DrawRay(_muzzle.position, _muzzle.forward * 50, Color.red);
     }
 
     private void FixedUpdate()
     {
-        _machine.OnFixedUpdate();
+        Machine.OnFixedUpdate();
     }
 
     private void ComponentInit()
@@ -57,21 +59,10 @@ public class Player : MonoBehaviour
         _myCamera = Camera.main;
     }
 
-    public void WalkMovement(float horizontalInput, float verticalInput) //캐릭터의 걷게하는 함수
+    public void Movement(float horizontalInput, float verticalInput, float speedMul = 1) //캐릭터의 걷게하는 함수
     {
         Vector3 moveDir = new Vector3(horizontalInput, 0, verticalInput).normalized;
-        moveDir = transform.TransformDirection(moveDir) * _moveSpeed;
-        _myController.Move(moveDir * Time.deltaTime);
-
-        MyAnimator.SetFloat("Vertical", verticalInput);
-        MyAnimator.SetFloat("Horizontal", horizontalInput);
-    }
-
-    public void RunMovement(float horizontalInput, float verticalInput) //캐릭터를 달리게 해주는 변수
-    {
-        Vector3 moveDir = new Vector3(horizontalInput, 0, verticalInput).normalized;
-        moveDir = transform.TransformDirection(moveDir) * _moveSpeed * _runSpeedMul;
-
+        moveDir = transform.TransformDirection(moveDir) * _moveSpeed * speedMul;
         _myController.Move(moveDir * Time.deltaTime);
 
         MyAnimator.SetFloat("Vertical", verticalInput);
@@ -103,12 +94,16 @@ public class Player : MonoBehaviour
         if (Physics.Raycast(ray, out hit, distance, layerMask))
         {
             Vector3 hitPos = hit.point;
+            float hitDistance = Vector3.Distance(_myCamera.transform.position, hit.point);
             _crossHair.position = hitPos;
+            _crossHair.localScale = Vector3.one * (hitDistance / distance);
             _crossHair.LookAt(_myCamera.transform.position);
+
         }
         else
         {
             _crossHair.position = _myCamera.transform.position + _myCamera.transform.forward * distance;
+            _crossHair.localScale = Vector3.one;
             _crossHair.LookAt(_myCamera.transform.position);
         }
     }
