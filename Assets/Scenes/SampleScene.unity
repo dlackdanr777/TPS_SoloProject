@@ -1365,6 +1365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletHolePrefab: {fileID: 7061722958526817895, guid: e35cd2851fecbb24ca091db75e9b3d47,
     type: 3}
+  _bulletHoleCount: 300
 --- !u!4 &539623734
 Transform:
   m_ObjectHideFlags: 0

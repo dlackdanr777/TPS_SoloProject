@@ -99,15 +99,15 @@ public class GunController : MonoBehaviour
         Debug.DrawRay(CurrentGun.MuzzleFlash.transform.position, fireDirection, Color.red, 10000);
 
         RaycastHit hit;
-        Ray ray = _player.MainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f)); //카메라 정중앙에 레이를 위치시킨다
+        Ray ray = new Ray(CurrentGun.MuzzleFlash.transform.position, fireDirection);
         float distance = _player.GunController.CurrentGun.Range;
         int layerMask = (1 << LayerMask.NameToLayer("Player"));
         layerMask = ~layerMask;
 
         if (Physics.Raycast(ray, out hit, distance, layerMask))
         {
-            Vector3 hitPos = hit.point;
-            Instantiate(ObjectPoolManager.Instance.BulletHolePrefab, hit.point, Quaternion.identity);
+            Quaternion bulletHoleRotation = Quaternion.LookRotation(ray.direction);
+            ObjectPoolManager.Instance.UseObjectPool(ObjectPoolType.Bullet, hit.point, bulletHoleRotation);
         }
     }
 

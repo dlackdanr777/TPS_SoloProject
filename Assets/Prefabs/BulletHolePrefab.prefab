@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1524090827419108354}
   - component: {fileID: 600915058541824832}
+  - component: {fileID: -8981871448346998154}
   m_Layer: 0
   m_Name: BulletHolePrefab
   m_TagString: Untagged
@@ -45,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: bae51d0b7c49c914083530644631c9af, type: 2}
-  m_DrawDistance: 1000
+  m_DrawDistance: 100
   m_FadeScale: 0.9
   m_StartAngleFade: 180
   m_EndAngleFade: 180
@@ -54,5 +55,18 @@ MonoBehaviour:
   m_DecalLayerMask: 1
   m_ScaleMode: 0
   m_Offset: {x: 0, y: 0, z: 0}
-  m_Size: {x: 0.3, y: 0.3, z: 1}
+  m_Size: {x: 0.2, y: 0.2, z: 0.5}
   m_FadeFactor: 1
+--- !u!114 &-8981871448346998154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7061722958526817895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cca67d86e6d25984187f8e8602665b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _disableTime: 30
