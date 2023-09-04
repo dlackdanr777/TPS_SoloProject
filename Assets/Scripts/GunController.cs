@@ -1,11 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.VFX;
 
 public class GunController : MonoBehaviour
 {
-    [SerializeField] private Gun _currentGun; //현재 들고있는 총
+    public Gun CurrentGun; //현재 들고있는 총
+
+    [SerializeField] private CrossHair _crossHair;
 
     private Player _player;
 
@@ -15,14 +15,24 @@ public class GunController : MonoBehaviour
 
     private bool _isReload = false;
 
+    private float _nowRecoil; //현재 반동
+
+    private float _recoilMul; //반동 배수
+
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
         _player = GetComponent<Player>();
     }
 
+    private void Start()
+    {
+        _nowRecoil = CurrentGun.MinRecoil;
+    }
+
     private void Update()
     {
+        FireStabilization();
         GunFireRateCalc();
         TryReload();
     }
@@ -47,7 +57,7 @@ public class GunController : MonoBehaviour
     {
         if(!_isReload)
         {
-            if(_currentGun.CurrentBulletCount > 0)
+            if(CurrentGun.CurrentBulletCount > 0)
             {
                 Shoot();
             }
@@ -58,51 +68,75 @@ public class GunController : MonoBehaviour
         }
 
     }
-
-    public void Shoot()
+    Vector3 fireDirection;
+    public void Shoot() //총을 쏘는 함수
     {
-        _currentFireRate = _currentGun.FireRate;
-        _currentGun.CurrentBulletCount--; //탄약 감소
-        PlaySound(_currentGun.FireSound);
-        //float verticalRand = Random.Range(0.2f, 0.5f); 
-        //_player.PlayerCamera.CameraRotate(0, verticalRand);
-        //_currentGun.MuzzleFlash.Emit(1);
-        _currentGun.MuzzleFlash.Play();
+        _currentFireRate = CurrentGun.FireRate;
+        CurrentGun.CurrentBulletCount--; //탄약 감소
+        PlaySound(CurrentGun.FireSound);
+        CurrentGun.MuzzleFlash.Play();
         _player.MyAnimator.SetTrigger("Fire");
         Debug.Log("총알 발사");
+
+        float xError = GetRandomNormalDistribution(0f, _nowRecoil);
+        float yError = GetRandomNormalDistribution(0f, _nowRecoil);
+        fireDirection = _crossHair.transform.position - CurrentGun.MuzzleFlash.transform.position;
+
+        float targetDistance = Vector3.Distance(CurrentGun.MuzzleFlash.transform.position, _crossHair.transform.position);
+        float distanceScale =   targetDistance / CurrentGun.Range;
+
+        fireDirection = Quaternion.AngleAxis(yError * distanceScale, Vector3.up) * fireDirection;
+        fireDirection = Quaternion.AngleAxis(xError * distanceScale, Vector3.right) * fireDirection;
+
+        if(_nowRecoil < CurrentGun.MaxRecoil)
+        {
+            _nowRecoil += CurrentGun.Recoil;
+            if (_nowRecoil > CurrentGun.MaxRecoil)
+                _nowRecoil = CurrentGun.MaxRecoil;
+        }
+  
+        Debug.DrawRay(CurrentGun.MuzzleFlash.transform.position, fireDirection, Color.red, 10000);
     }
+
 
     public void TryReload()
     {
-        if (Input.GetKeyDown(KeyCode.R) && !_isReload &&_currentGun.CurrentBulletCount < _currentGun.ReloadBulletCount)
+        if (Input.GetKeyDown(KeyCode.R) && !_isReload &&CurrentGun.CurrentBulletCount < CurrentGun.ReloadBulletCount)
         {
 
             StartCoroutine(ReloadRoutine());
         }
     }
 
+    public float GetRandomNormalDistribution(float mean, float standard)
+    {
+        var x1 = Random.Range(0, 1f);
+        var x2 = Random.Range(0, 1f);
+        return mean + standard * (Mathf.Sqrt(-2.0f * Mathf.Log(x1)) * Mathf.Sin(2.0f * Mathf.PI * x2));
+    }
+
     private IEnumerator ReloadRoutine()
     {
-        if(_currentGun.CarryBulletCount > 0)
+        if(CurrentGun.CarryBulletCount > 0)
         {
             Debug.Log("재장전중");
             _isReload = true;
             _player.Machine.IsReload = true;
             _player.MyAnimator.SetTrigger("Reload");
-            _currentGun.CarryBulletCount += _currentGun.CurrentBulletCount;
-            _currentGun.CurrentBulletCount = 0;
+            CurrentGun.CarryBulletCount += CurrentGun.CurrentBulletCount;
+            CurrentGun.CurrentBulletCount = 0;
 
-            yield return new WaitForSeconds(_currentGun.ReloadTime);
+            yield return new WaitForSeconds(CurrentGun.ReloadTime);
 
-            if(_currentGun.CarryBulletCount >= _currentGun.ReloadBulletCount)
+            if(CurrentGun.CarryBulletCount >= CurrentGun.ReloadBulletCount)
             {
-                _currentGun.CurrentBulletCount = _currentGun.ReloadBulletCount;
-                _currentGun.CarryBulletCount -= _currentGun.ReloadBulletCount;
+                CurrentGun.CurrentBulletCount = CurrentGun.ReloadBulletCount;
+                CurrentGun.CarryBulletCount -= CurrentGun.ReloadBulletCount;
             }
             else
             {
-                _currentGun.CurrentBulletCount = _currentGun.CarryBulletCount;
-                _currentGun.CarryBulletCount = 0;
+                CurrentGun.CurrentBulletCount = CurrentGun.CarryBulletCount;
+                CurrentGun.CarryBulletCount = 0;
             }
             Debug.Log("재장전 끝");
             _isReload = false;
@@ -115,10 +149,60 @@ public class GunController : MonoBehaviour
     }
 
 
-
     private void PlaySound(AudioClip clip)
     {
         _audioSource.clip = clip;
         _audioSource.PlayOneShot(clip);
+    }
+
+    private void FireStabilization() //반동을 회복시키는 함수
+    {
+        if (_nowRecoil > CurrentGun.MinRecoil * _recoilMul)
+            _nowRecoil -= CurrentGun.RecoilRecoveryAmount * Time.deltaTime;
+
+        if (_nowRecoil < CurrentGun.MinRecoil * _recoilMul)
+            _nowRecoil = CurrentGun.MinRecoil * _recoilMul;
+    }
+
+    public void CrossHairEnable() //크로스헤어를 활성화시키는 함수
+    {
+        if (!_crossHair.gameObject.activeSelf)
+            _crossHair.gameObject.SetActive(true);
+
+        RaycastHit hit;
+        Ray ray = _player.MainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f)); //카메라 정중앙에 레이를 위치시킨다
+        float distance = _player.GunController.CurrentGun.Range;
+        int layerMask = (1 << LayerMask.NameToLayer("Player"));
+        layerMask = ~layerMask;
+
+        if (Physics.Raycast(ray, out hit, distance, layerMask))
+        {
+            Vector3 hitPos = hit.point;
+            float hitDistance = Vector3.Distance(_player.MainCamera.transform.position, hit.point);
+            _crossHair.transform.position = hitPos;
+            float distanceScale = hitDistance / distance;
+            _crossHair.transform.localScale = Vector3.one * distanceScale;
+
+            _crossHair.CrossHairAeraSize(_nowRecoil * distanceScale);
+            _crossHair.transform.LookAt(_player.MainCamera.transform.position);
+        }
+        else
+        {
+            _crossHair.transform.position = _player.MainCamera.transform.position + _player.MainCamera.transform.forward * distance;
+            _crossHair.transform.localScale = Vector3.one;
+
+            _crossHair.CrossHairAeraSize(_nowRecoil);
+            _crossHair.transform.LookAt(_player.MainCamera.transform.position);
+        }
+    }
+
+    public void CrossHairDisable() //크로스헤어를 비활성화 시키는 함수
+    {
+        _crossHair.gameObject.SetActive(false);
+    }
+
+    public void SetRecoilMul(float value)
+    {
+        _recoilMul = value;
     }
 }

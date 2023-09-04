@@ -7,7 +7,10 @@ public class Gun : MonoBehaviour
 {
     public string Name; //이름
     public float Range; //사정거리
-    public float Accuracy; //정확도
+    public float MaxRecoil; //최대 분산도
+    public float MinRecoil; //최저 분산도
+    public float Recoil; //반동
+    public float RecoilRecoveryAmount; //반동회복량
     public float RPM; //분당 발사속도
     public float ReloadTime; //재장전 시간
 
@@ -17,9 +20,6 @@ public class Gun : MonoBehaviour
     public int ReloadBulletCount; //총알의 재장전 갯수
     public int CurrentBulletCount; //탄창에 남아있는 총알의 갯수 
     public int CarryBulletCount; //인벤토리의 총알 갯수
-
-    public float RetroActionForce; //반동 세기
-    public float RetroActionFineSightForce; //정조준의 반동 세기
 
     public Animator Anim;
     public VisualEffect MuzzleFlash; //총구 화염 이펙트

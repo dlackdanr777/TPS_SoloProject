@@ -15,7 +15,7 @@ public class IdleState : ILowerState
 
     public void OnStart()
     {
-
+        _player.GunController.SetRecoilMul(1f);
     }
 
     public void OnUpdate()

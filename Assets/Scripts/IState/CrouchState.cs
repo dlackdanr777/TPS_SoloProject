@@ -17,6 +17,7 @@ public class CrouchIdleState : ILowerState
     public void OnStart()
     {
         _player.MyAnimator.SetBool("Crouch", true);
+        _player.GunController.SetRecoilMul(0.5f);
     }
 
     public void OnUpdate()
@@ -36,7 +37,6 @@ public class CrouchIdleState : ILowerState
 
     public void OnStateUpdate()
     {
-
         if ((_machine.HorizontalInput != 0 || _machine.VerticalInput != 0))
             _machine.ChangeState(_machine.CrouchWalkState);
 

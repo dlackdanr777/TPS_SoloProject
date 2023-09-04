@@ -15,7 +15,7 @@ public class CrouchWalkState : ILowerState
 
     public void OnStart()
     {
-
+        _player.GunController.SetRecoilMul(1f);
     }
 
     public void OnUpdate()
@@ -39,6 +39,7 @@ public class CrouchWalkState : ILowerState
 
     public void OnStateUpdate()
     {
+
         if (_machine.HorizontalInput == 0 && _machine.VerticalInput == 0)
             _machine.ChangeState(_machine.CrouchIdleState);
 

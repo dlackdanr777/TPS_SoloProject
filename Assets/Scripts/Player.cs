@@ -7,14 +7,11 @@ public class Player : MonoBehaviour
 {
     [Header("컴포넌트")]
     private CharacterController _myController;
-    private Camera _myCamera;
-    public PlayerCamera PlayerCamera;
     [HideInInspector] public Animator MyAnimator;
     [HideInInspector] public GunController GunController;
+    public Camera MainCamera;
+    public PlayerCamera PlayerCamera;
 
-
-    [Header("오브젝트")]
-    [SerializeField] private Transform _muzzle;
 
     [Header("애니메이션 리깅")]
     public MultiAimConstraint SpineAim1;
@@ -42,7 +39,6 @@ public class Player : MonoBehaviour
     {
         GravityEnable();
         Machine.OnUpdate();
-        Debug.DrawRay(_muzzle.position, _muzzle.forward * 50, Color.red);
     }
 
     private void FixedUpdate()
@@ -55,7 +51,7 @@ public class Player : MonoBehaviour
         _myController = GetComponent<CharacterController>();
         MyAnimator = GetComponent<Animator>();
         GunController = GetComponent<GunController>();
-        _myCamera = Camera.main;
+        MainCamera = Camera.main;
     }
 
     public void Movement(float horizontalInput, float verticalInput, float speedMul = 1) //캐릭터의 걷게하는 함수
@@ -75,7 +71,7 @@ public class Player : MonoBehaviour
 
     public void PlayerRotate() //캐릭터를 마우스회전에 따라 회전시키는 함수
     {
-        Vector3 cameraRotation = new Vector3(0, _myCamera.transform.eulerAngles.y, 0);
+        Vector3 cameraRotation = new Vector3(0, MainCamera.transform.eulerAngles.y, 0);
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(cameraRotation), Time.deltaTime * _rotateSpeed);
     }
 

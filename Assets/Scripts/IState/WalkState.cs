@@ -15,7 +15,7 @@ public class WalkState : ILowerState
 
     public void OnStart()
     {
- 
+        _player.GunController.SetRecoilMul(2f);
     }
 
     public void OnUpdate()
