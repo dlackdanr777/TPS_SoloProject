@@ -10,9 +10,16 @@ public class BulletHole : MonoBehaviour
         StartCoroutine(BulletHoleDisable(_disableTime));
     }
 
+    private void OnDisable()
+    {
+        StopCoroutine(BulletHoleDisable(_disableTime));
+    }
+
     private IEnumerator BulletHoleDisable(float time)
     {
-        yield return new WaitForSeconds(time);
+        yield return YieldCache.WaitForSeconds(time);
         gameObject.SetActive(false);
     }
+
+    
 }

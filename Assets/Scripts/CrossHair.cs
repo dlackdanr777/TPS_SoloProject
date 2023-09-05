@@ -12,7 +12,6 @@ public class CrossHair : MonoBehaviour
     public void CrossHairAeraSize(float fireAccuracy)
     {
         float CrossHairDistance = 0.35f + (fireAccuracy * 2.5f);
-        Debug.Log(CrossHairDistance);
         _rightCrossHair.anchoredPosition = new Vector2(CrossHairDistance, 0);
         _leftCrossHair.anchoredPosition = new Vector2(-CrossHairDistance, 0);
         _upCrossHair.anchoredPosition = new Vector2(0, CrossHairDistance);

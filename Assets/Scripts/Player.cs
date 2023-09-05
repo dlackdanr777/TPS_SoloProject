@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     private CharacterController _myController;
     [HideInInspector] public Animator MyAnimator;
     [HideInInspector] public GunController GunController;
+    [HideInInspector] public Inventory Inventory;
     public Camera MainCamera;
     public PlayerCamera PlayerCamera;
 
@@ -51,6 +52,7 @@ public class Player : MonoBehaviour
         _myController = GetComponent<CharacterController>();
         MyAnimator = GetComponent<Animator>();
         GunController = GetComponent<GunController>();
+        Inventory = GetComponent<Inventory>();
         MainCamera = Camera.main;
     }
 

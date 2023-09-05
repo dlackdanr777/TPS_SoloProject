@@ -74,8 +74,8 @@ public class PlayerStateMachine
         VerticalInput = Input.GetAxis("Vertical");
         CrouchKeyPressed = Input.GetKeyDown(KeyCode.LeftControl);
         RunEnable = Input.GetKey(KeyCode.LeftShift) && VerticalInput > 0.1f && UpperCurrentState != ReloadState
-            && LowerCurrentState != CrouchIdleState && LowerCurrentState != CrouchWalkState; 
-        AimModeEnable = Input.GetMouseButton(1) && LowerCurrentState != RunState && UpperCurrentState != ReloadState;
+            && LowerCurrentState != CrouchIdleState && LowerCurrentState != CrouchWalkState;
+        AimModeEnable = Input.GetMouseButton(1) && LowerCurrentState != RunState && UpperCurrentState != ReloadState && !PopupUIManager.Instance.PopupEnable;
     }
     public void ChangeState(ILowerState nextState) //상태를 변환하는 함수(꼭이걸로 상태를 변화해야함)
     {

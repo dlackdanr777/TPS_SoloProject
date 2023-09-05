@@ -69,4 +69,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca67d86e6d25984187f8e8602665b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _disableTime: 30
+  _disableTime: 60

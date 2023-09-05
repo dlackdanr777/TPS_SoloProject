@@ -22,8 +22,6 @@ public class PlayerCamera : MonoBehaviour
     private void Awake()
     {
         _mainCamera = Camera.main;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     private void Start()
@@ -44,11 +42,14 @@ public class PlayerCamera : MonoBehaviour
     private float _mouseY;
     private void CameraRotate()
     {
-        _mouseX += Input.GetAxis("Mouse X") * _rotateSpeed * Time.deltaTime;
-        _mouseY += Input.GetAxis("Mouse Y") * _rotateSpeed * Time.deltaTime;
+        if (!PopupUIManager.Instance.PopupEnable)
+        {
+            _mouseX += Input.GetAxis("Mouse X") * _rotateSpeed * Time.deltaTime;
+            _mouseY += Input.GetAxis("Mouse Y") * _rotateSpeed * Time.deltaTime;
 
-        _mouseY = Mathf.Clamp(_mouseY, _minXRotateClamp, _maxXRotateClamp);
-        transform.localEulerAngles = new Vector3(-_mouseY, _mouseX, 0);
+            _mouseY = Mathf.Clamp(_mouseY, _minXRotateClamp, _maxXRotateClamp);
+            transform.localEulerAngles = new Vector3(-_mouseY, _mouseX, 0);
+        }
     }
 
     public void CameraCorrection()

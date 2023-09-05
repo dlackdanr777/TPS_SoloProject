@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum ObjectPoolType
@@ -11,46 +13,35 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
     public GameObject BulletHolePrefab;
     [SerializeField] private int _bulletHoleCount;
     private GameObject _bulletHoleParent;
-    private GameObject[] _bulletHolePool;
+    private Queue<GameObject> _bulletHolePool;
 
 
     private void Start()
     {
-        ObjectPooling();
+        BulletHoleObjectPooling();
     }
 
-    private void ObjectPooling()
+    private void BulletHoleObjectPooling()
     {
-        _bulletHolePool = new GameObject[_bulletHoleCount];
-        _bulletHoleParent = new GameObject("BulletHoleParent");
+        _bulletHolePool = new Queue<GameObject>();
+       _bulletHoleParent = new GameObject("BulletHoleParent");
 
-        for (int i = 0, count = _bulletHoleCount; i < count; i++) 
+        for(int i =0, count = _bulletHoleCount; i < count; i++)
         {
-            _bulletHolePool[i] = Instantiate(BulletHolePrefab, Vector3.zero, Quaternion.identity);
-            _bulletHolePool[i].transform.parent = _bulletHoleParent.transform;
-            _bulletHolePool[i].SetActive(false);
+            GameObject bulletHole = Instantiate(BulletHolePrefab, Vector3.zero, Quaternion.identity);
+            _bulletHolePool.Enqueue(bulletHole);
+            bulletHole.transform.parent = _bulletHoleParent.transform;
+            bulletHole.SetActive(false);
         }
     }
 
-    public void UseObjectPool(ObjectPoolType type, Vector3 pos, Quaternion rot)
+    public void SpawnBulletHole(Vector3 pos, Quaternion rot)
     {
-        if (type == ObjectPoolType.Bullet)
-        {
-            UseObjectArray(ref _bulletHolePool, pos, rot);
-        }
-    }
-
-    private void UseObjectArray(ref GameObject[] objArray, Vector3 pos, Quaternion rot)
-    {
-        for (int i = 0, count = objArray.Length; i < count; i++)
-        {
-            if (!objArray[i].activeSelf)
-            {
-                objArray[i].SetActive(true);
-                objArray[i].transform.position = pos;
-                objArray[i].transform.rotation = rot;
-                break;
-            }
-        }
-    }
+        GameObject bulletHole = _bulletHolePool.Dequeue();
+        bulletHole.SetActive(false);
+        bulletHole.SetActive(true);
+        bulletHole.transform.position = pos;
+        bulletHole.transform.rotation = rot;
+        _bulletHolePool.Enqueue(bulletHole);
+    } 
 }

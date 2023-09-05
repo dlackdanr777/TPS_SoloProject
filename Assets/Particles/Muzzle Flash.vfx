@@ -20,7 +20,7 @@ MonoBehaviour:
     x: -509
     y: -260
     width: 1874
-    height: 2613
+    height: 2802
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4939,7 +4939,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.Vector, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"vector":{"x":2.0,"y":2.0,"z":-0.3330000042915344}}'
+      m_SerializableObject: '{"vector":{"x":2.0,"y":1.0,"z":-0.3330000042915344}}'
     m_Space: 0
   m_Property:
     name: A
@@ -5931,7 +5931,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614849}
-  m_UIPosition: {x: -12, y: 1948}
+  m_UIPosition: {x: -12, y: 2137}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -9783,7 +9783,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.3
+      m_SerializableObject: 0
     m_Space: 2147483647
   m_Property:
     name: Bounce
