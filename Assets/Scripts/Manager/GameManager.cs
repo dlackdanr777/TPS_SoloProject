@@ -14,9 +14,9 @@ public class GameManager : SingletonHandler<GameManager>
 
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if(Input.GetKey(KeyCode.Alpha1))
         {
-            Player.Inventory.AddItemByID(1, 1);
+            Player.Inventory.AddItemByID(1, 10);
         }
     }
 

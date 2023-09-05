@@ -1,7 +1,6 @@
 using UnityEngine.Animations.Rigging;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
-using Unity.VisualScripting;
+
 
 public class Player : MonoBehaviour
 {

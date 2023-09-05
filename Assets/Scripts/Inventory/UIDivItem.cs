@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Text.RegularExpressions;
 using TMPro;
-using UnityEditor.EventSystems;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UIDivItem : PopupUI
 {
-    [SerializeField] private TMP_InputField _inputField;
+    [SerializeField] private TextMeshProUGUI _AmountText;
     [SerializeField] private TextMeshProUGUI _itemNameTMP;
     [SerializeField] private Button _okButton;
 
@@ -64,23 +63,27 @@ public class UIDivItem : PopupUI
     {
         if(item != null)
         {
-            ChildSetActive(true);
-            if(_coroutine != null)
+            if (item.Amount > 1)
             {
-                StopCoroutine(_coroutine);
+                ChildSetActive(true);
+                if (_coroutine != null)
+                {
+                    StopCoroutine(_coroutine);
+                }
+                _AmountText.text = "1";
+                _itemNameTMP.text = item.Data.Name + " x" + item.Amount;
+                AddMaxValue = item.Amount - 1;
+
+                _coroutine = StartCoroutine(EnableInput());
+                _okButton.onClick.RemoveAllListeners();
+                _okButton.onClick.AddListener(() => DivItem(item));
+                _okButton.onClick.AddListener(() => ChildSetActive(false));
+                _okButton.onClick.AddListener(() => { if (_coroutine != null) StopCoroutine(_coroutine); });
             }
-            _inputField.text = "1";
-            _itemNameTMP.text = item.Data.Name + " x" + item.Amount;
-            AddMaxValue = item.Amount - 1;
-
-            _coroutine = StartCoroutine(EnableInput());
-            _okButton.onClick.RemoveAllListeners();
-            _okButton.onClick.AddListener(() => DivItem(item));
-            _okButton.onClick.AddListener(() => ChildSetActive(false));
-            _okButton.onClick.AddListener(() => { if (_coroutine != null) StopCoroutine(_coroutine); });
-
-            _inputField.onValueChanged.RemoveAllListeners();
-            _inputField.onValueChanged.AddListener(delegate { onValueChangedInputField(item); });
+            else
+            {
+                Debug.Log("1개 이상을 가지고 있어야 나눌 수 있습니다.");
+            }
         }
         else
         {
@@ -104,10 +107,10 @@ public class UIDivItem : PopupUI
     public void DivItem(Item item)
     {
         Regex regexNumber = new Regex(@"[0-9]");
-        bool isMatch = regexNumber.IsMatch(_inputField.text); //숫자만 들어있나 확인
-        if (isMatch && _inputField.text != "") //만약 숫자만 들어있다면
+        bool isMatch = regexNumber.IsMatch(_AmountText.text); //숫자만 들어있나 확인
+        if (isMatch && _AmountText.text != "") //만약 숫자만 들어있다면
         {
-            int divAmount = int.Parse(_inputField.text);
+            int divAmount = int.Parse(_AmountText.text);
             if (divAmount != 0)
             {
                 GameManager.Instance.Player.Inventory.DivItem(item, divAmount);
@@ -120,20 +123,6 @@ public class UIDivItem : PopupUI
         else
         {
             Debug.Log("숫자 이외는 입력 할 수 없습니다.");
-        }
-    }
-
-    private void onValueChangedInputField(Item item)
-    {
-        int divAmount = int.Parse(_inputField.text);
-        if (divAmount >= item.Amount)
-        {
-            _inputField.text = (item.Amount - 1).ToString();
-            divAmount = item.Amount - 1;
-        }
-        if(divAmount < 1)
-        {
-            _inputField.text = "1";
         }
     }
 
@@ -181,21 +170,21 @@ public class UIDivItem : PopupUI
 
     private void AddValue()
     {
-        int tempValue = int.Parse(_inputField.text);
+        int tempValue = int.Parse(_AmountText.text);
         if (tempValue < AddMaxValue)
         {
             tempValue += 1;
-            _inputField.text = tempValue.ToString();
+            _AmountText.text = tempValue.ToString();
         }
     }
 
     private void SubValue()
     {
-        int tempValue = int.Parse(_inputField.text);
+        int tempValue = int.Parse(_AmountText.text);
         if (tempValue > 1)
         {
             tempValue -= 1;
-            _inputField.text = tempValue.ToString();
+            _AmountText.text = tempValue.ToString();
         }
     }
 }

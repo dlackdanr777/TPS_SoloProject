@@ -1,5 +1,5 @@
 
-public abstract class Item
+public class Item
 {
     public int Amount;
     public ItemData Data { get; private set; }
@@ -11,5 +11,6 @@ public abstract class Item
     }
 
     public int SlotIndex = -1;
+
 
 }

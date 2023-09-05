@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EquipmentItem : MonoBehaviour
+public class EquipmentItem : Item
 {
-    // Start is called before the first frame update
-    void Start()
+    public EquipmentItemData EquipmentItemData { get; private set; }
+    public EquipmentItem(EquipmentItemData data, int amount = 1) : base(data, amount)
     {
-        
+        EquipmentItemData = data;
+        Amount = amount;
     }
-
-    // Update is called once per frame
-    void Update()
+    public EquipmentItem Clone()
     {
-        
+        return new EquipmentItem(EquipmentItemData);
     }
 }
