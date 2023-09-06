@@ -22,7 +22,7 @@ public class AimModeEndState : IUpperState
     public void OnUpdate()
     {
         _player.PlayerRotate();
-        _player.SetRiggingWeight(-0.1f);
+        _player.Rigging.SetUpperRigWeight(-0.1f);
     }
 
     public void OnFixedUpdate()

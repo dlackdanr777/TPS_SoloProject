@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UIInventorySlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
+public class UIInventorySlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public Image IconImage;
     public TextMeshProUGUI AmountText;
@@ -12,10 +12,12 @@ public class UIInventorySlot : MonoBehaviour, IPointerClickHandler, IBeginDragHa
     [HideInInspector] public int SlotIndex = -1;
 
     private UIInventory _uiInventory;
+    private RectTransform _rectTransform;
 
     public void Init(UIInventory uiInventory)
     {
         _uiInventory = uiInventory;
+        _rectTransform = GetComponent<RectTransform>();
     }
     public bool GetisNull()
     {
@@ -63,11 +65,12 @@ public class UIInventorySlot : MonoBehaviour, IPointerClickHandler, IBeginDragHa
                 else if( _item is IUsableItem) // 소비아이템이라면
                 {
                     //소비시키는 코드를 작성
-                    _uiInventory.UIDivItem.SetActive(_item);
+                    _uiInventory.UiDivItem.SetActive(_item);
                 }
             }
         }
     }
+
 
     public void OnBeginDrag(PointerEventData eventData) //마우스 드래그가 시작 됬을 때 실행되는 함수
     {
@@ -133,5 +136,22 @@ public class UIInventorySlot : MonoBehaviour, IPointerClickHandler, IBeginDragHa
     private bool IsOverUI()
     {
         return EventSystem.current.IsPointerOverGameObject();
-    }  
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if(_item != null)
+        {
+            _uiInventory.UiItemDescription.ChildSetActive(true);
+            Vector3 slotHalfSize = _rectTransform.sizeDelta * 0.5f;
+            _uiInventory.UiItemDescription.transform.position = transform.position + _uiInventory.UiItemDescription.GetUISize() + slotHalfSize;
+            _uiInventory.UiItemDescription.UpdateUI(_item);
+        }
+
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        _uiInventory.UiItemDescription.ChildSetActive(false);
+    }
 }

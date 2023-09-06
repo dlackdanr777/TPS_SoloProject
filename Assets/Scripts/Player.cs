@@ -4,33 +4,29 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public float RunSpeedMul => _runSpeedMul; 
+
     [Header("컴포넌트")]
-    private CharacterController _myController;
-    [HideInInspector] public Animator MyAnimator;
-    [HideInInspector] public GunController GunController;
-    [HideInInspector] public Inventory Inventory;
     public Camera MainCamera;
     public PlayerCamera PlayerCamera;
+    public Animator MyAnimator;
+    public GunController GunController;
+    public Inventory Inventory;
+    public Rigging Rigging;
+    [SerializeField] private CharacterController _myController;
 
-
-    [Header("애니메이션 리깅")]
-    public MultiAimConstraint SpineAim1;
-    public MultiAimConstraint SpineAim2;
-    public MultiAimConstraint SpineAim3;
-    public MultiAimConstraint HeadAim;
 
     [Header("이동 관련 변수")]
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _horizontalSpeed;
     [SerializeField] private float _verticalSpeed;
-    public float RunSpeedMul;
+    [SerializeField] private float _runSpeedMul;
     [SerializeField] private float _rotateSpeed;
 
     public PlayerStateMachine Machine;
 
     private void Awake()
     {
-        ComponentInit();
         Machine = new PlayerStateMachine(this);
     }
 
@@ -44,15 +40,6 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         Machine.OnFixedUpdate();
-    }
-
-    private void ComponentInit()
-    {
-        _myController = GetComponent<CharacterController>();
-        MyAnimator = GetComponent<Animator>();
-        GunController = GetComponent<GunController>();
-        Inventory = GetComponent<Inventory>();
-        MainCamera = Camera.main;
     }
 
     public void Movement(float horizontalInput, float verticalInput, float speedMul = 1) //캐릭터의 걷게하는 함수
@@ -75,18 +62,5 @@ public class Player : MonoBehaviour
         Vector3 cameraRotation = new Vector3(0, MainCamera.transform.eulerAngles.y, 0);
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(cameraRotation), Time.deltaTime * _rotateSpeed);
     }
-
-    public void SetRiggingWeight(float weight) //조준선을 추적하는 뼈대의 가중치를 설정하는 함수
-    {
-        if (SpineAim1.weight != weight)
-        {
-            float weightLerp = Mathf.Lerp(SpineAim1.weight, weight, Time.deltaTime * 10);
-            SpineAim1.weight = weightLerp;
-            SpineAim2.weight = weightLerp;
-            SpineAim3.weight = weightLerp;
-            HeadAim.weight = weightLerp;
-        }
-    }
-
 
 }

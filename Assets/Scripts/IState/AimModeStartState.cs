@@ -23,7 +23,7 @@ public class AimModeStartState : IUpperState
         _player.Movement(_machine.HorizontalInput, _machine.VerticalInput);
         _player.PlayerRotate();
         _player.GunController.CrossHairEnable();
-        _player.SetRiggingWeight(1.1f);
+        _player.Rigging.SetUpperRigWeight(1.1f);
     }
 
     public void OnFixedUpdate()

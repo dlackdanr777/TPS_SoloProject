@@ -5,7 +5,10 @@ public class UIInventory : PopupUI
 {
     [SerializeField] private Transform _gridLayout; //슬롯들을 자식으로 가지고있는 오브젝트
 
-    public UIDivItem UIDivItem;
+    public UIDivItem UiDivItem;
+
+    public UIItemDescription UiItemDescription;
+
     private UIInventorySlot[] _slots;
     private Inventory _inventory;
 
@@ -67,7 +70,8 @@ public class UIInventory : PopupUI
 
     public override void ChildSetActive(bool value)
     {
-        UIDivItem.ChildSetActive(false);
+        UiDivItem.ChildSetActive(false);
+        UiItemDescription.ChildSetActive(false);
         base.ChildSetActive(value);
     }
 
