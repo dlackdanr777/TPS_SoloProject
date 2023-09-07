@@ -15,13 +15,14 @@ public class CrouchWalkState : ILowerState
 
     public void OnStart()
     {
-        _player.GunController.SetRecoilMul(1f);
+        _player.OnSetRecoilSizeHandler?.Invoke(1f);
     }
 
     public void OnUpdate()
     {
-        _player.Movement(_machine.HorizontalInput, _machine.VerticalInput, 0.5f);
-        _player.PlayerRotate();
+        _player.OnMovedHandler?.Invoke(_machine.HorizontalInput, _machine.VerticalInput, 0.5f);
+
+        _player.OnRotateHandler?.Invoke();
 
         if (_machine.UpperCurrentState == _machine.AimModeLoopState)
             _player.PlayerCamera.ZoomIn();
@@ -46,7 +47,7 @@ public class CrouchWalkState : ILowerState
         if (_machine.CrouchKeyPressed)
         {
             _machine.ChangeState(_machine.IdleState);
-            _player.MyAnimator.SetBool("Crouch", false);
+            _player.Animator.SetBool("Crouch", false);
         }
     }
 }

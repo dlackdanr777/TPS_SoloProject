@@ -20,10 +20,10 @@ public class AimModeLoopState : IUpperState
 
     public void OnUpdate()
     {
-        _player.PlayerRotate();
-        _player.GunController.CrossHairEnable();
+        _player.OnRotateHandler?.Invoke();
+        _player.OnAimEnableHandler?.Invoke();
 
-        _player.GunController.TryFire();
+        _player.OnFireHandler?.Invoke();
     }
 
     public void OnFixedUpdate()
@@ -38,6 +38,6 @@ public class AimModeLoopState : IUpperState
 
     public void OnStateUpdate()
     {
-        if (!_machine.AimModeEnable || _machine.IsReload) _machine.ChangeState(_machine.AimModeEndState);
+        if (!_machine.AimModeEnable || _player.GunController.IsReload) _machine.ChangeState(_machine.AimModeEndState);
     }
 }

@@ -15,14 +15,16 @@ public class AimModeEndState : IUpperState
 
     public void OnStart()
     {
-        _player.MyAnimator.SetBool("AimMode", false);
-        _player.GunController.CrossHairDisable();
+        _player.Animator.SetBool("AimMode", false);
+        _player.OnAimDisableHandler?.Invoke();
     }
 
     public void OnUpdate()
     {
-        _player.PlayerRotate();
+        _player.OnRotateHandler?.Invoke();
+
         _player.Rigging.SetUpperRigWeight(-0.1f);
+        Debug.Log("Ω√¿€");
     }
 
     public void OnFixedUpdate()
@@ -38,7 +40,7 @@ public class AimModeEndState : IUpperState
     {
         if (_player.PlayerCamera.ZoomOut())
         {
-            if (_machine.IsReload) _machine.ChangeState(_machine.ReloadState);
+            if (_player.GunController.IsReload) _machine.ChangeState(_machine.ReloadState);
             else  _machine.ChangeState(_machine.BasicUpperState); 
         }         
     }

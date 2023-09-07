@@ -10,6 +10,7 @@ public class UIInventory : PopupUI
     public UIItemDescription UiItemDescription;
 
     private UIInventorySlot[] _slots;
+
     private Inventory _inventory;
 
     [SerializeField] private Button _sortButton;

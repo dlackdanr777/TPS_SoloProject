@@ -15,20 +15,20 @@ public class WalkState : ILowerState
 
     public void OnStart()
     {
-        _player.GunController.SetRecoilMul(2f);
+        _player.OnSetRecoilSizeHandler?.Invoke(2f);
     }
 
     public void OnUpdate()
     {
         if(_machine.UpperCurrentState == _machine.AimModeLoopState)
-            _player.Movement(_machine.HorizontalInput, _machine.VerticalInput, 0.5f);
+            _player.OnMovedHandler?.Invoke(_machine.HorizontalInput, _machine.VerticalInput, 0.5f);
         else
-            _player.Movement(_machine.HorizontalInput, _machine.VerticalInput);
+            _player.OnMovedHandler?.Invoke(_machine.HorizontalInput, _machine.VerticalInput, 1);
 
         if (_machine.UpperCurrentState == _machine.AimModeLoopState)
             _player.PlayerCamera.ZoomIn();
 
-        _player.PlayerRotate();
+        _player.OnRotateHandler?.Invoke();
     }
 
     public void OnFixedUpdate()

@@ -97,7 +97,7 @@ public class UIDivItem : PopupUI
         {
             if(Input.GetKey(KeyCode.Return))
             {
-                _okButton.onClick.Invoke();
+                _okButton.onClick?.Invoke();
                 yield break;
             }
             yield return YieldCache.WaitForSeconds(0.01f);

@@ -10,7 +10,6 @@ public class PlayerStateMachine
     public bool CrouchKeyPressed;
     public bool RunEnable;
     public bool AimModeEnable;
-    public bool IsReload;
 
     public ILowerState LowerCurrentState { get; private set; }
     public ILowerState IdleState { get; private set; }

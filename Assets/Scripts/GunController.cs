@@ -1,17 +1,23 @@
 using System.Collections;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class GunController : MonoBehaviour
 {
+
+    public bool IsReload => _isReload;
+
     public Gun CurrentGun; //현재 들고있는 총
 
     [SerializeField] private CrossHair _crossHair;
 
-    private Player _player;
-
-    private float _currentFireRate; // 이값이 0이어야 총 발사 가능
+    [SerializeField] private Animator _playerAnimator;
 
     private AudioSource _audioSource;
+
+    [SerializeField] private Camera _mainCamera;
+
+    private float _currentFireRate; // 이값이 0이어야 총 발사 가능
 
     private bool _isReload = false;
 
@@ -22,7 +28,6 @@ public class GunController : MonoBehaviour
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
-        _player = GetComponent<Player>();
     }
 
     private void Start()
@@ -66,7 +71,6 @@ public class GunController : MonoBehaviour
                 StartCoroutine(ReloadRoutine());
             }
         }
-
     }
     Vector3 fireDirection;
     public void Shoot() //총을 쏘는 함수
@@ -75,7 +79,7 @@ public class GunController : MonoBehaviour
         CurrentGun.CurrentBulletCount--; //탄약 감소
         PlaySound(CurrentGun.FireSound);
         CurrentGun.MuzzleFlash.Play();
-        _player.MyAnimator.SetTrigger("Fire");
+        _playerAnimator.SetTrigger("Fire");
         Debug.Log("총알 발사");
 
         float xError = GetRandomNormalDistribution(0f, _nowRecoil);
@@ -115,7 +119,6 @@ public class GunController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) && !_isReload &&CurrentGun.CurrentBulletCount < CurrentGun.ReloadBulletCount)
         {
-
             StartCoroutine(ReloadRoutine());
         }
     }
@@ -132,9 +135,8 @@ public class GunController : MonoBehaviour
         if(CurrentGun.CarryBulletCount > 0)
         {
             Debug.Log("재장전중");
+            _playerAnimator.SetTrigger("Reload");
             _isReload = true;
-            _player.Machine.IsReload = true;
-            _player.MyAnimator.SetTrigger("Reload");
             CurrentGun.CarryBulletCount += CurrentGun.CurrentBulletCount;
             CurrentGun.CurrentBulletCount = 0;
 
@@ -152,7 +154,6 @@ public class GunController : MonoBehaviour
             }
             Debug.Log("재장전 끝");
             _isReload = false;
-            _player.Machine.IsReload = false;
         }
         else
         {
@@ -182,7 +183,7 @@ public class GunController : MonoBehaviour
             _crossHair.gameObject.SetActive(true);
 
         RaycastHit hit;
-        Ray ray = _player.MainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f)); //카메라 정중앙에 레이를 위치시킨다
+        Ray ray = _mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f)); //카메라 정중앙에 레이를 위치시킨다
         float distance = CurrentGun.Range;
         int layerMask = (1 << LayerMask.NameToLayer("Player"));
         layerMask = ~layerMask;
@@ -190,21 +191,21 @@ public class GunController : MonoBehaviour
         if (Physics.Raycast(ray, out hit, distance, layerMask))
         {
             Vector3 hitPos = hit.point;
-            float hitDistance = Vector3.Distance(_player.MainCamera.transform.position, hit.point);
+            float hitDistance = Vector3.Distance(_mainCamera.transform.position, hit.point);
             _crossHair.transform.position = hitPos;
             float distanceScale = hitDistance / distance;
             _crossHair.transform.localScale = Vector3.one * distanceScale;
 
             _crossHair.CrossHairAeraSize(_nowRecoil * distanceScale);
-            _crossHair.transform.LookAt(_player.MainCamera.transform.position);
+            _crossHair.transform.LookAt(_mainCamera.transform.position);
         }
         else
         {
-            _crossHair.transform.position = _player.MainCamera.transform.position + _player.MainCamera.transform.forward * distance;
+            _crossHair.transform.position = _mainCamera.transform.position + _mainCamera.transform.forward * distance;
             _crossHair.transform.localScale = Vector3.one;
 
             _crossHair.CrossHairAeraSize(_nowRecoil);
-            _crossHair.transform.LookAt(_player.MainCamera.transform.position);
+            _crossHair.transform.LookAt(_mainCamera.transform.position);
         }
     }
 

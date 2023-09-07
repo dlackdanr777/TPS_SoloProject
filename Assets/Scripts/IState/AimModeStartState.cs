@@ -15,14 +15,13 @@ public class AimModeStartState : IUpperState
 
     public void OnStart()
     {
-        _player.MyAnimator.SetBool("AimMode", true);
+        _player.Animator.SetBool("AimMode", true);
     }
 
     public void OnUpdate()
     {
-        _player.Movement(_machine.HorizontalInput, _machine.VerticalInput);
-        _player.PlayerRotate();
-        _player.GunController.CrossHairEnable();
+        _player.OnRotateHandler?.Invoke();
+        _player.OnAimEnableHandler?.Invoke();
         _player.Rigging.SetUpperRigWeight(1.1f);
     }
 

@@ -16,13 +16,13 @@ public class RunState : ILowerState
 
     public void OnStart()
     {
-        _player.MyAnimator.SetBool("IsRun", true);
+        _player.Animator.SetBool("IsRun", true);
     }
 
     public void OnUpdate()
     {
-        _player.Movement(_machine.HorizontalInput, _machine.VerticalInput, _player.RunSpeedMul);
-        _player.PlayerRotate();
+        _player.OnMovedHandler?.Invoke(_machine.HorizontalInput, _machine.VerticalInput, _player.PlayerMovement.RunSpeedMul);
+        _player.OnRotateHandler?.Invoke();
 
     }
 
@@ -32,7 +32,7 @@ public class RunState : ILowerState
 
     public void OnExit()
     {
-        _player.MyAnimator.SetBool("IsRun", false);
+        _player.Animator.SetBool("IsRun", false);
     }
 
     public void OnStateUpdate()

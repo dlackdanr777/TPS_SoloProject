@@ -18,7 +18,7 @@ public class BasicUpperState : IUpperState
 
     public void OnUpdate()
     {
-        _player.PlayerCamera.CameraCorrection();
+        //_player.PlayerCamera.CameraCorrection();
     }
 
     public void OnFixedUpdate()
@@ -34,6 +34,6 @@ public class BasicUpperState : IUpperState
     public void OnStateUpdate()
     {
         _machine.ChangeToAimModeState();
-        if (_machine.IsReload) _machine.ChangeState(_machine.ReloadState);
+        if (_player.GunController.IsReload) _machine.ChangeState(_machine.ReloadState);
     }
 }

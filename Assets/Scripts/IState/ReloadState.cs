@@ -32,6 +32,6 @@ public class ReloadState : IUpperState
 
     public void OnStateUpdate()
     {
-        if (!_machine.IsReload) _machine.ChangeState(_machine.BasicUpperState);
+        if (!_player.GunController.IsReload) _machine.ChangeState(_machine.BasicUpperState);
     }
 }
