@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static UnityEditor.PlayerSettings;
 
 public class UIInventorySlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -143,8 +144,11 @@ public class UIInventorySlot : MonoBehaviour, IPointerClickHandler, IBeginDragHa
         if(_item != null)
         {
             _uiInventory.UiItemDescription.ChildSetActive(true);
-            Vector3 slotHalfSize = _rectTransform.sizeDelta * 0.5f;
-            _uiInventory.UiItemDescription.transform.position = transform.position + _uiInventory.UiItemDescription.GetUISize() + slotHalfSize;
+
+            //Vector3 slotHalfSize = _rectTransform.sizeDelta * 0.5f;
+            //Vector3 uiPos = transform.position + _uiInventory.UiItemDescription.GetUISize() + slotHalfSize;
+            
+            //_uiInventory.UiItemDescription.transform.position = UIPositionResearch(_uiInventory.UiItemDescription.GetUISize());
             _uiInventory.UiItemDescription.UpdateUI(_item);
         }
 
@@ -154,4 +158,5 @@ public class UIInventorySlot : MonoBehaviour, IPointerClickHandler, IBeginDragHa
     {
         _uiInventory.UiItemDescription.ChildSetActive(false);
     }
+
 }

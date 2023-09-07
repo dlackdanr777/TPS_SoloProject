@@ -18,7 +18,6 @@ public class BasicUpperState : IUpperState
 
     public void OnUpdate()
     {
-        //_player.PlayerCamera.CameraCorrection();
     }
 
     public void OnFixedUpdate()

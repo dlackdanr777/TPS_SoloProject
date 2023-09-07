@@ -22,12 +22,13 @@ public class CrouchIdleState : ILowerState
 
     public void OnUpdate()
     {
-        if (_machine.UpperCurrentState == _machine.AimModeLoopState)
-            _player.PlayerCamera.ZoomIn();
+
     }
 
     public void OnFixedUpdate()
     {
+        if (_machine.UpperCurrentState == _machine.AimModeLoopState)
+            _player.PlayerCamera.ZoomIn();
     }
 
     public void OnExit()

@@ -21,15 +21,13 @@ public class AimModeEndState : IUpperState
 
     public void OnUpdate()
     {
-        _player.OnRotateHandler?.Invoke();
 
-        _player.Rigging.SetUpperRigWeight(-0.1f);
-        Debug.Log("Ω√¿€");
     }
 
     public void OnFixedUpdate()
     {
-
+        _player.OnRotateHandler?.Invoke();
+        _player.Rigging.SetUpperRigWeight(-0.1f);
     }
 
     public void OnExit()

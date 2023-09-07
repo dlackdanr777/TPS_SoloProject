@@ -20,17 +20,17 @@ public class CrouchWalkState : ILowerState
 
     public void OnUpdate()
     {
+
+    }
+
+    public void OnFixedUpdate()
+    {
         _player.OnMovedHandler?.Invoke(_machine.HorizontalInput, _machine.VerticalInput, 0.5f);
 
         _player.OnRotateHandler?.Invoke();
 
         if (_machine.UpperCurrentState == _machine.AimModeLoopState)
             _player.PlayerCamera.ZoomIn();
-    }
-
-    public void OnFixedUpdate()
-    {
-
     }
 
     public void OnExit()

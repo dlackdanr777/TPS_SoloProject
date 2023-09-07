@@ -20,14 +20,13 @@ public class AimModeLoopState : IUpperState
 
     public void OnUpdate()
     {
-        _player.OnRotateHandler?.Invoke();
-        _player.OnAimEnableHandler?.Invoke();
-
         _player.OnFireHandler?.Invoke();
+        _player.OnAimEnableHandler?.Invoke();
     }
 
     public void OnFixedUpdate()
     {
+        _player.OnRotateHandler?.Invoke();
 
     }
 

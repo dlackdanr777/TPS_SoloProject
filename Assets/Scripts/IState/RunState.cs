@@ -21,13 +21,14 @@ public class RunState : ILowerState
 
     public void OnUpdate()
     {
-        _player.OnMovedHandler?.Invoke(_machine.HorizontalInput, _machine.VerticalInput, _player.PlayerMovement.RunSpeedMul);
-        _player.OnRotateHandler?.Invoke();
+
 
     }
 
     public void OnFixedUpdate()
     {
+        _player.OnMovedHandler?.Invoke(_machine.HorizontalInput, _machine.VerticalInput, _player.PlayerMovement.RunSpeedMul);
+        _player.OnRotateHandler?.Invoke();
     }
 
     public void OnExit()

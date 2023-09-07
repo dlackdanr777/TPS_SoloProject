@@ -20,14 +20,14 @@ public class AimModeStartState : IUpperState
 
     public void OnUpdate()
     {
-        _player.OnRotateHandler?.Invoke();
-        _player.OnAimEnableHandler?.Invoke();
-        _player.Rigging.SetUpperRigWeight(1.1f);
+
     }
 
     public void OnFixedUpdate()
     {
-
+        _player.OnRotateHandler?.Invoke();
+        _player.OnAimEnableHandler?.Invoke();
+        _player.Rigging.SetUpperRigWeight(1.1f);
     }
 
     public void OnExit()

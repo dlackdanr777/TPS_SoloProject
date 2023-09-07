@@ -20,7 +20,12 @@ public class WalkState : ILowerState
 
     public void OnUpdate()
     {
-        if(_machine.UpperCurrentState == _machine.AimModeLoopState)
+
+    }
+
+    public void OnFixedUpdate()
+    {
+        if (_machine.UpperCurrentState == _machine.AimModeLoopState)
             _player.OnMovedHandler?.Invoke(_machine.HorizontalInput, _machine.VerticalInput, 0.5f);
         else
             _player.OnMovedHandler?.Invoke(_machine.HorizontalInput, _machine.VerticalInput, 1);
@@ -29,11 +34,6 @@ public class WalkState : ILowerState
             _player.PlayerCamera.ZoomIn();
 
         _player.OnRotateHandler?.Invoke();
-    }
-
-    public void OnFixedUpdate()
-    {
-
     }
 
     public void OnExit()

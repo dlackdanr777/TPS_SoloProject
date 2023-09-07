@@ -4,7 +4,6 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class GunController : MonoBehaviour
 {
-
     public bool IsReload => _isReload;
 
     public Gun CurrentGun; //현재 들고있는 총
@@ -13,9 +12,9 @@ public class GunController : MonoBehaviour
 
     [SerializeField] private Animator _playerAnimator;
 
-    private AudioSource _audioSource;
-
     [SerializeField] private Camera _mainCamera;
+
+    private AudioSource _audioSource;
 
     private float _currentFireRate; // 이값이 0이어야 총 발사 가능
 

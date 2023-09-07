@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class CinemachineCamera : MonoBehaviour
 {
-    [SerializeField] private GameObject _targetCharacter;
+    [SerializeField] private GameObject _target;
     [SerializeField] private Camera _brainCamera;
     [SerializeField] private GameObject _mainVitualCamera;
     [SerializeField] private GameObject _zoomVitualCamera;
 
     [SerializeField] private float _rotateSpeed;
 
-    [SerializeField] private float _minXRotateClamp;
-    [SerializeField] private float _maxXRotateClamp;
+    [SerializeField] private float _minYRotateClamp;
+    [SerializeField] private float _maxYRotateClamp;
 
     private Vector3 _tempPos;
 
@@ -19,9 +19,9 @@ public class CinemachineCamera : MonoBehaviour
         _tempPos = transform.position;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
-        transform.position = _tempPos + _targetCharacter.transform.position;
+        transform.position = _tempPos + _target.transform.position;
         if (!PopupUIManager.Instance.PopupEnable)
         {
             CameraRotate();
@@ -35,7 +35,7 @@ public class CinemachineCamera : MonoBehaviour
         _mouseX += Input.GetAxis("Mouse X") * _rotateSpeed * Time.deltaTime;
         _mouseY += Input.GetAxis("Mouse Y") * _rotateSpeed * Time.deltaTime;
 
-        _mouseY = Mathf.Clamp(_mouseY, _minXRotateClamp, _maxXRotateClamp);
+        _mouseY = Mathf.Clamp(_mouseY, _minYRotateClamp, _maxYRotateClamp);
         transform.localEulerAngles = new Vector3(-_mouseY, _mouseX, 0);
     }
 
