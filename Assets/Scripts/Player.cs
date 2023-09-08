@@ -25,7 +25,6 @@ public class Player : MonoBehaviour, IHp, IAttack
     public Action<float, float, float> OnMovedHandler;
     public Action<float> OnSetRecoilSizeHandler;
     public Action OnRotateHandler;
-    public Action OnGravityHandler;
     public Action OnAimEnableHandler;
     public Action OnAimDisableHandler;
     public Action OnFireHandler;
@@ -74,7 +73,6 @@ public class Player : MonoBehaviour, IHp, IAttack
 
     private void Update()
     {
-        OnGravityHandler();
         Machine.OnUpdate();
     }
 
@@ -90,8 +88,6 @@ public class Player : MonoBehaviour, IHp, IAttack
 
     private void ActionInit()
     {
-        OnGravityHandler = PlayerMovement.GravityEnable;
-
         OnRotateHandler = PlayerMovement.Rotate;      
         
         OnMovedHandler = PlayerMovement.Movement;
