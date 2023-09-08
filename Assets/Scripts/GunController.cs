@@ -108,13 +108,17 @@ public class GunController : MonoBehaviour
         RaycastHit hit;
         Ray ray = new Ray(CurrentGun.MuzzleFlash.transform.position, fireDirection);
         float distance = CurrentGun.Range;
-        int layerMask = (1 << LayerMask.NameToLayer("Player"));
+
+        int playerMask = 1 << LayerMask.NameToLayer("Player");
+        int enemyMask = 1 << LayerMask.NameToLayer("Enemy");
+        int layerMask = playerMask | enemyMask;
         layerMask = ~layerMask;
 
         if (Physics.Raycast(ray, out hit, distance, layerMask))
         {
             Quaternion bulletHoleRotation = Quaternion.LookRotation(ray.direction);
-            ObjectPoolManager.Instance.SpawnBulletHole(hit.point, bulletHoleRotation);
+            GameObject bulletHole = ObjectPoolManager.Instance.SpawnBulletHole(hit.point, bulletHoleRotation);
+            bulletHole.transform.parent = hit.transform;
 
             if (hit.transform.GetComponent<IHp>() != null)
                OnTargetDamageHendler(hit.transform.GetComponent<IHp>(), CurrentGun.Damage);
