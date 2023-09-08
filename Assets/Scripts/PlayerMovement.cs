@@ -5,10 +5,11 @@ public class PlayerMovement : MonoBehaviour, IMovement
 {
     public float RunSpeedMul => _runSpeedMul;
 
+    [Header("컴포넌트")]
     [SerializeField] private CharacterController _controller;
     [SerializeField] private Camera _mainCamera;
 
-    [Header("이동 관련 변수")]
+    [Header("능력치")]
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _runSpeedMul;
     [SerializeField] private float _rotateSpeed;
@@ -31,8 +32,4 @@ public class PlayerMovement : MonoBehaviour, IMovement
         Vector3 cameraRotation = new Vector3(0, _mainCamera.transform.eulerAngles.y, 0);
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(cameraRotation), Time.deltaTime * _rotateSpeed);
     }
-
-
-
-
 }

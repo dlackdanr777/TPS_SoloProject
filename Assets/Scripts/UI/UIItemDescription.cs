@@ -13,8 +13,8 @@ public class UIItemDescription : PopupUI
 
     private void Start()
     {
-        _uiSize = GetComponent<RectTransform>().sizeDelta * 0.5f;
-        _uiSize.x = 0;
+        _uiSize = GetComponent<RectTransform>().sizeDelta;
+        Debug.Log(_uiSize);
     }
     public void UpdateUI(Item item)
     {

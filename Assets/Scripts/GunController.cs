@@ -1,10 +1,14 @@
+using System;
 using System.Collections;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
+using Random = UnityEngine.Random;
 
 public class GunController : MonoBehaviour
 {
     public bool IsReload => _isReload;
+
+    public event Action<IHp, float> OnTargetDamageHendler;
+    public event Action OnFireHendler;
 
     public Gun CurrentGun; //현재 들고있는 총
 
@@ -63,6 +67,7 @@ public class GunController : MonoBehaviour
         {
             if(CurrentGun.CurrentBulletCount > 0)
             {
+                OnFireHendler();
                 Shoot();
             }
             else
@@ -98,7 +103,7 @@ public class GunController : MonoBehaviour
                 _nowRecoil = CurrentGun.MaxRecoil;
         }
 
-        Debug.DrawRay(CurrentGun.MuzzleFlash.transform.position, fireDirection, Color.red, 10000);
+        //Debug.DrawRay(CurrentGun.MuzzleFlash.transform.position, fireDirection, Color.red, 10000);
 
         RaycastHit hit;
         Ray ray = new Ray(CurrentGun.MuzzleFlash.transform.position, fireDirection);
@@ -110,6 +115,9 @@ public class GunController : MonoBehaviour
         {
             Quaternion bulletHoleRotation = Quaternion.LookRotation(ray.direction);
             ObjectPoolManager.Instance.SpawnBulletHole(hit.point, bulletHoleRotation);
+
+            if (hit.transform.GetComponent<IHp>() != null)
+               OnTargetDamageHendler(hit.transform.GetComponent<IHp>(), CurrentGun.Damage);
         }
     }
 

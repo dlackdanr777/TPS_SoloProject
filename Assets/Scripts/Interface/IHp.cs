@@ -14,6 +14,6 @@ public interface IHp
 
     event Action onHpMin;
 
-    void HpRecoverHp(object subject, float value);
-    void HpDepleteHp(object subject, float value);
+    void RecoverHp(object subject, float value);
+    void DepleteHp(object subject, float value);
 }

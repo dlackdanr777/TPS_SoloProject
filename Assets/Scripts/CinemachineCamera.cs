@@ -1,27 +1,37 @@
+using Cinemachine;
 using UnityEngine;
 
 public class CinemachineCamera : MonoBehaviour
 {
     [SerializeField] private GameObject _target;
     [SerializeField] private Camera _brainCamera;
-    [SerializeField] private GameObject _mainVitualCamera;
-    [SerializeField] private GameObject _zoomVitualCamera;
+    [SerializeField] private CinemachineVirtualCamera _mainVitualCamera;
+    [SerializeField] private CinemachineVirtualCamera _zoomVitualCamera;
+    private CinemachineBasicMultiChannelPerlin _virtualCameraNoise;
 
     [SerializeField] private float _rotateSpeed;
-
     [SerializeField] private float _minYRotateClamp;
     [SerializeField] private float _maxYRotateClamp;
+
+    [Header("카메라 흔들림")]
+    [SerializeField] private float _shakeAmplitude = 1.2f;
+    [SerializeField] private float _shakeFrequency = 2.0f;
+    [SerializeField] private float _shakeDuration = 0.1f;
+    private float _shakeTime;
 
     private Vector3 _tempPos;
 
     private void Start()
     {
         _tempPos = transform.position;
+        if (_virtualCameraNoise == null)
+            _virtualCameraNoise = _zoomVitualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
     private void LateUpdate()
     {
         transform.position = _tempPos + _target.transform.position;
+        CameraShake();
         if (!PopupUIManager.Instance.PopupEnable)
         {
             CameraRotate();
@@ -44,8 +54,8 @@ public class CinemachineCamera : MonoBehaviour
     {
         if (Vector3.Distance(_brainCamera.transform.position, _zoomVitualCamera.transform.position) > 0.05f)
           {
-            _mainVitualCamera.SetActive(false);
-            _zoomVitualCamera.SetActive(true);
+            _mainVitualCamera.gameObject.SetActive(false);
+            _zoomVitualCamera.gameObject.SetActive(true);
             return false;
         }
         return true;
@@ -56,11 +66,36 @@ public class CinemachineCamera : MonoBehaviour
     {
         if (Vector3.Distance(_brainCamera.transform.position, _mainVitualCamera.transform.position) > 0.05f)
           {
-            _mainVitualCamera.SetActive(true);
-            _zoomVitualCamera.SetActive(false);
+            _mainVitualCamera.gameObject.SetActive(true);
+            _zoomVitualCamera.gameObject.SetActive(false);
             return false;
         }
         return true;
+    }
+
+    public void CameraShakeStart()
+    {
+        _shakeTime = _shakeDuration;
+    }
+
+    private void CameraShake()
+    {
+        if(_virtualCameraNoise != null || _zoomVitualCamera != null)
+        {
+            if(_shakeTime > 0)
+            {
+                _virtualCameraNoise.m_AmplitudeGain = _shakeAmplitude;
+                _virtualCameraNoise.m_FrequencyGain = _shakeFrequency;
+
+                _shakeTime -= Time.deltaTime;
+            }
+            else
+            {
+                _virtualCameraNoise.m_AmplitudeGain = 0f;
+                _shakeTime = 0f;
+            }
+        }
+
     }
 
 }

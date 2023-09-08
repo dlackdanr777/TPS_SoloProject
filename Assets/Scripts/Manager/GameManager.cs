@@ -19,7 +19,7 @@ public class GameManager : SingletonHandler<GameManager>
             Player.Inventory.AddItemByID(1, 10);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            Player.HpDepleteHp(Player, 10);
+            Player.DepleteHp(Player, 10);
     }
 
     public void CursorVisible()

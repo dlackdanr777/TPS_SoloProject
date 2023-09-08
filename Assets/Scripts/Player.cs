@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class Player : MonoBehaviour, IHp
+public class Player : MonoBehaviour, IHp, IAttack
 {
     [Header("컴포넌트")]
     public Camera MainCamera;
@@ -13,12 +15,13 @@ public class Player : MonoBehaviour, IHp
     public PlayerMovement PlayerMovement;
     public PlayerStateMachine Machine;
 
-
+    public Dictionary<int, string> a;
     public event Action onHpMax;
     public event Action onHpMin;
     public event Action<float> onHpChanged;
     public event Action<object, float> OnHpRecoverd;
     public event Action<object, float> OnHpDepleted;
+    public event Action<IHp, float> OnTargetDamaged;
     public Action<float, float, float> OnMovedHandler;
     public Action<float> OnSetRecoilSizeHandler;
     public Action OnRotateHandler;
@@ -51,11 +54,11 @@ public class Player : MonoBehaviour, IHp
     }
     public float maxHp => _maxHp;
     public float minHp => _minHp;
+    public float damage { get; }
 
     private float _hp;
     [SerializeField] private float _maxHp;
     [SerializeField] private float _minHp = 0;
-    
 
     private void Awake()
     {
@@ -103,18 +106,27 @@ public class Player : MonoBehaviour, IHp
 
         OnFireHandler = GunController.TryFire;
         OnSetRecoilSizeHandler = GunController.SetRecoilMul;
+
+        GunController.OnTargetDamageHendler += TargetDamage;
+        GunController.OnFireHendler += PlayerCamera.CameraShakeStart;
     }
 
-    public void HpRecoverHp(object subject, float value)
+    public void RecoverHp(object subject, float value)
     {
         hp += value;
         OnHpRecoverd?.Invoke(subject, value);
     }
 
-    public void HpDepleteHp(object subject, float value)
+    public void DepleteHp(object subject, float value)
     {
         hp -= value;
         OnHpDepleted?.Invoke(subject, value);
+    }
+
+    public void TargetDamage(IHp ihp, float aomunt)
+    {
+        ihp.DepleteHp(this, aomunt);
+        OnTargetDamaged?.Invoke(ihp, aomunt);
     }
 }
 
