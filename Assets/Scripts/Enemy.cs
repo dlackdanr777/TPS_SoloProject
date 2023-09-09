@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, IHp
 {
+    [SerializeField] private AudioSource _audioSource;
+
     public float hp
     {
         get => _hp;

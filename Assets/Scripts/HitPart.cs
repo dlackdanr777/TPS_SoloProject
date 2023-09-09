@@ -22,7 +22,6 @@ public class HitPart : MonoBehaviour, IHp
     public void DepleteHp(object subject, float value)
     {
         _enemy.DepleteHp(subject, value * _multiple);
-        Debug.Log(_partName + " Hit!");
     }
 
     public void RecoverHp(object subject, float value)
