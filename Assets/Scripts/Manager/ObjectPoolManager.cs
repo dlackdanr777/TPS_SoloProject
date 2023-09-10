@@ -82,11 +82,8 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
         }
         GameObject zombie = _zombiePool.Dequeue();
         zombie.SetActive(true);
-        CharacterController controller = zombie.GetComponent<CharacterController>();
-        controller.enabled = false;
         zombie.transform.position = pos;
         zombie.transform.rotation = rot;
-        controller.enabled = true;
     }
 
     public IEnumerator ZombleDisable(GameObject zombie)

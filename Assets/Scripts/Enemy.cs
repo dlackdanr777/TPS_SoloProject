@@ -6,7 +6,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour, IHp
 {
     [SerializeField] private AudioSource _audioSource;
-    [SerializeField] private CharacterController _controller;
+    [SerializeField] private Navmesh _navmesh;
     [SerializeField] private Animator _animator;
 
     
@@ -46,20 +46,20 @@ public class Enemy : MonoBehaviour, IHp
     private float _hp;
     [SerializeField] private float _maxHp;
     [SerializeField] private float _minHp = 0;
-    [SerializeField] private float _rotateSpeed;
     private bool _isDead;
+
 
     private void Start()
     {
         Init();
         ActionInit();
+        _navmesh.StartNavMesh(GameManager.Instance.Player.transform);
     }
 
     private void FixedUpdate()
     {
         if (!_isDead)
         {
-            //OnRotatedHandler(PathFinding.PathfindingFirstPos);
         }
     }
 
@@ -73,7 +73,6 @@ public class Enemy : MonoBehaviour, IHp
     {
         _hp = _maxHp;
         _isDead = false;
-        _controller.enabled = true;
     }
 
     private void ActionInit()
@@ -83,15 +82,15 @@ public class Enemy : MonoBehaviour, IHp
             if (!_isDead)
             {
                 StartCoroutine(ObjectPoolManager.Instance.ZombleDisable(gameObject));
-                _controller.enabled = false;
+                _navmesh.StopNavMesh();
                 _animator.SetTrigger("Dead");
                 _isDead = true;
             }
         };
-        OnRotatedHandler = Rotate;
+        //OnRotatedHandler = Rotate;
     }
 
-    private void Rotate(Vector3 targetPos)
+    /*private void Rotate(Vector3 targetPos)
     {
         Vector3 thisPos = transform.position;
         targetPos.y = 0f;
@@ -99,7 +98,7 @@ public class Enemy : MonoBehaviour, IHp
 
         Vector3 dir = targetPos - thisPos;
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * _rotateSpeed);
-    }
+    }*/
 
     public void RecoverHp(object subject, float value)
     {
