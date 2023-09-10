@@ -7,9 +7,9 @@ public class FollowTarget : MonoBehaviour
     [SerializeField] private CharacterController _controller;
     [SerializeField] private Transform _target;
 
-    public void FixedUpdate()
+
+    public void LookAtTarget()
     {
-        //_controller.Move(transform.forward * Time.deltaTime);
         transform.LookAt(_target);
     }
 }

@@ -48,8 +48,8 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
         for (int i = 0, count = _zombieCount; i < count; i++)
         {
             GameObject zombie = Instantiate(_basicZombiePrefab, Vector3.zero, Quaternion.identity);
-            _zombiePool.Enqueue(zombie);
             zombie.transform.parent = _zombieParent.transform;
+            _zombiePool.Enqueue(zombie);
             zombie.SetActive(false);
         }
     }
@@ -73,12 +73,27 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
 
     public void SpawnZombie(Vector3 pos, Quaternion rot)
     {
+        if(_zombiePool.Count == 0)
+        {
+            GameObject zombiePool = Instantiate(_basicZombiePrefab, pos, rot);
+            _zombiePool.Enqueue(zombiePool);
+            zombiePool.transform.parent = _zombieParent.transform;
+            zombiePool.SetActive(false);
+        }
         GameObject zombie = _zombiePool.Dequeue();
-        zombie.SetActive(false);
         zombie.SetActive(true);
+        CharacterController controller = zombie.GetComponent<CharacterController>();
+        controller.enabled = false;
         zombie.transform.position = pos;
         zombie.transform.rotation = rot;
+        controller.enabled = true;
+    }
+
+    public IEnumerator ZombleDisable(GameObject zombie)
+    {
+        yield return YieldCache.WaitForSeconds(10);
         _zombiePool.Enqueue(zombie);
+        zombie.SetActive(false);
     }
 
 }

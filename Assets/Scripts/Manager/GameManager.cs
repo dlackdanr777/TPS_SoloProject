@@ -20,6 +20,9 @@ public class GameManager : SingletonHandler<GameManager>
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
             Player.DepleteHp(Player, 10);
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            ObjectPoolManager.Instance.SpawnZombie(new Vector3(5, 5, 5), Quaternion.identity);
     }
 
     public void CursorVisible()

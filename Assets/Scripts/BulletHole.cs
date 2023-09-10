@@ -35,8 +35,6 @@ public class BulletHole : MonoBehaviour
 
         else if (other.tag == "Ground")
             _AudioSource.PlayOneShot(_groundClip);
-
-        Debug.Log(other.tag);
     }
 
     private void OnTriggerEnter(Collider other)

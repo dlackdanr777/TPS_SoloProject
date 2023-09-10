@@ -17,6 +17,7 @@ public class Gravity : MonoBehaviour
 
     public void GravityEnable() //중력을 활성화시키는 함수
     {
-        _controller.Move(new Vector3(0, Physics.gravity.y * 0.7f, 0) * Time.deltaTime);
+        if(_controller.enabled)
+            _controller.Move(new Vector3(0, Physics.gravity.y * 0.7f, 0) * Time.deltaTime);
     }
 }
