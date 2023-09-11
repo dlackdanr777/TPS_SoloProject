@@ -1,4 +1,4 @@
-
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +11,27 @@ public class FieldOfView : MonoBehaviour
     [SerializeField] LayerMask _obstacleMask;
 
     private List<Collider> _hitTargetList = new List<Collider>();
+    private Coroutine FieldOfViewDetectionRoutine;
+
+    private void Start()
+    {
+        if (FieldOfViewDetectionRoutine != null)
+            StopCoroutine(FieldOfViewDetectionRoutine);
+        FieldOfViewDetectionRoutine = StartCoroutine(FieldOfViewDetection());
+    }
+
+    private void OnEnable()
+    {
+        if (FieldOfViewDetectionRoutine != null)
+            StopCoroutine(FieldOfViewDetectionRoutine);
+        FieldOfViewDetectionRoutine = StartCoroutine(FieldOfViewDetection());
+    }
+
+    private void OnDisable()
+    {
+        if (FieldOfViewDetectionRoutine != null)
+            StopCoroutine(FieldOfViewDetectionRoutine);
+    }
 
     public Transform GetTargetTransform()
     {
@@ -23,6 +44,33 @@ public class FieldOfView : MonoBehaviour
     {
         float radian = angle * Mathf.Deg2Rad;
         return new Vector3(Mathf.Sin(radian), 0f, Mathf.Cos(radian));
+    }
+
+    IEnumerator FieldOfViewDetection()
+    {
+        while (true)
+        {
+            _hitTargetList.Clear();
+            Vector3 myPos = transform.position + Vector3.up;
+            Vector3 lookDir = AngleToDir(transform.eulerAngles.y);
+            Collider[] Targets = Physics.OverlapSphere(myPos, _viewRadius, _targetMask);
+
+            if (Targets.Length != 0)
+            {
+                foreach (Collider EnemyColli in Targets)
+                {
+                    Vector3 targetPos = EnemyColli.transform.position;
+                    Vector3 targetDir = (targetPos - myPos).normalized;
+                    float targetAngle = Mathf.Acos(Vector3.Dot(lookDir, targetDir)) * Mathf.Rad2Deg;
+                    if (targetAngle <= _viewAngle * 0.5f && !Physics.Raycast(myPos, targetDir, _viewRadius, _obstacleMask))
+                    {
+                        _hitTargetList.Add(EnemyColli);
+                        if (_debugMode) Debug.DrawLine(myPos, targetPos, Color.red);
+                    }
+                }
+            }
+            yield return YieldCache.WaitForSeconds(1f);
+        }    
     }
 
     private void OnDrawGizmos()
@@ -40,20 +88,6 @@ public class FieldOfView : MonoBehaviour
         Debug.DrawRay(myPos, leftDir * _viewRadius, Color.blue);
         Debug.DrawRay(myPos, lookDir * _viewRadius, Color.cyan);
 
-        _hitTargetList.Clear();
-        Collider[] Targets = Physics.OverlapSphere(myPos, _viewRadius, _targetMask);
 
-        if (Targets.Length == 0) return;
-        foreach (Collider EnemyColli in Targets)
-        {
-            Vector3 targetPos = EnemyColli.transform.position;
-            Vector3 targetDir = (targetPos - myPos).normalized;
-            float targetAngle = Mathf.Acos(Vector3.Dot(lookDir, targetDir)) * Mathf.Rad2Deg;
-            if (targetAngle <= _viewAngle * 0.5f && !Physics.Raycast(myPos, targetDir, _viewRadius, _obstacleMask))
-            {
-                _hitTargetList.Add(EnemyColli);
-                if (_debugMode) Debug.DrawLine(myPos, targetPos, Color.red);
-            }
-        }
     }
 }

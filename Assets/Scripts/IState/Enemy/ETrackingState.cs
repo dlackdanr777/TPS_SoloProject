@@ -22,12 +22,12 @@ public class ETrackingState : IState
 
     public void OnFixedUpdate()
     {
-        _enemy.OnTargetFollowedHandler();
+        _enemy.OnTargetFollowedHandler?.Invoke();
     }
 
     public void OnStateUpdate()
     {
-        if (_enemy.Target == null)
+        if (_machine.ChangeIdleStateCondition())
             _machine.ChangeState(_machine.IdleState);
     }
 

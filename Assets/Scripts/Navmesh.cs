@@ -34,6 +34,7 @@ public class Navmesh : MonoBehaviour
     
     public void NaveMeshEnabled(bool value)
     {
+        _target = null;
         _agent.enabled = value;
     }
 

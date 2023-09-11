@@ -7,9 +7,11 @@ public class EnemyStateMachine
     private Enemy _enemy;
     public IState CurrentState { get; private set; }
     public IState IdleState { get; private set; }
+    public IState IdleToTrackingState { get; private set; }
     public IState TrackingState { get; private set; }
     public IState DeadState { get; private set; }
 
+    private float _changeTimer;
     public EnemyStateMachine(Enemy enemy)
     {
         _enemy = enemy;
@@ -30,6 +32,7 @@ public class EnemyStateMachine
     private void StateInit()
     {
         IdleState = new EIdleState(_enemy, this);
+        IdleToTrackingState = new EIdleToTrackingState(_enemy, this);
         TrackingState = new ETrackingState(_enemy, this);
 
         CurrentState = IdleState;
@@ -56,5 +59,24 @@ public class EnemyStateMachine
             return true;
         }
         return false;
+    }
+
+    public bool ChangeIdleStateCondition()
+    {
+        if (_enemy.FieldOfView.GetTargetTransform() == null)
+        {
+            _changeTimer += Time.deltaTime;
+            if (_changeTimer > 20)
+            {
+                _enemy.Target = _enemy.FieldOfView.GetTargetTransform();
+                return true;
+            }
+        }
+        else
+        {
+            _changeTimer = 0;
+        }
+
+            return false;
     }
 }

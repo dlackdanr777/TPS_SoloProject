@@ -3822,8 +3822,9 @@ MonoBehaviour:
   AudioSource: {fileID: 5560287371081300553}
   Navmesh: {fileID: 1278211784702787623}
   Animator: {fileID: 5536305206762234351}
-  FieldOfView: {fileID: 0}
+  FieldOfView: {fileID: 6310101857440634231}
   _capsuleCollider: {fileID: 2428491910844260622}
+  Target: {fileID: 0}
   _maxHp: 100
   _minHp: 0
 --- !u!114 &1278211784702787623
@@ -3968,7 +3969,7 @@ NavMeshAgent:
   m_Speed: 0.05
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 180
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -3976,7 +3977,7 @@ NavMeshAgent:
   m_Height: 1.8
   m_BaseOffset: -0.011
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 2
+  m_ObstacleAvoidanceType: 1
 --- !u!136 &2428491910844260622
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4013,14 +4014,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _debugMode: 0
-  _viewAngle: 0
-  _viewRadius: 1
+  _viewAngle: 90
+  _viewRadius: 20
   _targetMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   _obstacleMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1536
 --- !u!1 &8778137322870662496
 GameObject:
   m_ObjectHideFlags: 0

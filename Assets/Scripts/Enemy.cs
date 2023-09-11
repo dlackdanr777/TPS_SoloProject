@@ -102,6 +102,7 @@ public class Enemy : MonoBehaviour, IHp
                 StartCoroutine(ObjectPoolManager.Instance.ZombleDisable(gameObject));
                 Navmesh.NaveMeshEnabled(false);
                 _capsuleCollider.enabled = false;
+                _machine.ChangeState(_machine.IdleState);
                 Animator.SetTrigger("Dead");
                 _isDead = true;
             }
