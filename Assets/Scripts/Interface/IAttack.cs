@@ -4,7 +4,7 @@ public interface IAttack
 {
     float damage { get; }
 
-    event Action<IHp, float> OnTargetDamaged;
+    event Action OnTargetDamaged;
 
     void TargetDamage(IHp iHp, float aomunt);
 }

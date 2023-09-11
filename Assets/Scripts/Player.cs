@@ -21,7 +21,7 @@ public class Player : MonoBehaviour, IHp, IAttack
     public event Action<float> onHpChanged;
     public event Action<object, float> OnHpRecoverd;
     public event Action<object, float> OnHpDepleted;
-    public event Action<IHp, float> OnTargetDamaged;
+    public event Action OnTargetDamaged;
     public Action<float, float, float> OnMovedHandler;
     public Action<float> OnSetRecoilSizeHandler;
     public Action OnRotateHandler;
@@ -122,7 +122,7 @@ public class Player : MonoBehaviour, IHp, IAttack
     public void TargetDamage(IHp ihp, float aomunt)
     {
         ihp.DepleteHp(this, aomunt);
-        OnTargetDamaged?.Invoke(ihp, aomunt);
+        OnTargetDamaged?.Invoke();
     }
 }
 

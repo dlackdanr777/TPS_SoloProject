@@ -3910,12 +3910,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f178e2806fa4f824a9584eb3a2d1d29d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioSource: {fileID: -3392287386590342140}
-  _controller: {fileID: 4860663401668192520}
-  _animator: {fileID: 8140161492385289073}
+  AudioSource: {fileID: -3392287386590342140}
+  Navmesh: {fileID: 0}
+  Animator: {fileID: 8140161492385289073}
   _maxHp: 100
   _minHp: 0
-  _rotateSpeed: 3
 --- !u!114 &1629676196305588713
 MonoBehaviour:
   m_ObjectHideFlags: 0

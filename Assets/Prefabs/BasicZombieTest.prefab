@@ -3781,6 +3781,8 @@ GameObject:
   - component: {fileID: 5536305206762234351}
   - component: {fileID: 5560287371081300553}
   - component: {fileID: 8961644573415092414}
+  - component: {fileID: 2428491910844260622}
+  - component: {fileID: 6310101857440634231}
   m_Layer: 7
   m_Name: BasicZombieTest
   m_TagString: Enemy
@@ -3803,7 +3805,7 @@ Transform:
   - {fileID: 4828488089567585439}
   - {fileID: 4943039820126488095}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2281966700007285565
 MonoBehaviour:
@@ -3817,9 +3819,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f178e2806fa4f824a9584eb3a2d1d29d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioSource: {fileID: 5560287371081300553}
-  _navmesh: {fileID: 1278211784702787623}
-  _animator: {fileID: 5536305206762234351}
+  AudioSource: {fileID: 5560287371081300553}
+  Navmesh: {fileID: 1278211784702787623}
+  Animator: {fileID: 5536305206762234351}
+  FieldOfView: {fileID: 0}
+  _capsuleCollider: {fileID: 2428491910844260622}
   _maxHp: 100
   _minHp: 0
 --- !u!114 &1278211784702787623
@@ -3846,7 +3850,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 29e38bee3e97c214dad6eb37ca85b587, type: 3}
   m_Controller: {fileID: 9100000, guid: ed5de02a92de9684782aff9bf9ea5b24, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -3970,9 +3974,53 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1.8
-  m_BaseOffset: 0
+  m_BaseOffset: -0.011
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 2
+--- !u!136 &2428491910844260622
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722914752568561241}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &6310101857440634231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722914752568561241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63133e8f81203543973c2cda531b664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _debugMode: 0
+  _viewAngle: 0
+  _viewRadius: 1
+  _targetMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _obstacleMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &8778137322870662496
 GameObject:
   m_ObjectHideFlags: 0

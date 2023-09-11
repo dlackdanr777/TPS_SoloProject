@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -19,13 +20,14 @@ public class BulletHole : MonoBehaviour
 
     private void OnDisable()
     {
+        //ObjectPoolManager.Instance.DisableBulletHole(gameObject);
         StopCoroutine(BulletHoleDisable(_disableTime));
     }
 
     private IEnumerator BulletHoleDisable(float time)
     {
         yield return YieldCache.WaitForSeconds(time);
-        gameObject.SetActive(false);
+        ObjectPoolManager.Instance.DisableBulletHole(gameObject);
     }
 
     private void SoundEffect(Collider other)

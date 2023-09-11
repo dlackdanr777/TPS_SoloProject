@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
 
 public enum ObjectPoolType
@@ -34,8 +35,8 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
         for(int i = 0, count = _bulletHoleCount; i < count; i++)
         {
             GameObject bulletHole = Instantiate(BulletHolePrefab, Vector3.zero, Quaternion.identity);
-            _bulletHolePool.Enqueue(bulletHole);
             bulletHole.transform.parent = _bulletHoleParent.transform;
+            _bulletHolePool.Enqueue(bulletHole);
             bulletHole.SetActive(false);
         }
     }
@@ -68,6 +69,16 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
         bulletHole.transform.rotation = rot;
         _bulletHolePool.Enqueue(bulletHole);
         return bulletHole;
+    }
+
+    public void DisableBulletHole(GameObject bulletHole)
+    {
+        bulletHole.transform.parent = _bulletHoleParent.transform;
+        bulletHole.transform.localPosition = Vector3.zero;
+        bulletHole.transform.localRotation = Quaternion.identity;
+        bulletHole.SetActive(false);
+
+        bulletHole.GetComponent<NavMeshSurface>().BuildNavMesh();
     }
 
 

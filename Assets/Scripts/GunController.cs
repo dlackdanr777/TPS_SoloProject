@@ -91,7 +91,7 @@ public class GunController : MonoBehaviour
         fireDirection = _crossHair.transform.position - CurrentGun.MuzzleFlash.transform.position;
 
         float targetDistance = Vector3.Distance(CurrentGun.MuzzleFlash.transform.position, _crossHair.transform.position);
-        float distanceScale =   targetDistance / CurrentGun.Range;
+        float distanceScale = targetDistance / CurrentGun.Range;
 
         fireDirection = Quaternion.AngleAxis(yError * distanceScale, Vector3.up) * fireDirection;
         fireDirection = Quaternion.AngleAxis(xError * distanceScale, Vector3.right) * fireDirection;

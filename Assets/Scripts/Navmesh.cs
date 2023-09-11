@@ -16,6 +16,7 @@ public class Navmesh : MonoBehaviour
 
     private void OnEnable()
     {
+        NaveMeshEnabled(true);
         _coroutine = StartCoroutine(UpdateDestination());
     }
 
@@ -29,6 +30,11 @@ public class Navmesh : MonoBehaviour
     {
         _target = transform;
         _agent.SetDestination(_target.position);
+    }
+    
+    public void NaveMeshEnabled(bool value)
+    {
+        _agent.enabled = value;
     }
 
     public void StopNavMesh()
@@ -48,10 +54,10 @@ public class Navmesh : MonoBehaviour
     {
         while (true)
         {
-            if(_target != null && !_agent.isStopped)
+            if(_target != null && _agent.enabled)
                 _agent.SetDestination(_target.position);
 
-            yield return YieldCache.WaitForSeconds(0.1f);
+            yield return YieldCache.WaitForSeconds(0.2f);
         }
     }
 

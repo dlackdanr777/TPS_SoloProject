@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 public class GameManager : SingletonHandler<GameManager>
 {
@@ -22,7 +21,7 @@ public class GameManager : SingletonHandler<GameManager>
             Player.DepleteHp(Player, 10);
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            ObjectPoolManager.Instance.SpawnZombie(new Vector3(5, 5, 5), Quaternion.identity);
+            ObjectPoolManager.Instance.SpawnZombie(new Vector3(5, 1, 5), Quaternion.identity);
     }
 
     public void CursorVisible()

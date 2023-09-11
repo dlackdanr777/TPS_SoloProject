@@ -4,12 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, IHp
-{
-    [SerializeField] private AudioSource _audioSource;
-    [SerializeField] private Navmesh _navmesh;
-    [SerializeField] private Animator _animator;
-
-    
+{ 
     public float hp
     {
         get => _hp;
@@ -43,23 +38,45 @@ public class Enemy : MonoBehaviour, IHp
 
     public Action OnTargetFollowedHandler;
 
-    private float _hp;
+    public AudioSource AudioSource;
+    public Navmesh Navmesh;
+    public Animator Animator;
+    public FieldOfView FieldOfView;
+    [SerializeField] private CapsuleCollider _capsuleCollider;
+
+    public Transform Target;
+
     [SerializeField] private float _maxHp;
     [SerializeField] private float _minHp = 0;
+    private float _hp;
     private bool _isDead;
 
+    private EnemyStateMachine _machine;
+
+    private void Awake()
+    {
+        _machine = new EnemyStateMachine(this);
+    }
 
     private void Start()
     {
         Init();
         ActionInit();
-        _navmesh.StartNavMesh(GameManager.Instance.Player.transform);
+    }
+
+    private void Update()
+    {
+        if (!_isDead)
+        {
+            _machine.OnUpdate();
+        }
     }
 
     private void FixedUpdate()
     {
         if (!_isDead)
         {
+            _machine.OnFixedUpdate();
         }
     }
 
@@ -73,6 +90,7 @@ public class Enemy : MonoBehaviour, IHp
     {
         _hp = _maxHp;
         _isDead = false;
+        _capsuleCollider.enabled = true;
     }
 
     private void ActionInit()
@@ -82,23 +100,16 @@ public class Enemy : MonoBehaviour, IHp
             if (!_isDead)
             {
                 StartCoroutine(ObjectPoolManager.Instance.ZombleDisable(gameObject));
-                _navmesh.StopNavMesh();
-                _animator.SetTrigger("Dead");
+                Navmesh.NaveMeshEnabled(false);
+                _capsuleCollider.enabled = false;
+                Animator.SetTrigger("Dead");
                 _isDead = true;
             }
         };
-        //OnRotatedHandler = Rotate;
+
+        OnTargetFollowedHandler = () => { if (Target != null) Navmesh.StartNavMesh(Target); };
     }
 
-    /*private void Rotate(Vector3 targetPos)
-    {
-        Vector3 thisPos = transform.position;
-        targetPos.y = 0f;
-        thisPos.y = 0f;
-
-        Vector3 dir = targetPos - thisPos;
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * _rotateSpeed);
-    }*/
 
     public void RecoverHp(object subject, float value)
     {
