@@ -29,6 +29,10 @@ public class ETrackingState : IState
     {
         if (_machine.ChangeIdleStateCondition())
             _machine.ChangeState(_machine.IdleState);
+
+        if (_machine.AttackStateCondition())
+            _machine.ChangeState(_machine.AttackState);
+
     }
 
     public void OnExit()

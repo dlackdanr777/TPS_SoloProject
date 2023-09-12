@@ -6,11 +6,11 @@ public class HitPart : MonoBehaviour, IHp
     [SerializeField] private string _partName;
     [SerializeField] private float _multiple;
 
-    public float hp => throw new NotImplementedException();
+    public float hp => _enemy.hp;
 
-    public float maxHp => throw new NotImplementedException();
+    public float maxHp => _enemy.maxHp;
 
-    public float minHp => throw new NotImplementedException();
+    public float minHp => _enemy.minHp;
 
     public event Action<float> onHpChanged;
     public event Action<object, float> OnHpRecoverd;

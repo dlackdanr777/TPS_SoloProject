@@ -121,8 +121,11 @@ public class Player : MonoBehaviour, IHp, IAttack
 
     public void TargetDamage(IHp ihp, float aomunt)
     {
-        ihp.DepleteHp(this, aomunt);
-        OnTargetDamaged?.Invoke();
+        if(ihp.hp > ihp.minHp)
+        {
+            ihp.DepleteHp(this, aomunt);
+            OnTargetDamaged?.Invoke();
+        }    
     }
 }
 

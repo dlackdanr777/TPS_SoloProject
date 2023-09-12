@@ -3,7 +3,6 @@ using UnityEngine.Animations.Rigging;
 
 public class Rigging : MonoBehaviour
 {
-    [SerializeField] private Transform _rigTarget; //뼈대들이 바라볼 타겟
     [Header("애니메이션 리깅")]
     [SerializeField] private MultiAimConstraint SpineAim1;
     [SerializeField] private MultiAimConstraint SpineAim2;

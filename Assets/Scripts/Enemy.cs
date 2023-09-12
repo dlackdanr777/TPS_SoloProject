@@ -1,9 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IHp
+public class Enemy : MonoBehaviour, IHp, IAttack
 { 
     public float hp
     {
@@ -28,6 +29,8 @@ public class Enemy : MonoBehaviour, IHp
     }
     public float maxHp => _maxHp;
     public float minHp => _minHp;
+    public float damage => _damage;
+    public float attackRadius => _attackRadius;
 
     public event Action<float> onHpChanged;
     public event Action<object, float> OnHpRecoverd;
@@ -35,6 +38,7 @@ public class Enemy : MonoBehaviour, IHp
     public event Action<Vector3> OnRotatedHandler;
     public event Action onHpMax;
     public event Action onHpMin;
+    public event Action OnTargetDamaged;
 
     public Action OnTargetFollowedHandler;
 
@@ -49,6 +53,11 @@ public class Enemy : MonoBehaviour, IHp
     [SerializeField] private float _maxHp;
     [SerializeField] private float _minHp = 0;
     private float _hp;
+
+    [SerializeField] private float _damage;
+    [SerializeField] private float _attackRadius;
+    [SerializeField] private LayerMask _attackLayerMask;
+    [SerializeField] private LayerMask _obstacleMask;
     private bool _isDead;
 
     private EnemyStateMachine _machine;
@@ -129,5 +138,59 @@ public class Enemy : MonoBehaviour, IHp
             Debug.Log("피격되었습니다! 남은체력:" + _hp);
             OnHpDepleted?.Invoke(subject, value);
         }
+    }
+
+    public void TargetDamage(IHp iHp, float aomunt)
+    {
+        if (iHp.hp > iHp.minHp)
+        {
+            iHp.DepleteHp(this, aomunt);
+            OnTargetDamaged?.Invoke();
+        }
+    }
+    List<Collider> _hitColliders = new List<Collider>();
+
+    public bool CheckPlayerAtAttackRange()
+    {
+        _hitColliders.Clear();
+
+        Vector3 attackPos = transform.position + transform.up + (transform.forward * attackRadius);
+        Vector3 myPos = transform.position + Vector3.up;
+        Collider[] Targets = Physics.OverlapSphere(attackPos, attackRadius, _attackLayerMask);
+        if (Targets.Length != 0)
+        {
+            foreach (Collider EnemyColli in Targets)
+            {
+                Vector3 targetPos = EnemyColli.transform.position;
+                Vector3 targetDir = (targetPos - myPos).normalized;
+                float targetDistance = Vector3.Distance(targetPos, myPos);
+                if (!Physics.Raycast(myPos, targetDir, targetDistance, _obstacleMask))
+                {
+                    _hitColliders.Add(EnemyColli);
+                }
+            }
+        }
+
+        if (_hitColliders.Count > 0)
+            return true;
+        return false;
+    }
+
+    public void Attack()
+    {
+        foreach(Collider collider in _hitColliders)
+        {
+            if(collider.GetComponent<IHp>() != null)
+            {
+                collider.GetComponent<IHp>().DepleteHp(this, _damage);
+            }
+        }
+    }
+
+    public void OnDrawGizmos()
+    {
+        Vector3 attackPos = transform.position + transform.up + (transform.forward * attackRadius);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(attackPos, attackRadius);
     }
 }

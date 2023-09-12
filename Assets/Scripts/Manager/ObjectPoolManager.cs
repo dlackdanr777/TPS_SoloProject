@@ -77,8 +77,6 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
         bulletHole.transform.localPosition = Vector3.zero;
         bulletHole.transform.localRotation = Quaternion.identity;
         bulletHole.SetActive(false);
-
-        bulletHole.GetComponent<NavMeshSurface>().BuildNavMesh();
     }
 
 

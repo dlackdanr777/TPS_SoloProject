@@ -32,6 +32,7 @@ public void OnFixedUpdate()
     {
         if (_machine.ChangeTrackingStateCondition())
             _machine.ChangeState(_machine.IdleToTrackingState);
+
     }
 
     public void OnExit()

@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro.Examples;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,8 @@ public class CrossHair : MonoBehaviour
     [SerializeField] private RectTransform _upCrossHair;
     [SerializeField] private RectTransform _downCrossHair;
 
+    [SerializeField] private Transform _aimCenter;
+
     [Space(10f)]
     [SerializeField] private Image[] _sideCrossHair;
 
@@ -17,6 +20,16 @@ public class CrossHair : MonoBehaviour
     private void Start()
     {
         GameManager.Instance.Player.OnTargetDamaged += SideCrossHairEnable;
+    }
+
+    private void FixedUpdate()
+    {
+        AimCenterMove();
+    }
+
+    public void OnEnable()
+    {
+        _aimCenter.position = transform.position;
     }
 
     public void OnDisable()
@@ -66,7 +79,14 @@ public class CrossHair : MonoBehaviour
             }
             yield return YieldCache.WaitForSeconds(0.02f);
         }
-
-
     } 
+
+    private void AimCenterMove()
+    {
+        Vector3 _aimNextPos = transform.position + -transform.forward;
+        if(Vector3.Distance(_aimNextPos, _aimCenter.position) > 0.1f)
+        {
+            _aimCenter.position = Vector3.Lerp(_aimCenter.position, _aimNextPos, Time.deltaTime * 20f);
+        }
+    }
 }

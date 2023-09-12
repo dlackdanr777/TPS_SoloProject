@@ -3825,8 +3825,16 @@ MonoBehaviour:
   FieldOfView: {fileID: 6310101857440634231}
   _capsuleCollider: {fileID: 2428491910844260622}
   Target: {fileID: 0}
-  _maxHp: 100
+  _maxHp: 50
   _minHp: 0
+  _damage: 10
+  _attackRadius: 0.45
+  _attackLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  _obstacleMask:
+    serializedVersion: 2
+    m_Bits: 1536
 --- !u!114 &1278211784702787623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3997,7 +4005,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.25
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}

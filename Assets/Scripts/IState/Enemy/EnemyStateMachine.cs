@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyStateMachine
@@ -9,6 +10,7 @@ public class EnemyStateMachine
     public IState IdleState { get; private set; }
     public IState IdleToTrackingState { get; private set; }
     public IState TrackingState { get; private set; }
+    public IState AttackState { get; private set; }
     public IState DeadState { get; private set; }
 
     private float _changeTimer;
@@ -34,6 +36,7 @@ public class EnemyStateMachine
         IdleState = new EIdleState(_enemy, this);
         IdleToTrackingState = new EIdleToTrackingState(_enemy, this);
         TrackingState = new ETrackingState(_enemy, this);
+        AttackState = new EAttackState(_enemy, this);
 
         CurrentState = IdleState;
     }
@@ -76,7 +79,11 @@ public class EnemyStateMachine
         {
             _changeTimer = 0;
         }
-
             return false;
+    }
+
+    public bool AttackStateCondition()
+    {
+        return _enemy.CheckPlayerAtAttackRange();
     }
 }
