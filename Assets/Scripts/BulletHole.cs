@@ -2,10 +2,9 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource), typeof(BoxCollider))]
+[RequireComponent(typeof(AudioSource))]
 public class BulletHole : MonoBehaviour
 {
-    [SerializeField] private BoxCollider _boxCollider;
     [SerializeField] private AudioSource _AudioSource;
     [SerializeField] private AudioClip _hitPartClip;
     [SerializeField] private AudioClip _groundClip;
@@ -14,36 +13,31 @@ public class BulletHole : MonoBehaviour
     private void OnEnable()
     {
         StartCoroutine(BulletHoleDisable(_disableTime));
-        _boxCollider.enabled = true;
-
+        StartCoroutine(PlaySoundEffect());
     }
 
     private void OnDisable()
     {
-        //ObjectPoolManager.Instance.DisableBulletHole(gameObject);
+        gameObject.SetActive(false);
         StopCoroutine(BulletHoleDisable(_disableTime));
     }
 
     private IEnumerator BulletHoleDisable(float time)
     {
         yield return YieldCache.WaitForSeconds(time);
-        ObjectPoolManager.Instance.DisableBulletHole(gameObject);
+        gameObject.SetActive(false);
     }
 
-    private void SoundEffect(Collider other)
+    private IEnumerator PlaySoundEffect()
     {
-        if (other.tag == "HitPart" || other.tag == "Enemy")
+        yield return YieldCache.WaitForSeconds(0.01f);
+
+        if (transform.parent.tag == "HitPart" || transform.parent.tag == "Enemy")
             _AudioSource.PlayOneShot(_hitPartClip);
 
-        else if (other.tag == "Ground")
+        else if (transform.parent.tag == "Ground")
             _AudioSource.PlayOneShot(_groundClip);
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        SoundEffect(other);
-        _boxCollider.enabled = false;
-
-        Debug.Log("ÃÑ¾Ë¼Ò¸®");
+        Debug.Log(transform.parent.tag);
     }
 }

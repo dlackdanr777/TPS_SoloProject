@@ -111,7 +111,8 @@ public class GunController : MonoBehaviour
 
         int playerMask = 1 << LayerMask.NameToLayer("Player");
         int enemyMask = 1 << LayerMask.NameToLayer("Enemy");
-        int layerMask = playerMask | enemyMask;
+        int bulletMask = 1 << LayerMask.NameToLayer("Bullet");
+        int layerMask = playerMask | enemyMask | bulletMask;
         layerMask = ~layerMask;
 
         if (Physics.Raycast(ray, out hit, distance, layerMask))
@@ -163,7 +164,6 @@ public class GunController : MonoBehaviour
                 CurrentGun.CurrentBulletCount = CurrentGun.CarryBulletCount;
                 CurrentGun.CarryBulletCount = 0;
             }
-            Debug.Log("재장전 끝");
             _isReload = false;
         }
         else

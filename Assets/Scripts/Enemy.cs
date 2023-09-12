@@ -1,11 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, IHp, IAttack
-{ 
+{
+    public ZombieType ZombieType;
     public float hp
     {
         get => _hp;
@@ -46,9 +46,10 @@ public class Enemy : MonoBehaviour, IHp, IAttack
     public Navmesh Navmesh;
     public Animator Animator;
     public FieldOfView FieldOfView;
+    public Transform Target;
     [SerializeField] private CapsuleCollider _capsuleCollider;
 
-    public Transform Target;
+    List<Collider> _hitColliders = new List<Collider>();
 
     [SerializeField] private float _maxHp;
     [SerializeField] private float _minHp = 0;
@@ -108,7 +109,7 @@ public class Enemy : MonoBehaviour, IHp, IAttack
         {
             if (!_isDead)
             {
-                StartCoroutine(ObjectPoolManager.Instance.ZombleDisable(gameObject));
+                StartCoroutine(ObjectPoolManager.Instance.ZombleDisable(this));
                 Navmesh.NaveMeshEnabled(false);
                 _capsuleCollider.enabled = false;
                 _machine.ChangeState(_machine.IdleState);
@@ -136,6 +137,11 @@ public class Enemy : MonoBehaviour, IHp, IAttack
         {
             hp -= value;
             Debug.Log("피격되었습니다! 남은체력:" + _hp);
+            if(subject is Player)
+            {
+                Player player = (Player)subject;
+                Target = player.transform;
+            }
             OnHpDepleted?.Invoke(subject, value);
         }
     }
@@ -148,7 +154,7 @@ public class Enemy : MonoBehaviour, IHp, IAttack
             OnTargetDamaged?.Invoke();
         }
     }
-    List<Collider> _hitColliders = new List<Collider>();
+
 
     public bool CheckPlayerAtAttackRange()
     {

@@ -61,6 +61,13 @@ public class EnemyStateMachine
             _enemy.Target = _enemy.FieldOfView.GetTargetTransform();
             return true;
         }
+        else
+        {
+            if(_enemy.Target != null)
+            {
+                return true;
+            }
+        }
         return false;
     }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class FieldOfView : MonoBehaviour
 {
     [SerializeField] bool _debugMode = false;
+    [SerializeField] Transform _viewPoint;
     [Range(0f, 360f)][SerializeField] float _viewAngle = 0f;
     [SerializeField] float _viewRadius = 1f;
     [SerializeField] LayerMask _targetMask;
@@ -51,7 +52,7 @@ public class FieldOfView : MonoBehaviour
         while (true)
         {
             _hitTargetList.Clear();
-            Vector3 myPos = transform.position + Vector3.up;
+            Vector3 myPos = _viewPoint.position;
             Vector3 lookDir = AngleToDir(transform.eulerAngles.y);
             Collider[] Targets = Physics.OverlapSphere(myPos, _viewRadius, _targetMask);
 
@@ -76,8 +77,8 @@ public class FieldOfView : MonoBehaviour
     private void OnDrawGizmos()
     {
         if (!_debugMode) return;
-        Vector3 myPos = transform.position + Vector3.up;
-        Gizmos.DrawWireSphere(myPos, _viewRadius);
+        Vector3 myPos = _viewPoint.position;
+        Gizmos.DrawWireSphere(myPos, _viewRadius); 
 
         float lookingAngle = transform.eulerAngles.y;  //캐릭터가 바라보는 방향의 각도
         Vector3 rightDir = AngleToDir(transform.eulerAngles.y + _viewAngle * 0.5f);

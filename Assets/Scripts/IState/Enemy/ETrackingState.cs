@@ -37,6 +37,5 @@ public class ETrackingState : IState
 
     public void OnExit()
     {
-        _enemy.Animator.SetBool("IsWalking", false);
     }
 }

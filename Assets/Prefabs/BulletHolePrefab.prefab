@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 600915058541824832}
   - component: {fileID: -8981871448346998154}
   - component: {fileID: 299617311444232088}
-  - component: {fileID: 1445201903186853579}
   - component: {fileID: -6548915446166325932}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BulletHolePrefab
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -72,7 +71,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca67d86e6d25984187f8e8602665b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _boxCollider: {fileID: 1445201903186853579}
   _AudioSource: {fileID: 299617311444232088}
   _hitPartClip: {fileID: 8300000, guid: 75a4db6ed5a970d4fb35f8bf58a48bd8, type: 3}
   _groundClip: {fileID: 8300000, guid: 034a855cc3acd454ababa19fb86d67b5, type: 3}
@@ -173,27 +171,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!65 &1445201903186853579
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7061722958526817895}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.1, y: 0.1, z: 0.1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &-6548915446166325932
 Rigidbody:
   m_ObjectHideFlags: 0

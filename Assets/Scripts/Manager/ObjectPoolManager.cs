@@ -1,30 +1,41 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.AI.Navigation;
 using UnityEngine;
 
-public enum ObjectPoolType
+public enum ZombieType
 {
-    Bullet,
-    size
+    Basic,
+    Women,
+    Heavy,
+    Count
 }
 
 public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
 {
+    [Serializable]
+    private struct ZombieStruct
+    {
+        public ZombieType Type;
+        public int PoolCount;
+        public GameObject Prefab;
+        [HideInInspector] public Queue<GameObject> Pool;
+        [HideInInspector] public GameObject Parent;
+    }
+
     [SerializeField] private GameObject BulletHolePrefab;
     [SerializeField] private int _bulletHoleCount;
     private GameObject _bulletHoleParent;
     private Queue<GameObject> _bulletHolePool;
 
-    [SerializeField] private GameObject _basicZombiePrefab;
-    [SerializeField] private int _zombieCount;
-    private GameObject _zombieParent;
-    private Queue<GameObject> _zombiePool;
+    [SerializeField] private ZombieStruct[] _zombieStruct;
+
 
     private void Start()
     {
         BulletHoleObjectPooling();
-        BasicZombieObjectPooling();
+        ZombieObjectPooling(ZombieType.Basic);
+        ZombieObjectPooling(ZombieType.Women);
     }
 
     private void BulletHoleObjectPooling()
@@ -41,16 +52,16 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
         }
     }
 
-    private void BasicZombieObjectPooling()
+    private void ZombieObjectPooling(ZombieType zombieType)
     {
-        _zombiePool = new Queue<GameObject>();
-        _zombieParent = new GameObject("ZombieParent");
+        _zombieStruct[(int)zombieType].Pool = new Queue<GameObject>();
+        _zombieStruct[(int)zombieType].Parent = new GameObject(Enum.GetName(typeof(ZombieType), (int)zombieType) + " Zombie Parent======");
 
-        for (int i = 0, count = _zombieCount; i < count; i++)
+        for (int i = 0, count = _zombieStruct[(int)zombieType].PoolCount; i < count; i++)
         {
-            GameObject zombie = Instantiate(_basicZombiePrefab, Vector3.zero, Quaternion.identity);
-            zombie.transform.parent = _zombieParent.transform;
-            _zombiePool.Enqueue(zombie);
+            GameObject zombie = Instantiate(_zombieStruct[(int)zombieType].Prefab, Vector3.zero, Quaternion.identity);
+            zombie.transform.parent = _zombieStruct[(int)zombieType].Parent.transform;
+            _zombieStruct[(int)zombieType].Pool.Enqueue(zombie);
             zombie.SetActive(false);
         }
     }
@@ -71,35 +82,27 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
         return bulletHole;
     }
 
-    public void DisableBulletHole(GameObject bulletHole)
+    public void SpawnZombie(ZombieType zombieType, Vector3 pos, Quaternion rot)
     {
-        bulletHole.transform.parent = _bulletHoleParent.transform;
-        bulletHole.transform.localPosition = Vector3.zero;
-        bulletHole.transform.localRotation = Quaternion.identity;
-        bulletHole.SetActive(false);
-    }
-
-
-    public void SpawnZombie(Vector3 pos, Quaternion rot)
-    {
-        if(_zombiePool.Count == 0)
+        if(_zombieStruct[(int)zombieType].Pool.Count == 0)
         {
-            GameObject zombiePool = Instantiate(_basicZombiePrefab, pos, rot);
-            _zombiePool.Enqueue(zombiePool);
-            zombiePool.transform.parent = _zombieParent.transform;
+            GameObject zombiePool = Instantiate(_zombieStruct[(int)zombieType].Prefab, pos, rot);
+            _zombieStruct[(int)zombieType].Pool.Enqueue(zombiePool);
+            zombiePool.transform.parent = _zombieStruct[(int)zombieType].Parent.transform;
             zombiePool.SetActive(false);
         }
-        GameObject zombie = _zombiePool.Dequeue();
+        GameObject zombie = _zombieStruct[(int)zombieType].Pool.Dequeue();
         zombie.SetActive(true);
         zombie.transform.position = pos;
         zombie.transform.rotation = rot;
     }
 
-    public IEnumerator ZombleDisable(GameObject zombie)
+    public IEnumerator ZombleDisable(Enemy enemy)
     {
-        yield return YieldCache.WaitForSeconds(10);
-        _zombiePool.Enqueue(zombie);
-        zombie.SetActive(false);
+        yield return YieldCache.WaitForSeconds(40);
+        int zombieType = (int)enemy.ZombieType;
+        _zombieStruct[zombieType].Pool.Enqueue(enemy.gameObject);
+        enemy.gameObject.SetActive(false);
     }
 
 }
