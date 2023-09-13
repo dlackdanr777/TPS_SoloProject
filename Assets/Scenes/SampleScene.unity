@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2431,7 +2431,7 @@ GameObject:
   - component: {fileID: 138513948}
   - component: {fileID: 138513947}
   - component: {fileID: 138513946}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (2)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2564,17 +2564,17 @@ PrefabInstance:
     - target: {fileID: 5622586335662084969, guid: 38e9d3b7cf0e7af49a16262152570320,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.158
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5622586335662084969, guid: 38e9d3b7cf0e7af49a16262152570320,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.626
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5622586335662084969, guid: 38e9d3b7cf0e7af49a16262152570320,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.396012
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5622586335662084969, guid: 38e9d3b7cf0e7af49a16262152570320,
         type: 3}
@@ -2610,11 +2610,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6310101857440634231, guid: 38e9d3b7cf0e7af49a16262152570320,
-        type: 3}
-      propertyPath: _debugMode
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8722914752568561241, guid: 38e9d3b7cf0e7af49a16262152570320,
         type: 3}
@@ -4170,6 +4165,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1498585553929629781, guid: d4789f9f51769ed4a8ffbc896725b1a0,
+        type: 3}
+      propertyPath: m_Speed
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498585553929629781, guid: d4789f9f51769ed4a8ffbc896725b1a0,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 1813132716804433857, guid: d4789f9f51769ed4a8ffbc896725b1a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -4229,6 +4234,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Woman Zombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394464893377087925, guid: d4789f9f51769ed4a8ffbc896725b1a0,
+        type: 3}
+      propertyPath: _obstacleMask.m_Bits
+      value: 1536
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949565129537125161, guid: d4789f9f51769ed4a8ffbc896725b1a0,
+        type: 3}
+      propertyPath: _debugMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -48,6 +48,7 @@ public class Enemy : MonoBehaviour, IHp, IAttack
     public FieldOfView FieldOfView;
     public Transform Target;
     [SerializeField] private CapsuleCollider _capsuleCollider;
+    [SerializeField] private ParticleSystem _deadBloodParticle;
 
     List<Collider> _hitColliders = new List<Collider>();
 
@@ -59,6 +60,8 @@ public class Enemy : MonoBehaviour, IHp, IAttack
     [SerializeField] private float _attackRadius;
     [SerializeField] private LayerMask _attackLayerMask;
     [SerializeField] private LayerMask _obstacleMask;
+
+
     private bool _isDead;
 
     private EnemyStateMachine _machine;
@@ -110,15 +113,23 @@ public class Enemy : MonoBehaviour, IHp, IAttack
             if (!_isDead)
             {
                 StartCoroutine(ObjectPoolManager.Instance.ZombleDisable(this));
+                StartCoroutine(StartDeadParticle());
                 Navmesh.NaveMeshEnabled(false);
                 _capsuleCollider.enabled = false;
                 _machine.ChangeState(_machine.IdleState);
                 Animator.SetTrigger("Dead");
+
                 _isDead = true;
             }
         };
 
         OnTargetFollowedHandler = () => { if (Target != null) Navmesh.StartNavMesh(Target); };
+    }
+
+    IEnumerator StartDeadParticle()
+    {
+        yield return YieldCache.WaitForSeconds(3);
+        _deadBloodParticle.Emit(3);
     }
 
 

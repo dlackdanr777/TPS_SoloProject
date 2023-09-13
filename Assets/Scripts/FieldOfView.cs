@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class FieldOfView : MonoBehaviour
 {
     [SerializeField] bool _debugMode = false;
-    [SerializeField] Transform _viewPoint;
     [Range(0f, 360f)][SerializeField] float _viewAngle = 0f;
     [SerializeField] float _viewRadius = 1f;
     [SerializeField] LayerMask _targetMask;
@@ -52,7 +52,7 @@ public class FieldOfView : MonoBehaviour
         while (true)
         {
             _hitTargetList.Clear();
-            Vector3 myPos = _viewPoint.position;
+            Vector3 myPos = transform.position + Vector3.up;
             Vector3 lookDir = AngleToDir(transform.eulerAngles.y);
             Collider[] Targets = Physics.OverlapSphere(myPos, _viewRadius, _targetMask);
 
@@ -60,13 +60,12 @@ public class FieldOfView : MonoBehaviour
             {
                 foreach (Collider EnemyColli in Targets)
                 {
-                    Vector3 targetPos = EnemyColli.transform.position;
+                    Vector3 targetPos = EnemyColli.transform.position + Vector3.up * 1.5f;
                     Vector3 targetDir = (targetPos - myPos).normalized;
                     float targetAngle = Mathf.Acos(Vector3.Dot(lookDir, targetDir)) * Mathf.Rad2Deg;
                     if (targetAngle <= _viewAngle * 0.5f && !Physics.Raycast(myPos, targetDir, _viewRadius, _obstacleMask))
                     {
                         _hitTargetList.Add(EnemyColli);
-                        if (_debugMode) Debug.DrawLine(myPos, targetPos, Color.red);
                     }
                 }
             }
@@ -77,7 +76,7 @@ public class FieldOfView : MonoBehaviour
     private void OnDrawGizmos()
     {
         if (!_debugMode) return;
-        Vector3 myPos = _viewPoint.position;
+        Vector3 myPos = transform.position + Vector3.up * 1.5f;
         Gizmos.DrawWireSphere(myPos, _viewRadius); 
 
         float lookingAngle = transform.eulerAngles.y;  //캐릭터가 바라보는 방향의 각도

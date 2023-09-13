@@ -3816,7 +3816,7 @@ GameObject:
   - component: {fileID: 8961644573415092414}
   - component: {fileID: 2428491910844260622}
   m_Layer: 7
-  m_Name: BasicZombieTest
+  m_Name: BasicZombie
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3834,10 +3834,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6354508279346953455}
   - {fileID: 4828488089567585439}
   - {fileID: 4943039820126488095}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2281966700007285565
 MonoBehaviour:
@@ -3858,6 +3859,7 @@ MonoBehaviour:
   FieldOfView: {fileID: 6310101857440634231}
   Target: {fileID: 0}
   _capsuleCollider: {fileID: 2428491910844260622}
+  _deadBloodParticle: {fileID: 3754713881617275196}
   _maxHp: 50
   _minHp: 0
   _damage: 10
@@ -3892,7 +3894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d63133e8f81203543973c2cda531b664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _debugMode: 0
+  _debugMode: 1
   _viewPoint: {fileID: 531878197896183031}
   _viewAngle: 90
   _viewRadius: 20
@@ -4030,10 +4032,10 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.3
   m_Speed: 0.05
-  m_Acceleration: 8
+  m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 360
-  m_StoppingDistance: 0
+  m_StoppingDistance: 0.1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -4328,3 +4330,88 @@ Transform:
   m_Father: {fileID: 2526534576887982514}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8262428997357135122
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5622586335662084969}
+    m_Modifications:
+    - target: {fileID: 3064054104404466173, guid: d140d1733f0714f43bbbc54b1fafbbba,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064054104404466173, guid: d140d1733f0714f43bbbc54b1fafbbba,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064054104404466173, guid: d140d1733f0714f43bbbc54b1fafbbba,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064054104404466173, guid: d140d1733f0714f43bbbc54b1fafbbba,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064054104404466173, guid: d140d1733f0714f43bbbc54b1fafbbba,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064054104404466173, guid: d140d1733f0714f43bbbc54b1fafbbba,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064054104404466173, guid: d140d1733f0714f43bbbc54b1fafbbba,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064054104404466173, guid: d140d1733f0714f43bbbc54b1fafbbba,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064054104404466173, guid: d140d1733f0714f43bbbc54b1fafbbba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064054104404466173, guid: d140d1733f0714f43bbbc54b1fafbbba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064054104404466173, guid: d140d1733f0714f43bbbc54b1fafbbba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713572540401313571, guid: d140d1733f0714f43bbbc54b1fafbbba,
+        type: 3}
+      propertyPath: m_Name
+      value: Floor Blood
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d140d1733f0714f43bbbc54b1fafbbba, type: 3}
+--- !u!198 &3754713881617275196 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5093965921792130094, guid: d140d1733f0714f43bbbc54b1fafbbba,
+    type: 3}
+  m_PrefabInstance: {fileID: 8262428997357135122}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6354508279346953455 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3064054104404466173, guid: d140d1733f0714f43bbbc54b1fafbbba,
+    type: 3}
+  m_PrefabInstance: {fileID: 8262428997357135122}
+  m_PrefabAsset: {fileID: 0}
