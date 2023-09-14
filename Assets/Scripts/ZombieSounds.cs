@@ -7,15 +7,17 @@ public class ZombieSounds : MonoBehaviour
     public enum ZombieSoundType
     {
         Idle,
-        detection,
+        Detection,
         Tracking,
         Dead,
         Length
     }
 
     [SerializeField] private AudioSource _source;
-    [SerializeField] private AudioClip[] _clips;
-
+    [SerializeField] private AudioClip[] _idleClips;
+    [SerializeField] private AudioClip[] _detectionClips;
+    [SerializeField] private AudioClip[] _trackingClips;
+    [SerializeField] private AudioClip[] _deadClips;
 
     /// <summary>
     /// 사운드를 실행하는 함수
@@ -23,7 +25,22 @@ public class ZombieSounds : MonoBehaviour
     /// <param name="type"></param>
     public void PlayZombieSoundClip(ZombieSoundType type)
     {
-        _source.clip = _clips[(int)type];
+        switch ((int)type)
+        {
+            case (int)ZombieSoundType.Idle:
+                _source.clip = _idleClips[Random.Range(0, _idleClips.Length)];
+                break;
+            case (int)ZombieSoundType.Detection:
+                _source.clip = _detectionClips[Random.Range(0, _detectionClips.Length)];
+                break;
+            case (int)ZombieSoundType.Tracking:
+                _source.clip = _trackingClips[Random.Range(0, _trackingClips.Length)];
+                break;
+            case (int)ZombieSoundType.Dead:
+                _source.clip = _deadClips[Random.Range(0, _deadClips.Length)];
+                break;
+        }
+        
         _source.Play();
     }
 

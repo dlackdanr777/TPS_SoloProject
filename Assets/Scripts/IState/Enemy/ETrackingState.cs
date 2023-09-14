@@ -13,7 +13,6 @@ public class ETrackingState : IState
 
     public void OnStart()
     {
-        _playSoundTime = Random.Range(5f, 10f);
         _enemy.Animator.SetBool("IsWalking", true);
     }
 
@@ -45,7 +44,7 @@ public class ETrackingState : IState
         _playSoundTimer = 0;
     }
 
-    private float _playSoundTime = 10;
+    private float _playSoundTime = 0;
     private float _playSoundTimer;
 
     private void PlaySound()
@@ -53,7 +52,7 @@ public class ETrackingState : IState
         if (_playSoundTimer > _playSoundTime)
         {
             _enemy.ZombieSounds.PlayZombieSoundClip(ZombieSounds.ZombieSoundType.Tracking);
-            _playSoundTime = Random.Range(5f, 10f);
+            _playSoundTime = Random.Range(4f, 5f);
             _playSoundTimer = 0;
         }
     }

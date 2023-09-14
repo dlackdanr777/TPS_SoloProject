@@ -22,7 +22,7 @@ public class EIdleToTrackingState : IState
 
     public void OnStart()
     {
-        _enemy.ZombieSounds.PlayZombieSoundClip(ZombieSounds.ZombieSoundType.detection);
+        _enemy.ZombieSounds.PlayZombieSoundClip(ZombieSounds.ZombieSoundType.Detection);
         _enemy.Animator.SetBool("IsWalking", false);
 
         _rotateTime = Random.Range(0.3f, 1f);

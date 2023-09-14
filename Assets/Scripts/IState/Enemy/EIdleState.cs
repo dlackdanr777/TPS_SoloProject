@@ -15,7 +15,7 @@ public class EIdleState : IState
 
     public void OnStart()
     {
-        _playSoundTime = Random.Range(10f, 20f);
+        _playSoundTime = Random.Range(8f, 15f);
         _enemy.Animator.SetBool("IsWalking", false);
         _enemy.Target = null;
     }
@@ -51,7 +51,7 @@ public void OnFixedUpdate()
         if(_playSoundTimer > _playSoundTime)
         {
             _enemy.ZombieSounds.PlayZombieSoundClip(ZombieSounds.ZombieSoundType.Idle);
-            _playSoundTime = Random.Range(10f, 20f);
+            _playSoundTime = Random.Range(8f, 15f);
             _playSoundTimer = 0;
         }          
     }
