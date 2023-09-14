@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 65227666413336124}
   m_Layer: 9
   m_Name: Coll07
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967289
@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 65250456829810082}
   m_Layer: 9
   m_Name: Coll13
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967289
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 65439632249781306}
   m_Layer: 9
   m_Name: Coll02
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967289
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 65925868371767562}
   m_Layer: 9
   m_Name: Coll12
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967289
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 65268675984063310}
   m_Layer: 9
   m_Name: Coll06
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967289
@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 65521940024667754}
   m_Layer: 9
   m_Name: Coll11
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967289
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 23157570108617526}
   m_Layer: 9
   m_Name: StairsSmall
-  m_TagString: Metal
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967289
@@ -363,7 +363,7 @@ Transform:
   - {fileID: 4440804440959140}
   - {fileID: 4509184983315328}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 310
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33321937807501992
 MeshFilter:
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 65383235266281170}
   m_Layer: 9
   m_Name: Coll00
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967289
@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 65161697487074720}
   m_Layer: 9
   m_Name: Coll04
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967289
@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 65079167680802376}
   m_Layer: 9
   m_Name: Coll03
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967289
@@ -586,7 +586,7 @@ GameObject:
   - component: {fileID: 65266518109648412}
   m_Layer: 9
   m_Name: Coll01
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967289
@@ -639,7 +639,7 @@ GameObject:
   - component: {fileID: 65251533787222704}
   m_Layer: 9
   m_Name: Coll05
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967289
@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 65743475234287220}
   m_Layer: 9
   m_Name: Coll10
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967289
@@ -745,7 +745,7 @@ GameObject:
   - component: {fileID: 65321438650175080}
   m_Layer: 9
   m_Name: Coll08
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967289
@@ -798,7 +798,7 @@ GameObject:
   - component: {fileID: 65993506111961252}
   m_Layer: 9
   m_Name: Coll09
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967289

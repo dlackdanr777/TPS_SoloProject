@@ -59,6 +59,7 @@ public class FootstepSound : MonoBehaviour
 
                     _audioSource.clip = clip;
                     _audioSource.Play();
+                    return;
                 }
             }
         }

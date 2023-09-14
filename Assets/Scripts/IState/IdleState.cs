@@ -16,6 +16,8 @@ public class IdleState : ILowerState
     public void OnStart()
     {
         _player.OnSetRecoilSizeHandler?.Invoke(1f);
+        _player.Animator.SetFloat("Horizontal", 0);
+        _player.Animator.SetFloat("Vertical", 0);
     }
 
     public void OnUpdate()
