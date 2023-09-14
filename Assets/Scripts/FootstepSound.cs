@@ -25,7 +25,10 @@ public class FootstepSound : MonoBehaviour
     private int _layerMask;
     private void Start()
     {
-        _layerMask = 1 << LayerMask.NameToLayer("Ground");
+        int obstacleLayer = 1 << LayerMask.NameToLayer("Obstacle");
+        int groundLayer = 1 << LayerMask.NameToLayer("Ground");
+
+        _layerMask = obstacleLayer | groundLayer;
     }
 
 
