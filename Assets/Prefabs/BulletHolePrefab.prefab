@@ -5259,6 +5259,16 @@ PrefabInstance:
       propertyPath: SubModule.subEmitters.Array.data[2].emitter
       value: 
       objectReference: {fileID: 896982179767501947}
+    - target: {fileID: 7537065596268128809, guid: f98933ff98dcaeb4a8c8cea0ced8f9c2,
+        type: 3}
+      propertyPath: SubModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537065596268128809, guid: f98933ff98dcaeb4a8c8cea0ced8f9c2,
+        type: 3}
+      propertyPath: VelocityModule.inWorldSpace
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8186563756473518066, guid: f98933ff98dcaeb4a8c8cea0ced8f9c2,
         type: 3}
       propertyPath: m_RootOrder

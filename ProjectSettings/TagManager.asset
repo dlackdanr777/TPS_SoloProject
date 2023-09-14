@@ -10,6 +10,18 @@ TagManager:
   - Bullet
   - StoneFloor
   - WoodenFloor
+  - Flashlight
+  - PickableItem
+  - NL_LMBV
+  - Sun
+  - VentilationGrid
+  - Stone
+  - Wood
+  - Grave
+  - Grass
+  - Dirt
+  - Metal
+  - Glass
   layers:
   - Default
   - TransparentFX
@@ -22,8 +34,8 @@ TagManager:
   - Bullet
   - Ground
   - Wall
+  - Obstacle
   - HitPart
-  - 
   - 
   - 
   - 
