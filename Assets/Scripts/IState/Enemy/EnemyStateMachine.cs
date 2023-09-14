@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -37,7 +38,7 @@ public class EnemyStateMachine
         IdleToTrackingState = new EIdleToTrackingState(_enemy, this);
         TrackingState = new ETrackingState(_enemy, this);
         AttackState = new EAttackState(_enemy, this);
-
+        DeadState = new EDeadState(_enemy, this);
         CurrentState = IdleState;
     }
 
@@ -91,6 +92,6 @@ public class EnemyStateMachine
 
     public bool AttackStateCondition()
     {
-        return _enemy.CheckPlayerAtAttackRange();
+        return _enemy.Attack.GetCheckPlayerAtAttackRange();
     }
 }

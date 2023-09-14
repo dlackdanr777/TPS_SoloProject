@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - HitPart
   - Bullet
+  - StoneFloor
+  - WoodenFloor
   layers:
   - Default
   - TransparentFX

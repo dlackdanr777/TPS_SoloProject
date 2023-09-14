@@ -15,17 +15,20 @@ public class EIdleState : IState
 
     public void OnStart()
     {
+        _playSoundTime = Random.Range(10f, 20f);
         _enemy.Animator.SetBool("IsWalking", false);
         _enemy.Target = null;
     }
 
     public void OnUpdate()
     {
+
     }
 
 public void OnFixedUpdate()
     {
-        
+        _playSoundTimer += Time.deltaTime;
+        PlaySound();
     }
 
     public void OnStateUpdate()
@@ -37,7 +40,20 @@ public void OnFixedUpdate()
 
     public void OnExit()
     {
+        _playSoundTimer = 0;
+    }
 
+    private float _playSoundTime = 10;
+    private float _playSoundTimer;
+
+    private void PlaySound()
+    {
+        if(_playSoundTimer > _playSoundTime)
+        {
+            _enemy.ZombieSounds.PlayZombieSoundClip(ZombieSounds.ZombieSoundType.Idle);
+            _playSoundTime = Random.Range(10f, 20f);
+            _playSoundTimer = 0;
+        }          
     }
 
 }

@@ -1,9 +1,8 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IHp, IAttack
+public class Enemy : MonoBehaviour, IHp
 {
     public ZombieType ZombieType;
     public float hp
@@ -29,8 +28,6 @@ public class Enemy : MonoBehaviour, IHp, IAttack
     }
     public float maxHp => _maxHp;
     public float minHp => _minHp;
-    public float damage => _damage;
-    public float attackRadius => _attackRadius;
 
     public event Action<float> onHpChanged;
     public event Action<object, float> OnHpRecoverd;
@@ -45,22 +42,18 @@ public class Enemy : MonoBehaviour, IHp, IAttack
     public AudioSource AudioSource;
     public Navmesh Navmesh;
     public Animator Animator;
+    public ZombieSounds ZombieSounds;
     public FieldOfView FieldOfView;
+    public Attack Attack;
+    
     public Transform Target;
+    
     [SerializeField] private CapsuleCollider _capsuleCollider;
     [SerializeField] private ParticleSystem _deadBloodParticle;
-
-    List<Collider> _hitColliders = new List<Collider>();
 
     [SerializeField] private float _maxHp;
     [SerializeField] private float _minHp = 0;
     private float _hp;
-
-    [SerializeField] private float _damage;
-    [SerializeField] private float _attackRadius;
-    [SerializeField] private LayerMask _attackLayerMask;
-    [SerializeField] private LayerMask _obstacleMask;
-
 
     private bool _isDead;
 
@@ -104,6 +97,7 @@ public class Enemy : MonoBehaviour, IHp, IAttack
         _hp = _maxHp;
         _isDead = false;
         _capsuleCollider.enabled = true;
+        _machine.ChangeState(_machine.IdleState);
     }
 
     private void ActionInit()
@@ -114,11 +108,13 @@ public class Enemy : MonoBehaviour, IHp, IAttack
             {
                 StartCoroutine(ObjectPoolManager.Instance.ZombleDisable(this));
                 StartCoroutine(StartDeadParticle());
+                ZombieSounds.PlayZombieSoundClip(ZombieSounds.ZombieSoundType.Dead);
                 Navmesh.NaveMeshEnabled(false);
                 _capsuleCollider.enabled = false;
-                _machine.ChangeState(_machine.IdleState);
-                Animator.SetTrigger("Dead");
+                _machine.ChangeState(_machine.DeadState);
 
+                Animator.SetTrigger("Dead");
+                Target = null;
                 _isDead = true;
             }
         };
@@ -157,57 +153,4 @@ public class Enemy : MonoBehaviour, IHp, IAttack
         }
     }
 
-    public void TargetDamage(IHp iHp, float aomunt)
-    {
-        if (iHp.hp > iHp.minHp)
-        {
-            iHp.DepleteHp(this, aomunt);
-            OnTargetDamaged?.Invoke();
-        }
-    }
-
-
-    public bool CheckPlayerAtAttackRange()
-    {
-        _hitColliders.Clear();
-
-        Vector3 attackPos = transform.position + transform.up + (transform.forward * attackRadius);
-        Vector3 myPos = transform.position + Vector3.up;
-        Collider[] Targets = Physics.OverlapSphere(attackPos, attackRadius, _attackLayerMask);
-        if (Targets.Length != 0)
-        {
-            foreach (Collider EnemyColli in Targets)
-            {
-                Vector3 targetPos = EnemyColli.transform.position;
-                Vector3 targetDir = (targetPos - myPos).normalized;
-                float targetDistance = Vector3.Distance(targetPos, myPos);
-                if (!Physics.Raycast(myPos, targetDir, targetDistance, _obstacleMask))
-                {
-                    _hitColliders.Add(EnemyColli);
-                }
-            }
-        }
-
-        if (_hitColliders.Count > 0)
-            return true;
-        return false;
-    }
-
-    public void Attack()
-    {
-        foreach(Collider collider in _hitColliders)
-        {
-            if(collider.GetComponent<IHp>() != null)
-            {
-                collider.GetComponent<IHp>().DepleteHp(this, _damage);
-            }
-        }
-    }
-
-    public void OnDrawGizmos()
-    {
-        Vector3 attackPos = transform.position + transform.up + (transform.forward * attackRadius);
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(attackPos, attackRadius);
-    }
 }

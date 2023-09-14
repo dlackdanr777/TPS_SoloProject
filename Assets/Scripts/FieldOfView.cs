@@ -14,13 +14,6 @@ public class FieldOfView : MonoBehaviour
     private List<Collider> _hitTargetList = new List<Collider>();
     private Coroutine FieldOfViewDetectionRoutine;
 
-    private void Start()
-    {
-        if (FieldOfViewDetectionRoutine != null)
-            StopCoroutine(FieldOfViewDetectionRoutine);
-        FieldOfViewDetectionRoutine = StartCoroutine(FieldOfViewDetection());
-    }
-
     private void OnEnable()
     {
         if (FieldOfViewDetectionRoutine != null)

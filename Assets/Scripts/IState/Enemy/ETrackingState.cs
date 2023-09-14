@@ -1,4 +1,5 @@
 
+using UnityEngine;
 public class ETrackingState : IState
 {
     private Enemy _enemy;
@@ -12,6 +13,7 @@ public class ETrackingState : IState
 
     public void OnStart()
     {
+        _playSoundTime = Random.Range(5f, 10f);
         _enemy.Animator.SetBool("IsWalking", true);
     }
 
@@ -23,6 +25,9 @@ public class ETrackingState : IState
     public void OnFixedUpdate()
     {
         _enemy.OnTargetFollowedHandler?.Invoke();
+
+        _playSoundTimer += Time.deltaTime;
+        PlaySound();
     }
 
     public void OnStateUpdate()
@@ -37,5 +42,19 @@ public class ETrackingState : IState
 
     public void OnExit()
     {
+        _playSoundTimer = 0;
+    }
+
+    private float _playSoundTime = 10;
+    private float _playSoundTimer;
+
+    private void PlaySound()
+    {
+        if (_playSoundTimer > _playSoundTime)
+        {
+            _enemy.ZombieSounds.PlayZombieSoundClip(ZombieSounds.ZombieSoundType.Tracking);
+            _playSoundTime = Random.Range(5f, 10f);
+            _playSoundTimer = 0;
+        }
     }
 }
