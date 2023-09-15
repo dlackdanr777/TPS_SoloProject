@@ -25,8 +25,9 @@ public class Player : MonoBehaviour, IHp, IAttack
     public Action<float, float, float> OnMovedHandler;
     public Action<float> OnSetRecoilSizeHandler;
     public Action OnRotateHandler;
-    public Action OnAimEnableHandler;
-    public Action OnAimDisableHandler;
+    public Action OnEnableAimHandler;
+    public Action OnDisableAimHandler;
+    public Action OnFollowAimHandler;
     public Action OnFireHandler;
 
 
@@ -68,12 +69,14 @@ public class Player : MonoBehaviour, IHp, IAttack
     {
         Init();
         ActionInit();
+        OnDisableAimHandler?.Invoke();
     }
 
 
     private void Update()
     {
         Machine.OnUpdate();
+        OnFollowAimHandler?.Invoke();
     }
 
     private void FixedUpdate()
@@ -97,8 +100,9 @@ public class Player : MonoBehaviour, IHp, IAttack
             Animator.SetFloat("Horizontal", horizontal);
         };
 
-        OnAimEnableHandler = GunController.CrossHairEnable;
-        OnAimDisableHandler = GunController.CrossHairDisable;
+        OnEnableAimHandler = GunController.EnableCrossHair;
+        OnDisableAimHandler = GunController.DisableCrossHair;
+        OnFollowAimHandler = GunController.FollowCrossHair;
 
         OnFireHandler = GunController.TryFire;
         OnSetRecoilSizeHandler = GunController.SetRecoilMul;

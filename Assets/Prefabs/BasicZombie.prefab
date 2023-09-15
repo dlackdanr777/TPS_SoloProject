@@ -1120,7 +1120,7 @@ Transform:
   - {fileID: 8000551673483934187}
   - {fileID: 6483457950167241386}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1727509648781147750
 MonoBehaviour:
@@ -1158,14 +1158,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0503bf3b73447d64cb434c4b8baefeb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 5
+  _damage: 3
   _attackRadius: 0.5
   _attackLayerMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 16392
   _obstacleMask:
     serializedVersion: 2
-    m_Bits: 1536
+    m_Bits: 19968
 --- !u!114 &7345855696676998947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1190,7 +1190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d63133e8f81203543973c2cda531b664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _debugMode: 1
+  _debugMode: 0
   _viewAngle: 120
   _viewRadius: 20
   _targetMask:
@@ -1198,7 +1198,7 @@ MonoBehaviour:
     m_Bits: 8
   _obstacleMask:
     serializedVersion: 2
-    m_Bits: 1536
+    m_Bits: 3584
 --- !u!95 &8316129803491266194
 Animator:
   serializedVersion: 5
@@ -1329,7 +1329,7 @@ NavMeshAgent:
   m_Speed: 0.05
   m_Acceleration: 20
   avoidancePriority: 50
-  m_AngularSpeed: 360
+  m_AngularSpeed: 480
   m_StoppingDistance: 0.1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -1337,7 +1337,7 @@ NavMeshAgent:
   m_Height: 1.8
   m_BaseOffset: -0.011
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 2
+  m_ObstacleAvoidanceType: 1
 --- !u!136 &965168047732495755
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1374,11 +1374,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _source: {fileID: 8389139103176532207}
-  _clips:
-  - {fileID: 8300000, guid: b47ba8be9f3dd7148909872441cf1944, type: 3}
-  - {fileID: 8300000, guid: 8066c3122cd0b7d45848e117ae747c1a, type: 3}
-  - {fileID: 8300000, guid: 49666a95528772041b868d4ba3e0b287, type: 3}
-  - {fileID: 8300000, guid: 4f11eb6ac73f69d4398687e3ae00653d, type: 3}
+  _idleClips:
+  - {fileID: 8300000, guid: fb1ebe7b032f2b043b2d6261f96bbd74, type: 3}
+  - {fileID: 8300000, guid: 1fa43abbe54132b4d865a4631a751c87, type: 3}
+  - {fileID: 8300000, guid: 72e01c31c14ac324d82302ffe7c4d002, type: 3}
+  - {fileID: 8300000, guid: f6133b91afe656a4ea0f555a320862b7, type: 3}
+  - {fileID: 8300000, guid: 946793175dc5c3445a56b3037b4e85f7, type: 3}
+  - {fileID: 8300000, guid: 337771287b4463543830885c0f3793cb, type: 3}
+  - {fileID: 8300000, guid: ce48cd215d0a23a4593715c5496a324c, type: 3}
+  - {fileID: 8300000, guid: f5aa2cdae32e047448152c8c8577aa48, type: 3}
+  - {fileID: 8300000, guid: 71146bc7692f5d14389296869f5fa7a0, type: 3}
+  - {fileID: 8300000, guid: 87dbad70ff0f0ad4ea012e4c15d4e94e, type: 3}
+  _detectionClips:
+  - {fileID: 8300000, guid: edcf6900ab6afea49aeeafa2f27f505d, type: 3}
+  - {fileID: 8300000, guid: 9a9246ad5cf5b094587c7cc0312408c3, type: 3}
+  - {fileID: 8300000, guid: acfe22a67cc94f7498cc169501bd1a3d, type: 3}
+  - {fileID: 8300000, guid: 68b7d11d8c3abc346a57b238f343caee, type: 3}
+  - {fileID: 8300000, guid: 7e8b3892ef4abe14f875049726e26981, type: 3}
+  _trackingClips:
+  - {fileID: 8300000, guid: 0a5cb470993c7f649bf29f75c007d462, type: 3}
+  - {fileID: 8300000, guid: b763e17297ec2d64689c8b04011239bf, type: 3}
+  - {fileID: 8300000, guid: bddbeaa0c71575b42a10497765cbb3c6, type: 3}
+  - {fileID: 8300000, guid: 62851ef76a39e6c41a8213f8cd1adfd1, type: 3}
+  - {fileID: 8300000, guid: 0d0552707d6ffdd418d0fdda63cf3953, type: 3}
+  _deadClips:
+  - {fileID: 8300000, guid: ea98f92e029c80a4385f25e47d21aa71, type: 3}
+  - {fileID: 8300000, guid: 342c14b0196f586489c230f2f7a6d2fb, type: 3}
+  - {fileID: 8300000, guid: 07b3a7bccde5ebc49a05309778df7b7f, type: 3}
+  - {fileID: 8300000, guid: 1adf70f52ce4ea94eaa0fbf57f56d28f, type: 3}
+  - {fileID: 8300000, guid: 06e75cb697e8e204188a94bccc845f35, type: 3}
+  - {fileID: 8300000, guid: fe407b7a17cada1479922e76f3e11cb7, type: 3}
+  - {fileID: 8300000, guid: 83a43a91b2ecae445b07d4191c8a32eb, type: 3}
+  - {fileID: 8300000, guid: 569786f94d920eb4da43f1039bc90a54, type: 3}
 --- !u!1 &2971865263299465364
 GameObject:
   m_ObjectHideFlags: 0

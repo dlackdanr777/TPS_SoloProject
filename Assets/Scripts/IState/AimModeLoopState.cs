@@ -21,7 +21,7 @@ public class AimModeLoopState : IUpperState
     public void OnUpdate()
     {
         _player.OnFireHandler?.Invoke();
-        _player.OnAimEnableHandler?.Invoke();
+        _player.OnEnableAimHandler?.Invoke();
     }
 
     public void OnFixedUpdate()

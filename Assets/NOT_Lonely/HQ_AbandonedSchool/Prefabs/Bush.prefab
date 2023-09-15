@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4378032855231842}
   - component: {fileID: 205066058343180796}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bush
   m_TagString: Grass
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 4705502678456680}
   - component: {fileID: 33587524187427412}
   - component: {fileID: 23001993937420720}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bush_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 4224582735930618}
   - component: {fileID: 33146947881029880}
   - component: {fileID: 23147325112075858}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bush_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

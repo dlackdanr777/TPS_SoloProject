@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class CountableItemData : ItemData
 {
     public int MaxAmount => _maxAmount;
-    public int a;
+    public int _amount;
     [SerializeField] protected int _maxAmount = 99;
 }
 

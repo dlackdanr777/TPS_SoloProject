@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour, IHp
     public event Action onHpMin;
     public event Action OnTargetDamaged;
 
+    public Action OnTargetLossHandler;
     public Action OnTargetFollowedHandler;
 
     public AudioSource AudioSource;
@@ -120,6 +121,7 @@ public class Enemy : MonoBehaviour, IHp
         };
 
         OnTargetFollowedHandler = () => { if (Target != null) Navmesh.StartNavMesh(Target); };
+        OnTargetLossHandler = () => { if (Target == null) Navmesh.StopNavMesh(); };
     }
 
     IEnumerator StartDeadParticle()

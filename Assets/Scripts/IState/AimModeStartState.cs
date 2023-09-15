@@ -26,7 +26,7 @@ public class AimModeStartState : IUpperState
     public void OnFixedUpdate()
     {
         _player.OnRotateHandler?.Invoke();
-        _player.OnAimEnableHandler?.Invoke();
+        _player.OnEnableAimHandler?.Invoke();
         _player.Rigging.SetUpperRigWeight(1.1f);
     }
 

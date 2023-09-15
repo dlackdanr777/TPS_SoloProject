@@ -17,7 +17,7 @@ public class EIdleState : IState
     {
         _playSoundTime = Random.Range(8f, 15f);
         _enemy.Animator.SetBool("IsWalking", false);
-        _enemy.Target = null;
+        _enemy.OnTargetLossHandler();
     }
 
     public void OnUpdate()

@@ -77,7 +77,7 @@ public class EnemyStateMachine
         if (_enemy.FieldOfView.GetTargetTransform() == null)
         {
             _changeTimer += Time.deltaTime;
-            if (_changeTimer > 20)
+            if (_changeTimer > 120)
             {
                 _enemy.Target = _enemy.FieldOfView.GetTargetTransform();
                 return true;

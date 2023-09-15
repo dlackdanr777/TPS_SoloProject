@@ -18,6 +18,8 @@ public class GunController : MonoBehaviour
 
     [SerializeField] private Camera _mainCamera;
 
+    [SerializeField] private LayerMask _hitLayerMask;
+
     private AudioSource _audioSource;
 
     private float _currentFireRate; // 이값이 0이어야 총 발사 가능
@@ -27,6 +29,7 @@ public class GunController : MonoBehaviour
     private float _nowRecoil; //현재 반동
 
     private float _recoilMul; //반동 배수
+
 
     private void Awake()
     {
@@ -103,24 +106,17 @@ public class GunController : MonoBehaviour
                 _nowRecoil = CurrentGun.MaxRecoil;
         }
 
-        //Debug.DrawRay(CurrentGun.MuzzleFlash.transform.position, fireDirection, Color.red, 10000);
-
         RaycastHit hit;
         Ray ray = new Ray(CurrentGun.MuzzleFlash.transform.position, fireDirection);
         float distance = CurrentGun.Range;
 
-        int playerMask = 1 << LayerMask.NameToLayer("Player");
-        int enemyMask = 1 << LayerMask.NameToLayer("Enemy");
-        int bulletMask = 1 << LayerMask.NameToLayer("Bullet");
-        int layerMask = playerMask | enemyMask | bulletMask;
-        layerMask = ~layerMask;
-
-        if (Physics.Raycast(ray, out hit, distance, layerMask))
+        if (Physics.Raycast(ray, out hit, distance, _hitLayerMask))
         {
+            Debug.Log("맞춤");
             Quaternion bulletHoleRotation = Quaternion.LookRotation(ray.direction);
             GameObject bulletHole = ObjectPoolManager.Instance.SpawnBulletHole(hit.point, bulletHoleRotation);
             bulletHole.transform.parent = hit.transform;
-
+            Debug.Log(hit.transform.GetComponent<IHp>());
             if (hit.transform.GetComponent<IHp>() != null)
                OnTargetDamageHendler(hit.transform.GetComponent<IHp>(), CurrentGun.Damage);
         }
@@ -188,18 +184,13 @@ public class GunController : MonoBehaviour
             _nowRecoil = CurrentGun.MinRecoil * _recoilMul;
     }
 
-    public void CrossHairEnable() //크로스헤어를 활성화시키는 함수
+    public void FollowCrossHair()
     {
-        if (!_crossHair.gameObject.activeSelf)
-            _crossHair.gameObject.SetActive(true);
-
         RaycastHit hit;
         Ray ray = _mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f)); //카메라 정중앙에 레이를 위치시킨다
         float distance = CurrentGun.Range;
-        int layerMask = (1 << LayerMask.NameToLayer("Player"));
-        layerMask = ~layerMask;
 
-        if (Physics.Raycast(ray, out hit, distance, layerMask))
+        if (Physics.Raycast(ray, out hit, distance, _hitLayerMask))
         {
             Vector3 hitPos = hit.point;
             float hitDistance = Vector3.Distance(_mainCamera.transform.position, hit.point);
@@ -220,9 +211,16 @@ public class GunController : MonoBehaviour
         }
     }
 
-    public void CrossHairDisable() //크로스헤어를 비활성화 시키는 함수
+    public void EnableCrossHair() //크로스헤어를 활성화시키는 함수
     {
-        _crossHair.gameObject.SetActive(false);
+        _crossHair.Visibility();
+
+       
+    }
+
+    public void DisableCrossHair() //크로스헤어를 비활성화 시키는 함수
+    {
+        _crossHair.Hidden();
     }
 
     public void SetRecoilMul(float value)

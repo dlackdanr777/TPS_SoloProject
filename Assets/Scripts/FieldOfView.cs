@@ -12,6 +12,7 @@ public class FieldOfView : MonoBehaviour
     [SerializeField] LayerMask _obstacleMask;
 
     private List<Collider> _hitTargetList = new List<Collider>();
+    Collider[] Targets = new Collider[0];
     private Coroutine FieldOfViewDetectionRoutine;
 
     private void OnEnable()
@@ -47,16 +48,19 @@ public class FieldOfView : MonoBehaviour
             _hitTargetList.Clear();
             Vector3 myPos = transform.position + Vector3.up;
             Vector3 lookDir = AngleToDir(transform.eulerAngles.y);
-            Collider[] Targets = Physics.OverlapSphere(myPos, _viewRadius, _targetMask);
+            Targets = Physics.OverlapSphere(myPos, _viewRadius, _targetMask);
 
             if (Targets.Length != 0)
             {
                 foreach (Collider EnemyColli in Targets)
                 {
                     Vector3 targetPos = EnemyColli.transform.position + Vector3.up * 1.5f;
+                    float targetDistance = Vector3.Distance(myPos, targetPos);
                     Vector3 targetDir = (targetPos - myPos).normalized;
+
                     float targetAngle = Mathf.Acos(Vector3.Dot(lookDir, targetDir)) * Mathf.Rad2Deg;
-                    if (targetAngle <= _viewAngle * 0.5f && !Physics.Raycast(myPos, targetDir, _viewRadius, _obstacleMask))
+
+                    if (targetAngle <= _viewAngle * 0.5f && !Physics.Raycast(myPos, targetDir, targetDistance, _obstacleMask))
                     {
                         _hitTargetList.Add(EnemyColli);
                     }
@@ -80,6 +84,18 @@ public class FieldOfView : MonoBehaviour
         Debug.DrawRay(myPos, rightDir * _viewRadius, Color.blue);
         Debug.DrawRay(myPos, leftDir * _viewRadius, Color.blue);
         Debug.DrawRay(myPos, lookDir * _viewRadius, Color.cyan);
+
+        if (Targets.Length > 0)
+        {
+            foreach (Collider EnemyColli in Targets)
+            {
+                Vector3 targetPos = EnemyColli.transform.position + Vector3.up * 1.5f;
+                float targetDistance = Vector3.Distance(myPos, targetPos);
+                Vector3 targetDir = (targetPos - myPos).normalized;
+                Debug.DrawRay(myPos, targetDir * targetDistance, Color.red);
+                Debug.Log("Ω√¿€");
+            }
+        }
 
 
     }

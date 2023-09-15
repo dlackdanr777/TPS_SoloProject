@@ -12,6 +12,6 @@ public abstract class ItemData : ScriptableObject
     [SerializeField] protected string _description;
     [SerializeField] protected Sprite _icon;
 
-
     public abstract Item CreateItem();
+
 }

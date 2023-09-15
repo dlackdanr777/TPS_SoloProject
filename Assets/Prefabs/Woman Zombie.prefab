@@ -1813,7 +1813,7 @@ Transform:
   - {fileID: 31045558105143518}
   - {fileID: 6810745704057535398}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7988632609085529867
 Animator:
@@ -1873,13 +1873,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 10
-  _attackRadius: 0.4
+  _attackRadius: 0.6
   _attackLayerMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 16392
   _obstacleMask:
     serializedVersion: 2
-    m_Bits: 1536
+    m_Bits: 19968
 --- !u!114 &3991719177391204701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1904,7 +1904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d63133e8f81203543973c2cda531b664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _debugMode: 1
+  _debugMode: 0
   _viewAngle: 120
   _viewRadius: 20
   _targetMask:
@@ -1912,7 +1912,7 @@ MonoBehaviour:
     m_Bits: 8
   _obstacleMask:
     serializedVersion: 2
-    m_Bits: 1536
+    m_Bits: 3584
 --- !u!195 &1498585553929629781
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2067,11 +2067,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _source: {fileID: 60317213656877745}
-  _clips:
-  - {fileID: 8300000, guid: b47ba8be9f3dd7148909872441cf1944, type: 3}
-  - {fileID: 8300000, guid: 8066c3122cd0b7d45848e117ae747c1a, type: 3}
-  - {fileID: 8300000, guid: 49666a95528772041b868d4ba3e0b287, type: 3}
-  - {fileID: 8300000, guid: 4f11eb6ac73f69d4398687e3ae00653d, type: 3}
+  _idleClips:
+  - {fileID: 8300000, guid: 060864f0da45c0b45a0952d8b6dce170, type: 3}
+  - {fileID: 8300000, guid: 634ec1222f6e17f4aa99d5c83e52ad31, type: 3}
+  - {fileID: 8300000, guid: 2f9d3268a312bd743aa3c225fb20019a, type: 3}
+  - {fileID: 8300000, guid: ea4075fc19c5eaf4aa9119040c859b4d, type: 3}
+  - {fileID: 8300000, guid: 0024de638738e8a41a531293e550ab8e, type: 3}
+  _detectionClips:
+  - {fileID: 8300000, guid: 236e9d90cae0e394180dc850bca5d6c5, type: 3}
+  - {fileID: 8300000, guid: 33b29649e18826d40ba4ae7b581f0f70, type: 3}
+  _trackingClips:
+  - {fileID: 8300000, guid: a56d687578f4fe540b0d8d712215a6fa, type: 3}
+  - {fileID: 8300000, guid: dbaad28258131304d8bc8f7cc7bcb0c9, type: 3}
+  - {fileID: 8300000, guid: a6ba84756179c5a4e989d018b5fd95b8, type: 3}
+  - {fileID: 8300000, guid: d8166453e7504c3458c4787ed46037b0, type: 3}
+  - {fileID: 8300000, guid: fdd92fc2a8ffbe94f914e42bfebeb757, type: 3}
+  _deadClips:
+  - {fileID: 8300000, guid: ed3aaf9570834134689620a7bf34b325, type: 3}
+  - {fileID: 8300000, guid: b0f3900ff57ea1641b55210a9d2c5e65, type: 3}
+  - {fileID: 8300000, guid: 52289b048549a004e888e60d91bdc373, type: 3}
 --- !u!1 &3499544963270234731
 GameObject:
   m_ObjectHideFlags: 0

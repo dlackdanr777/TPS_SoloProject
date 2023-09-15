@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class Inventory : MonoBehaviour
 {
@@ -43,6 +45,30 @@ public class Inventory : MonoBehaviour
             Debug.Log("[Item Databse] 존재하지 않는 ItemID 입니다.");
             return false;
         }
+    }
+
+    public bool UseItemByID(int ID, int amount = 1)
+    {
+        int itemCount = FindItemCountByID(ID);
+        if (itemCount > -1 && itemCount >= amount)
+        {
+            List<Item> items = _inventoryItems.FindAll(x => x.Data.ID == ID);
+            foreach(Item item in items)
+            {
+                if(item.Amount > amount)
+                {
+                    item.Amount -= amount;
+                    UIInventory.UpdateSlotUI(UIInventory.GetSlotByIndex(item.SlotIndex));
+                    return true;
+                }
+            }
+        }
+        else
+        {
+            Debug.Log("소지하고 있는 아이템의 갯수가 부족합니다.");
+        }
+
+        return false;
     }
 
     private bool AddItemAmount(CountableItem item, int amount = 1) //아이템 카운트를 증가시키는 함수
@@ -101,7 +127,6 @@ public class Inventory : MonoBehaviour
         }
     }
 
-
     public Item FindExtraAountItem(Item item) //최대수량이 아닌 아이템을 찾는 함수
     {
         if(item is CountableItem)
@@ -147,6 +172,38 @@ public class Inventory : MonoBehaviour
             }
         }
         return itemBox;
+    }
+
+    /// <summary>
+    /// 아이템 ID를 통해 인벤토리에 해당 아이템이 몇개 있는지 확인하는 함수
+    /// </summary>
+    /// <param name="ID"></param>
+    /// <returns></returns>
+    public int FindItemCountByID(int ID)
+    {
+        List<Item> items = _inventoryItems.FindAll(x => x.Data.ID == ID);
+        int totalAmount = 0;
+        if(items.Count > 0)
+        {
+            if (items[0] is CountableItem)
+            {
+                for (int i = 0, count = items.Count; i < count; i++)
+                {
+                    CountableItem CountableItem = items[i] as CountableItem;
+                    totalAmount += CountableItem.Amount;
+                }
+            }
+            else if (items[0] is EquipmentItem)
+            {
+                totalAmount = items.Count;
+            }
+
+            return totalAmount;
+        }
+        else
+        {
+            return -1;
+        }
     }
 
     public void MergeItem(Item mainItem, Item subItem) //두개의 아이템을 합쳐주는함수

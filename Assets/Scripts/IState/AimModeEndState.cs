@@ -16,7 +16,7 @@ public class AimModeEndState : IUpperState
     public void OnStart()
     {
         _player.Animator.SetBool("AimMode", false);
-        _player.OnAimDisableHandler?.Invoke();
+        _player.OnDisableAimHandler?.Invoke();
     }
 
     public void OnUpdate()

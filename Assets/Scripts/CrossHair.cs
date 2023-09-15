@@ -15,6 +15,8 @@ public class CrossHair : MonoBehaviour
     [Space(10f)]
     [SerializeField] private Image[] _sideCrossHair;
 
+    private bool _isVisibility;
+
     private Coroutine _SideCrossHairEnableRoutine;
 
     private void Start()
@@ -38,6 +40,36 @@ public class CrossHair : MonoBehaviour
         {
             Color color = new Color(0, 1, 0, 0);
             _sideCrossHair[i].color = color;
+        }
+    }
+
+    public void Visibility()
+    {
+        if (_isVisibility == false)
+        {
+            _rightCrossHair.gameObject.SetActive(true);
+            _leftCrossHair.gameObject.SetActive(true);
+            _upCrossHair.gameObject.SetActive(true);
+            _downCrossHair.gameObject.SetActive(true);
+            _isVisibility = true;
+        }
+    }
+
+    public void Hidden()
+    {
+        if (_isVisibility == true)
+        {
+            _rightCrossHair.gameObject.SetActive(false);
+            _leftCrossHair.gameObject.SetActive(false);
+            _upCrossHair.gameObject.SetActive(false);
+            _downCrossHair.gameObject.SetActive(false);
+
+            for (int i = 0; i < _sideCrossHair.Length; i++)
+            {
+                Color color = new Color(0, 1, 0, 0);
+                _sideCrossHair[i].color = color;
+            }
+            _isVisibility = false;
         }
     }
 

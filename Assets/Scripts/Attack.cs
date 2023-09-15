@@ -45,6 +45,7 @@ public class Attack : MonoBehaviour, IAttack
  
     public bool GetCheckPlayerAtAttackRange()
     {
+
         if (_hitColliders.Count > 0)
             return true;
 
@@ -65,7 +66,7 @@ public class Attack : MonoBehaviour, IAttack
             {
                 foreach (Collider EnemyColli in Targets)
                 {
-                    Vector3 targetPos = EnemyColli.transform.position;
+                    Vector3 targetPos = EnemyColli.transform.position + Vector3.up;
                     Vector3 targetDir = (targetPos - myPos).normalized;
                     float targetDistance = Vector3.Distance(targetPos, myPos);
                     if (!Physics.Raycast(myPos, targetDir, targetDistance, _obstacleMask))
@@ -88,6 +89,8 @@ public class Attack : MonoBehaviour, IAttack
             {
                 collider.GetComponent<IHp>().DepleteHp(this, _damage);
                 OnAttackHendler?.Invoke();
+                
+                return;
             }
         }
     }
