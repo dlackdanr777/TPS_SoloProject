@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4495807808351226}
   - component: {fileID: 33480362457367320}
   - component: {fileID: 23472668643114652}
-  m_Layer: 11
+  m_Layer: 17
   m_Name: CeilingTilePieceSmall_A
   m_TagString: Stone
   m_Icon: {fileID: 0}

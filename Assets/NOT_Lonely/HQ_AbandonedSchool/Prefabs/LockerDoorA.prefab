@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33794065205483806}
   - component: {fileID: 23613551347033934}
   - component: {fileID: 65039151112621782}
-  m_Layer: 11
+  m_Layer: 17
   m_Name: LockerDoorA
   m_TagString: Metal
   m_Icon: {fileID: 0}

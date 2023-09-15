@@ -40,8 +40,8 @@ TagManager:
   - DefensiveBuild
   - DefensiveWall
   - DropItem
-  - 
-  - 
+  - OverViewObject
+  - Debris
   - 
   - 
   - 

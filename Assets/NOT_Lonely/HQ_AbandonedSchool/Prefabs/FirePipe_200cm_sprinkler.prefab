@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33216213352404808}
   - component: {fileID: 23156896304108100}
   - component: {fileID: 64547732745002920}
-  m_Layer: 11
+  m_Layer: 17
   m_Name: FirePipe_200cm_sprinkler
   m_TagString: Metal
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4304622750766796}
   - component: {fileID: 205240846659198324}
-  m_Layer: 11
+  m_Layer: 17
   m_Name: Vent_grid_A
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 4794916379389188}
   - component: {fileID: 33635160489842444}
   - component: {fileID: 23127747350468126}
-  m_Layer: 11
+  m_Layer: 17
   m_Name: Vent_grid_B_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 33976387775141432}
   - component: {fileID: 23578439193923850}
   - component: {fileID: 64370219324826158}
-  m_Layer: 11
+  m_Layer: 17
   m_Name: Vent_grid_A_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

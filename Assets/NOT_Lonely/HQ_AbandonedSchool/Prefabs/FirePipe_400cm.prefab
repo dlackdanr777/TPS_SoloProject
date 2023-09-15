@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33973003201391870}
   - component: {fileID: 23547742295048314}
   - component: {fileID: 64580436517813352}
-  m_Layer: 11
+  m_Layer: 17
   m_Name: FirePipe_400cm
   m_TagString: Metal
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4397142675449166}
   - component: {fileID: 33747659259728378}
   - component: {fileID: 23278151367346364}
-  m_Layer: 11
+  m_Layer: 17
   m_Name: LampGymBrokenB_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4365413400533066}
   - component: {fileID: 33902987858399892}
   - component: {fileID: 23088907819227462}
-  m_Layer: 11
+  m_Layer: 17
   m_Name: LampGymBrokenB_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 33490833503336080}
   - component: {fileID: 23281723391410144}
   - component: {fileID: 64926175995265542}
-  m_Layer: 11
+  m_Layer: 17
   m_Name: LampGymBrokenB_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4873725698238336}
   - component: {fileID: 205190143249497056}
-  m_Layer: 11
+  m_Layer: 17
   m_Name: LampGymBrokenB
   m_TagString: Metal
   m_Icon: {fileID: 0}
