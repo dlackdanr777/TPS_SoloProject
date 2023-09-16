@@ -12,6 +12,14 @@ public class PreviewObject : MonoBehaviour
     private int _itemID;
     private int _itemAmount;
 
+    private List<Renderer> _renderers = new List<Renderer>();
+
+    private void Start()
+    {
+        _renderers.Add(transform.GetComponent<Renderer>());
+        foreach (Transform tfChild in transform)
+            _renderers.Add(tfChild.GetComponent<Renderer>());
+    }
 
     private void FixedUpdate()
     {
@@ -34,19 +42,11 @@ public class PreviewObject : MonoBehaviour
             SetColor(_greenMaterial);
     }
 
+
     private void SetColor(Material mat)
     {
-        transform.GetComponent<Renderer>().material = mat;
-        foreach (Transform tfChild in transform)
-        {
-            Material[] newMaterials = new Material[tfChild.GetComponent<Renderer>().materials.Length];
-
-            for (int i = 0, count = newMaterials.Length; i < count; i++)
-                newMaterials[i] = mat;
-
-            tfChild.GetComponent<Renderer>().materials = newMaterials;
-        }
-
+        foreach (var renderer in _renderers)
+            renderer.material = mat;
     }
 
     private void OnTriggerEnter(Collider other)

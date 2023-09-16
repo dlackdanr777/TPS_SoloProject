@@ -10,6 +10,8 @@ public class UIBuild : PopupUI
     [SerializeField] private UIBuildSlot _slotPrefab;
     private UIBuildSlot[] _buildSlot;
 
+
+
     private void Start()
     {
         SetSlots();
@@ -33,6 +35,14 @@ public class UIBuild : PopupUI
     {
         _buildSystem.SelectCraftItem(index);
         CloseButton.onClick?.Invoke();
+    }
+
+    public override void ChildSetActive(bool value)
+    {
+        if (value)
+            _buildSystem.BuildDisable();
+
+        base.ChildSetActive(value);
     }
 
 }

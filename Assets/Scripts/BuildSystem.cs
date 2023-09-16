@@ -16,8 +16,8 @@ public struct Craft
 public class BuildSystem : MonoBehaviour
 {
     [SerializeField] private Craft[] _craftItem;
-    [SerializeField] Camera _camera;
-
+    [SerializeField] private Camera _camera;
+    [SerializeField] private AudioClip _buildSuccessClip;
     private int _craftItemIndex = -1;
     private PreviewObject _PreviewObj;
     private RaycastHit _hit;
@@ -97,14 +97,27 @@ public class BuildSystem : MonoBehaviour
                 else if (Input.GetKeyDown(KeyCode.E))
                     _PreviewObj.transform.eulerAngles += Vector3.up * 30f;
 
-                if (_PreviewObj.isBuildable())
+
+                if (Input.GetMouseButtonDown(0))
                 {
-                    if (Input.GetMouseButtonDown(0))
-                    {          
+                    if (_PreviewObj.isBuildable())
+                    {
                         if (GameManager.Instance.Player.Inventory.UseItemByID(itemId, amount))
+                        {
                             Instantiate(_craftItem[_craftItemIndex].CraftPrefab, _PreviewObj.transform.position, _PreviewObj.transform.rotation);
+                            SoundManager.Instance.PlayAudio(AudioType.Effect, _buildSuccessClip);
+                        }              
+                        else
+                        {
+                            UIManager.Instance.ShowCenterText("건설 재료가 부족합니다.");
+                        }
+                    }
+                    else
+                    {
+                        UIManager.Instance.ShowCenterText("그곳엔 건설할 수 없습니다.");
                     }
                 }
+
             }
         }
     }
