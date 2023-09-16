@@ -15,17 +15,14 @@ public struct Craft
 
 public class BuildSystem : MonoBehaviour
 {
-
-
-    private int _craftItemIndex = -1;
-    private PreviewObject _PreviewObj;
     [SerializeField] private Craft[] _craftItem;
     [SerializeField] Camera _camera;
 
-    [SerializeField] private float _ratetePerSecond;
+    private int _craftItemIndex = -1;
+    private PreviewObject _PreviewObj;
     private RaycastHit _hit;
-    private Ray _ray;
     private LayerMask _layerMask;
+    private Ray _ray;
 
     [SerializeField] private bool _buildingEnable;
 
@@ -39,7 +36,7 @@ public class BuildSystem : MonoBehaviour
 
         if (_buildingEnable)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1))
                 BuildDisable();
         }
 
@@ -65,7 +62,7 @@ public class BuildSystem : MonoBehaviour
 
 
         _craftItemIndex = index;
-        _PreviewObj = Instantiate(_craftItem[_craftItemIndex].PreviewPrefab.gameObject, Vector3.zero, Quaternion.identity).
+        _PreviewObj = Instantiate(_craftItem[_craftItemIndex].PreviewPrefab.gameObject, Vector3.zero, _craftItem[_craftItemIndex].PreviewPrefab.transform.rotation).
             GetComponent<PreviewObject>();
         _buildingEnable = true;
     }

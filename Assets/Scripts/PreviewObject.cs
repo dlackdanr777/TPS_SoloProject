@@ -12,6 +12,7 @@ public class PreviewObject : MonoBehaviour
     private int _itemID;
     private int _itemAmount;
 
+
     private void FixedUpdate()
     {
         ChangeColor();
@@ -50,10 +51,8 @@ public class PreviewObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
         if(other.gameObject.layer != 9 && other.gameObject.layer != 17 && other.gameObject.layer != IGNORE_RAYCAST_LAYER)
         {
-            Debug.Log(other.gameObject.layer);
             _colliders.Add(other);
         }
     }
