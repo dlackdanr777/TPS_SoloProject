@@ -55,10 +55,14 @@ public class Inventory : MonoBehaviour
             List<Item> items = _inventoryItems.FindAll(x => x.Data.ID == ID);
             foreach(Item item in items)
             {
-                if(item.Amount > amount)
+                if(item.Amount >= amount)
                 {
                     item.Amount -= amount;
                     UIInventory.UpdateSlotUI(UIInventory.GetSlotByIndex(item.SlotIndex));
+
+                    if (item.Amount <= 0)
+                        RemoveItem(item);
+                       
                     return true;
                 }
             }

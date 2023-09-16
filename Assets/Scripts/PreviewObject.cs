@@ -9,15 +9,25 @@ public class PreviewObject : MonoBehaviour
     private List<Collider> _colliders = new List<Collider>();
     private const int IGNORE_RAYCAST_LAYER = 2;
 
-    private void Update()
+    private int _itemID;
+    private int _itemAmount;
+
+    private void FixedUpdate()
     {
         ChangeColor();
+    }
 
+    public void SetItem(int id, int Amount)
+    {
+        _itemID = id;
+        _itemAmount = Amount;
     }
 
     private void ChangeColor()
     {
-        if (_colliders.Count > 0)
+        int itemCount = GameManager.Instance.Player.Inventory.FindItemCountByID(_itemID);
+
+        if (_colliders.Count > 0 || itemCount < _itemAmount)
             SetColor(_redMaterial);
         else
             SetColor(_greenMaterial);

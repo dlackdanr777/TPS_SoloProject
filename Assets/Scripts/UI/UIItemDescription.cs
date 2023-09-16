@@ -14,7 +14,6 @@ public class UIItemDescription : PopupUI
     private void Start()
     {
         _uiSize = GetComponent<RectTransform>().sizeDelta;
-        Debug.Log(_uiSize);
     }
     public void UpdateUI(Item item)
     {

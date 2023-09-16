@@ -4,11 +4,13 @@ using UnityEngine;
 public class PopupUIManager : SingletonHandler<PopupUIManager>
 {
     public PopupUI UIInventory;
+    public PopupUI UIBuild;
 
     public bool PopupEnable;
     //Å°ÀÔ·Â
     private KeyCode EscapeKey = KeyCode.Escape;
     private KeyCode InventoryKey = KeyCode.I;
+    private KeyCode BuildKey = KeyCode.B;
 
     private LinkedList<PopupUI> _activePopupList;
     private List<PopupUI> _allPopupList;
@@ -32,12 +34,13 @@ public class PopupUIManager : SingletonHandler<PopupUIManager>
         }
 
         TogglekeyDownAction(InventoryKey, UIInventory);
+        TogglekeyDownAction(BuildKey, UIBuild);
     }
 
     private void Init()
     {
         _allPopupList = new List<PopupUI>()
-        { UIInventory };
+        { UIInventory, UIBuild };
 
         foreach (var popup in _allPopupList)
         {

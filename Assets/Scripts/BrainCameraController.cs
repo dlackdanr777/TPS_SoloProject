@@ -11,28 +11,38 @@ public class BrainCameraController : MonoBehaviour
     Ray _ray;
     RaycastHit _hit;
 
-    ObstacleBuild _obstacleBuild;
+    Iinteractive _interactive;
+
     private void Update()
     {
         _ray = _camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
         if (Physics.Raycast(_ray, out _hit, _rayDistance, _layerMask))
         {
-            if (_obstacleBuild == null)
+            if (_interactive == null)
             {
-                if (_hit.transform.GetComponent<ObstacleBuild>() != null)
+                if (_hit.transform.GetComponent<Iinteractive>() != null)
                 {
-                    _obstacleBuild = _hit.transform.GetComponent<ObstacleBuild>();
-                    _obstacleBuild.ShowObstacle();
+                    _interactive = _hit.transform.GetComponent<Iinteractive>();
+                    _interactive.EnableInteraction();
                 }
             }
         }
         else
         {
-            if(_obstacleBuild != null)
+            if(_interactive != null)
             {
-                _obstacleBuild.HiddenObstacle();
-                _obstacleBuild = null;
+                _interactive.DisableInteraction();
+                _interactive = null;
             }
         }
+
+        if(_interactive != null)
+        {
+            if (Input.GetKeyDown(_interactive.InputKey))
+            {
+                _interactive.Interact();
+            }
+        }
+
     }
 }

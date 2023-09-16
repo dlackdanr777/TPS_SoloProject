@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using static UnityEditor.Progress;
 
-public class ObstacleBuild : MonoBehaviour
+public class ObstacleBuild : MonoBehaviour, Iinteractive
 {
     [SerializeField] private GameObject _obstaclePrefab;
     [SerializeField] private GameObject[] _obstacleBluePrint;
@@ -16,6 +15,10 @@ public class ObstacleBuild : MonoBehaviour
     private Inventory _inventory;
 
     private bool _buildEnable;
+
+    public KeyCode InputKey => _inputKey;
+    private KeyCode _inputKey = KeyCode.B;
+
     public void Start()
     {
         _obstacle = new GameObject[_obstacleBluePrint.Length];
@@ -32,16 +35,6 @@ public class ObstacleBuild : MonoBehaviour
         }
     }
 
-    public void Update()
-    {
-        if (_buildEnable)
-        {
-            if (Input.GetKeyDown(KeyCode.B))
-            {
-                BuildObstacle();
-            }
-        }
-    }
 
     public bool CheckBuildEnable()
     {
@@ -106,5 +99,23 @@ public class ObstacleBuild : MonoBehaviour
                 _obstacleBluePrint[i].SetActive(false);
         }
         _text.gameObject.SetActive(false);
+    }
+
+    public void Interact()
+    {
+        if (_buildEnable)
+        {
+            BuildObstacle();
+        }
+    }
+
+    public void EnableInteraction()
+    {
+        ShowObstacle();
+    }
+
+    public void DisableInteraction()
+    {
+        HiddenObstacle();
     }
 }

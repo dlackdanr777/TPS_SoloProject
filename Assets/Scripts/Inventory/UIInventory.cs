@@ -90,6 +90,7 @@ public class UIInventory : PopupUI
 
     public void UpdateSlotUI(UIInventorySlot slot)
     {
+
         slot.UpdateUI(slot._item);
     }
 
