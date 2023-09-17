@@ -43,8 +43,6 @@ GameObject:
   - component: {fileID: 33297332038449096}
   - component: {fileID: 23830053341659188}
   - component: {fileID: 64471616213881160}
-  - component: {fileID: 65364192269918078}
-  - component: {fileID: 114094495633418936}
   - component: {fileID: 111118578480680172}
   m_Layer: 11
   m_Name: LockerB
@@ -141,69 +139,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 0ac179707bd88df41b7307b4d980333f, type: 3}
---- !u!65 &65364192269918078
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1160007385968420}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.35000008, y: 1.6999999, z: 1.3132013}
-  m_Center: {x: 8.474677e-18, y: 0.84999996, z: 0.43892014}
---- !u!114 &114094495633418936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1160007385968420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53902f99ae0788849b5bec608f908713, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerHeadTag: MainCamera
-  knob: {fileID: 4882309297509510}
-  controls:
-    openingSpeed: 1
-    closingSpeed: 1.3
-    closeStartFrom: 0.33
-    openMethod: 0
-    openButton: 101
-    autoClose: 0
-    OpenedAtStart: 0
-  AnimationNames:
-    OpeningAnim: LockerDoor_open
-    LockedAnim: MainDoor_locked
-  doorSounds:
-    enabled: 1
-    open: {fileID: 0}
-    close: {fileID: 0}
-    closed: {fileID: 0}
-    volume: 1
-    pitchRandom: 0.2
-  doorTexts:
-    enabled: 0
-    openingText: Press [BUTTON] to open
-    closingText: Press [BUTTON] to close
-    lockText: You need a key!
-    TextPrefab: {fileID: 0}
-  keySystem:
-    enabled: 0
-    isUnlock: 0
-    LockPrefab: {fileID: 0}
 --- !u!111 &111118578480680172
 Animation:
   m_ObjectHideFlags: 0

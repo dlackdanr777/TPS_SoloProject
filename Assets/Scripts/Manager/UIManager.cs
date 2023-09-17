@@ -6,12 +6,25 @@ using UnityEngine;
 public class UIManager : SingletonHandler<UIManager>
 {
     [SerializeField] private TextMeshProUGUI _centerText;
+    [SerializeField] private TextMeshProUGUI _aimRightText;
     private Coroutine ShowCenterTextRoutine;
 
     public void Start()
     {
         _centerText.alpha = 0;
     }
+
+    public void ShowRightText(string textContent)
+    {
+        _aimRightText.alpha = 1;
+        _aimRightText.text = textContent;
+    }
+
+    public void HiddenRightText()
+    {
+        _aimRightText.alpha = 0;
+    }
+
 
     public void ShowCenterText(string textContent)
     {

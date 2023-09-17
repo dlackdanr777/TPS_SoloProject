@@ -127,8 +127,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uCC45\uC0C1"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fb335d428adb8044b81cdbb58a9d4bd3, type: 2}
-  m_sharedMaterial: {fileID: 5795875643310853637, guid: fb335d428adb8044b81cdbb58a9d4bd3,
+  m_fontAsset: {fileID: 11400000, guid: e3e951040e509844ab6768ba42b3b06b, type: 2}
+  m_sharedMaterial: {fileID: -4314753433807058648, guid: e3e951040e509844ab6768ba42b3b06b,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -428,7 +428,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 69, y: -36.6}
-  m_SizeDelta: {x: 100, y: 60}
+  m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5329751936952969421
 CanvasRenderer:
@@ -460,8 +460,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uBAA9\uC7AC  X10"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fb335d428adb8044b81cdbb58a9d4bd3, type: 2}
-  m_sharedMaterial: {fileID: 5795875643310853637, guid: fb335d428adb8044b81cdbb58a9d4bd3,
+  m_fontAsset: {fileID: 11400000, guid: 9aeb9944a0bc4284dae28a0aa95335bc, type: 2}
+  m_sharedMaterial: {fileID: 169273435008575768, guid: 9aeb9944a0bc4284dae28a0aa95335bc,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -486,8 +486,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -639,7 +639,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -91.2, y: -69.5}
+  m_AnchoredPosition: {x: -91.2, y: -76}
   m_SizeDelta: {x: 80, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2944818212495259081
@@ -672,8 +672,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC81C\uC791 \uC7AC\uB8CC"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fb335d428adb8044b81cdbb58a9d4bd3, type: 2}
-  m_sharedMaterial: {fileID: 5795875643310853637, guid: fb335d428adb8044b81cdbb58a9d4bd3,
+  m_fontAsset: {fileID: 11400000, guid: 9aeb9944a0bc4284dae28a0aa95335bc, type: 2}
+  m_sharedMaterial: {fileID: 169273435008575768, guid: 9aeb9944a0bc4284dae28a0aa95335bc,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -698,15 +698,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

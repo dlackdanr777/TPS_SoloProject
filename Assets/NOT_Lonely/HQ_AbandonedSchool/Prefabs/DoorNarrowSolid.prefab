@@ -215,8 +215,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4944102135447920}
   - component: {fileID: 111956634575385480}
-  - component: {fileID: 114097202976587684}
-  - component: {fileID: 65956844613578254}
   m_Layer: 11
   m_Name: DoorNarrowSolid
   m_TagString: Wood
@@ -257,66 +255,3 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 1
---- !u!114 &114097202976587684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838814048331682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53902f99ae0788849b5bec608f908713, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerHeadTag: MainCamera
-  knob: {fileID: 4027093045467010}
-  controls:
-    openingSpeed: 1
-    closingSpeed: 1.3
-    closeStartFrom: 0.33
-    openMethod: 0
-    openButton: 101
-    autoClose: 0
-    OpenedAtStart: 0
-  AnimationNames:
-    OpeningAnim: DoorNarrow_open
-    LockedAnim: MainDoor_locked
-  doorSounds:
-    enabled: 1
-    open: {fileID: 0}
-    close: {fileID: 0}
-    closed: {fileID: 0}
-    volume: 1
-    pitchRandom: 0.2
-  doorTexts:
-    enabled: 0
-    openingText: Press [BUTTON] to open
-    closingText: Press [BUTTON] to close
-    lockText: You need a key!
-    TextPrefab: {fileID: 0}
-  keySystem:
-    enabled: 0
-    isUnlock: 0
-    LockPrefab: {fileID: 0}
---- !u!65 &65956844613578254
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838814048331682}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.16, y: 2.2050257, z: 3.2522357}
-  m_Center: {x: 0, y: 1.1118892, z: -0.13111877}

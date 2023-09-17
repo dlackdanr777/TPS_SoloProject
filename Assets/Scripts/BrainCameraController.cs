@@ -38,8 +38,10 @@ public class BrainCameraController : MonoBehaviour
 
         if(_interactive != null)
         {
+
             if (Input.GetKeyDown(_interactive.InputKey))
             {
+                Debug.Log("½ÇÇà");
                 _interactive.Interact();
             }
         }
