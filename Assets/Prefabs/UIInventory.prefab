@@ -204,7 +204,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 8
     m_Bottom: 0
   m_ChildAlignment: 1
   m_StartCorner: 0
@@ -13995,6 +13995,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 21890827132101077}
     m_Modifications:
+    - target: {fileID: 1680750132261681305, guid: 3394969c9db729348a356eb62087df27,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680750132261681305, guid: 3394969c9db729348a356eb62087df27,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9e3605e7f019a70429839ab633703d72,
+        type: 3}
     - target: {fileID: 2132027124697451331, guid: 3394969c9db729348a356eb62087df27,
         type: 3}
       propertyPath: m_AnchoredPosition.y

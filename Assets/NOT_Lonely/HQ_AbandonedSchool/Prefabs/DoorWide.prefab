@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 65027856492793730}
   m_Layer: 11
   m_Name: Joint_L
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 81
@@ -51,8 +51,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.48551273, y: 2.118874, z: 0.040575966}
-  m_Center: {x: -0.23973036, y: 1.0941269, z: -0.023948718}
+  m_Size: {x: 0.48551273, y: 2.118874, z: 0.06492774}
+  m_Center: {x: -0.23973036, y: 1.0941269, z: -0.036124587}
 --- !u!1 &1240320712136106
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 4789210562791634}
   m_Layer: 14
   m_Name: doorKnob
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 81
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4950989419810648}
   m_Layer: 11
   m_Name: DoorWide
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 81
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 23849371951926230}
   m_Layer: 14
   m_Name: Glass
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 81
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 4784729806358316}
   m_Layer: 14
   m_Name: PushHandle
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 81
@@ -332,10 +332,11 @@ GameObject:
   - component: {fileID: 4136039640849760}
   - component: {fileID: 65941155204400440}
   - component: {fileID: 6399900533653626717}
+  - component: {fileID: 3849575175171339147}
   - component: {fileID: 161417109336356066}
   m_Layer: 14
   m_Name: Joint_R
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -377,8 +378,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0196574, y: 2.118874, z: 0.040575966}
-  m_Center: {x: 0.5071532, y: 1.094127, z: -0.023948718}
+  m_Size: {x: 1.0196574, y: 2.118874, z: 0.056447666}
+  m_Center: {x: 0.50715315, y: 1.0941269, z: -0.03188455}
 --- !u!114 &6399900533653626717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,6 +396,21 @@ MonoBehaviour:
   _audioSource: {fileID: 2406665258824772808}
   _openClip: {fileID: 8300000, guid: 338bfc10da542c749b15e719564ec6d2, type: 3}
   _closeClip: {fileID: 8300000, guid: d3f29e36d1ee8254ba55cc038a92f131, type: 3}
+--- !u!114 &3849575175171339147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820688689350740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e7050d70f019148b6458fbd58f5b79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHp: 300
+  _minHp: 0
+  _debrisPrefub: {fileID: 0}
 --- !u!208 &161417109336356066
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -405,11 +421,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.5098285, y: 1.059437, z: 0.020287985}
+  m_Extents: {x: 0.5098285, y: 1.059437, z: 0.028223835}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0.5071532, y: 1.094127, z: -0.02394872}
+  m_Center: {x: 0.5071532, y: 1.094127, z: -0.03188455}
   m_TimeToStationary: 0.01
 --- !u!1 &1890524825438222
 GameObject:

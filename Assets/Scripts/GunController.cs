@@ -87,7 +87,6 @@ public class GunController : MonoBehaviour
         PlaySound(CurrentGun.FireSound);
         CurrentGun.MuzzleFlash.Play();
         _playerAnimator.SetTrigger("Fire");
-        Debug.Log("총알 발사");
 
         float xError = GetRandomNormalDistribution(0f, _nowRecoil);
         float yError = GetRandomNormalDistribution(0f, _nowRecoil);
@@ -116,7 +115,6 @@ public class GunController : MonoBehaviour
             Quaternion bulletHoleRotation = Quaternion.LookRotation(ray.direction);
             GameObject bulletHole = ObjectPoolManager.Instance.SpawnBulletHole(hit.point, bulletHoleRotation);
             bulletHole.transform.parent = hit.transform;
-            Debug.Log(hit.transform.GetComponent<IHp>());
             if (hit.transform.GetComponent<IHp>() != null)
                OnTargetDamageHendler(hit.transform.GetComponent<IHp>(), CurrentGun.Damage);
         }

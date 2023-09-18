@@ -9,6 +9,7 @@ public abstract class ItemData : ScriptableObject
 
     [SerializeField] protected int _id;
     [SerializeField] protected string _name;
+    [TextArea]
     [SerializeField] protected string _description;
     [SerializeField] protected Sprite _icon;
 
