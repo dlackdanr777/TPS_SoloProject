@@ -1088,14 +1088,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6922905832094351325}
+  - component: {fileID: 8316129803491266194}
+  - component: {fileID: 1749606777678732229}
+  - component: {fileID: 965168047732495755}
+  - component: {fileID: 8389139103176532207}
   - component: {fileID: 1727509648781147750}
   - component: {fileID: 2758386012689585671}
   - component: {fileID: 7345855696676998947}
   - component: {fileID: 5480065800101087677}
-  - component: {fileID: 8316129803491266194}
-  - component: {fileID: 8389139103176532207}
-  - component: {fileID: 1749606777678732229}
-  - component: {fileID: 965168047732495755}
   - component: {fileID: 7913423427151874699}
   m_Layer: 7
   m_Name: BasicZombie
@@ -1122,83 +1122,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1727509648781147750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2866469778005338699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f178e2806fa4f824a9584eb3a2d1d29d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ZombieType: 0
-  AudioSource: {fileID: 8389139103176532207}
-  Navmesh: {fileID: 7345855696676998947}
-  Animator: {fileID: 8316129803491266194}
-  ZombieSounds: {fileID: 7913423427151874699}
-  FieldOfView: {fileID: 5480065800101087677}
-  Attack: {fileID: 2758386012689585671}
-  Target: {fileID: 0}
-  _capsuleCollider: {fileID: 965168047732495755}
-  _deadBloodParticle: {fileID: 4144078292747427626}
-  _maxHp: 50
-  _minHp: 0
---- !u!114 &2758386012689585671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2866469778005338699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0503bf3b73447d64cb434c4b8baefeb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 3
-  _attackRadius: 0.5
-  _attackLayerMask:
-    serializedVersion: 2
-    m_Bits: 16392
-  _obstacleMask:
-    serializedVersion: 2
-    m_Bits: 19968
---- !u!114 &7345855696676998947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2866469778005338699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcc12b501eb1a8048b017a5a92f41d7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5480065800101087677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2866469778005338699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d63133e8f81203543973c2cda531b664, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _debugMode: 0
-  _viewAngle: 120
-  _viewRadius: 20
-  _targetMask:
-    serializedVersion: 2
-    m_Bits: 8
-  _obstacleMask:
-    serializedVersion: 2
-    m_Bits: 3584
 --- !u!95 &8316129803491266194
 Animator:
   serializedVersion: 5
@@ -1220,6 +1143,51 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!195 &1749606777678732229
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2866469778005338699}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.3
+  m_Speed: 0.05
+  m_Acceleration: 20
+  avoidancePriority: 50
+  m_AngularSpeed: 480
+  m_StoppingDistance: 0.1
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.8
+  m_BaseOffset: -0.011
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 1
+--- !u!136 &965168047732495755
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2866469778005338699}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.25
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!82 &8389139103176532207
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1316,51 +1284,83 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!195 &1749606777678732229
-NavMeshAgent:
+--- !u!114 &1727509648781147750
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2866469778005338699}
   m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.3
-  m_Speed: 0.05
-  m_Acceleration: 20
-  avoidancePriority: 50
-  m_AngularSpeed: 480
-  m_StoppingDistance: 0.1
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.8
-  m_BaseOffset: -0.011
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 1
---- !u!136 &965168047732495755
-CapsuleCollider:
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f178e2806fa4f824a9584eb3a2d1d29d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ZombieType: 0
+  AudioSource: {fileID: 8389139103176532207}
+  Navmesh: {fileID: 7345855696676998947}
+  Animator: {fileID: 8316129803491266194}
+  ZombieSounds: {fileID: 7913423427151874699}
+  FieldOfView: {fileID: 5480065800101087677}
+  Attack: {fileID: 2758386012689585671}
+  Target: {fileID: 0}
+  _capsuleCollider: {fileID: 965168047732495755}
+  _deadBloodParticle: {fileID: 4144078292747427626}
+  _maxHp: 50
+  _minHp: 0
+--- !u!114 &2758386012689585671
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2866469778005338699}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.25
-  m_Height: 1.8
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.9, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0503bf3b73447d64cb434c4b8baefeb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 3
+  _attackRadius: 0.5
+  _attackLayerMask:
+    serializedVersion: 2
+    m_Bits: 16392
+  _obstacleMask:
+    serializedVersion: 2
+    m_Bits: 19968
+--- !u!114 &7345855696676998947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2866469778005338699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcc12b501eb1a8048b017a5a92f41d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5480065800101087677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2866469778005338699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63133e8f81203543973c2cda531b664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _debugMode: 0
+  _viewAngle: 120
+  _viewRadius: 20
+  _targetMask:
+    serializedVersion: 2
+    m_Bits: 8
+  _obstacleMask:
+    serializedVersion: 2
+    m_Bits: 3584
 --- !u!114 &7913423427151874699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1397,6 +1397,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bddbeaa0c71575b42a10497765cbb3c6, type: 3}
   - {fileID: 8300000, guid: 62851ef76a39e6c41a8213f8cd1adfd1, type: 3}
   - {fileID: 8300000, guid: 0d0552707d6ffdd418d0fdda63cf3953, type: 3}
+  _attackClips:
+  - {fileID: 8300000, guid: d90a76521518317418bb2ff3503307ec, type: 3}
+  - {fileID: 8300000, guid: 40dc1b4be5fef734c9cf541caf5da988, type: 3}
+  - {fileID: 8300000, guid: a0854a004bd66d946976b5c6dec56b31, type: 3}
+  - {fileID: 8300000, guid: 826d542a98ac94c4b9735eadbbf8c71a, type: 3}
+  - {fileID: 8300000, guid: 753deaad9cdeb2d43bf8375e4923e050, type: 3}
   _deadClips:
   - {fileID: 8300000, guid: ea98f92e029c80a4385f25e47d21aa71, type: 3}
   - {fileID: 8300000, guid: 342c14b0196f586489c230f2f7a6d2fb, type: 3}

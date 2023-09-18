@@ -1,4 +1,5 @@
 
+using UnityEngine;
 public class EAttackState : IState
 {
     private Enemy _enemy;
@@ -13,6 +14,7 @@ public class EAttackState : IState
     public void OnStart()
     {
         _enemy.Animator.SetBool("IsAttack", true);
+        _enemy.ZombieSounds.PlayZombieSoundClip(ZombieSounds.ZombieSoundType.Attack);
     }
 
     public void OnUpdate()
@@ -23,6 +25,7 @@ public class EAttackState : IState
     public void OnFixedUpdate()
     {
         _enemy.OnTargetFollowedHandler?.Invoke();
+        PlaySound();
     }
 
     public void OnStateUpdate()
@@ -34,5 +37,19 @@ public class EAttackState : IState
     public void OnExit()
     {
         _enemy.Animator.SetBool("IsAttack", false);
+    }
+
+
+    private float _playSoundTime = 10;
+    private float _playSoundTimer;
+
+    private void PlaySound()
+    {
+        if (_playSoundTimer > _playSoundTime)
+        {
+            _enemy.ZombieSounds.PlayZombieSoundClip(ZombieSounds.ZombieSoundType.Idle);
+            _playSoundTime = Random.Range(3f, 4f);
+            _playSoundTimer = 0;
+        }
     }
 }

@@ -25,6 +25,7 @@ public class UIBuildSlot : MonoBehaviour
         _ingredientText.text = _itemName;
         _ingredientText.text += "  " + itemCount + "/" + _itemAmount;
     }
+
     public void UpdateUI(Craft craft)
     {
         _iconImage.sprite = craft.Sprite;

@@ -9,6 +9,7 @@ public class ZombieSounds : MonoBehaviour
         Idle,
         Detection,
         Tracking,
+        Attack,
         Dead,
         Length
     }
@@ -17,6 +18,7 @@ public class ZombieSounds : MonoBehaviour
     [SerializeField] private AudioClip[] _idleClips;
     [SerializeField] private AudioClip[] _detectionClips;
     [SerializeField] private AudioClip[] _trackingClips;
+    [SerializeField] private AudioClip[] _attackClips;
     [SerializeField] private AudioClip[] _deadClips;
 
     /// <summary>
@@ -35,6 +37,9 @@ public class ZombieSounds : MonoBehaviour
                 break;
             case (int)ZombieSoundType.Tracking:
                 _source.clip = _trackingClips[Random.Range(0, _trackingClips.Length)];
+                break;
+            case (int)ZombieSoundType.Attack:
+                _source.clip = _attackClips[Random.Range(0, _attackClips.Length)];
                 break;
             case (int)ZombieSoundType.Dead:
                 _source.clip = _deadClips[Random.Range(0, _deadClips.Length)];

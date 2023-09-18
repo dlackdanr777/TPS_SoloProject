@@ -396,6 +396,8 @@ MonoBehaviour:
   _audioSource: {fileID: 2406665258824772808}
   _openClip: {fileID: 8300000, guid: 338bfc10da542c749b15e719564ec6d2, type: 3}
   _closeClip: {fileID: 8300000, guid: d3f29e36d1ee8254ba55cc038a92f131, type: 3}
+  _lockClip: {fileID: 8300000, guid: f03382335ea0d5144b39af637398ec53, type: 3}
+  _isLocked: 0
 --- !u!114 &3849575175171339147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,7 +462,7 @@ Transform:
   - {fileID: 4950989419810648}
   - {fileID: 4596974785495678}
   m_Father: {fileID: 0}
-  m_RootOrder: 532
+  m_RootOrder: 531
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!111 &111899439316446258
 Animation:

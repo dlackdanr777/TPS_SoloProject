@@ -58,15 +58,21 @@ public class UIInventorySlot : MonoBehaviour, IPointerClickHandler, IBeginDragHa
         { 
             if(_item != null)
             {
-                if(_item is IEquipmentItem) //장착아이템이라면
+                if (_item is IUsableItem) // 소비아이템이라면
+                {
+                    IUsableItem uItem = _item as IUsableItem;
+                    uItem.Use();
+                }
+
+                else if (_item is CountableItem)
+                {
+                    _uiInventory.UiDivItem.SetActive(_item);
+                }
+                else if(_item is IEquipmentItem) //장착아이템이라면
                 {
                     //장착시키는 코드를 작성
                 }
-                else if( _item is IUsableItem) // 소비아이템이라면
-                {
-                    //소비시키는 코드를 작성
-                    _uiInventory.UiDivItem.SetActive(_item);
-                }
+
             }
         }
     }

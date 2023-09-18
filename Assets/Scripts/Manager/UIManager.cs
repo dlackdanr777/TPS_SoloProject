@@ -32,7 +32,7 @@ public class UIManager : SingletonHandler<UIManager>
         if(ShowCenterTextRoutine != null)
             StopCoroutine(ShowCenterTextRoutine);
 
-        StartCoroutine(ShowText(_centerText, textContent));
+        ShowCenterTextRoutine = StartCoroutine(ShowText(_centerText, textContent));
     }
 
     private IEnumerator ShowText(TextMeshProUGUI tmpText, string textContent)
@@ -40,7 +40,7 @@ public class UIManager : SingletonHandler<UIManager>
         tmpText.alpha = 1.0f;
         tmpText.text = textContent;
 
-        yield return YieldCache.WaitForSeconds(1);
+        yield return YieldCache.WaitForSeconds(2);
 
         while (tmpText.alpha > 0)
         {

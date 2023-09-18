@@ -1776,13 +1776,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1813132716804433857}
   - component: {fileID: 7988632609085529867}
+  - component: {fileID: 60317213656877745}
+  - component: {fileID: 1498585553929629781}
+  - component: {fileID: 547724573895937244}
   - component: {fileID: 4394464893377087925}
   - component: {fileID: 4842202720404019701}
   - component: {fileID: 3991719177391204701}
   - component: {fileID: 5949565129537125161}
-  - component: {fileID: 1498585553929629781}
-  - component: {fileID: 60317213656877745}
-  - component: {fileID: 547724573895937244}
   - component: {fileID: 5908635945709729218}
   m_Layer: 7
   m_Name: Woman Zombie
@@ -1836,105 +1836,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4394464893377087925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3329346125740517128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f178e2806fa4f824a9584eb3a2d1d29d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ZombieType: 0
-  AudioSource: {fileID: 60317213656877745}
-  Navmesh: {fileID: 3991719177391204701}
-  Animator: {fileID: 7988632609085529867}
-  ZombieSounds: {fileID: 5908635945709729218}
-  FieldOfView: {fileID: 5949565129537125161}
-  Attack: {fileID: 4842202720404019701}
-  Target: {fileID: 0}
-  _capsuleCollider: {fileID: 547724573895937244}
-  _deadBloodParticle: {fileID: 3652545600070327925}
-  _maxHp: 80
-  _minHp: 0
---- !u!114 &4842202720404019701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3329346125740517128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0503bf3b73447d64cb434c4b8baefeb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 10
-  _attackRadius: 0.6
-  _attackLayerMask:
-    serializedVersion: 2
-    m_Bits: 16392
-  _obstacleMask:
-    serializedVersion: 2
-    m_Bits: 19968
---- !u!114 &3991719177391204701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3329346125740517128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcc12b501eb1a8048b017a5a92f41d7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5949565129537125161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3329346125740517128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d63133e8f81203543973c2cda531b664, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _debugMode: 0
-  _viewAngle: 120
-  _viewRadius: 20
-  _targetMask:
-    serializedVersion: 2
-    m_Bits: 8
-  _obstacleMask:
-    serializedVersion: 2
-    m_Bits: 3584
---- !u!195 &1498585553929629781
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3329346125740517128}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.3
-  m_Speed: 0.05
-  m_Acceleration: 20
-  avoidancePriority: 50
-  m_AngularSpeed: 1080
-  m_StoppingDistance: 0.1
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 0
-  m_AutoRepath: 1
-  m_Height: 1.8
-  m_BaseOffset: -0.011
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 1
 --- !u!82 &60317213656877745
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2031,6 +1932,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!195 &1498585553929629781
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3329346125740517128}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.3
+  m_Speed: 0.05
+  m_Acceleration: 20
+  avoidancePriority: 50
+  m_AngularSpeed: 1080
+  m_StoppingDistance: 0.1
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 0
+  m_AutoRepath: 1
+  m_Height: 1.8
+  m_BaseOffset: -0.011
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 1
 --- !u!136 &547724573895937244
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2054,6 +1977,83 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &4394464893377087925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3329346125740517128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f178e2806fa4f824a9584eb3a2d1d29d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ZombieType: 0
+  AudioSource: {fileID: 60317213656877745}
+  Navmesh: {fileID: 3991719177391204701}
+  Animator: {fileID: 7988632609085529867}
+  ZombieSounds: {fileID: 5908635945709729218}
+  FieldOfView: {fileID: 5949565129537125161}
+  Attack: {fileID: 4842202720404019701}
+  Target: {fileID: 0}
+  _capsuleCollider: {fileID: 547724573895937244}
+  _deadBloodParticle: {fileID: 3652545600070327925}
+  _maxHp: 80
+  _minHp: 0
+--- !u!114 &4842202720404019701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3329346125740517128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0503bf3b73447d64cb434c4b8baefeb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 5
+  _attackRadius: 0.6
+  _attackLayerMask:
+    serializedVersion: 2
+    m_Bits: 16392
+  _obstacleMask:
+    serializedVersion: 2
+    m_Bits: 3584
+--- !u!114 &3991719177391204701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3329346125740517128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcc12b501eb1a8048b017a5a92f41d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5949565129537125161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3329346125740517128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63133e8f81203543973c2cda531b664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _debugMode: 0
+  _viewAngle: 120
+  _viewRadius: 20
+  _targetMask:
+    serializedVersion: 2
+    m_Bits: 8
+  _obstacleMask:
+    serializedVersion: 2
+    m_Bits: 3584
 --- !u!114 &5908635945709729218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2082,6 +2082,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a6ba84756179c5a4e989d018b5fd95b8, type: 3}
   - {fileID: 8300000, guid: d8166453e7504c3458c4787ed46037b0, type: 3}
   - {fileID: 8300000, guid: fdd92fc2a8ffbe94f914e42bfebeb757, type: 3}
+  _attackClips:
+  - {fileID: 8300000, guid: 33a7fe13a24e4074bae34cffbf7c0816, type: 3}
+  - {fileID: 8300000, guid: 84a36fce895b2484c9cf3ba1b6cbfc66, type: 3}
+  - {fileID: 8300000, guid: f7373b7470f2639408f54344e168561f, type: 3}
+  - {fileID: 8300000, guid: 9f27a3f2e100f894a8d665092bff0966, type: 3}
+  - {fileID: 8300000, guid: 706b26c8941fba24f80dcc436fd2592b, type: 3}
   _deadClips:
   - {fileID: 8300000, guid: ed3aaf9570834134689620a7bf34b325, type: 3}
   - {fileID: 8300000, guid: b0f3900ff57ea1641b55210a9d2c5e65, type: 3}

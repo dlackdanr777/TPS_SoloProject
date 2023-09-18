@@ -275,6 +275,18 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void SubItem(Item item, int amount = 1)
+    {
+        if (_inventoryItems.Contains(item))
+        {
+            item.Amount -= amount;
+            if (item.Amount <= 0)
+                RemoveItem(item);
+            else
+                UIInventory.GetSlotByIndex(item.SlotIndex).UpdateUI(item);
+        }
+    }
+
     public void DivItem(Item item, int Amount) //하나의 아이템을 둘로 나눠주는 함수
     {
         if (item != null)
