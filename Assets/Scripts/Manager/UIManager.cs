@@ -12,7 +12,6 @@ public class UIManager : SingletonHandler<UIManager>
     public void Start()
     {
         _centerText.alpha = 0;
-        _aimRightText.alpha = 0;
     }
 
     public void ShowRightText(string textContent)
