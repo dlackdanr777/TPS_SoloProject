@@ -398,6 +398,7 @@
 "Assets/Scripts/GunController.cs"
 "Assets/Scripts/HitPart.cs"
 "Assets/Scripts/InGame.cs"
+"Assets/Scripts/InGameTrigger.cs"
 "Assets/Scripts/Interface/IAttack.cs"
 "Assets/Scripts/Interface/IHp.cs"
 "Assets/Scripts/Interface/Iinteractive.cs"

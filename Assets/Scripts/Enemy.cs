@@ -48,7 +48,9 @@ public class Enemy : MonoBehaviour, IHp
     public Attack Attack;
     
     public Transform Target;
-    
+
+    public bool IsDead => _isDead;
+
     [SerializeField] private CapsuleCollider _capsuleCollider;
     [SerializeField] private ParticleSystem _deadBloodParticle;
 

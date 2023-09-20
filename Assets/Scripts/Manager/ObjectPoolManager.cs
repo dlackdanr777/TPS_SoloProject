@@ -93,8 +93,12 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
         }
         GameObject zombie = _zombieStruct[(int)zombieType].Pool.Dequeue();
         zombie.SetActive(true);
+        Enemy enemy = zombie.GetComponent<Enemy>();
+        enemy.Navmesh.NaveMeshEnabled(false);
         zombie.transform.position = pos;
         zombie.transform.rotation = rot;
+        enemy.Navmesh.NaveMeshEnabled(true);
+        enemy.Target = GameManager.Instance.Player.transform;
     }
 
     public IEnumerator ZombieDisable(Enemy enemy)
@@ -108,14 +112,17 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
     public int ZombieCounting()
     {
         int zombieCount = 0;
-        for(int i = 0, count = (int)ZombieType.Count; i <  count; i++)
+        for(int i = 0, count = (int)ZombieType.Count - 1; i <  count; i++)
         {
-            GameObject[] obj = _zombieStruct[i].Parent.GetComponentsInChildren<GameObject>();
-            zombieCount += obj.Length - 1;
+            Enemy[] objs = _zombieStruct[i].Parent.GetComponentsInChildren<Enemy>();
+            zombieCount += objs.Length;
+
+            foreach(var obj in objs)
+            {
+                if (obj.IsDead)
+                    zombieCount--;
+            }
         }
-
-        zombieCount -= (int)ZombieType.Count - 1;
-
         return zombieCount;
     }
 

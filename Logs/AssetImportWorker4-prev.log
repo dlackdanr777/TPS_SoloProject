@@ -15,7 +15,7 @@ D:/unity/TPS_SoloProject
 -logFile
 Logs/AssetImportWorker4.log
 -srvPort
-54526
+58986
 Successfully changed project path to: D:/unity/TPS_SoloProject
 D:/unity/TPS_SoloProject
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,11 +49,11 @@ D:/unity/TPS_SoloProject
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [16468] Host "[IP] 192.168.0.11 [Port] 0 [Flags] 2 [Guid] 3601373097 [EditorId] 3601373097 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6L5JQJ2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [9064] Host "[IP] 192.168.0.11 [Port] 0 [Flags] 2 [Guid] 2435530902 [EditorId] 2435530902 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6L5JQJ2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [16468] Host "[IP] 192.168.0.11 [Port] 0 [Flags] 2 [Guid] 3601373097 [EditorId] 3601373097 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6L5JQJ2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [9064] Host "[IP] 192.168.0.11 [Port] 0 [Flags] 2 [Guid] 2435530902 [EditorId] 2435530902 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6L5JQJ2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 5.65 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 5.52 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.4f1 (35713cd46cd7)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity 2022.3.4f1/Editor/Data/Resources/UnitySubsystems
@@ -71,44 +71,44 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity 2022.3.4f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity 2022.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity 2022.3.4f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56852
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56344
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity 2022.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004864 seconds.
-- Loaded All Assemblies, in  0.256 seconds
+Registered in 0.004278 seconds.
+- Loaded All Assemblies, in  0.229 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.199 seconds
-Domain Reload Profiling: 453ms
-	BeginReloadAssembly (68ms)
+- Finished resetting the current domain, in  0.183 seconds
+Domain Reload Profiling: 411ms
+	BeginReloadAssembly (63ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (26ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (45ms)
-	LoadAllAssembliesAndSetupDomain (107ms)
-		LoadAssemblies (66ms)
+		CreateAndSetChildDomain (0ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (41ms)
+	LoadAllAssembliesAndSetupDomain (92ms)
+		LoadAssemblies (61ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (102ms)
-			TypeCache.Refresh (101ms)
-				TypeCache.ScanAssembly (92ms)
+		AnalyzeDomain (88ms)
+			TypeCache.Refresh (87ms)
+				TypeCache.ScanAssembly (79ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (199ms)
+	FinalizeReload (184ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (153ms)
+		SetupLoadedEditorAssemblies (144ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (7ms)
+			InitializePlatformSupportModulesInManaged (6ms)
 			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (100ms)
-			ProcessInitializeOnLoadMethodAttributes (39ms)
+			BeforeProcessingInitializeOnLoad (1ms)
+			ProcessInitializeOnLoadAttributes (98ms)
+			ProcessInitializeOnLoadMethodAttributes (34ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -118,56 +118,56 @@ Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0.564 seconds
-Refreshing native plugins compatible for Editor in 1.92 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.521 seconds
+Refreshing native plugins compatible for Editor in 1.78 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 [MODES] ModeService[none].Initialize
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-TPS
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.544 seconds
-Domain Reload Profiling: 1107ms
-	BeginReloadAssembly (98ms)
+- Finished resetting the current domain, in  0.497 seconds
+Domain Reload Profiling: 1016ms
+	BeginReloadAssembly (93ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (19ms)
-	RebuildCommonClasses (24ms)
+		CreateAndSetChildDomain (17ms)
+	RebuildCommonClasses (23ms)
 	RebuildNativeTypeToScriptingClass (7ms)
 	initialDomainReloadingComplete (31ms)
-	LoadAllAssembliesAndSetupDomain (402ms)
-		LoadAssemblies (203ms)
+	LoadAllAssembliesAndSetupDomain (364ms)
+		LoadAssemblies (175ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (244ms)
-			TypeCache.Refresh (216ms)
-				TypeCache.ScanAssembly (206ms)
+		AnalyzeDomain (233ms)
+			TypeCache.Refresh (206ms)
+				TypeCache.ScanAssembly (196ms)
 			ScanForSourceGeneratedMonoScriptInfo (18ms)
 			ResolveRequiredComponents (9ms)
-	FinalizeReload (544ms)
+	FinalizeReload (497ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (406ms)
+		SetupLoadedEditorAssemblies (367ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (4ms)
 			SetLoadedEditorAssemblies (2ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (59ms)
-			ProcessInitializeOnLoadAttributes (277ms)
-			ProcessInitializeOnLoadMethodAttributes (57ms)
-			AfterProcessingInitializeOnLoad (6ms)
+			BeforeProcessingInitializeOnLoad (55ms)
+			ProcessInitializeOnLoadAttributes (252ms)
+			ProcessInitializeOnLoadMethodAttributes (47ms)
+			AfterProcessingInitializeOnLoad (5ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
 Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
 Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 1.91 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.16 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5954 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 89 unused Assets / (1.6 MB). Loaded Objects now: 6417.
-Memory consumption went from 243.8 MB to 242.2 MB.
-Total: 3.716500 ms (FindLiveObjects: 0.416700 ms CreateObjectMapping: 0.163300 ms MarkObjects: 2.636900 ms  DeleteObjects: 0.498600 ms)
+Unloading 89 unused Assets / (1.6 MB). Loaded Objects now: 6416.
+Memory consumption went from 244.5 MB to 242.9 MB.
+Total: 3.881800 ms (FindLiveObjects: 0.446400 ms CreateObjectMapping: 0.172500 ms MarkObjects: 2.714900 ms  DeleteObjects: 0.547500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -183,692 +183,59 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 57939.706424 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab
-  artifactKey: Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab using Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08f4af27d3ffcb4e53ef62dbe9a1772f') in 0.015406 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 16
-========================================================================
-Received Import Request.
-  Time since last request: 1.616642 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Cable_400cm_A.prefab
-  artifactKey: Guid(9e630c5c99bcc474fa5b0300f0bb6a92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Cable_400cm_A.prefab using Guid(9e630c5c99bcc474fa5b0300f0bb6a92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90beced4fc8c775d9778c5edb65272d3') in 0.005021 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 6
-========================================================================
-Received Import Request.
-  Time since last request: 0.001119 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Cable_ragged_A.prefab
-  artifactKey: Guid(02726d271ff9aef41967ea101ad305f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Cable_ragged_A.prefab using Guid(02726d271ff9aef41967ea101ad305f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef60b6212b3f5286bf068282318012fd') in 0.004537 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 6
-========================================================================
-Received Import Request.
-  Time since last request: 0.000695 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Cable_ragged_C.prefab
-  artifactKey: Guid(20967b1bb1cfd6943ae17a991bf89836) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Cable_ragged_C.prefab using Guid(20967b1bb1cfd6943ae17a991bf89836) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bffa9a9cf3503284fa30548f977198b6') in 0.005773 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 6
-========================================================================
-Received Import Request.
-  Time since last request: 0.004855 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/CardboardBoxA.prefab
-  artifactKey: Guid(0160c7b505a7fe14daf6f68471522e00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/CardboardBoxA.prefab using Guid(0160c7b505a7fe14daf6f68471522e00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '673a5e1eae1c07f2de753302dcfc1c4a') in 0.004505 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.006716 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/CardboardBoxA_open_folders.prefab
-  artifactKey: Guid(c0de563d326937949b8fdb38b9ce06be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/CardboardBoxA_open_folders.prefab using Guid(c0de563d326937949b8fdb38b9ce06be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dabc0d556f9e3f66ee165bb0beb4bdab') in 0.004502 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 17
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/CardboardBoxB_open_booksA.prefab
-  artifactKey: Guid(25261e1adddc3e94a889e0a39f27d305) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/CardboardBoxB_open_booksA.prefab using Guid(25261e1adddc3e94a889e0a39f27d305) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3faaffb3da216e3cd0c78f33940c4e1') in 0.016019 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 47
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/CeilingTilePieceA.prefab
-  artifactKey: Guid(a660222b65d7f7940ad2fa3ae2efff46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/CeilingTilePieceA.prefab using Guid(a660222b65d7f7940ad2fa3ae2efff46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48a3a4d530eacaa1e221d4a1ff91e407') in 0.004902 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 6
-========================================================================
-Received Import Request.
-  Time since last request: 10.458643 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab
-  artifactKey: Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab using Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb24d6ac4ee759967029e8098ae1f124') in 0.001868 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 17
-========================================================================
-Received Import Request.
-  Time since last request: 2.247300 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab
-  artifactKey: Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab using Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38f69c515e0d8a45e597cb78106af4da') in 0.002014 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 17
-========================================================================
-Received Import Request.
-  Time since last request: 6.638873 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab
-  artifactKey: Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab using Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cc7aa9164b3b2ba8d849082f7052777') in 0.001872 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 18
-========================================================================
-Received Import Request.
-  Time since last request: 5.904003 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab
-  artifactKey: Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab using Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f67e44e9aac6a477ff914a952ee25b8') in 0.001670 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 18
-========================================================================
-Received Import Request.
-  Time since last request: 3.995487 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab
-  artifactKey: Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab using Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f377537c89308d4802ed40f33818e24') in 0.001703 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 18
-========================================================================
-Received Import Request.
-  Time since last request: 10.806111 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab
-  artifactKey: Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab using Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4228901a6f38df29206c8f49a01f7fe2') in 0.002559 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 19
-========================================================================
-Received Import Request.
-  Time since last request: 8.582976 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab
-  artifactKey: Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab using Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '629686b34c5d31db22395869cef9bf34') in 0.002011 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 19
-========================================================================
-Received Import Request.
-  Time since last request: 3.422940 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab
-  artifactKey: Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab using Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b4abd361f43551f2977f95205a8f95c') in 0.001622 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 19
-========================================================================
-Received Import Request.
-  Time since last request: 2.203440 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab
-  artifactKey: Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab using Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de7fa456404476f3bb85a8c8709a7bbe') in 0.001572 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 19
-========================================================================
-Received Import Request.
-  Time since last request: 1.205551 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab
-  artifactKey: Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab using Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f6e4f2a48b59d2f98faf30fcf2e063d') in 0.001636 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 19
-========================================================================
-Received Import Request.
-  Time since last request: 1.190873 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab
-  artifactKey: Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab using Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aebc0e4d5a171b3547c4434d49e83e14') in 0.001710 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 19
-========================================================================
-Received Import Request.
-  Time since last request: 1.206900 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab
-  artifactKey: Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab using Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e00f4ac5430457fad9f36b67e31213b8') in 0.001737 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 19
-========================================================================
-Received Import Request.
-  Time since last request: 6.434145 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab
-  artifactKey: Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab using Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7f439249cf380abba73af72adb17da7') in 0.001889 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 19
-========================================================================
-Received Import Request.
-  Time since last request: 4.224136 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab
-  artifactKey: Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab using Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b1cc26db005c283054c35d4a6ad9fb2') in 0.002604 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 19
-========================================================================
-Received Import Request.
-  Time since last request: 1.193109 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab
-  artifactKey: Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab using Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '802c45e21f3822f42f620bba09190b73') in 0.001546 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 19
-========================================================================
-Received Import Request.
-  Time since last request: 0.664418 seconds.
-  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab
-  artifactKey: Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/DoorBack.prefab using Guid(d7eb50833b45f5f4d84f0682320ad852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f2b1029e1de6d7f4a0d55440b8be5c5') in 0.001617 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 19
-========================================================================
-Received Import Request.
-  Time since last request: 13.784807 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Apartment_Close_stereo.wav
-  artifactKey: Guid(cc8abfe0690378e42a7d500d0f509832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Apartment_Close_stereo.wav using Guid(cc8abfe0690378e42a7d500d0f509832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba7008b52a1b65c36384e8f0992ac066') in 0.000830 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.001535 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Big_Vault_Close_02_mono.wav
-  artifactKey: Guid(6616fdc757a964e449b8c88360ba2ea9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Big_Vault_Close_02_mono.wav using Guid(6616fdc757a964e449b8c88360ba2ea9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e1c3d82d874048987709dad598f396e') in 0.000565 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000011 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Cupboard_Wood_Close_stereo.wav
-  artifactKey: Guid(f6343ea9b407ca840b977b9e63e2e15c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Cupboard_Wood_Close_stereo.wav using Guid(f6343ea9b407ca840b977b9e63e2e15c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '970e71f5c641e8effc8e5e0a97897e97') in 0.000651 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Entrance_Wood_Close_stereo.wav
-  artifactKey: Guid(775af5535178f3a439806fba2b3665cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Entrance_Wood_Close_stereo.wav using Guid(775af5535178f3a439806fba2b3665cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58fcab231dac7a820f5aeb6314ae9953') in 0.000576 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000010 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_FlyMesh_Close_01_mono.wav
-  artifactKey: Guid(2c0bfaf4bdd4f2046951ff10ba7dcd96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_FlyMesh_Close_01_mono.wav using Guid(2c0bfaf4bdd4f2046951ff10ba7dcd96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bda356f98cb6879a65cddc4fa9a24da') in 0.000671 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000010 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_FlyMesh_Open_01_mono.wav
-  artifactKey: Guid(e0e66205a50f0d54089caadd8364e193) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_FlyMesh_Open_01_mono.wav using Guid(e0e66205a50f0d54089caadd8364e193) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84434bbb926ae4690311c079018cdc75') in 0.000532 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.009951 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Fridge_Close_02_mono.wav
-  artifactKey: Guid(185ab3d1dc261da4aa5776b097647ce0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Fridge_Close_02_mono.wav using Guid(185ab3d1dc261da4aa5776b097647ce0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60c92633f6b9d42731588bec45ad2149') in 0.000896 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Fridge_Close_stereo.wav
-  artifactKey: Guid(7e41ae45be05de44195ea34239fb46f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Fridge_Close_stereo.wav using Guid(7e41ae45be05de44195ea34239fb46f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '791090f867f4efed581dc6bed26ae7cb') in 0.000674 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000011 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Indoor_Wood_Close_Gentle_stereo.wav
-  artifactKey: Guid(7d492295b0947d34c8b99bb8fb81a65f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Indoor_Wood_Close_Gentle_stereo.wav using Guid(7d492295b0947d34c8b99bb8fb81a65f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20fe563424561f603d354cc8e28eaa98') in 0.001109 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Interior_Bathroom_Door_Wood_Open_01_stereo.wav
-  artifactKey: Guid(98802cfe54dd6124e9a1798d60c3cc28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Interior_Bathroom_Door_Wood_Open_01_stereo.wav using Guid(98802cfe54dd6124e9a1798d60c3cc28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7318f67378c3c1a65b7f7ac5bb4f0c2f') in 0.000725 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Fridge_Open_stereo.wav
-  artifactKey: Guid(ff0c46045bdd3234987718ecf860effa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Fridge_Open_stereo.wav using Guid(ff0c46045bdd3234987718ecf860effa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff616182a0fced3ed35b9612f92f3db6') in 0.000885 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Indoor_Wood_Open_stereo.wav
-  artifactKey: Guid(9523418711c09604c85b10e165afcbce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Indoor_Wood_Open_stereo.wav using Guid(9523418711c09604c85b10e165afcbce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a21b2e253ad91f324d98297bdd58184') in 0.000572 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000010 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Metal_Door_01_Close_Gently_Short_stereo.wav
-  artifactKey: Guid(28b19bfae7d9483458a767ddda1493a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Metal_Door_01_Close_Gently_Short_stereo.wav using Guid(28b19bfae7d9483458a767ddda1493a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd63892a0b890bb9d76c2470b420e366') in 0.000730 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Metal_Glass_Close_stereo.wav
-  artifactKey: Guid(38c43ca7eaf5b644c8e49f573a5c41d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Metal_Glass_Close_stereo.wav using Guid(38c43ca7eaf5b644c8e49f573a5c41d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '430cf936590094df2fd81fd95b7e43e2') in 0.000955 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Metal_Hatch_Open_Creak_stereo.wav
-  artifactKey: Guid(dda228519843be64ea26fd2031977fa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Metal_Hatch_Open_Creak_stereo.wav using Guid(dda228519843be64ea26fd2031977fa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62e3bc4fc81b3cd297c87581ddf20c89') in 0.000734 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Metal_Open_Creak_stereo.wav
-  artifactKey: Guid(d5d1d83f3e58ad0488a55a59f03f43b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Metal_Open_Creak_stereo.wav using Guid(d5d1d83f3e58ad0488a55a59f03f43b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a444cf284a41a2cc83248a9caf5daa38') in 0.000562 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Microwave_Close_02_mono.wav
-  artifactKey: Guid(fa00f137087d4a243b334687341c0392) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Microwave_Close_02_mono.wav using Guid(fa00f137087d4a243b334687341c0392) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbf275536b3fb3bbfa7d52bbd1ab7060') in 0.000662 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Microwave_Open_stereo.wav
-  artifactKey: Guid(8484f7b3bc03a784b8bcc0daafc0c2de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Microwave_Open_stereo.wav using Guid(8484f7b3bc03a784b8bcc0daafc0c2de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '354c5903c9fc2305ab6683c14ae50ab9') in 0.000929 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Owen_Close_stereo.wav
-  artifactKey: Guid(a794f23a707798548b92036490ce6eac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Owen_Close_stereo.wav using Guid(a794f23a707798548b92036490ce6eac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e52c9db2d22a0807822c9371c857ed8f') in 0.000632 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000011 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Sci-Fi_Heavy_Close_Lock_Reverb_stereo.wav
-  artifactKey: Guid(6b41bc71b8603e14c971607e7b60f9c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Sci-Fi_Heavy_Close_Lock_Reverb_stereo.wav using Guid(6b41bc71b8603e14c971607e7b60f9c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd808060d34754c20cae81aefbb0a5050') in 0.000543 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000011 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Sci-Fi_Heavy_Close_stereo.wav
-  artifactKey: Guid(b92976239c1779140b0626df04e79eb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Sci-Fi_Heavy_Close_stereo.wav using Guid(b92976239c1779140b0626df04e79eb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '066225186bb6bdfd4e310e5e49941f57') in 0.000594 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Sci-Fi_Heavy_Metal_Close_stereo.wav
-  artifactKey: Guid(8ebec20d484511746aa693822f550d09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Sci-Fi_Heavy_Metal_Close_stereo.wav using Guid(8ebec20d484511746aa693822f550d09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5112bd9d0c38a3f384e1e3a48993e25d') in 0.000628 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Sci-Fi_Metal_01_Close_stereo.wav
-  artifactKey: Guid(026446fb55fd36341bcdc1d597a96118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Sci-Fi_Metal_01_Close_stereo.wav using Guid(026446fb55fd36341bcdc1d597a96118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e0c0aefb62045990ea457b60d9e9511') in 0.000547 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Sci-Fi_Metal_Slam_Lock_Reverb_stereo.wav
-  artifactKey: Guid(7849587a3f5021f40a6e6eb412b79d75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Sci-Fi_Metal_Slam_Lock_Reverb_stereo.wav using Guid(7849587a3f5021f40a6e6eb412b79d75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a8c9f35841c01bf15c00ee6b5b4ff9e') in 0.000512 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000010 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Wood_Bedroom_Close_02_mono.wav
-  artifactKey: Guid(565c7cd1c51869047a233f8042e7a107) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Wood_Bedroom_Close_02_mono.wav using Guid(565c7cd1c51869047a233f8042e7a107) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd650c219d2e2e13f46abdc3302d5b0cc') in 0.000556 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Wood_Bedroom_Open_01_mono.wav
-  artifactKey: Guid(ccc098f7c0c39724294a091290fa7c29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Wood_Bedroom_Open_01_mono.wav using Guid(ccc098f7c0c39724294a091290fa7c29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74dc45dc56123e47b536491f6e360887') in 0.000849 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Wood_Bedroom_Open_03_mono.wav
-  artifactKey: Guid(89ad12501a25d8c40922b5a39454fb53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Wood_Bedroom_Open_03_mono.wav using Guid(89ad12501a25d8c40922b5a39454fb53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e3d52bd59809e4798fd55159b00f20e') in 0.000651 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Wood_Bedroom_Close_03_mono.wav
-  artifactKey: Guid(aec93eb178442694e9d8d22056e04a36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Wood_Bedroom_Close_03_mono.wav using Guid(aec93eb178442694e9d8d22056e04a36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71c9e1db07620e105f38c56310cacb47') in 0.000579 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000011 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Wood_Kitchen_Cabinet_Close_01_mono.wav
-  artifactKey: Guid(2e45ee9ec8d2219438d89e29eb12aba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Wood_Kitchen_Cabinet_Close_01_mono.wav using Guid(2e45ee9ec8d2219438d89e29eb12aba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c7db84ceed2ccd3b1d83802ba8b9c19') in 0.000604 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Wood_Kitchen_Cabinet_Close_04_mono.wav
-  artifactKey: Guid(34597ca413c93fb4aba714ee545c240d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Wood_Kitchen_Cabinet_Close_04_mono.wav using Guid(34597ca413c93fb4aba714ee545c240d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88e201bd609b7fff391e0f88738ea9b9') in 0.000900 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Wood_Door_Open_01_mono.wav
-  artifactKey: Guid(b7564a1792caa934f8e58278eabe47de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Wood_Door_Open_01_mono.wav using Guid(b7564a1792caa934f8e58278eabe47de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '994ff4c73af0d5317872e2fa86752b49') in 0.001007 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Metal_Hollow_Deep_Close_stereo.wav
-  artifactKey: Guid(59849bcf243f56d46b64c294563230d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DOOR_Metal_Hollow_Deep_Close_stereo.wav using Guid(59849bcf243f56d46b64c294563230d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97d221b855d49842da89a34af2a936b5') in 0.000813 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 21.535899 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DRAWER_Wood_Kitchen_Close_01_mono.wav
-  artifactKey: Guid(cc864d43158fd55498e2ed4d5725f488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DRAWER_Wood_Kitchen_Close_01_mono.wav using Guid(cc864d43158fd55498e2ed4d5725f488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1af960b835461124f2c978edeaeacf8a') in 0.001051 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.003317 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DRAWER_Wood_Kitchen_Open_01_mono.wav
-  artifactKey: Guid(785f022964d70c44891689533dfc2787) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DRAWER_Wood_Kitchen_Open_01_mono.wav using Guid(785f022964d70c44891689533dfc2787) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cc94b680fa0e90b14a6866de245ee8c') in 0.000687 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/DRAWER_Wood_Kitchen_Open_03_mono.wav
-  artifactKey: Guid(3d6d982c06e0b004a9a2ccc341104f60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/DRAWER_Wood_Kitchen_Open_03_mono.wav using Guid(3d6d982c06e0b004a9a2ccc341104f60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25ea30bb5dd0e809aaae0318eaf9f020') in 0.000629 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Close_Metal_Small_stereo.wav
-  artifactKey: Guid(4cf1aa4b38cebd44997dc5bae0244170) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Close_Metal_Small_stereo.wav using Guid(4cf1aa4b38cebd44997dc5bae0244170) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f243486f814aef9ec53d2f53bbd5fe6a') in 0.000647 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_01_Mid_Short_stereo.wav
-  artifactKey: Guid(aba44751aaf6c714f84d858679eaabcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_01_Mid_Short_stereo.wav using Guid(aba44751aaf6c714f84d858679eaabcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54e428b56c00bd86b28ce71c6163acb2') in 0.000534 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.001767 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_01_stereo.wav
-  artifactKey: Guid(2e61208e889ab8c4cbd93e3892b88b48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_01_stereo.wav using Guid(2e61208e889ab8c4cbd93e3892b88b48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '078be8f7b4573e6b16bf831de342ff0f') in 0.000744 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.405761 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_02_stereo.wav
-  artifactKey: Guid(7ebcf3ecce22c644896f883f5c569ccd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_02_stereo.wav using Guid(7ebcf3ecce22c644896f883f5c569ccd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e803c666ae5da597022ab35d927ddf00') in 0.000748 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.001216 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_03_Mid_stereo.wav
-  artifactKey: Guid(3ff422c3bb7e77c4bac6c9a5c83d1e23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_03_Mid_stereo.wav using Guid(3ff422c3bb7e77c4bac6c9a5c83d1e23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a68b64a8e64bd716a91bb139baf11b1f') in 0.000601 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.001995 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_04_Mid_stereo.wav
-  artifactKey: Guid(d251367d8f127dd4caf602d65dd43ae5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_04_Mid_stereo.wav using Guid(d251367d8f127dd4caf602d65dd43ae5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15eae5fe123fbaf937c540480bd77891') in 0.000908 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.002182 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_05_Mid_stereo.wav
-  artifactKey: Guid(e460f68adcf615b4398b1b2637b4a49b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_05_Mid_stereo.wav using Guid(e460f68adcf615b4398b1b2637b4a49b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cf1e6b85b134f1092de60cc1cb9d660') in 0.000648 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.001586 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_06_Mid_stereo.wav
-  artifactKey: Guid(0d4d779868baf4b4a805fa697aaf6a07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_06_Mid_stereo.wav using Guid(0d4d779868baf4b4a805fa697aaf6a07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c99ac1c47b06099310d3b19159ceb75') in 0.000580 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.002000 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_08_stereo.wav
-  artifactKey: Guid(df2e23f2a9b6ef448ae57cbbfaa12272) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_08_stereo.wav using Guid(df2e23f2a9b6ef448ae57cbbfaa12272) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d9bcb31a39992545d1bc7b8ac9296ed') in 0.000864 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.010125 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_09_Mid_stereo.wav
-  artifactKey: Guid(d5da44f4f4ad18e48af90d9a50341c4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_09_Mid_stereo.wav using Guid(d5da44f4f4ad18e48af90d9a50341c4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae34e1a9f6fcdfbb8f56edc901d03076') in 0.000891 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.003063 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_10_Mid_stereo.wav
-  artifactKey: Guid(9ff940c59458f30409437d40f3deae37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_10_Mid_stereo.wav using Guid(9ff940c59458f30409437d40f3deae37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdd2d07e840c745d8efbd4566f6b6102') in 0.000570 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_11_Mid_Squeal_stereo.wav
-  artifactKey: Guid(246ac6ca5f7934647bb9c0cf5c4867db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_11_Mid_Squeal_stereo.wav using Guid(246ac6ca5f7934647bb9c0cf5c4867db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cc74bf99df37d65d95521708232e61b') in 0.000768 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.001758 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_12_stereo.wav
-  artifactKey: Guid(68e26648c75d3a44e81492e88142b49a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Close_12_stereo.wav using Guid(68e26648c75d3a44e81492e88142b49a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72e3f4ece1a1ed5b6c38135c0a72b1ee') in 0.000623 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.002629 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Large_Close_01_mono.wav
-  artifactKey: Guid(a352860c9a12ef94b8ee6a88f10884d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Large_Close_01_mono.wav using Guid(a352860c9a12ef94b8ee6a88f10884d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '324bbe3ae0a7c77555eda9b16559c519') in 0.000554 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.002609 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Large_Close_04_mono.wav
-  artifactKey: Guid(8ef593c4f1abc75408e420daf0e3b445) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Large_Close_04_mono.wav using Guid(8ef593c4f1abc75408e420daf0e3b445) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5aca1a79fd6c8c0bd2bb997c7dfdef1') in 0.000844 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.018597 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Open_02_Dark_Short_stereo.wav
-  artifactKey: Guid(5518ea86591afab4da66ec2d453eb627) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Open_02_Dark_Short_stereo.wav using Guid(5518ea86591afab4da66ec2d453eb627) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ed4d6d510f1895d4b7dbd08288bff72') in 0.000955 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000100 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Open_02_Mid_stereo.wav
-  artifactKey: Guid(252b59db716d55947bccf5691bdc9daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Open_02_Mid_stereo.wav using Guid(252b59db716d55947bccf5691bdc9daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd930d37740160e12dbf93f3c3200b41b') in 0.000581 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.002615 seconds.
-  path: Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Open_04_Squeal_stereo.wav
-  artifactKey: Guid(502282aa5ad230544a9fe4067f28c517) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/DOORS_GATES_DRAWERS/GATE_Metal_Open_04_Squeal_stereo.wav using Guid(502282aa5ad230544a9fe4067f28c517) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc1eb38934ff4b583eb5c86f1ed3f626') in 0.000595 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0.600 seconds
-Refreshing native plugins compatible for Editor in 1.69 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.571 seconds
+Refreshing native plugins compatible for Editor in 1.83 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 [MODES] ModeService[none].Initialize
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-TPS
-Error saving file Library/StateCache/LayerSettings/9e/9ecc5c3c162a7aba29bafa64c8b94b7c.json. Error: System.IO.IOException: Sharing violation on path D:\unity\TPS_SoloProject\Library\StateCache\LayerSettings\9e\9ecc5c3c162a7aba29bafa64c8b94b7c.json
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <605bf8b31fcb444b85176da963870aa7>:0 
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <605bf8b31fcb444b85176da963870aa7>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
-  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding, System.Int32 bufferSize) [0x00055] in <605bf8b31fcb444b85176da963870aa7>:0 
-  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding) [0x00000] in <605bf8b31fcb444b85176da963870aa7>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.StreamWriter..ctor(string,bool,System.Text.Encoding)
-  at System.IO.File.WriteAllText (System.String path, System.String contents, System.Text.Encoding encoding) [0x00034] in <605bf8b31fcb444b85176da963870aa7>:0 
-  at UnityEditor.StateCache`1[T].SetState (UnityEngine.Hash128 key, T obj) [0x0004b] in <da771086bc2e4cfc9ad0a72e083a7f98>:0 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.StateCache`1<UnityEditor.Tools/LayerSettings>:SetState (UnityEngine.Hash128,UnityEditor.Tools/LayerSettings)
-UnityEditor.Tools:set_lockedLayers (int)
-UnityEditor.Tools:OnEnable ()
-
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.954 seconds
-Domain Reload Profiling: 1552ms
-	BeginReloadAssembly (134ms)
+- Finished resetting the current domain, in  0.952 seconds
+Domain Reload Profiling: 1522ms
+	BeginReloadAssembly (129ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (46ms)
-	RebuildCommonClasses (25ms)
+		CreateAndSetChildDomain (40ms)
+	RebuildCommonClasses (24ms)
 	RebuildNativeTypeToScriptingClass (8ms)
 	initialDomainReloadingComplete (24ms)
-	LoadAllAssembliesAndSetupDomain (407ms)
-		LoadAssemblies (207ms)
+	LoadAllAssembliesAndSetupDomain (385ms)
+		LoadAssemblies (190ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (252ms)
-			TypeCache.Refresh (241ms)
-				TypeCache.ScanAssembly (230ms)
+		AnalyzeDomain (244ms)
+			TypeCache.Refresh (234ms)
+				TypeCache.ScanAssembly (221ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (11ms)
-	FinalizeReload (955ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (953ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (402ms)
+		SetupLoadedEditorAssemblies (399ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (5ms)
-			SetLoadedEditorAssemblies (3ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (2ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (63ms)
-			ProcessInitializeOnLoadAttributes (265ms)
-			ProcessInitializeOnLoadMethodAttributes (56ms)
-			AfterProcessingInitializeOnLoad (9ms)
-			EditorAssembliesLoaded (1ms)
+			BeforeProcessingInitializeOnLoad (67ms)
+			ProcessInitializeOnLoadAttributes (247ms)
+			ProcessInitializeOnLoadMethodAttributes (72ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (22ms)
-Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
+		AwakeInstancesAfterBackupRestoration (17ms)
 Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
-Refreshing native plugins compatible for Editor in 1.78 ms, found 3 plugins.
+Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
+Refreshing native plugins compatible for Editor in 1.90 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5769 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 52 unused Assets / (1.6 MB). Loaded Objects now: 6435.
-Memory consumption went from 210.3 MB to 208.8 MB.
-Total: 3.998800 ms (FindLiveObjects: 0.416300 ms CreateObjectMapping: 0.164300 ms MarkObjects: 2.866700 ms  DeleteObjects: 0.550700 ms)
+Unloading 52 unused Assets / (1.6 MB). Loaded Objects now: 6433.
+Memory consumption went from 210.8 MB to 209.2 MB.
+Total: 3.879500 ms (FindLiveObjects: 0.463900 ms CreateObjectMapping: 0.171500 ms MarkObjects: 2.738500 ms  DeleteObjects: 0.504700 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -884,6 +251,54 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 73894.056296 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Electronic Highway Sign SDF.asset
+  artifactKey: Guid(dc36b3fdc14f47ebb36fd484a67e268a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Electronic Highway Sign SDF.asset using Guid(dc36b3fdc14f47ebb36fd484a67e268a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6c297bf9d41709c12b76b0f4958f701') in 0.021122 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/TextMesh Pro/Fonts/KoPub Dotum Medium SDF.asset
+  artifactKey: Guid(9aeb9944a0bc4284dae28a0aa95335bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Fonts/KoPub Dotum Medium SDF.asset using Guid(9aeb9944a0bc4284dae28a0aa95335bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4226a5890926166fbb20b42557e01951') in 0.016883 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+  artifactKey: Guid(2e498d1c8094910479dc3e1b768306a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset using Guid(2e498d1c8094910479dc3e1b768306a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bb2c24487e5dcb607116372c4c67cc2') in 0.003412 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Roboto-Bold SDF.asset
+  artifactKey: Guid(5302535af1044152a457ed104f1f4b91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Roboto-Bold SDF.asset using Guid(5302535af1044152a457ed104f1f4b91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e5ffc119f7c3b7756a7245ef46e4d57') in 0.008754 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Oswald Bold SDF.asset
+  artifactKey: Guid(0161d805a3764c089bef00bfe00793f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Oswald Bold SDF.asset using Guid(0161d805a3764c089bef00bfe00793f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '413dc63fde4eb4286b2b49d8e9867a13') in 0.012939 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/TextMesh Pro/Fonts/KoPub Batang Medium SDF.asset
+  artifactKey: Guid(37ae3969e3c0b4949a466220deb89d6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Fonts/KoPub Batang Medium SDF.asset using Guid(37ae3969e3c0b4949a466220deb89d6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69ec65c8b24479573dd17363d08fd595') in 0.012570 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: 스레드 종료 또는 응용 프로그램 요청 때문에 I/O 작업이 취소되었습니다.
 AssetImportWorker is now disconnected from the server

@@ -40,8 +40,7 @@ public class Navmesh : MonoBehaviour
 
     public void StopNavMesh()
     {
-        _agent.isStopped = true;
-        _target = null;
+        NaveMeshEnabled(false);
     }
 
     public void StartNavMesh(Transform transform)
