@@ -24,6 +24,7 @@ public class Gun : MonoBehaviour
     public Animator Anim;
     public VisualEffect MuzzleFlash; //총구 화염 이펙트
     public AudioClip FireSound; //총 발사 소리
+    public AudioClip ReloadSound;
 
     public float FireRate; //총알 발사 간격
 

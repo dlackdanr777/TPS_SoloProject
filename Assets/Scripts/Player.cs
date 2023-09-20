@@ -16,6 +16,7 @@ public class Player : MonoBehaviour, IHp, IAttack
     public FlashLight FlashLight;
     public PlayerStateMachine Machine;
     public CharacterController CharacterController;
+    public AudioSource AudioSource;
 
     public Dictionary<int, string> a;
     public event Action onHpMax;
@@ -32,6 +33,7 @@ public class Player : MonoBehaviour, IHp, IAttack
     public Action OnFollowAimHandler;
     public Action OnFireHandler;
 
+    [SerializeField] private AudioClip[] _hitSoundClips;
 
     public float hp
     {
@@ -143,6 +145,8 @@ public class Player : MonoBehaviour, IHp, IAttack
     public void DepleteHp(object subject, float value)
     {
         hp -= value;
+        int randIndex = Random.Range(0, _hitSoundClips.Length);
+        AudioSource.PlayOneShot(_hitSoundClips[randIndex]);
         OnHpDepleted?.Invoke(subject, value);
     }
 

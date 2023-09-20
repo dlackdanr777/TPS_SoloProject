@@ -15,7 +15,7 @@ D:/unity/TPS_SoloProject
 -logFile
 Logs/AssetImportWorker2.log
 -srvPort
-52620
+56133
 Successfully changed project path to: D:/unity/TPS_SoloProject
 D:/unity/TPS_SoloProject
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,11 +49,11 @@ D:/unity/TPS_SoloProject
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [1556] Host "[IP] 192.168.0.11 [Port] 0 [Flags] 2 [Guid] 3964355674 [EditorId] 3964355674 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6L5JQJ2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [10120] Host "[IP] 192.168.0.11 [Port] 0 [Flags] 2 [Guid] 1546144778 [EditorId] 1546144778 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6L5JQJ2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [1556] Host "[IP] 192.168.0.11 [Port] 0 [Flags] 2 [Guid] 3964355674 [EditorId] 3964355674 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6L5JQJ2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [10120] Host "[IP] 192.168.0.11 [Port] 0 [Flags] 2 [Guid] 1546144778 [EditorId] 1546144778 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6L5JQJ2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 5.68 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 6.68 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.4f1 (35713cd46cd7)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity 2022.3.4f1/Editor/Data/Resources/UnitySubsystems
@@ -71,44 +71,44 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity 2022.3.4f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity 2022.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity 2022.3.4f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56576
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56304
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity 2022.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004634 seconds.
-- Loaded All Assemblies, in  0.244 seconds
+Registered in 0.004183 seconds.
+- Loaded All Assemblies, in  0.292 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.197 seconds
-Domain Reload Profiling: 440ms
-	BeginReloadAssembly (65ms)
+- Finished resetting the current domain, in  0.258 seconds
+Domain Reload Profiling: 549ms
+	BeginReloadAssembly (86ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (28ms)
-	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (44ms)
-	LoadAllAssembliesAndSetupDomain (99ms)
-		LoadAssemblies (63ms)
+	RebuildCommonClasses (38ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (46ms)
+	LoadAllAssembliesAndSetupDomain (109ms)
+		LoadAssemblies (84ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (95ms)
-			TypeCache.Refresh (94ms)
-				TypeCache.ScanAssembly (85ms)
+		AnalyzeDomain (104ms)
+			TypeCache.Refresh (103ms)
+				TypeCache.ScanAssembly (94ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (198ms)
+	FinalizeReload (258ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (153ms)
+		SetupLoadedEditorAssemblies (212ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (6ms)
-			SetLoadedEditorAssemblies (5ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			SetLoadedEditorAssemblies (9ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (103ms)
-			ProcessInitializeOnLoadMethodAttributes (36ms)
+			ProcessInitializeOnLoadAttributes (138ms)
+			ProcessInitializeOnLoadMethodAttributes (55ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -118,56 +118,56 @@ Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0.624 seconds
-Refreshing native plugins compatible for Editor in 1.90 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.808 seconds
+Refreshing native plugins compatible for Editor in 2.58 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 [MODES] ModeService[none].Initialize
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-TPS
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.553 seconds
-Domain Reload Profiling: 1176ms
-	BeginReloadAssembly (98ms)
+- Finished resetting the current domain, in  0.698 seconds
+Domain Reload Profiling: 1504ms
+	BeginReloadAssembly (141ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (18ms)
-	RebuildCommonClasses (25ms)
-	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (32ms)
-	LoadAllAssembliesAndSetupDomain (460ms)
-		LoadAssemblies (209ms)
+		CreateAndSetChildDomain (29ms)
+	RebuildCommonClasses (36ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (42ms)
+	LoadAllAssembliesAndSetupDomain (576ms)
+		LoadAssemblies (271ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (296ms)
-			TypeCache.Refresh (269ms)
-				TypeCache.ScanAssembly (258ms)
-			ScanForSourceGeneratedMonoScriptInfo (19ms)
-			ResolveRequiredComponents (9ms)
-	FinalizeReload (554ms)
+		AnalyzeDomain (370ms)
+			TypeCache.Refresh (330ms)
+				TypeCache.ScanAssembly (316ms)
+			ScanForSourceGeneratedMonoScriptInfo (28ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (699ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (411ms)
+		SetupLoadedEditorAssemblies (530ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
+			InitializePlatformSupportModulesInManaged (5ms)
 			SetLoadedEditorAssemblies (2ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (69ms)
-			ProcessInitializeOnLoadAttributes (278ms)
-			ProcessInitializeOnLoadMethodAttributes (51ms)
-			AfterProcessingInitializeOnLoad (6ms)
+			BeforeProcessingInitializeOnLoad (84ms)
+			ProcessInitializeOnLoadAttributes (365ms)
+			ProcessInitializeOnLoadMethodAttributes (65ms)
+			AfterProcessingInitializeOnLoad (8ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
 Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
 Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 2.14 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 2.33 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5957 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 89 unused Assets / (1.6 MB). Loaded Objects now: 6419.
-Memory consumption went from 244.6 MB to 243.0 MB.
-Total: 5.060700 ms (FindLiveObjects: 0.488900 ms CreateObjectMapping: 0.340300 ms MarkObjects: 3.675600 ms  DeleteObjects: 0.555000 ms)
+Unloading 5958 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 89 unused Assets / (1.6 MB). Loaded Objects now: 6420.
+Memory consumption went from 244.7 MB to 243.1 MB.
+Total: 4.494200 ms (FindLiveObjects: 0.417100 ms CreateObjectMapping: 0.178600 ms MarkObjects: 3.274000 ms  DeleteObjects: 0.623400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -182,8 +182,1485 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: 스레드 종료 또는 응용 프로그램 요청 때문에 I/O 작업이 취소되었습니다.
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.589 seconds
+Refreshing native plugins compatible for Editor in 1.88 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-TPS
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.956 seconds
+Domain Reload Profiling: 1543ms
+	BeginReloadAssembly (133ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (43ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (395ms)
+		LoadAssemblies (205ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (246ms)
+			TypeCache.Refresh (226ms)
+				TypeCache.ScanAssembly (213ms)
+			ScanForSourceGeneratedMonoScriptInfo (8ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (957ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (426ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (64ms)
+			ProcessInitializeOnLoadAttributes (288ms)
+			ProcessInitializeOnLoadMethodAttributes (59ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (17ms)
+Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 2.47 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5773 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 52 unused Assets / (1.6 MB). Loaded Objects now: 6437.
+Memory consumption went from 211.0 MB to 209.4 MB.
+Total: 5.343300 ms (FindLiveObjects: 0.468100 ms CreateObjectMapping: 0.203800 ms MarkObjects: 4.068100 ms  DeleteObjects: 0.602500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 99429.611698 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Assault_Rifle_Model_01_Fire_Single_RR1_stereo.wav
+  artifactKey: Guid(509b52d7254ee8549b3fc50e1dcc4560) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Assault_Rifle_Model_01_Fire_Single_RR1_stereo.wav using Guid(509b52d7254ee8549b3fc50e1dcc4560) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b052578a5b0dd6e7b4a0b2840ba71166') in 0.013028 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.001686 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Assault_Rifle_Model_01_Fire_Single_RR3_stereo.wav
+  artifactKey: Guid(a38b5a4caef76884fa3f42be0fa428c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Assault_Rifle_Model_01_Fire_Single_RR3_stereo.wav using Guid(a38b5a4caef76884fa3f42be0fa428c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ec6051129931eec7dc8cd252ba24706') in 0.000827 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Assault_Rifle_Model_02_Fire_Single_RR1_stereo.wav
+  artifactKey: Guid(97f0eabcab485024a8834a9909f80645) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Assault_Rifle_Model_02_Fire_Single_RR1_stereo.wav using Guid(97f0eabcab485024a8834a9909f80645) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6e61e391e96538dc866b36cf633513e') in 0.000885 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Assault_Rifle_Model_02b_Fire_Single_RR2_stereo.wav
+  artifactKey: Guid(7b4146d6c90ded346a6f17023e697037) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Assault_Rifle_Model_02b_Fire_Single_RR2_stereo.wav using Guid(7b4146d6c90ded346a6f17023e697037) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '139084dffb209aa9dcb8cea70f6ff7a6') in 0.000753 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Assault_Rifle_Model_02b_Fire_Single_RR3_stereo.wav
+  artifactKey: Guid(5f7efb64b885f1345b5fd97da05e1044) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Assault_Rifle_Model_02b_Fire_Single_RR3_stereo.wav using Guid(5f7efb64b885f1345b5fd97da05e1044) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb638c41839ae9148c409af02b8a34e7') in 0.000797 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Assault_Rifle_Model_03_Fire_Single_RR1_stereo.wav
+  artifactKey: Guid(e4fd271a4405ab4439ce2486e2031cc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Assault_Rifle_Model_03_Fire_Single_RR1_stereo.wav using Guid(e4fd271a4405ab4439ce2486e2031cc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec0cf17e7d5f28bf5cd8fe1dcac8d1e6') in 0.000859 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Assault_Rifle_Model_03b_Fire_Single_RR1_stereo.wav
+  artifactKey: Guid(9279eb8b748d03b4bbf8d3ff5430daa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Assault_Rifle_Model_03b_Fire_Single_RR1_stereo.wav using Guid(9279eb8b748d03b4bbf8d3ff5430daa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d53259fdf83659dacbee56db369e4bd') in 0.000707 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Handgun_B_FS92_9mm_Fire_RR1_stereo.wav
+  artifactKey: Guid(016b515daa1fe794b8f533a98f445007) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Handgun_B_FS92_9mm_Fire_RR1_stereo.wav using Guid(016b515daa1fe794b8f533a98f445007) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e73d8b72ab66e845a3c496ca9b8145fc') in 0.000691 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Handgun_B_FS92_9mm_Fire_RR2_stereo.wav
+  artifactKey: Guid(92d0b54da84a96441a0fa6f8e5f4bab1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Handgun_B_FS92_9mm_Fire_RR2_stereo.wav using Guid(92d0b54da84a96441a0fa6f8e5f4bab1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0739d8356760c500ae3e00b6cbc0a469') in 0.000476 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Handgun_H_P30L_9mm_Fire_RR1_stereo.wav
+  artifactKey: Guid(9c37a78d464ba4e45bc18ea4ef07a34a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Handgun_H_P30L_9mm_Fire_RR1_stereo.wav using Guid(9c37a78d464ba4e45bc18ea4ef07a34a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd4ed9df5fe0132ed4813ba0aa85a733') in 0.000776 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Shotgun_Model_01_Fire_Single_RR1_stereo.wav
+  artifactKey: Guid(839582df1742a8e4eaab02db47251e37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Shotgun_Model_01_Fire_Single_RR1_stereo.wav using Guid(839582df1742a8e4eaab02db47251e37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '070cce58fc1a404235a1e1565d79573c') in 0.000649 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Shotgun_Model_01_Fire_Single_RR3_stereo.wav
+  artifactKey: Guid(79121255a523dff4496dbbe00fa79663) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Shotgun_Model_01_Fire_Single_RR3_stereo.wav using Guid(79121255a523dff4496dbbe00fa79663) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9e5e014f0e65753302ab473054caa68') in 0.000637 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Shotgun_Model_01b_Fire_Single_RR3_stereo.wav
+  artifactKey: Guid(30ec27fe87f115948bd519523beecd7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Shotgun_Model_01b_Fire_Single_RR3_stereo.wav using Guid(30ec27fe87f115948bd519523beecd7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e60e12f8ba8a9c3a6bcc591f1dc1b5a3') in 0.000497 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Shotgun_Model_02_Fire_Single_RR3_stereo.wav
+  artifactKey: Guid(1b467ab6f3fc32b429ef9b60ef0604f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Shotgun_Model_02_Fire_Single_RR3_stereo.wav using Guid(1b467ab6f3fc32b429ef9b60ef0604f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be5c5914e2a004fac8c6740993545aa1') in 0.000851 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Shotgun_Model_03_Fire_Single_RR2_stereo.wav
+  artifactKey: Guid(40131d6bccb4a4547bf54383f7c0a87e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Shotgun_Model_03_Fire_Single_RR2_stereo.wav using Guid(40131d6bccb4a4547bf54383f7c0a87e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '587ac0866c60896e090f1d992415f97b') in 0.000666 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Shotgun_Model_04_Fire_Single_RR1_stereo.wav
+  artifactKey: Guid(45d419774bc66a543a8e365e247e7bab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Shotgun_Model_04_Fire_Single_RR1_stereo.wav using Guid(45d419774bc66a543a8e365e247e7bab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5c0976a819b3aa46c8258eb38e86f84') in 0.000638 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Shotgun_Model_04_Fire_Single_RR3_stereo.wav
+  artifactKey: Guid(40da1bdc3b04d6c4f80f7bb9a32710cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Shotgun_Model_04_Fire_Single_RR3_stereo.wav using Guid(40da1bdc3b04d6c4f80f7bb9a32710cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6eda0520f74fa5ea0174507c3fd67d0') in 0.000529 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Sniper_Rifle_Model_01_Fire_Single_RR2_stereo.wav
+  artifactKey: Guid(5c7b4815e2d118f449ad0514b698ffe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Sniper_Rifle_Model_01_Fire_Single_RR2_stereo.wav using Guid(5c7b4815e2d118f449ad0514b698ffe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ceefe548dfd498e69a45c2693b761f19') in 0.000564 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Sniper_Rifle_Model_02_Fire_Single_RR1_stereo.wav
+  artifactKey: Guid(8be91042b74a1aa4796ef14b3fa05735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Sniper_Rifle_Model_02_Fire_Single_RR1_stereo.wav using Guid(8be91042b74a1aa4796ef14b3fa05735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '022d47b5d7ef5bbb714eae3e2c04d095') in 0.000631 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Shotgun_Model_02_Fire_Single_RR2_stereo.wav
+  artifactKey: Guid(b9b59a09d6db0254d8ed568a1099dbd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Shotgun_Model_02_Fire_Single_RR2_stereo.wav using Guid(b9b59a09d6db0254d8ed568a1099dbd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2627319f9a7206bc5938a84fb59aa48') in 0.000545 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Sniper_Rifle_Model_02_Silencer_Fire_Single_RR2_stereo.wav
+  artifactKey: Guid(5532c4a2206cb7b43ba2238a96fc1588) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Sniper_Rifle_Model_02_Silencer_Fire_Single_RR2_stereo.wav using Guid(5532c4a2206cb7b43ba2238a96fc1588) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79e7bfee9e05e169a11fc908762c392e') in 0.000759 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Sub_Machine_Gun_Model_01_Fire_Single_RR2_stereo.wav
+  artifactKey: Guid(085029d1451a90d4ea3e8cecd36d3510) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Sub_Machine_Gun_Model_01_Fire_Single_RR2_stereo.wav using Guid(085029d1451a90d4ea3e8cecd36d3510) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d60f02d1789d91af064a93b5d926518') in 0.000638 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Shotgun_Model_04_Fire_Single_RR2_stereo.wav
+  artifactKey: Guid(a02f0e22dac44254a9e1cb85127ea340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Shotgun_Model_04_Fire_Single_RR2_stereo.wav using Guid(a02f0e22dac44254a9e1cb85127ea340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57b5a125d881872d16504f957761c2b2') in 0.000514 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Sub_Machine_Gun_Model_02_Fire_Single_RR1_stereo.wav
+  artifactKey: Guid(829ec92e9052fdb43a5fab87e00fcb9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Sub_Machine_Gun_Model_02_Fire_Single_RR1_stereo.wav using Guid(829ec92e9052fdb43a5fab87e00fcb9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afb9270af669ee5f2e51376424af677a') in 0.000758 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Sub_Machine_Gun_Model_02_Fire_Single_RR3_stereo.wav
+  artifactKey: Guid(8154ea4141482cb499741639a88ecf67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Sub_Machine_Gun_Model_02_Fire_Single_RR3_stereo.wav using Guid(8154ea4141482cb499741639a88ecf67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2b48f03816bb05e7fd8cccbb38af1f7') in 0.000891 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Sniper_Rifle_Model_02_Fire_Single_RR3_stereo.wav
+  artifactKey: Guid(156902dd96c1e57458d228f9c0c6ce3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Sniper_Rifle_Model_02_Fire_Single_RR3_stereo.wav using Guid(156902dd96c1e57458d228f9c0c6ce3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc835c0aa2717908273dad216518e5bf') in 0.000822 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Sniper_Rifle_Model_02_Silencer_Fire_Single_RR1_stereo.wav
+  artifactKey: Guid(80d7edefcb9329d46b2fcc38b75c0ddb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Sniper_Rifle_Model_02_Silencer_Fire_Single_RR1_stereo.wav using Guid(80d7edefcb9329d46b2fcc38b75c0ddb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45ed02a0841ca020e3c818780bba8dcc') in 0.001007 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Assault_Rifle_Model_03b_Fire_Single_RR2_stereo.wav
+  artifactKey: Guid(b8e7126414597694b9b3ec0c44148060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Assault_Rifle_Model_03b_Fire_Single_RR2_stereo.wav using Guid(b8e7126414597694b9b3ec0c44148060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e832a5a6e99163ec032c78b3b0d8707') in 0.000657 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Assault_Rifle_Model_03_Fire_Single_RR3_stereo.wav
+  artifactKey: Guid(cb0213a19913e4b4588ea9fc184a131a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS/FIREARM_Assault_Rifle_Model_03_Fire_Single_RR3_stereo.wav using Guid(cb0213a19913e4b4588ea9fc184a131a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b96ce7854667380a78e7209cd711fe12') in 0.000698 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.646 seconds
+Refreshing native plugins compatible for Editor in 1.81 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Error saving file Library/StateCache/LayerSettings/9e/9ecc5c3c162a7aba29bafa64c8b94b7c.json. Error: System.IO.IOException: Sharing violation on path D:\unity\TPS_SoloProject\Library\StateCache\LayerSettings\9e\9ecc5c3c162a7aba29bafa64c8b94b7c.json
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <605bf8b31fcb444b85176da963870aa7>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <605bf8b31fcb444b85176da963870aa7>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
+  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding, System.Int32 bufferSize) [0x00055] in <605bf8b31fcb444b85176da963870aa7>:0 
+  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding) [0x00000] in <605bf8b31fcb444b85176da963870aa7>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamWriter..ctor(string,bool,System.Text.Encoding)
+  at System.IO.File.WriteAllText (System.String path, System.String contents, System.Text.Encoding encoding) [0x00034] in <605bf8b31fcb444b85176da963870aa7>:0 
+  at UnityEditor.StateCache`1[T].SetState (UnityEngine.Hash128 key, T obj) [0x0004b] in <da771086bc2e4cfc9ad0a72e083a7f98>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.StateCache`1<UnityEditor.Tools/LayerSettings>:SetState (UnityEngine.Hash128,UnityEditor.Tools/LayerSettings)
+UnityEditor.Tools:set_lockedLayers (int)
+UnityEditor.Tools:OnEnable ()
+UnityEngine.ScriptableObject:CreateInstance (System.Type)
+UnityEngine.ScriptableObject:CreateInstance<UnityEditor.Tools> ()
+UnityEditor.Tools:get_get ()
+UnityEditor.Tools:get_visibleLayers ()
+UnityEditor.Animations.Rigging.BoneRendererUtils:.cctor () (at ./Library/PackageCache/com.unity.animation.rigging@1.2.1/Editor/Utils/BoneRendererUtils.cs:121)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: ./Library/PackageCache/com.unity.animation.rigging@1.2.1/Editor/Utils/BoneRendererUtils.cs Line: 121)
+
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-TPS
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.999 seconds
+Domain Reload Profiling: 1643ms
+	BeginReloadAssembly (147ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (51ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (436ms)
+		LoadAssemblies (216ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (277ms)
+			TypeCache.Refresh (259ms)
+				TypeCache.ScanAssembly (244ms)
+			ScanForSourceGeneratedMonoScriptInfo (7ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (999ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (461ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (69ms)
+			ProcessInitializeOnLoadAttributes (312ms)
+			ProcessInitializeOnLoadMethodAttributes (65ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (18ms)
+Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 2.61 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5773 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 52 unused Assets / (1.6 MB). Loaded Objects now: 6455.
+Memory consumption went from 211.2 MB to 209.6 MB.
+Total: 5.772000 ms (FindLiveObjects: 0.551400 ms CreateObjectMapping: 0.180400 ms MarkObjects: 4.246600 ms  DeleteObjects: 0.792000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.579 seconds
+Refreshing native plugins compatible for Editor in 1.85 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-TPS
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.911 seconds
+Domain Reload Profiling: 1489ms
+	BeginReloadAssembly (132ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (44ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (384ms)
+		LoadAssemblies (206ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (229ms)
+			TypeCache.Refresh (220ms)
+				TypeCache.ScanAssembly (209ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (912ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (391ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (83ms)
+			ProcessInitializeOnLoadAttributes (243ms)
+			ProcessInitializeOnLoadMethodAttributes (51ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 2.27 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5773 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 52 unused Assets / (1.6 MB). Loaded Objects now: 6472.
+Memory consumption went from 211.2 MB to 209.6 MB.
+Total: 4.135600 ms (FindLiveObjects: 0.560800 ms CreateObjectMapping: 0.211000 ms MarkObjects: 2.806900 ms  DeleteObjects: 0.555400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 116.147065 seconds.
+  path: Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS
+  artifactKey: Guid(756a1f0d52be7d24bac3902a828c8212) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_First_Person_Shooter_FPS using Guid(756a1f0d52be7d24bac3902a828c8212) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a565b427fb146d7fc4e9becf459ab34a') in 0.001672 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 6.722847 seconds.
+  path: Assets/Sounds/Firearms/Handling
+  artifactKey: Guid(5226c5c64afc1464f8f093267924488b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling using Guid(5226c5c64afc1464f8f093267924488b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '634377ce7b9b76f9836d72a618a97791') in 0.000673 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.033988 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_9mm_Ammo_Cardboard_Box_Close_mono.wav
+  artifactKey: Guid(652f30d3e57d172429e0ef61ba4e5e10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_9mm_Ammo_Cardboard_Box_Close_mono.wav using Guid(652f30d3e57d172429e0ef61ba4e5e10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4340f5d7e4499b7a092af37b799f2e07') in 0.001368 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_9mm_Ammo_Cardboard_Box_Take_Bullet_RR1_mono.wav
+  artifactKey: Guid(c2350a34f8be8ae44b898265edd1ab5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_9mm_Ammo_Cardboard_Box_Take_Bullet_RR1_mono.wav using Guid(c2350a34f8be8ae44b898265edd1ab5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ddb9880cda5dc70d2886703377d1dae') in 0.001009 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_9mm_Ammo_Cardboard_Box_Take_Bullet_RR2_mono.wav
+  artifactKey: Guid(ceea614a9e3bc2a4ab2e584b0ce69f4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_9mm_Ammo_Cardboard_Box_Take_Bullet_RR2_mono.wav using Guid(ceea614a9e3bc2a4ab2e584b0ce69f4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5db5c2d2478f0b08672bf254feadb9a7') in 0.000773 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.008215 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Cocking_Motion_Re-Chamber_New_Round_Safety_On_Loaded_Magazine_mono.wav
+  artifactKey: Guid(7619950da5323e54193f11af20cf6d9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Cocking_Motion_Re-Chamber_New_Round_Safety_On_Loaded_Magazine_mono.wav using Guid(7619950da5323e54193f11af20cf6d9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b1d778511f940b5b5925a8a08c2c950') in 0.000837 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Cocking_Motion_Chamber_Round_Safety_On_Full_Magazine_mono.wav
+  artifactKey: Guid(9019775cd23a9c144a4051f1333650eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Cocking_Motion_Chamber_Round_Safety_On_Full_Magazine_mono.wav using Guid(9019775cd23a9c144a4051f1333650eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '278976533a77391d81aff64c965c65ad') in 0.000679 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Dry_Fire_Press_Release_Trigger_Safety_Off_mono.wav
+  artifactKey: Guid(06c76c6466e2dff48ad34a1bce1ef9dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Dry_Fire_Press_Release_Trigger_Safety_Off_mono.wav using Guid(06c76c6466e2dff48ad34a1bce1ef9dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a194264a13581c01797af5d9e13d1825') in 0.000893 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Dry_Fire_Press_Trigger_Safety_Off_mono.wav
+  artifactKey: Guid(9ca43f2597b7e0a4e82e995f8c72a194) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Dry_Fire_Press_Trigger_Safety_Off_mono.wav using Guid(9ca43f2597b7e0a4e82e995f8c72a194) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ec7c7efded72c4a3ee3a977318bd60d') in 0.000787 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Dry_Fire_Release_Trigger_Safety_Off_mono.wav
+  artifactKey: Guid(3b87ee1e404270647aefe9ebc023f362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Dry_Fire_Release_Trigger_Safety_Off_mono.wav using Guid(3b87ee1e404270647aefe9ebc023f362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed76b116051b2c336f7db58090e6c780') in 0.001038 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Insert_Bullet_Into_Magazine_RR1_mono.wav
+  artifactKey: Guid(a6937b7e68f6eaa429b5fed020dc825d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Insert_Bullet_Into_Magazine_RR1_mono.wav using Guid(a6937b7e68f6eaa429b5fed020dc825d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fe4981b00c399b9ada3fe790c43c296') in 0.000915 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Insert_Full_Magazine_mono.wav
+  artifactKey: Guid(71bcc58ea32657f4593ec2a25990ffd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Insert_Full_Magazine_mono.wav using Guid(71bcc58ea32657f4593ec2a25990ffd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '917cc93f8e5a7840559a0dc070ad9cd7') in 0.000713 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Manually_Cock_Hammer_mono.wav
+  artifactKey: Guid(6b13f89e4e9c37a44bc65c7ff837fd04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Manually_Cock_Hammer_mono.wav using Guid(6b13f89e4e9c37a44bc65c7ff837fd04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45fcbed5723280207df6e638fc9c26f3') in 0.000697 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Remove_9mm_Bullet_From_Magazine_RR1_mono.wav
+  artifactKey: Guid(66b32d51014a9504bbfae97fb3117888) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Remove_9mm_Bullet_From_Magazine_RR1_mono.wav using Guid(66b32d51014a9504bbfae97fb3117888) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61271e1db6be735149e410abb9fc083f') in 0.000553 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Remove_9mm_Bullet_From_Magazine_RR4_mono.wav
+  artifactKey: Guid(0baf1a560476fb147a5442a25e123003) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Remove_9mm_Bullet_From_Magazine_RR4_mono.wav using Guid(0baf1a560476fb147a5442a25e123003) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b97913dd59067d8c1d64d63c491a79b') in 0.000559 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Remove_Loaded_Magazine_mono.wav
+  artifactKey: Guid(ce1dd806046f3d4449fae212bd1a3f47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Remove_Loaded_Magazine_mono.wav using Guid(ce1dd806046f3d4449fae212bd1a3f47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd59a93e310c6493e8732c170ee1b9e9d') in 0.000911 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Safety_Off_Full_Magazine_mono.wav
+  artifactKey: Guid(83c934acd8219674da9c630177f91fd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Safety_Off_Full_Magazine_mono.wav using Guid(83c934acd8219674da9c630177f91fd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a10ae658c87e00cf5a66a2be39e0c04') in 0.000772 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_Switch_01_mono.wav
+  artifactKey: Guid(37edefb461a46d448b5df1a5e012c65c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_Switch_01_mono.wav using Guid(37edefb461a46d448b5df1a5e012c65c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc6a56878ee5e458f7b0baa2b3c29fe9') in 0.000786 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000094 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Manually_De-cock_Hammer_Gently_mono.wav
+  artifactKey: Guid(d275a5ebc62e14e43881641c9ee09819) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Manually_De-cock_Hammer_Gently_mono.wav using Guid(d275a5ebc62e14e43881641c9ee09819) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45b84f88e405551ccd0f7dce9db8bbda') in 0.000617 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Safety_On_Full_Magazine_mono.wav
+  artifactKey: Guid(d845d4a338722434a95d30f50ee0ded7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_B_FS92_9mm_Safety_On_Full_Magazine_mono.wav using Guid(d845d4a338722434a95d30f50ee0ded7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6a5d42c29db8b5b1cd7ffbd474a595b') in 0.000606 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_Switch_06_mono.wav
+  artifactKey: Guid(4da865d941bbf734da08dd5e4c5d64e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_Switch_06_mono.wav using Guid(4da865d941bbf734da08dd5e4c5d64e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0653fd3feba4ea6c8c70c90a3702157f') in 0.000973 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_Switch_08_mono.wav
+  artifactKey: Guid(dc4ff5aecd3f57b41a7269beac590dfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_Switch_08_mono.wav using Guid(dc4ff5aecd3f57b41a7269beac590dfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90fd297d215eaef76ca5114a67fe3040') in 0.000817 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_Switch_05_mono.wav
+  artifactKey: Guid(43b45fdf7a6ce6940a0842e9b4c5b7f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_Switch_05_mono.wav using Guid(43b45fdf7a6ce6940a0842e9b4c5b7f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd614c068591b8849a2e367db9f67eace') in 0.000753 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Sounds/Firearms/Handling/HANDLING_Switch_02_mono.wav
+  artifactKey: Guid(6bcbd8b99d585194f80c8a0d2e4bc494) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Handling/HANDLING_Switch_02_mono.wav using Guid(6bcbd8b99d585194f80c8a0d2e4bc494) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd62cdcc7c6f9baa7a94947fc31007fb1') in 0.001022 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 12.864589 seconds.
+  path: Assets/Sounds/Zombie/ZOMBIE_Moan_02_mono.wav
+  artifactKey: Guid(49666a95528772041b868d4ba3e0b287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Zombie/ZOMBIE_Moan_02_mono.wav using Guid(49666a95528772041b868d4ba3e0b287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '818bce23224ebc94f2eb6e44da8f0a64') in 0.000692 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.001631 seconds.
+  path: Assets/Sounds/Zombie/ZOMBIE_Moan_05_mono.wav
+  artifactKey: Guid(9ea3d55fd29b7d4459a47acdee5a745a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Zombie/ZOMBIE_Moan_05_mono.wav using Guid(9ea3d55fd29b7d4459a47acdee5a745a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f56ffab5097594e63edbbc78949ca24') in 0.000621 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.003034 seconds.
+  path: Assets/Sounds/Zombie/ZOMBIE_Moan_08_mono.wav
+  artifactKey: Guid(e50b1b124282ae04b836d01bdf3bf191) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Zombie/ZOMBIE_Moan_08_mono.wav using Guid(e50b1b124282ae04b836d01bdf3bf191) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b11e739042625e32c9e4b7946625c1a') in 0.000941 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 10.905308 seconds.
+  path: Assets/Sounds/HUMAN/Eating_Drinking/DRINK_Pour_Liquid_In_Glass_Short_mono.wav
+  artifactKey: Guid(0bd00f8b0754404478f360a00166ebc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/HUMAN/Eating_Drinking/DRINK_Pour_Liquid_In_Glass_Short_mono.wav using Guid(0bd00f8b0754404478f360a00166ebc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5e2c7b09191c0cfcbd028e9b434e593') in 0.000687 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.002584 seconds.
+  path: Assets/Sounds/HUMAN/Eating_Drinking/EAT_Apple_Bite_01_mono.wav
+  artifactKey: Guid(aa324ee1cd60a9c4aa37e54c0fd7f20e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/HUMAN/Eating_Drinking/EAT_Apple_Bite_01_mono.wav using Guid(aa324ee1cd60a9c4aa37e54c0fd7f20e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1c0eeca1bd16303430f2dcb7960c61c') in 0.000694 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.002968 seconds.
+  path: Assets/Sounds/HUMAN/Eating_Drinking/EAT_Apple_Bite_04_mono.wav
+  artifactKey: Guid(7f8fe8f483a34b04cbde889909f6ee9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/HUMAN/Eating_Drinking/EAT_Apple_Bite_04_mono.wav using Guid(7f8fe8f483a34b04cbde889909f6ee9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '628ff827b5956b91426b1e885cd10be0') in 0.000565 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000806 seconds.
+  path: Assets/Sounds/HUMAN/Eating_Drinking/EAT_Bite_02_mono.wav
+  artifactKey: Guid(173a128bb51130e449758769b50fddd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/HUMAN/Eating_Drinking/EAT_Bite_02_mono.wav using Guid(173a128bb51130e449758769b50fddd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ef4a8a15571c4737698f2c14f041b67') in 0.000620 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.002752 seconds.
+  path: Assets/Sounds/HUMAN/Eating_Drinking/EAT_Bite_05_mono.wav
+  artifactKey: Guid(0bc6d1c34980ab54198043c722c1e15f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/HUMAN/Eating_Drinking/EAT_Bite_05_mono.wav using Guid(0bc6d1c34980ab54198043c722c1e15f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffeb59f6123c43e540d12d11e90200b7') in 0.000564 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.001327 seconds.
+  path: Assets/Sounds/HUMAN/Eating_Drinking/EAT_Chew_Loop_02_loop_mono.wav
+  artifactKey: Guid(76bd5155e261a134b855845b9be84d7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/HUMAN/Eating_Drinking/EAT_Chew_Loop_02_loop_mono.wav using Guid(76bd5155e261a134b855845b9be84d7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '551ec80a0d5e33b62bb86bffb97b52f2') in 0.000669 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.001158 seconds.
+  path: Assets/Sounds/HUMAN/Eating_Drinking/EAT_Cookie_Bite_mono.wav
+  artifactKey: Guid(435197eef171b284b958a625279e7419) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/HUMAN/Eating_Drinking/EAT_Cookie_Bite_mono.wav using Guid(435197eef171b284b958a625279e7419) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abc4f0ee0d963b7b02c172db73e83482') in 0.000785 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 2.304381 seconds.
+  path: Assets/Sounds/HUMAN/Footsteps/Generic_Metal_Hollow_Run/FOOTSTEP_Generic_Metal_Hollow_Run_RR2_mono.wav
+  artifactKey: Guid(23bf1a720d4f03d4284fbaf73d949c94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/HUMAN/Footsteps/Generic_Metal_Hollow_Run/FOOTSTEP_Generic_Metal_Hollow_Run_RR2_mono.wav using Guid(23bf1a720d4f03d4284fbaf73d949c94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28cd88a1a40375ffcd7f158b89f52b96') in 0.000755 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.002809 seconds.
+  path: Assets/Sounds/HUMAN/Footsteps/Generic_Metal_Hollow_Run/FOOTSTEP_Generic_Metal_Hollow_Run_RR5_mono.wav
+  artifactKey: Guid(32fc5efd53d9e794db1b8084e5e980d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/HUMAN/Footsteps/Generic_Metal_Hollow_Run/FOOTSTEP_Generic_Metal_Hollow_Run_RR5_mono.wav using Guid(32fc5efd53d9e794db1b8084e5e980d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbca809111e62a49a13c941d52df6445') in 0.000885 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000462 seconds.
+  path: Assets/Sounds/HUMAN/Footsteps/Generic_Metal_Hollow_Run/FOOTSTEP_Generic_Metal_Hollow_Run_RR8_mono.wav
+  artifactKey: Guid(03a451ceb8106094ca11be39b310dbf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/HUMAN/Footsteps/Generic_Metal_Hollow_Run/FOOTSTEP_Generic_Metal_Hollow_Run_RR8_mono.wav using Guid(03a451ceb8106094ca11be39b310dbf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03085ff398ca0c4434fd1c05c4cab73e') in 0.001271 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 1.376013 seconds.
+  path: Assets/Sounds/HUMAN/Movement/MOVEMENT_Snow_RR2_mono.wav
+  artifactKey: Guid(00ccc25e34ac46443b7cc939be72d38a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/HUMAN/Movement/MOVEMENT_Snow_RR2_mono.wav using Guid(00ccc25e34ac46443b7cc939be72d38a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c73d4f6e144e47706b391a811be20ba7') in 0.001009 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 8.627278 seconds.
+  path: Assets/Sounds/Bullet/Bullet_HeadHit.mp3
+  artifactKey: Guid(034a855cc3acd454ababa19fb86d67b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Bullet/Bullet_HeadHit.mp3 using Guid(034a855cc3acd454ababa19fb86d67b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da74f0c4a7c1d6dcb344bf09fc5bb19a') in 0.000948 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 24.165934 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_01_Fire_Burst_800RPM_2x_mono.wav
+  artifactKey: Guid(c858ff27fc786d74facc92b7bd450141) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_01_Fire_Burst_800RPM_2x_mono.wav using Guid(c858ff27fc786d74facc92b7bd450141) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fbf94d5bbf47d129243b607fc6106e1') in 0.000754 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.002886 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_01_Fire_Burst_800RPM_9x_mono.wav
+  artifactKey: Guid(e29ed0cf79aa3cc428a4b1f9f382bd09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_01_Fire_Burst_800RPM_9x_mono.wav using Guid(e29ed0cf79aa3cc428a4b1f9f382bd09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbd11f3d710bb0c7ee970714e962da3a') in 0.000688 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.001396 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_01_Fire_Single_RR2_mono.wav
+  artifactKey: Guid(51bfebdf848131642b3fea92ab41e631) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_01_Fire_Single_RR2_mono.wav using Guid(51bfebdf848131642b3fea92ab41e631) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e35306739e27a06d8704585ce39ff963') in 0.000678 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.003718 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_02_Fire_Burst_760RPM_2x_mono.wav
+  artifactKey: Guid(495b27d8582b5294aa798a9d4461187f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_02_Fire_Burst_760RPM_2x_mono.wav using Guid(495b27d8582b5294aa798a9d4461187f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67a7073842b8c4651d02c99379a98314') in 0.000649 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.001114 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_02_Fire_Burst_760RPM_9x_mono.wav
+  artifactKey: Guid(31234754896b40d4b89a39e5145dfd23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_02_Fire_Burst_760RPM_9x_mono.wav using Guid(31234754896b40d4b89a39e5145dfd23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50bccc11ecbbae67e9e3313e1d77279e') in 0.000544 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.001824 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_02_Fire_Single_RR2_mono.wav
+  artifactKey: Guid(df3b2b98e421c5045b3bb846a315991a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_02_Fire_Single_RR2_mono.wav using Guid(df3b2b98e421c5045b3bb846a315991a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3982a63252f538be3208139b292e9677') in 0.000563 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.003532 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_03_Fire_Burst_880RPM_2x_mono.wav
+  artifactKey: Guid(7b55b5060d644c6438909c78218a74c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_03_Fire_Burst_880RPM_2x_mono.wav using Guid(7b55b5060d644c6438909c78218a74c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6b1e8b2a8d14a562607a1bd272c993c') in 0.000653 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.002623 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_03_Fire_Burst_880RPM_9x_mono.wav
+  artifactKey: Guid(7693de36a94701b41b00eb3d17a25660) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_03_Fire_Burst_880RPM_9x_mono.wav using Guid(7693de36a94701b41b00eb3d17a25660) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e83bb9fbbed4c390d8c4575e4dfb7a29') in 0.000648 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.002481 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_03_Fire_Single_RR2_mono.wav
+  artifactKey: Guid(1186999a011dda2438eb5f31ed5653f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_03_Fire_Single_RR2_mono.wav using Guid(1186999a011dda2438eb5f31ed5653f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62fde2f399370e7fe360322a2f4337f1') in 0.000776 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.001317 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_04_Fire_Burst_920RPM_2x_mono.wav
+  artifactKey: Guid(919b8f8f76163a944a15eea8e8f39dd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_04_Fire_Burst_920RPM_2x_mono.wav using Guid(919b8f8f76163a944a15eea8e8f39dd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c49d711c7ff34d6b41b64fcc8dde916') in 0.000653 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.001875 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_04_Fire_Burst_920RPM_9x_mono.wav
+  artifactKey: Guid(ba5152b45b45ea14bbc54093608fcd0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_04_Fire_Burst_920RPM_9x_mono.wav using Guid(ba5152b45b45ea14bbc54093608fcd0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd63a0565b81452d1fa80f82e5ee5dab1') in 0.000607 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.001402 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_04_Fire_Single_RR2_mono.wav
+  artifactKey: Guid(45eef783f6e15aa4388188e5b65264ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_04_Fire_Single_RR2_mono.wav using Guid(45eef783f6e15aa4388188e5b65264ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6be28cdf06e9064eff5de94a7b2dacc3') in 0.000515 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.002641 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_05_Fire_Burst_600RPM_2x_mono.wav
+  artifactKey: Guid(6ffa7d1f0c9f43c48825c9552e25ba79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_05_Fire_Burst_600RPM_2x_mono.wav using Guid(6ffa7d1f0c9f43c48825c9552e25ba79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36997b23299ce286b1c16519131b3308') in 0.000682 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.002543 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_05_Fire_Burst_600RPM_9x_mono.wav
+  artifactKey: Guid(ae5332e14b7076d47aa5a009f4d04943) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_05_Fire_Burst_600RPM_9x_mono.wav using Guid(ae5332e14b7076d47aa5a009f4d04943) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38f3eb5fef5c0f84124b2f2048e5b765') in 0.000794 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.002260 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_05_Fire_Single_RR2_mono.wav
+  artifactKey: Guid(726fee450624e56459887ee6ba19470c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_05_Fire_Single_RR2_mono.wav using Guid(726fee450624e56459887ee6ba19470c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3319aee1dbde43b17511ee2bed8c1951') in 0.000685 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.001916 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_06_Fire_Burst_1000RPM_2x_mono.wav
+  artifactKey: Guid(89712224669510743a370ca0395f69a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_06_Fire_Burst_1000RPM_2x_mono.wav using Guid(89712224669510743a370ca0395f69a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b6e3e4a8b975b373aa1a50bf5aed031') in 0.000759 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.002566 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_06_Fire_Burst_1000RPM_9x_mono.wav
+  artifactKey: Guid(9cb3eed1916c050439895a86699094c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_06_Fire_Burst_1000RPM_9x_mono.wav using Guid(9cb3eed1916c050439895a86699094c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '455a6bb7ceddc382f97678fa471454e1') in 0.000606 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.002638 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_06_Fire_Single_RR2_mono.wav
+  artifactKey: Guid(33c5740cc20c8dc4ea9f480ccbc39dad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_06_Fire_Single_RR2_mono.wav using Guid(33c5740cc20c8dc4ea9f480ccbc39dad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db86dd084738b662471ae82b592bfe69') in 0.000580 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.002577 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_07_Fire_Burst_800RPM_2x_mono.wav
+  artifactKey: Guid(fb697e4d953d56b449f29d885bec7ccb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_07_Fire_Burst_800RPM_2x_mono.wav using Guid(fb697e4d953d56b449f29d885bec7ccb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be057e5bf5ae6e9c918fbfbcdd32c759') in 0.000724 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.003063 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_07_Fire_Burst_800RPM_9x_mono.wav
+  artifactKey: Guid(50d951888f644e247a0fc803e3af8d06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_07_Fire_Burst_800RPM_9x_mono.wav using Guid(50d951888f644e247a0fc803e3af8d06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19a9ff6e6569aa3beb29074b6bc9e8b8') in 0.000890 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.001301 seconds.
+  path: Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_07_Fire_Single_RR3_mono.wav
+  artifactKey: Guid(4a4938f9da7cbb447a47d18778090c89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Fire_Real_Time_Strategy_RTS/FIREARM_RTS_Machine_Gun_Model_07_Fire_Single_RR3_mono.wav using Guid(4a4938f9da7cbb447a47d18778090c89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0fb1fe721b0cc500235dba822def516') in 0.000947 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 34.248933 seconds.
+  path: Assets/Sounds/Firearms/Reloading/RELOAD_Chamber_02_stereo.wav
+  artifactKey: Guid(32841954f8a7d3646b2456c923bdfcc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Reloading/RELOAD_Chamber_02_stereo.wav using Guid(32841954f8a7d3646b2456c923bdfcc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01d341b3f763daeaaafd10276b724243') in 0.000752 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.002565 seconds.
+  path: Assets/Sounds/Firearms/Reloading/RELOAD_Clicks_Double_mono.wav
+  artifactKey: Guid(bf1c4ce0c003c314187347fc7645941b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Reloading/RELOAD_Clicks_Double_mono.wav using Guid(bf1c4ce0c003c314187347fc7645941b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e9a5cc63df9c8394d60b2a9b62433d9') in 0.000577 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.001880 seconds.
+  path: Assets/Sounds/Firearms/Reloading/RELOAD_Eject_Leaver_Action_stereo.wav
+  artifactKey: Guid(440746c046bee824a834933659c84637) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Reloading/RELOAD_Eject_Leaver_Action_stereo.wav using Guid(440746c046bee824a834933659c84637) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37329bae4175e78e467a39956610ad78') in 0.000723 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.002202 seconds.
+  path: Assets/Sounds/Firearms/Reloading/RELOAD_Mechanical_03_mono.wav
+  artifactKey: Guid(7ea37670dfb4ecb44b9c4aad96d147a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Reloading/RELOAD_Mechanical_03_mono.wav using Guid(7ea37670dfb4ecb44b9c4aad96d147a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1738235206ea96adf943b27878b9cd2') in 0.000546 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.001856 seconds.
+  path: Assets/Sounds/Firearms/Reloading/RELOAD_Mechanical_06_mono.wav
+  artifactKey: Guid(36f223d3472e0b2479899b3a4f6a5736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Reloading/RELOAD_Mechanical_06_mono.wav using Guid(36f223d3472e0b2479899b3a4f6a5736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16b9caa24dd86c48160173066d236799') in 0.000647 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.001190 seconds.
+  path: Assets/Sounds/Firearms/Reloading/RELOAD_Mechanical_09_mono.wav
+  artifactKey: Guid(fa70e5308105bf14fb980c9c962ceb99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Reloading/RELOAD_Mechanical_09_mono.wav using Guid(fa70e5308105bf14fb980c9c962ceb99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '790da1ae2dc2c012137a091a1c3f2600') in 0.000528 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.002529 seconds.
+  path: Assets/Sounds/Firearms/Reloading/RELOAD_Mechanical_12_mono.wav
+  artifactKey: Guid(d0f15376952f6dd4b8d18e9bdb1ba78c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Reloading/RELOAD_Mechanical_12_mono.wav using Guid(d0f15376952f6dd4b8d18e9bdb1ba78c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ece549710e7e0e99de07dee3d8171c07') in 0.000645 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.002024 seconds.
+  path: Assets/Sounds/Firearms/Reloading/RELOAD_Mechanical_15_mono.wav
+  artifactKey: Guid(4692a44b0f357cb46b1fc74a99d9132f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Reloading/RELOAD_Mechanical_15_mono.wav using Guid(4692a44b0f357cb46b1fc74a99d9132f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01fadff89e4403c9e544e2fc14c796b2') in 0.000614 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000878 seconds.
+  path: Assets/Sounds/Firearms/Reloading/RELOAD_Rechamber_Leaver_Action_stereo.wav
+  artifactKey: Guid(18248ea67d94e9b42b12276f2fdd9fd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Firearms/Reloading/RELOAD_Rechamber_Leaver_Action_stereo.wav using Guid(18248ea67d94e9b42b12276f2fdd9fd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2479b8e263a229569f8ff3a2d408369d') in 0.000745 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.573 seconds
+Refreshing native plugins compatible for Editor in 2.39 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-TPS
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.954 seconds
+Domain Reload Profiling: 1526ms
+	BeginReloadAssembly (128ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (44ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (384ms)
+		LoadAssemblies (194ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (239ms)
+			TypeCache.Refresh (224ms)
+				TypeCache.ScanAssembly (213ms)
+			ScanForSourceGeneratedMonoScriptInfo (6ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (955ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (438ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (66ms)
+			ProcessInitializeOnLoadAttributes (301ms)
+			ProcessInitializeOnLoadMethodAttributes (55ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (19ms)
+Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 2.46 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5773 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 52 unused Assets / (1.6 MB). Loaded Objects now: 6489.
+Memory consumption went from 211.2 MB to 209.6 MB.
+Total: 4.262200 ms (FindLiveObjects: 0.446900 ms CreateObjectMapping: 0.150000 ms MarkObjects: 2.859300 ms  DeleteObjects: 0.805200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.587 seconds
+Refreshing native plugins compatible for Editor in 1.93 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-TPS
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.955 seconds
+Domain Reload Profiling: 1539ms
+	BeginReloadAssembly (131ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (38ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (30ms)
+	LoadAllAssembliesAndSetupDomain (382ms)
+		LoadAssemblies (198ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (242ms)
+			TypeCache.Refresh (226ms)
+				TypeCache.ScanAssembly (214ms)
+			ScanForSourceGeneratedMonoScriptInfo (6ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (955ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (428ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (71ms)
+			ProcessInitializeOnLoadAttributes (283ms)
+			ProcessInitializeOnLoadMethodAttributes (60ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (19ms)
+Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 2.79 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5773 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 52 unused Assets / (1.6 MB). Loaded Objects now: 6506.
+Memory consumption went from 211.2 MB to 209.6 MB.
+Total: 4.880200 ms (FindLiveObjects: 0.493900 ms CreateObjectMapping: 0.207700 ms MarkObjects: 3.568700 ms  DeleteObjects: 0.609100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 193.973594 seconds.
+  path: Assets/Sounds/Tools/TOOL_Hammer_Nail_x8_05_mono.wav
+  artifactKey: Guid(972249d4b44451e42ad83dc6b4ea5fb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Tools/TOOL_Hammer_Nail_x8_05_mono.wav using Guid(972249d4b44451e42ad83dc6b4ea5fb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b841e241d22b0bcb75927d1e0fb1cc47') in 0.013397 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.574 seconds
+Refreshing native plugins compatible for Editor in 1.89 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-TPS
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.927 seconds
+Domain Reload Profiling: 1498ms
+	BeginReloadAssembly (130ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (40ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (27ms)
+	LoadAllAssembliesAndSetupDomain (382ms)
+		LoadAssemblies (205ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (233ms)
+			TypeCache.Refresh (212ms)
+				TypeCache.ScanAssembly (202ms)
+			ScanForSourceGeneratedMonoScriptInfo (8ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (927ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (416ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (59ms)
+			ProcessInitializeOnLoadAttributes (279ms)
+			ProcessInitializeOnLoadMethodAttributes (63ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (16ms)
+Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 1.83 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5773 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 52 unused Assets / (1.6 MB). Loaded Objects now: 6523.
+Memory consumption went from 211.2 MB to 209.6 MB.
+Total: 4.272600 ms (FindLiveObjects: 0.473900 ms CreateObjectMapping: 0.170000 ms MarkObjects: 2.948800 ms  DeleteObjects: 0.678800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.552 seconds
+Refreshing native plugins compatible for Editor in 1.69 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-TPS
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.916 seconds
+Domain Reload Profiling: 1466ms
+	BeginReloadAssembly (125ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (41ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (366ms)
+		LoadAssemblies (191ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (224ms)
+			TypeCache.Refresh (215ms)
+				TypeCache.ScanAssembly (203ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (916ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (392ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (57ms)
+			ProcessInitializeOnLoadAttributes (274ms)
+			ProcessInitializeOnLoadMethodAttributes (48ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (17ms)
+Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 1.69 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5773 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 52 unused Assets / (1.6 MB). Loaded Objects now: 6540.
+Memory consumption went from 211.2 MB to 209.7 MB.
+Total: 4.648900 ms (FindLiveObjects: 0.613500 ms CreateObjectMapping: 0.190400 ms MarkObjects: 3.144000 ms  DeleteObjects: 0.700100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.601 seconds
+Refreshing native plugins compatible for Editor in 1.74 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-TPS
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.978 seconds
+Domain Reload Profiling: 1577ms
+	BeginReloadAssembly (134ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (51ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (404ms)
+		LoadAssemblies (207ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (243ms)
+			TypeCache.Refresh (227ms)
+				TypeCache.ScanAssembly (215ms)
+			ScanForSourceGeneratedMonoScriptInfo (6ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (978ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (448ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (66ms)
+			ProcessInitializeOnLoadAttributes (308ms)
+			ProcessInitializeOnLoadMethodAttributes (61ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (22ms)
+Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 2.34 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5773 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 52 unused Assets / (1.6 MB). Loaded Objects now: 6557.
+Memory consumption went from 211.3 MB to 209.7 MB.
+Total: 4.782800 ms (FindLiveObjects: 0.478000 ms CreateObjectMapping: 0.168600 ms MarkObjects: 3.538600 ms  DeleteObjects: 0.596600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.543 seconds
+Refreshing native plugins compatible for Editor in 1.68 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Error saving file Library/StateCache/LayerSettings/9e/9ecc5c3c162a7aba29bafa64c8b94b7c.json. Error: System.IO.IOException: Sharing violation on path D:\unity\TPS_SoloProject\Library\StateCache\LayerSettings\9e\9ecc5c3c162a7aba29bafa64c8b94b7c.json
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <605bf8b31fcb444b85176da963870aa7>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <605bf8b31fcb444b85176da963870aa7>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
+  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding, System.Int32 bufferSize) [0x00055] in <605bf8b31fcb444b85176da963870aa7>:0 
+  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding) [0x00000] in <605bf8b31fcb444b85176da963870aa7>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamWriter..ctor(string,bool,System.Text.Encoding)
+  at System.IO.File.WriteAllText (System.String path, System.String contents, System.Text.Encoding encoding) [0x00034] in <605bf8b31fcb444b85176da963870aa7>:0 
+  at UnityEditor.StateCache`1[T].SetState (UnityEngine.Hash128 key, T obj) [0x0004b] in <da771086bc2e4cfc9ad0a72e083a7f98>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.StateCache`1<UnityEditor.Tools/LayerSettings>:SetState (UnityEngine.Hash128,UnityEditor.Tools/LayerSettings)
+UnityEditor.Tools:set_lockedLayers (int)
+UnityEditor.Tools:OnEnable ()
+UnityEngine.ScriptableObject:CreateInstance (System.Type)
+UnityEngine.ScriptableObject:CreateInstance<UnityEditor.Tools> ()
+UnityEditor.Tools:get_get ()
+UnityEditor.Tools:get_visibleLayers ()
+UnityEditor.Animations.Rigging.BoneRendererUtils:.cctor () (at ./Library/PackageCache/com.unity.animation.rigging@1.2.1/Editor/Utils/BoneRendererUtils.cs:121)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: ./Library/PackageCache/com.unity.animation.rigging@1.2.1/Editor/Utils/BoneRendererUtils.cs Line: 121)
+
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-TPS
+Error saving file Library/StateCache/LayerSettings/9e/9ecc5c3c162a7aba29bafa64c8b94b7c.json. Error: System.IO.IOException: Sharing violation on path D:\unity\TPS_SoloProject\Library\StateCache\LayerSettings\9e\9ecc5c3c162a7aba29bafa64c8b94b7c.json
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <605bf8b31fcb444b85176da963870aa7>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <605bf8b31fcb444b85176da963870aa7>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
+  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding, System.Int32 bufferSize) [0x00055] in <605bf8b31fcb444b85176da963870aa7>:0 
+  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding) [0x00000] in <605bf8b31fcb444b85176da963870aa7>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamWriter..ctor(string,bool,System.Text.Encoding)
+  at System.IO.File.WriteAllText (System.String path, System.String contents, System.Text.Encoding encoding) [0x00034] in <605bf8b31fcb444b85176da963870aa7>:0 
+  at UnityEditor.StateCache`1[T].SetState (UnityEngine.Hash128 key, T obj) [0x0004b] in <da771086bc2e4cfc9ad0a72e083a7f98>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.StateCache`1<UnityEditor.Tools/LayerSettings>:SetState (UnityEngine.Hash128,UnityEditor.Tools/LayerSettings)
+UnityEditor.Tools:set_lockedLayers (int)
+UnityEditor.Tools:OnEnable ()
+
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.924 seconds
+Domain Reload Profiling: 1467ms
+	BeginReloadAssembly (128ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (44ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (23ms)
+	LoadAllAssembliesAndSetupDomain (357ms)
+		LoadAssemblies (186ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (219ms)
+			TypeCache.Refresh (209ms)
+				TypeCache.ScanAssembly (199ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (925ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (395ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (72ms)
+			ProcessInitializeOnLoadAttributes (263ms)
+			ProcessInitializeOnLoadMethodAttributes (48ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (17ms)
+Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 1.77 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5773 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 52 unused Assets / (1.6 MB). Loaded Objects now: 6574.
+Memory consumption went from 211.3 MB to 209.7 MB.
+Total: 4.096300 ms (FindLiveObjects: 0.435400 ms CreateObjectMapping: 0.166400 ms MarkObjects: 2.930300 ms  DeleteObjects: 0.563300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 

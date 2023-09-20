@@ -21,7 +21,7 @@ public class GunController : MonoBehaviour
 
     [SerializeField] private LayerMask _hitLayerMask;
 
-    private AudioSource _audioSource;
+    [SerializeField] private AudioSource _audioSource;
 
     private float _currentFireRate; // 이값이 0이어야 총 발사 가능
 
@@ -31,11 +31,6 @@ public class GunController : MonoBehaviour
 
     private float _recoilMul; //반동 배수
 
-
-    private void Awake()
-    {
-        _audioSource = GetComponent<AudioSource>();
-    }
 
     private void Start()
     {
@@ -150,6 +145,7 @@ public class GunController : MonoBehaviour
             _isReload = true;
             CurrentGun.CarryBulletCount += CurrentGun.CurrentBulletCount;
             CurrentGun.CurrentBulletCount = 0;
+            _audioSource.PlayOneShot(CurrentGun.ReloadSound);
 
             yield return new WaitForSeconds(CurrentGun.ReloadTime);
 
@@ -164,6 +160,7 @@ public class GunController : MonoBehaviour
                 CurrentGun.CarryBulletCount = 0;
             }
             _isReload = false;
+
             OnReloadHendler?.Invoke();
         }
         else

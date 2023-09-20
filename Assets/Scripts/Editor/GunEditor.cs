@@ -37,6 +37,7 @@ public class GunEditor : Editor
         EditorGUILayout.Space();
         _gun.MuzzleFlash = (VisualEffect)EditorGUILayout.ObjectField("총구 화염 이펙트", _gun.MuzzleFlash, typeof(VisualEffect), true);
         _gun.FireSound = (AudioClip)EditorGUILayout.ObjectField("발사 사운드", _gun.FireSound, typeof(AudioClip), true);
+        _gun.ReloadSound = (AudioClip)EditorGUILayout.ObjectField("재장전 사운드", _gun.ReloadSound, typeof(AudioClip), true);
 
         EditorGUILayout.LabelField("탄약수: " + _gun.CurrentBulletCount);
 
