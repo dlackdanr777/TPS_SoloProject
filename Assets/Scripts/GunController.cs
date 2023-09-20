@@ -187,7 +187,7 @@ public class GunController : MonoBehaviour
         RaycastHit hit;
         Ray ray = _mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f)); //카메라 정중앙에 레이를 위치시킨다
         float distance = CurrentGun.Range;
-
+        Debug.DrawRay(CurrentGun.MuzzleFlash.transform.position, CurrentGun.MuzzleFlash.transform.forward * distance, Color.red);
         if (Physics.Raycast(ray, out hit, distance, _hitLayerMask))
         {
             Vector3 hitPos = hit.point;
