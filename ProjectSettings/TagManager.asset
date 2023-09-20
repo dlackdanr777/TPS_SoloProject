@@ -4,25 +4,23 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ground
-  - Enemy
-  - HitPart
+  - Metal
+  - Wood
+  - MetalFloor
+  - Grass
+  - Stone
+  - Glass
   - Bullet
-  - StoneFloor
-  - WoodenFloor
+  - HitPart
+  - Enemy
   - Flashlight
   - PickableItem
-  - NL_LMBV
   - Sun
-  - VentilationGrid
-  - Stone
-  - Wood
-  - Grave
-  - Grass
   - Dirt
-  - Metal
-  - Glass
-  - MetalFloor
+  - WoodenFloor
+  - StoneFloor
+  - VentilationGrid
+  - Grave
   layers:
   - Default
   - TransparentFX
@@ -54,7 +52,7 @@ TagManager:
   - 
   - 
   - 
-  - PostProcessing
+  - 
   - 
   m_SortingLayers:
   - name: Default
