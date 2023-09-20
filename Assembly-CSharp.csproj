@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\UI\UIHeader.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Scripts\Inventory\OtherItem.cs" />
+    <Compile Include="Assets\Scripts\UI\UILose.cs" />
     <Compile Include="Assets\Scripts\FollowTarget.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
@@ -173,12 +174,14 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\Scripts\IState\DeadState.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Scripts\Inventory\DragInventorySlot.cs" />
     <Compile Include="Assets\Scripts\Interface\IHp.cs" />
     <Compile Include="Assets\Scripts\IState\AimModeEndState.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\Interface\IMovement.cs" />
+    <Compile Include="Assets\Scripts\UI\UIWin.cs" />
     <Compile Include="Assets\Scripts\IState\Enemy\EAttackState.cs" />
     <Compile Include="Assets\Scripts\Manager\PopupUIManager.cs" />
     <Compile Include="Assets\Scripts\Inventory\PotionItemData.cs" />

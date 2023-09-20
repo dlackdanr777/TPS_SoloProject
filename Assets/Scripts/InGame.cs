@@ -35,6 +35,12 @@ public class InGame : MonoBehaviour
     private float _currentTime;
 
     private bool _roundClear;
+
+    private void Awake()
+    {
+        GameManager.Instance.IsGameEnd = false;
+    }
+
     public void Start()
     {
         _currentRound = 1;
@@ -132,6 +138,7 @@ public class InGame : MonoBehaviour
     {
         if(_enemyCount >= 0)
         {
+            GameManager.Instance.GameEnd();
             //게임오버
         }
     }
@@ -140,7 +147,6 @@ public class InGame : MonoBehaviour
     private void RoundClear()
     {
         _clearWaitTime += Time.deltaTime;
-        _uiGame.SetZombieCountText(_currentRound + "라운드 클리어!");
         if (_clearWaitTime > 5)
         {
             
@@ -154,8 +160,8 @@ public class InGame : MonoBehaviour
             }
             else
             {
+                GameManager.Instance.GameEnd();
                 _uiGame.ShowUIWin();
-                GameManager.Instance.CursorVisible();
             }
 
         }

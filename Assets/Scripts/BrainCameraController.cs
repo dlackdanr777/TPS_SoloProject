@@ -43,6 +43,9 @@ public class BrainCameraController : MonoBehaviour
             {
                 Debug.Log("½ÇÇà");
                 _interactive.Interact();
+                _interactive.DisableInteraction();
+                _interactive = null;
+
             }
         }
 

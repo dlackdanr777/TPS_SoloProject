@@ -29,11 +29,14 @@ public class CinemachineCamera : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = _target.transform.position;
-        CameraShake();
-        if (!PopupUIManager.Instance.PopupEnable)
+        if (!GameManager.Instance.IsGameEnd)
         {
-            CameraRotate();
+            transform.position = _target.transform.position;
+            CameraShake();
+            if (!PopupUIManager.Instance.PopupEnable)
+            {
+                CameraRotate();
+            }
         }
     }
 

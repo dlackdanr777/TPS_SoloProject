@@ -1,9 +1,19 @@
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class GameManager : SingletonHandler<GameManager>
 {
+
+    public bool IsGameEnd
+    {
+        get { return _isGameEnd; }
+        set { _isGameEnd = value; }
+    }
+
     public Player Player;
 
+    private bool _isGameEnd;
     public void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -27,6 +37,12 @@ public class GameManager : SingletonHandler<GameManager>
             ObjectPoolManager.Instance.SpawnZombie(ZombieType.Women, new Vector3(10, 2.6f, 75f), Quaternion.identity);
     }
 
+    public void GameEnd()
+    {
+        CursorVisible();
+        _isGameEnd = true;
+    }
+
     public void CursorVisible()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -37,5 +53,11 @@ public class GameManager : SingletonHandler<GameManager>
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+        CursorVisible();
     }
 }

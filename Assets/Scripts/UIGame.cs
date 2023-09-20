@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class UIGame : MonoBehaviour
 {
@@ -12,6 +9,7 @@ public class UIGame : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _zombieCountText;
 
     [SerializeField] private GameObject _uiWin;
+    [SerializeField] private GameObject _uiLose;
 
 
     private Player _player;
@@ -29,6 +27,9 @@ public class UIGame : MonoBehaviour
         ShowBulletCount();
 
         _uiWin.gameObject.SetActive(false);
+        _uiLose.gameObject.SetActive(false);
+
+        GameManager.Instance.Player.onHpMin += ShowUILose;
     }
 
     public void SetGameTimerText(string text)
@@ -44,6 +45,11 @@ public class UIGame : MonoBehaviour
     public void ShowUIWin()
     {
         _uiWin.gameObject.SetActive(true);
+    }
+
+    public void ShowUILose()
+    {
+        _uiLose.gameObject.SetActive(true);
     }
 
     private void ShowBulletCount()

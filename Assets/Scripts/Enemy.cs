@@ -75,7 +75,7 @@ public class Enemy : MonoBehaviour, IHp
 
     private void Update()
     {
-        if (!_isDead)
+        if (!_isDead && !GameManager.Instance.IsGameEnd)
         {
             _machine.OnUpdate();
         }
@@ -83,7 +83,7 @@ public class Enemy : MonoBehaviour, IHp
 
     private void FixedUpdate()
     {
-        if (!_isDead)
+        if (!_isDead && !GameManager.Instance.IsGameEnd)
         {
             _machine.OnFixedUpdate();
         }

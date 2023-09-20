@@ -25,16 +25,20 @@ public class PopupUIManager : SingletonHandler<PopupUIManager>
 
     private void Update()
     {
-        if (Input.GetKeyDown(EscapeKey))
+        if (!GameManager.Instance.IsGameEnd)
         {
-            if(_activePopupList.Count > 0)
+            if (Input.GetKeyDown(EscapeKey))
             {
-                ClosePopup(_activePopupList.First.Value);
+                if (_activePopupList.Count > 0)
+                {
+                    ClosePopup(_activePopupList.First.Value);
+                }
             }
-        }
 
-        TogglekeyDownAction(InventoryKey, UIInventory);
-        TogglekeyDownAction(BuildKey, UIBuild);
+            TogglekeyDownAction(InventoryKey, UIInventory);
+            TogglekeyDownAction(BuildKey, UIBuild);
+        }
+       
     }
 
     private void Init()

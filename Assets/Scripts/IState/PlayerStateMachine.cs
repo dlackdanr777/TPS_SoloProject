@@ -17,6 +17,7 @@ public class PlayerStateMachine
     public ILowerState CrouchIdleState { get; private set; }
     public ILowerState CrouchWalkState { get; private set; }
     public ILowerState RunState { get; private set; }
+    public ILowerState DeadState { get; private set; }
 
 
     public IUpperState UpperCurrentState { get; private set; }
@@ -55,7 +56,7 @@ public class PlayerStateMachine
         CrouchIdleState = new CrouchIdleState(_player, this);
         CrouchWalkState = new CrouchWalkState(_player, this);
         RunState = new RunState(_player, this);
-
+        DeadState = new DeadState(_player, this);
 
         BasicUpperState = new BasicUpperState(_player, this);
         AimModeStartState = new AimModeStartState(_player, this);

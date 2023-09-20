@@ -15,7 +15,7 @@ D:/unity/TPS_SoloProject
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-58986
+60090
 Successfully changed project path to: D:/unity/TPS_SoloProject
 D:/unity/TPS_SoloProject
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,11 +49,11 @@ D:/unity/TPS_SoloProject
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [1000] Host "[IP] 192.168.0.11 [Port] 0 [Flags] 2 [Guid] 1432682757 [EditorId] 1432682757 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6L5JQJ2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [14148] Host "[IP] 192.168.0.11 [Port] 0 [Flags] 2 [Guid] 1609711074 [EditorId] 1609711074 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6L5JQJ2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [1000] Host "[IP] 192.168.0.11 [Port] 0 [Flags] 2 [Guid] 1432682757 [EditorId] 1432682757 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6L5JQJ2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [14148] Host "[IP] 192.168.0.11 [Port] 0 [Flags] 2 [Guid] 1609711074 [EditorId] 1609711074 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6L5JQJ2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 5.86 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 5.80 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.4f1 (35713cd46cd7)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity 2022.3.4f1/Editor/Data/Resources/UnitySubsystems
@@ -71,44 +71,44 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity 2022.3.4f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity 2022.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity 2022.3.4f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56564
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56284
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity 2022.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004448 seconds.
-- Loaded All Assemblies, in  0.294 seconds
+Registered in 0.005119 seconds.
+- Loaded All Assemblies, in  0.262 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.270 seconds
-Domain Reload Profiling: 563ms
-	BeginReloadAssembly (75ms)
+- Finished resetting the current domain, in  0.194 seconds
+Domain Reload Profiling: 455ms
+	BeginReloadAssembly (68ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (26ms)
+	RebuildCommonClasses (31ms)
 	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (48ms)
-	LoadAllAssembliesAndSetupDomain (135ms)
-		LoadAssemblies (73ms)
+	initialDomainReloadingComplete (44ms)
+	LoadAllAssembliesAndSetupDomain (109ms)
+		LoadAssemblies (66ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (130ms)
-			TypeCache.Refresh (129ms)
-				TypeCache.ScanAssembly (114ms)
+		AnalyzeDomain (104ms)
+			TypeCache.Refresh (103ms)
+				TypeCache.ScanAssembly (93ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (270ms)
+	FinalizeReload (195ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (209ms)
+		SetupLoadedEditorAssemblies (148ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (10ms)
-			SetLoadedEditorAssemblies (8ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (137ms)
-			ProcessInitializeOnLoadMethodAttributes (51ms)
+			ProcessInitializeOnLoadAttributes (100ms)
+			ProcessInitializeOnLoadMethodAttributes (34ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -118,272 +118,57 @@ Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0.776 seconds
-Refreshing native plugins compatible for Editor in 1.73 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.583 seconds
+Refreshing native plugins compatible for Editor in 1.65 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 [MODES] ModeService[none].Initialize
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-TPS
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.586 seconds
-Domain Reload Profiling: 1360ms
-	BeginReloadAssembly (140ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (6ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (29ms)
-	RebuildCommonClasses (35ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (47ms)
-	LoadAllAssembliesAndSetupDomain (541ms)
-		LoadAssemblies (255ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (343ms)
-			TypeCache.Refresh (310ms)
-				TypeCache.ScanAssembly (298ms)
-			ScanForSourceGeneratedMonoScriptInfo (24ms)
-			ResolveRequiredComponents (9ms)
-	FinalizeReload (587ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (432ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (5ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (65ms)
-			ProcessInitializeOnLoadAttributes (296ms)
-			ProcessInitializeOnLoadMethodAttributes (55ms)
-			AfterProcessingInitializeOnLoad (9ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
-Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
-Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 2.73 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5954 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 89 unused Assets / (1.6 MB). Loaded Objects now: 6416.
-Memory consumption went from 243.8 MB to 242.2 MB.
-Total: 4.689900 ms (FindLiveObjects: 0.464200 ms CreateObjectMapping: 0.171100 ms MarkObjects: 3.360100 ms  DeleteObjects: 0.693500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 72115.569296 seconds.
-  path: Assets/Prefabs/Player.prefab
-  artifactKey: Guid(e62244ec31e90114c9bc2f2efd219faf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(e62244ec31e90114c9bc2f2efd219faf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b36bc6cc4ec4133ca6509c5b56dbbfb') in 0.048480 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 318
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0.572 seconds
-Refreshing native plugins compatible for Editor in 2.02 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-TPS
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.902 seconds
-Domain Reload Profiling: 1472ms
-	BeginReloadAssembly (132ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (49ms)
-	RebuildCommonClasses (26ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (24ms)
-	LoadAllAssembliesAndSetupDomain (379ms)
-		LoadAssemblies (184ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (243ms)
-			TypeCache.Refresh (234ms)
-				TypeCache.ScanAssembly (223ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (9ms)
-	FinalizeReload (902ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (368ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (63ms)
-			ProcessInitializeOnLoadAttributes (244ms)
-			ProcessInitializeOnLoadMethodAttributes (49ms)
-			AfterProcessingInitializeOnLoad (5ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (13ms)
-Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
-Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
-Refreshing native plugins compatible for Editor in 1.73 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5769 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 52 unused Assets / (1.6 MB). Loaded Objects now: 6434.
-Memory consumption went from 210.1 MB to 208.5 MB.
-Total: 3.978400 ms (FindLiveObjects: 0.500300 ms CreateObjectMapping: 0.181000 ms MarkObjects: 2.819700 ms  DeleteObjects: 0.476900 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0.617 seconds
-Refreshing native plugins compatible for Editor in 1.79 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-TPS
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.130 seconds
-Domain Reload Profiling: 1746ms
-	BeginReloadAssembly (136ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (42ms)
-	RebuildCommonClasses (40ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (24ms)
-	LoadAllAssembliesAndSetupDomain (405ms)
-		LoadAssemblies (200ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (262ms)
-			TypeCache.Refresh (247ms)
-				TypeCache.ScanAssembly (234ms)
-			ScanForSourceGeneratedMonoScriptInfo (6ms)
-			ResolveRequiredComponents (9ms)
-	FinalizeReload (1131ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (541ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (6ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (90ms)
-			ProcessInitializeOnLoadAttributes (363ms)
-			ProcessInitializeOnLoadMethodAttributes (71ms)
-			AfterProcessingInitializeOnLoad (8ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (22ms)
-Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
-Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
-Refreshing native plugins compatible for Editor in 2.45 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5769 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 52 unused Assets / (1.6 MB). Loaded Objects now: 6451.
-Memory consumption went from 210.3 MB to 208.7 MB.
-Total: 5.074900 ms (FindLiveObjects: 0.917200 ms CreateObjectMapping: 0.168600 ms MarkObjects: 3.392700 ms  DeleteObjects: 0.595200 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0.553 seconds
-Refreshing native plugins compatible for Editor in 1.76 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-TPS
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.910 seconds
-Domain Reload Profiling: 1462ms
-	BeginReloadAssembly (130ms)
+- Finished resetting the current domain, in  0.607 seconds
+Domain Reload Profiling: 1188ms
+	BeginReloadAssembly (107ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (43ms)
-	RebuildCommonClasses (27ms)
-	RebuildNativeTypeToScriptingClass (13ms)
-	initialDomainReloadingComplete (25ms)
-	LoadAllAssembliesAndSetupDomain (357ms)
-		LoadAssemblies (193ms)
+		CreateAndSetChildDomain (24ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (33ms)
+	LoadAllAssembliesAndSetupDomain (408ms)
+		LoadAssemblies (198ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (217ms)
-			TypeCache.Refresh (207ms)
-				TypeCache.ScanAssembly (196ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
+		AnalyzeDomain (256ms)
+			TypeCache.Refresh (228ms)
+				TypeCache.ScanAssembly (217ms)
+			ScanForSourceGeneratedMonoScriptInfo (20ms)
 			ResolveRequiredComponents (9ms)
-	FinalizeReload (911ms)
+	FinalizeReload (607ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (373ms)
+		SetupLoadedEditorAssemblies (461ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
+			InitializePlatformSupportModulesInManaged (5ms)
 			SetLoadedEditorAssemblies (2ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (60ms)
-			ProcessInitializeOnLoadAttributes (253ms)
-			ProcessInitializeOnLoadMethodAttributes (48ms)
+			BeforeProcessingInitializeOnLoad (72ms)
+			ProcessInitializeOnLoadAttributes (320ms)
+			ProcessInitializeOnLoadMethodAttributes (55ms)
 			AfterProcessingInitializeOnLoad (6ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (14ms)
-Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
+		AwakeInstancesAfterBackupRestoration (6ms)
 Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
-Refreshing native plugins compatible for Editor in 2.34 ms, found 3 plugins.
+Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 2.12 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5769 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 52 unused Assets / (1.6 MB). Loaded Objects now: 6468.
-Memory consumption went from 210.3 MB to 208.7 MB.
-Total: 5.141400 ms (FindLiveObjects: 0.747400 ms CreateObjectMapping: 0.367700 ms MarkObjects: 3.480900 ms  DeleteObjects: 0.544200 ms)
+Unloading 5954 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 89 unused Assets / (1.6 MB). Loaded Objects now: 6416.
+Memory consumption went from 244.5 MB to 242.9 MB.
+Total: 5.681700 ms (FindLiveObjects: 0.530600 ms CreateObjectMapping: 0.437600 ms MarkObjects: 4.015700 ms  DeleteObjects: 0.696900 ms)
 
-Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
@@ -399,140 +184,756 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1216.086189 seconds.
-  path: Assets/HONETi/flat_gui_elements/bubble/detail.png
-  artifactKey: Guid(b78123abf87ab6b469a86bad2364a9f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HONETi/flat_gui_elements/bubble/detail.png using Guid(b78123abf87ab6b469a86bad2364a9f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c48395bcde09367e3b2fb0ab59b9ce6b') in 0.015316 seconds
+  Time since last request: 77263.727064 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BookcaseDoor_R.prefab
+  artifactKey: Guid(44f5e19254c45ed46be4b6d0a40e8118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BookcaseDoor_R.prefab using Guid(44f5e19254c45ed46be4b6d0a40e8118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd32363bc74df6091810b7f127040a60') in 0.014261 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
+Number of asset objects unloaded after import = 7
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/HONETi/flat_gui_elements/bubble/fill_detail.png
-  artifactKey: Guid(021625903ee0e5843aa3e32ff01c0ace) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HONETi/flat_gui_elements/bubble/fill_detail.png using Guid(021625903ee0e5843aa3e32ff01c0ace) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a2c2cc1ef092564642bd5f2f38885e9') in 0.000824 seconds
+  Time since last request: 0.000025 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Bookcase_staticB.prefab
+  artifactKey: Guid(7d3c5d38b237f914f98f36f74a4b1f8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Bookcase_staticB.prefab using Guid(7d3c5d38b237f914f98f36f74a4b1f8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '485d552d67d50b3f63ba39bd85a74d23') in 0.001887 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 8.954378 seconds.
-  path: Assets/HONETi/flat_gui_elements/panels/circle_bg.png
-  artifactKey: Guid(45b3e474c33883f46a8fb575009e0715) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HONETi/flat_gui_elements/panels/circle_bg.png using Guid(45b3e474c33883f46a8fb575009e0715) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b58e9323f79f54a75f940942de2395d') in 0.001522 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/HONETi/flat_gui_elements/panels/message_cloud_1.png
-  artifactKey: Guid(ae7f60d85bfdf1b4c9ef7998c21b0a14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HONETi/flat_gui_elements/panels/message_cloud_1.png using Guid(ae7f60d85bfdf1b4c9ef7998c21b0a14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b580220c15119a63049d045dcff788b') in 0.001052 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/HONETi/flat_gui_elements/panels/message_cloud_2.png
-  artifactKey: Guid(92d53934f0c069b468271e9ff7de22cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HONETi/flat_gui_elements/panels/message_cloud_2.png using Guid(92d53934f0c069b468271e9ff7de22cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5baf614a071c206628e20e09f6f7f85') in 0.001535 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
+Number of asset objects unloaded after import = 19
 ========================================================================
 Received Import Request.
   Time since last request: 0.000015 seconds.
-  path: Assets/HONETi/flat_gui_elements/panels/window.png
-  artifactKey: Guid(ea1393289b29df044a60b0e675fbe855) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HONETi/flat_gui_elements/panels/window.png using Guid(ea1393289b29df044a60b0e675fbe855) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72b587449231a5489b5f7d74f03e6630') in 0.001398 seconds
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BackboardIndoor_detached_B.prefab
+  artifactKey: Guid(5b9cc85f2020518428853f90ac9ec9a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BackboardIndoor_detached_B.prefab using Guid(5b9cc85f2020518428853f90ac9ec9a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ace125225a1d4e256942bb2dca6bc8d0') in 0.006293 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/HONETi/flat_gui_elements/panels/universal_panel_1.png
-  artifactKey: Guid(06e38d939e8c7cc4fa3b3d531f29156f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HONETi/flat_gui_elements/panels/universal_panel_1.png using Guid(06e38d939e8c7cc4fa3b3d531f29156f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6b73f7e407c4a562c1d67fffe2b13a3') in 0.002303 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/HONETi/flat_gui_elements/panels/separator.png
-  artifactKey: Guid(f15329934961cc04ea7a9d8e71e8c2f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HONETi/flat_gui_elements/panels/separator.png using Guid(f15329934961cc04ea7a9d8e71e8c2f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '404eb8901a2537f2e2397fc4d54b1e72') in 0.000878 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 15.532609 seconds.
-  path: Assets/HONETi/flat_gui_elements/loading_progress_bars/fill_2.png
-  artifactKey: Guid(5e32d2c581d8b744cba9476479242f2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HONETi/flat_gui_elements/loading_progress_bars/fill_2.png using Guid(5e32d2c581d8b744cba9476479242f2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20c4219e7b62bc78d4cf7540f0a0b788') in 0.001516 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/HONETi/flat_gui_elements/loading_progress_bars/fill_effect.png
-  artifactKey: Guid(f967c435c9249e743b271f46e433d4f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HONETi/flat_gui_elements/loading_progress_bars/fill_effect.png using Guid(f967c435c9249e743b271f46e433d4f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c80d4bfca7f4be0b79bf08852be9abf6') in 0.001217 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/HONETi/flat_gui_elements/loading_progress_bars/framed_bg.png
-  artifactKey: Guid(db6ffd1a229719b4eacb81dab66758da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HONETi/flat_gui_elements/loading_progress_bars/framed_bg.png using Guid(db6ffd1a229719b4eacb81dab66758da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a87ea34ee0ade4045aa051a1f50b9ef') in 0.001584 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/HONETi/flat_gui_elements/loading_progress_bars/thin_bg.png
-  artifactKey: Guid(5f5be9bc04d7fd840b482fc3509b75b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HONETi/flat_gui_elements/loading_progress_bars/thin_bg.png using Guid(5f5be9bc04d7fd840b482fc3509b75b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f80eb5e88637ead98411b136d057dcb') in 0.001016 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 43.722475 seconds.
-  path: Assets/HONETi/flat_gui_elements/additional_texture_sizes/level_icons/star_2.png
-  artifactKey: Guid(40a2e4b759207c14eb935a8b6187f728) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HONETi/flat_gui_elements/additional_texture_sizes/level_icons/star_2.png using Guid(40a2e4b759207c14eb935a8b6187f728) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af9efe28921f3efb096da325583ba2a6') in 0.001021 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/HONETi/flat_gui_elements/additional_texture_sizes/level_icons/star_3.png
-  artifactKey: Guid(fa1544dd488b4f1428d4f14bc74fb276) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HONETi/flat_gui_elements/additional_texture_sizes/level_icons/star_3.png using Guid(fa1544dd488b4f1428d4f14bc74fb276) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e9556aeddd398393cec3619ed488e20') in 0.000870 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 1.251376 seconds.
-  path: Assets/HONETi/flat_gui_elements/additional_texture_sizes/loading_progress_bars/fill_2.png
-  artifactKey: Guid(5338b2fc22c1d5c42a8bc2a26030ad40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HONETi/flat_gui_elements/additional_texture_sizes/loading_progress_bars/fill_2.png using Guid(5338b2fc22c1d5c42a8bc2a26030ad40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c5c7994f1f7fc6ad61584272ca5d5b3') in 0.000950 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/HONETi/flat_gui_elements/additional_texture_sizes/loading_progress_bars/thin_fill_effect.png
-  artifactKey: Guid(5732e562b88ecb74f8a63db60e7e7947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HONETi/flat_gui_elements/additional_texture_sizes/loading_progress_bars/thin_fill_effect.png using Guid(5732e562b88ecb74f8a63db60e7e7947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8ea02ffc2bd34c10447fffa18964ae2') in 0.001009 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
+Number of asset objects unloaded after import = 7
 ========================================================================
 Received Import Request.
   Time since last request: 0.000013 seconds.
-  path: Assets/HONETi/flat_gui_elements/additional_texture_sizes/loading_progress_bars/framed_bg.png
-  artifactKey: Guid(cb58c66b7b6bd7f48b0b434941965d73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HONETi/flat_gui_elements/additional_texture_sizes/loading_progress_bars/framed_bg.png using Guid(cb58c66b7b6bd7f48b0b434941965d73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6455f43dadbd98a40a853c57700cf846') in 0.000726 seconds
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BookShelvingDouble.prefab
+  artifactKey: Guid(00ff9522e048f8f4aa7017d27b3cc96d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BookShelvingDouble.prefab using Guid(00ff9522e048f8f4aa7017d27b3cc96d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e321ff29d878f71d1cb87b4793bc753d') in 0.000980 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Bookcase.prefab
+  artifactKey: Guid(92b58386b61485342835e239802f474e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Bookcase.prefab using Guid(92b58386b61485342835e239802f474e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe18174709c406456c6c10e983b46aa2') in 0.005195 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BackboardIndoor_detached.prefab
+  artifactKey: Guid(a8d265bbebe158a49bb604d8c2312eaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BackboardIndoor_detached.prefab using Guid(a8d265bbebe158a49bb604d8c2312eaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32f9642b333d106a6baf8d256941b9f2') in 0.001514 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Bench.prefab
+  artifactKey: Guid(872788dd7bf389349ab8b7040e21f125) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Bench.prefab using Guid(872788dd7bf389349ab8b7040e21f125) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21deaff23bc609e0e7dee53d2710acb7') in 0.001172 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BookShelvingDouble_booksB.prefab
+  artifactKey: Guid(e76a69af59ed2cd448c89768abbb5001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BookShelvingDouble_booksB.prefab using Guid(e76a69af59ed2cd448c89768abbb5001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eae72e445f3a9196ceb1d01f8a0e5d90') in 0.007672 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 139
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Bush.prefab
+  artifactKey: Guid(49a02221244d1da4ebf27c9657ee781e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Bush.prefab using Guid(49a02221244d1da4ebf27c9657ee781e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0497d91f44899f061643eda9a3c60872') in 0.001146 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.001684 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BookShelvingDouble_booksA.prefab
+  artifactKey: Guid(a81411eaf3cd42b4f981202601e1b665) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BookShelvingDouble_booksA.prefab using Guid(a81411eaf3cd42b4f981202601e1b665) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd416124b89fb8725669157911b8aefeb') in 0.006608 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 109
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Bell.prefab
+  artifactKey: Guid(bdba6bfe2745a1c47954a431ccbb4d82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Bell.prefab using Guid(bdba6bfe2745a1c47954a431ccbb4d82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0d3de34688a771021dc4add5caf6761') in 0.001351 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BookShelvingSingle.prefab
+  artifactKey: Guid(51cdee7c3bf25094799a8c56f12ab61b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BookShelvingSingle.prefab using Guid(51cdee7c3bf25094799a8c56f12ab61b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca8c4f858537f3e23639b4ae9083384c') in 0.001181 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Cable_50cm_corner.prefab
+  artifactKey: Guid(76166950a5ac6dc40a3a0acf6917615c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Cable_50cm_corner.prefab using Guid(76166950a5ac6dc40a3a0acf6917615c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06e5af20bc6d6fad49a3af61e09a00a5') in 0.001184 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BookcaseB.prefab
+  artifactKey: Guid(c5fdd64090cea8640aa32e7cf065876e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BookcaseB.prefab using Guid(c5fdd64090cea8640aa32e7cf065876e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4766d637f46b7638ec11aecdd3587901') in 0.001128 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Cable_100cm_A.prefab
+  artifactKey: Guid(b96fc87635113784b9a9548cdd517c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Cable_100cm_A.prefab using Guid(b96fc87635113784b9a9548cdd517c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14d07588c09616893eb8b31e95a0142e') in 0.001207 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BasketballBackboard.prefab
+  artifactKey: Guid(43cf05fff61d0a64fb33200373d53808) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BasketballBackboard.prefab using Guid(43cf05fff61d0a64fb33200373d53808) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff39ed696b25702d44467c8b555e145c') in 0.001107 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BookcaseBrokenC.prefab
+  artifactKey: Guid(a607141e1e6f12340b594d5c7b177caf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BookcaseBrokenC.prefab using Guid(a607141e1e6f12340b594d5c7b177caf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfe6f143062959e4fe6a8aa8c730e7b9') in 0.001232 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/ArchiveDrawers_static.prefab
+  artifactKey: Guid(cb37cfbadaac70341948e3c2f8993d98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/ArchiveDrawers_static.prefab using Guid(cb37cfbadaac70341948e3c2f8993d98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be32caf0f88f657720cba490bebc0bf8') in 0.001354 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BannerB_02.prefab
+  artifactKey: Guid(f2e376f09ccbc0c408950aa939db2d14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BannerB_02.prefab using Guid(f2e376f09ccbc0c408950aa939db2d14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e95a83086c99ff543a7af2d5d78ce1b3') in 0.000869 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BannerA_02.prefab
+  artifactKey: Guid(0417feb805689e048a21222b21a4e9ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/BannerA_02.prefab using Guid(0417feb805689e048a21222b21a4e9ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af8371088ad1219c68a333edeaf8ad6c') in 0.001162 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 3.251324 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/FirePipe_L_100cm.prefab
+  artifactKey: Guid(ce632aad9908b874f85bcf3030c1eb27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/FirePipe_L_100cm.prefab using Guid(ce632aad9908b874f85bcf3030c1eb27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e9e1daa87cfa64b8b6dc905c1387354') in 0.001144 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/FirePipe_T_200cm.prefab
+  artifactKey: Guid(aeca381d205368d43aa22fa1fc6f979d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/FirePipe_T_200cm.prefab using Guid(aeca381d205368d43aa22fa1fc6f979d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6de0af8aaf151e3a210491a1094c064a') in 0.000976 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/FirePipe_sprinkler.prefab
+  artifactKey: Guid(dd338fc8a52d8eb4a989b1f63e8a2ea4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/FirePipe_sprinkler.prefab using Guid(dd338fc8a52d8eb4a989b1f63e8a2ea4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '957cb03c36dbb6328ceca2e0540fc8b1') in 0.000959 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/FlagA.prefab
+  artifactKey: Guid(7342a5f25541d5a419eb631cce4652bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/FlagA.prefab using Guid(7342a5f25541d5a419eb631cce4652bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39a8f71c2ed98f0adbdb4881cc58d882') in 0.001159 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000977 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Flashlight_ON.prefab
+  artifactKey: Guid(18488ef18efca5e4e8fb58eeb6ce4a2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Flashlight_ON.prefab using Guid(18488ef18efca5e4e8fb58eeb6ce4a2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4e2e28d3c267cbf2fc957ef37eb8ff6') in 0.002139 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 26
+========================================================================
+Received Import Request.
+  Time since last request: 0.060917 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/FolderD.prefab
+  artifactKey: Guid(57e9923eb1d82144ab174da690c0bb85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/FolderD.prefab using Guid(57e9923eb1d82144ab174da690c0bb85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dc2b502fea44e5b31485daf2388eaa9') in 0.001026 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/FolderSet05.prefab
+  artifactKey: Guid(e8bc8b7f6f12f20449fb4eca98ba5bd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/FolderSet05.prefab using Guid(e8bc8b7f6f12f20449fb4eca98ba5bd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0b1bb8129e95cad416544877cc034f3') in 0.001224 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/FrameC.prefab
+  artifactKey: Guid(cabae0e58dd4d2849a36a1ca71566b2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/FrameC.prefab using Guid(cabae0e58dd4d2849a36a1ca71566b2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9be1c0f6f9ae9f25167dd07a2c6e21c0') in 0.001507 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/FolderSet03.prefab
+  artifactKey: Guid(c261831ef88b73441b17bff47081fc9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/FolderSet03.prefab using Guid(c261831ef88b73441b17bff47081fc9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c904d61546f5e1b7b4c5a4f9af8b35f') in 0.005894 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Glass_WindowSingle.prefab
+  artifactKey: Guid(4091fe117b751c746ba4abd19e87d2a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Glass_WindowSingle.prefab using Guid(4091fe117b751c746ba4abd19e87d2a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65a1c4df63ed2bd15277576440ce1598') in 0.001084 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.043763 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/GlassDebrisB.prefab
+  artifactKey: Guid(1bbe8e97a254a5f4f8737f3b6018d2d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/GlassDebrisB.prefab using Guid(1bbe8e97a254a5f4f8737f3b6018d2d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8b29d5386715254fd004e3eb704e42f') in 0.001183 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Gutter_B_Broken.prefab
+  artifactKey: Guid(178dd0e9574b4984a9e9b21c21c8c74a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Gutter_B_Broken.prefab using Guid(178dd0e9574b4984a9e9b21c21c8c74a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdaf05d70e8b979ed0c2de3852d48f71') in 0.001276 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Gutter_A_broken.prefab
+  artifactKey: Guid(c7dcf60beeb3812459869ba4225b3cdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Gutter_A_broken.prefab using Guid(c7dcf60beeb3812459869ba4225b3cdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f422c7797040a041497f6cee466f7866') in 0.000981 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/GutterPipe_mid_B.prefab
+  artifactKey: Guid(e91a4e74574d91140884ec4d536b3257) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/GutterPipe_mid_B.prefab using Guid(e91a4e74574d91140884ec4d536b3257) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '666f6987178883e2b5f363ae901a9c25') in 0.005667 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 35
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/GutterPipe_bottom.prefab
+  artifactKey: Guid(a34ba6fed275159469d8052e6cbfb243) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/GutterPipe_bottom.prefab using Guid(a34ba6fed275159469d8052e6cbfb243) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '083af14f4badad86116ab1221286be60') in 0.001195 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 32
+========================================================================
+Received Import Request.
+  Time since last request: 0.346021 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/GutterPipe_top_B.prefab
+  artifactKey: Guid(96b756c91c1f7d54c84f6165056e460b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/GutterPipe_top_B.prefab using Guid(96b756c91c1f7d54c84f6165056e460b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '816e8499efd59dd122074feb8ea1d938') in 0.001194 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 29
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/GutterPipe_top_B_Broken02.prefab
+  artifactKey: Guid(09484420ce109f04fbaecf2c42593831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/GutterPipe_top_B_Broken02.prefab using Guid(09484420ce109f04fbaecf2c42593831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c497b076024a6fd5e9dcea9048252005') in 0.007176 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/JalousieF.prefab
+  artifactKey: Guid(9fd0b0a59ef22744597e78431583fcaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/JalousieF.prefab using Guid(9fd0b0a59ef22744597e78431583fcaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d73b90952d2d9eb2cbbb5fa193fa81d') in 0.001025 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/JalousieB.prefab
+  artifactKey: Guid(012b4372be3711146b9c362e3b9862ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/JalousieB.prefab using Guid(012b4372be3711146b9c362e3b9862ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bee95be934c06a79930c92e3b6f11207') in 0.001712 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/JalousieD.prefab
+  artifactKey: Guid(fb629a38e33d76d4d92654ac36be772f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/JalousieD.prefab using Guid(fb629a38e33d76d4d92654ac36be772f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '560a0bc5cba9f7b06ad93c97c16f9fec') in 0.001214 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.290957 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LampFluoBuiltinA_ON.prefab
+  artifactKey: Guid(2166019e9549e5c4c847942f52474212) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LampFluoBuiltinA_ON.prefab using Guid(2166019e9549e5c4c847942f52474212) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f3bb70f0309b78a61c4868dc118ec1a') in 0.001677 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LampFluoBuiltinB.prefab
+  artifactKey: Guid(67bfdcf931288b048a67b80f8a2d484d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LampFluoBuiltinB.prefab using Guid(67bfdcf931288b048a67b80f8a2d484d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19d90c39067d91e61fa03643f3025f2f') in 0.001018 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.007549 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LampFluoBuiltinG.prefab
+  artifactKey: Guid(741921b00e0c6084b9ec6c1404032d23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LampFluoBuiltinG.prefab using Guid(741921b00e0c6084b9ec6c1404032d23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46bd843c6fe6cc6cd1e2668bd8353152') in 0.001671 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LampFluoHangingA_OFF.prefab
+  artifactKey: Guid(51303334d2fcc0144856ff8aae952f0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LampFluoHangingA_OFF.prefab using Guid(51303334d2fcc0144856ff8aae952f0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c670077efd204a56049f1367772dee93') in 0.001221 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LampFluoHangingB.prefab
+  artifactKey: Guid(8c3377175393f8146baf07c229912dbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LampFluoHangingB.prefab using Guid(8c3377175393f8146baf07c229912dbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d0c4d83adef88b3f68534f53e47aea2') in 0.001135 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.315062 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LampGym_OFF.prefab
+  artifactKey: Guid(0a1007069cb00904a991315cc37ecfdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LampGym_OFF.prefab using Guid(0a1007069cb00904a991315cc37ecfdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54e3cccd12c8983a4a4d93a6348f5d0b') in 0.001520 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LibraryBanner02.prefab
+  artifactKey: Guid(7fe42677849915d479815e24023fe07a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LibraryBanner02.prefab using Guid(7fe42677849915d479815e24023fe07a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cece351fdd507ab32f19040e377ddca1') in 0.001034 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LampGymBrokenA.prefab
+  artifactKey: Guid(974eee6053138624eaf0b29fc616c6f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LampGymBrokenA.prefab using Guid(974eee6053138624eaf0b29fc616c6f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9293236c0aa337c54a45d401b265ea2b') in 0.001472 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LibraryBanner06.prefab
+  artifactKey: Guid(faa844a4431d3b841804d4a4e703e8b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LibraryBanner06.prefab using Guid(faa844a4431d3b841804d4a4e703e8b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2cb4eafeb3f7260c3d113fedd3d91e5') in 0.001087 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LibraryCardCatalogB.prefab
+  artifactKey: Guid(160444dd2d59f214f9af6b9fbc603a6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LibraryCardCatalogB.prefab using Guid(160444dd2d59f214f9af6b9fbc603a6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65766865575b1d659a74e6c73211b1dc') in 0.001685 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 23
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LibraryChair.prefab
+  artifactKey: Guid(d2516a21766828c45905c8106b790985) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LibraryChair.prefab using Guid(d2516a21766828c45905c8106b790985) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7e2805a00ea0cf996251b7ee983a63d') in 0.001388 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.046936 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LibrarySign_B.prefab
+  artifactKey: Guid(1fa7b707f9036a84c9a50eaae0821de6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LibrarySign_B.prefab using Guid(1fa7b707f9036a84c9a50eaae0821de6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c15194783965de7a7b94bbd0192839be') in 0.001128 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LockerA.prefab
+  artifactKey: Guid(6ac1b8a64e12b514eb6f89c5f7717d58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LockerA.prefab using Guid(6ac1b8a64e12b514eb6f89c5f7717d58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '065eb09486cb3831683f46cd518e7a41') in 0.003280 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LightRays.prefab
+  artifactKey: Guid(6441db9c685d9eb44ad482fc82104f66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LightRays.prefab using Guid(6441db9c685d9eb44ad482fc82104f66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e1bd4bef20ff5f9f6f71bb77e4348c2') in 0.003451 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LightSwitch.prefab
+  artifactKey: Guid(bfc10883877ac3f4eb1456c3191e4f38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LightSwitch.prefab using Guid(bfc10883877ac3f4eb1456c3191e4f38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2a966c9320961bff1826b8c86d9e174') in 0.001042 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LockerC.prefab
+  artifactKey: Guid(225730b2e860fd942b79e05af56bb087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/LockerC.prefab using Guid(225730b2e860fd942b79e05af56bb087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ff87f5cc4d7aac1e2a1faf291f17ab9') in 0.002853 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.188714 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/PennantsB.prefab
+  artifactKey: Guid(0a03cbad9b82c7f4db91deff23a3b609) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/PennantsB.prefab using Guid(0a03cbad9b82c7f4db91deff23a3b609) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ea11966493e4fa9285cfe71c4c3d450') in 0.001053 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/PennantsC_03.prefab
+  artifactKey: Guid(bed24a836dc14d647941f838186f1642) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/PennantsC_03.prefab using Guid(bed24a836dc14d647941f838186f1642) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a164f3931849020e6bcc82b00d3229ad') in 0.001338 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/PennantsC_01.prefab
+  artifactKey: Guid(b8d3d4687a191e44293cd21a0e83f039) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/PennantsC_01.prefab using Guid(b8d3d4687a191e44293cd21a0e83f039) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90c4e69d2b04e485ec271ab3435a47c8') in 0.001004 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/PlantLeaf01.prefab
+  artifactKey: Guid(5b65e35d28bf8ea4296e4debb2d21568) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/PlantLeaf01.prefab using Guid(5b65e35d28bf8ea4296e4debb2d21568) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ef914750c20c3d223579cca0a2f9ed6') in 0.000857 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/PennantsC_02.prefab
+  artifactKey: Guid(976fbf3e3077fc44694d1b039129dfe3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/PennantsC_02.prefab using Guid(976fbf3e3077fc44694d1b039129dfe3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5dc2a364d7d7587c2e3aaebe36733bac') in 0.001011 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.044659 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Rostrum_frame.prefab
+  artifactKey: Guid(0a7db3e7aec4d7d4a8b43f89d4824e2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Rostrum_frame.prefab using Guid(0a7db3e7aec4d7d4a8b43f89d4824e2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47caa14804488600e7a4186bc205e829') in 0.001143 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Rostrum_plank.prefab
+  artifactKey: Guid(4e9de90b49feab940ba60d7c2216bc47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Rostrum_plank.prefab using Guid(4e9de90b49feab940ba60d7c2216bc47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f30b4b75fa96b9480520c949b100b660') in 0.000818 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Rostrums.prefab
+  artifactKey: Guid(c1d1769093843e24d823544bec51c0b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Rostrums.prefab using Guid(c1d1769093843e24d823544bec51c0b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0d6aa348ea9d042ad8b30bbc24614f3') in 0.001106 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.014951 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Sign_ClassroomN_Chemistry.prefab
+  artifactKey: Guid(2e8faa6ea35921547ad40388aa1cc075) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Sign_ClassroomN_Chemistry.prefab using Guid(2e8faa6ea35921547ad40388aa1cc075) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c43ae7f3d5c236fb173c64c870f45726') in 0.001033 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/StreetLamp_brokenA.prefab
+  artifactKey: Guid(d2a19d910a6cfe34da96858ceb000a46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/StreetLamp_brokenA.prefab using Guid(d2a19d910a6cfe34da96858ceb000a46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cce1ac18604e12646c5aeb118f07a27') in 0.001318 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 30
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Sign_WC_W.prefab
+  artifactKey: Guid(80610b5a2876ff54b89eebbe3bd61f62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Sign_WC_W.prefab using Guid(80610b5a2876ff54b89eebbe3bd61f62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9959f9fe184078d429798ccaf120df0') in 0.001031 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Sign_ClassroomN_LockerRoomW.prefab
+  artifactKey: Guid(faeb78cfb30dad24dbeda213de7f47f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Sign_ClassroomN_LockerRoomW.prefab using Guid(faeb78cfb30dad24dbeda213de7f47f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eba365a452d727bfc21c1d54ecdd262e') in 0.001084 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Speaker.prefab
+  artifactKey: Guid(da8aa30d75ca5cd408b3cad503cf1ba2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Speaker.prefab using Guid(da8aa30d75ca5cd408b3cad503cf1ba2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6e8744245f3082b1608d5135470d00e') in 0.001350 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/StudentDeskB.prefab
+  artifactKey: Guid(4531253669727d04cb0766ab2f96e652) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/StudentDeskB.prefab using Guid(4531253669727d04cb0766ab2f96e652) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '362eef173a8cd16cf6af83aed2037e4d') in 0.001231 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Sign_Exit.prefab
+  artifactKey: Guid(9de6bfb2c6d1e674aa24825948fa0539) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Sign_Exit.prefab using Guid(9de6bfb2c6d1e674aa24825948fa0539) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c75acc59ebaae2e111a4ee5b1ec6c95e') in 0.001117 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.022686 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/StudentDeskBrokenA.prefab
+  artifactKey: Guid(c1c68bf9665cefd48b9ea26f929c65d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/StudentDeskBrokenA.prefab using Guid(c1c68bf9665cefd48b9ea26f929c65d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '778cc76eb945ae7db108273611ffa387') in 0.001591 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/TeacherTable02_static.prefab
+  artifactKey: Guid(c67d00a933fc13747a32c5f0acd81af9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/TeacherTable02_static.prefab using Guid(c67d00a933fc13747a32c5f0acd81af9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5427cfd2365ce42b0641b6a428ae4e90') in 0.000963 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/TeacherChair.prefab
+  artifactKey: Guid(988b663b6053d934489ab2416cefca4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/TeacherChair.prefab using Guid(988b663b6053d934489ab2416cefca4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57ea412f3dd13f2caefe9e01a4a88ff1') in 0.001118 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/StudentDeskGrid.prefab
+  artifactKey: Guid(3c49e223f0c9e6547ab6991623b4f077) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/StudentDeskGrid.prefab using Guid(3c49e223f0c9e6547ab6991623b4f077) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6b793c5d97d4a0701bc9e316b66c808') in 0.001471 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.001804 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Telephone01.prefab
+  artifactKey: Guid(3595dce89f1e1814ca0d9104218a6808) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Telephone01.prefab using Guid(3595dce89f1e1814ca0d9104218a6808) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9399e0fab1bcc69026efb84bea0f6130') in 0.005861 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.064156 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Toilet_MirrorB.prefab
+  artifactKey: Guid(fb3138a3bd91edc448a55af61bf88b17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Toilet_MirrorB.prefab using Guid(fb3138a3bd91edc448a55af61bf88b17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4a6c8bedc387609ed24ace1fb0f4337') in 0.001498 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/TowelB.prefab
+  artifactKey: Guid(463952d6b52fbba4da40d390935a96e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/TowelB.prefab using Guid(463952d6b52fbba4da40d390935a96e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2b71f8633bf89d171a24cf964fa58bf') in 0.001502 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Toilet_MirrorC.prefab
+  artifactKey: Guid(b620d3d1b2c6e4a4face99618bd6d8d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Toilet_MirrorC.prefab using Guid(b620d3d1b2c6e4a4face99618bd6d8d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '522ad0111c7a1adb62c1f23f80a9b421') in 0.001417 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Toilet_Seat.prefab
+  artifactKey: Guid(970c4c8779dc18f41a8d88174049cb04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Toilet_Seat.prefab using Guid(970c4c8779dc18f41a8d88174049cb04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0841cf12a1f2ab051bba8fc11068a808') in 0.001135 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/ToiletCabin_static.prefab
+  artifactKey: Guid(49b7555ca9a65d547b93533560b6443d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/ToiletCabin_static.prefab using Guid(49b7555ca9a65d547b93533560b6443d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '824908e398064577c8543209e7d8af04') in 0.001222 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/ToiletA.prefab
+  artifactKey: Guid(42bb570d2e6020b42b4be2fbfe27a6c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/ToiletA.prefab using Guid(42bb570d2e6020b42b4be2fbfe27a6c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e09652609de7880c262e10773ac34327') in 0.001223 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.012568 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/TowelE.prefab
+  artifactKey: Guid(166d41c130928d84ea8e365fc1f1d25f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/TowelE.prefab using Guid(166d41c130928d84ea8e365fc1f1d25f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b41f645ce743d0650506d43b8d9d3b49') in 0.001221 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Tree03.prefab
+  artifactKey: Guid(3a927a7e1a013bd43a495b55b141463a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Tree03.prefab using Guid(3a927a7e1a013bd43a495b55b141463a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e99ddd72c7748cf05719ca6a1797e46a') in 0.001341 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/TrashCanBig_B.prefab
+  artifactKey: Guid(e480e6747d164b24dafcaa10f9582c72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/TrashCanBig_B.prefab using Guid(e480e6747d164b24dafcaa10f9582c72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c14f88440582990d74353e0084337e7') in 0.001686 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/TreeTrunk.prefab
+  artifactKey: Guid(0b00d9ffe491fbe498050833bd580845) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/TreeTrunk.prefab using Guid(0b00d9ffe491fbe498050833bd580845) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7801aeb354eada650b7b6be9c79b8e44') in 0.001251 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/TreesBackground.prefab
+  artifactKey: Guid(e423195f6e8f1e944bdfed30ea118d0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/TreesBackground.prefab using Guid(e423195f6e8f1e944bdfed30ea118d0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d811cb7b8bd275110d74d6c252d4c3d') in 0.001137 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/TrashCanBig_A.prefab
+  artifactKey: Guid(6f4b1bc90ebd1e346878ad014ac8c4cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/TrashCanBig_A.prefab using Guid(6f4b1bc90ebd1e346878ad014ac8c4cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df385966ac4418f2c29dc709acbf0d4d') in 0.000935 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.045129 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Vent_200cm_out_A.prefab
+  artifactKey: Guid(8cce73d2f768d4a4a8aa87936391ffd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Vent_200cm_out_A.prefab using Guid(8cce73d2f768d4a4a8aa87936391ffd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '834d4a82ff4f8efb18dc394cade9db77') in 0.001077 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Vent_grid_A.prefab
+  artifactKey: Guid(f271221de47357b4a88e5907313ce41d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Vent_grid_A.prefab using Guid(f271221de47357b4a88e5907313ce41d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b191ea1fc93a3a4853471723a76ec8d') in 0.001290 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Vent_crossX.prefab
+  artifactKey: Guid(c1e7b81d370e4394f8b324dd4b2e67d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Vent_crossX.prefab using Guid(c1e7b81d370e4394f8b324dd4b2e67d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3060a5ea19eb8efabe512943aef69b8') in 0.000907 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Vent_out_B.prefab
+  artifactKey: Guid(544a69f7d4b3f1d48a56b401d660273c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Vent_out_B.prefab using Guid(544a69f7d4b3f1d48a56b401d660273c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95a9692333861dc4ec92d6c3a2828c49') in 0.005164 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Vent_out_C.prefab
+  artifactKey: Guid(330243c75174e3b44b6ba73a2a393346) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/Vent_out_C.prefab using Guid(330243c75174e3b44b6ba73a2a393346) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8f98c9506ef9fc154d0544c3d3b1dbc') in 0.006829 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.022975 seconds.
+  path: Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/WetFloorSign_A.prefab
+  artifactKey: Guid(d1e206633a5aa4741b186baf2d136616) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NOT_Lonely/HQ_AbandonedSchool/Prefabs/WetFloorSign_A.prefab using Guid(d1e206633a5aa4741b186baf2d136616) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '026f6cf34add58ee2631b9d3f6166c95') in 0.001830 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: 스레드 종료 또는 응용 프로그램 요청 때문에 I/O 작업이 취소되었습니다.
 AssetImportWorker is now disconnected from the server

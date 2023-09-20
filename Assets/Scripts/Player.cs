@@ -15,6 +15,7 @@ public class Player : MonoBehaviour, IHp, IAttack
     public PlayerMovement PlayerMovement;
     public FlashLight FlashLight;
     public PlayerStateMachine Machine;
+    public CharacterController CharacterController;
 
     public Dictionary<int, string> a;
     public event Action onHpMax;
@@ -68,6 +69,7 @@ public class Player : MonoBehaviour, IHp, IAttack
 
     private void Start()
     {
+        GameManager.Instance.Player = this;
         Init();
         ActionInit();
         OnDisableAimHandler?.Invoke();
@@ -76,14 +78,21 @@ public class Player : MonoBehaviour, IHp, IAttack
 
     private void Update()
     {
-        Machine.OnUpdate();
-        OnFollowAimHandler?.Invoke();
-        FlashLight.ControllFlash();
+        if (!GameManager.Instance.IsGameEnd)
+        {
+            Machine.OnUpdate();
+            OnFollowAimHandler?.Invoke();
+            FlashLight.ControllFlash();
+        }
+
     }
 
     private void FixedUpdate()
     {
-        Machine.OnFixedUpdate();
+        if (!GameManager.Instance.IsGameEnd)
+        {
+            Machine.OnFixedUpdate();
+        }    
     }
 
     private void Init()
@@ -111,6 +120,18 @@ public class Player : MonoBehaviour, IHp, IAttack
 
         GunController.OnTargetDamageHendler += TargetDamage;
         GunController.OnFireHendler += PlayerCamera.CameraShakeStart;
+
+        onHpMin += () =>
+        {
+            if (!GameManager.Instance.IsGameEnd)
+            {
+                Animator.SetBool("IsDead", true);
+                GameManager.Instance.IsGameEnd = true;
+                GameManager.Instance.CursorVisible();
+                Machine.ChangeState(Machine.DeadState);
+                CharacterController.enabled = false;
+            }
+        };
     }
 
     public void RecoverHp(object subject, float value)

@@ -44,9 +44,12 @@ public class GunController : MonoBehaviour
 
     private void Update()
     {
-        FireStabilization();
-        GunFireRateCalc();
-        TryReload();
+        if (!GameManager.Instance.IsGameEnd)
+        {
+            FireStabilization();
+            GunFireRateCalc();
+            TryReload();
+        }
     }
 
     private void GunFireRateCalc()  
