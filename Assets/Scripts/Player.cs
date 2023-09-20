@@ -13,6 +13,7 @@ public class Player : MonoBehaviour, IHp, IAttack
     public Inventory Inventory;
     public Rigging Rigging;
     public PlayerMovement PlayerMovement;
+    public FlashLight FlashLight;
     public PlayerStateMachine Machine;
 
     public Dictionary<int, string> a;
@@ -77,6 +78,7 @@ public class Player : MonoBehaviour, IHp, IAttack
     {
         Machine.OnUpdate();
         OnFollowAimHandler?.Invoke();
+        FlashLight.ControllFlash();
     }
 
     private void FixedUpdate()

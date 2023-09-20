@@ -390,6 +390,7 @@
 "Assets/Scripts/DropItem.cs"
 "Assets/Scripts/Enemy.cs"
 "Assets/Scripts/FieldOfView.cs"
+"Assets/Scripts/FlashLight.cs"
 "Assets/Scripts/FollowTarget.cs"
 "Assets/Scripts/FootstepSound.cs"
 "Assets/Scripts/Gravity.cs"

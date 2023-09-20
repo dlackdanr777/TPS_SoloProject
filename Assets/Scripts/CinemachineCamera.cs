@@ -23,14 +23,13 @@ public class CinemachineCamera : MonoBehaviour
 
     private void Start()
     {
-        _tempPos = transform.position;
         if (_virtualCameraNoise == null)
             _virtualCameraNoise = _zoomVitualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
     private void LateUpdate()
     {
-        transform.position = _tempPos + _target.transform.position;
+        transform.position = _target.transform.position;
         CameraShake();
         if (!PopupUIManager.Instance.PopupEnable)
         {
