@@ -62,43 +62,24 @@
     <Compile Include="Assets\Scripts\Manager\SingletonHandler.cs" />
     <Compile Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Scripts\LightRays.cs" />
     <Compile Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Scripts\ParticlesAutoColor.cs" />
-    <Compile Include="Assets\Scripts\UI\UIBuildSlot.cs" />
-    <Compile Include="Assets\Scripts\IState\Enemy\EIdleToTrackingState.cs" />
-    <Compile Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Scripts\DoorScript.cs" />
-    <Compile Include="Assets\Scripts\PreviewObject.cs" />
-    <Compile Include="Assets\Scripts\HitPart.cs" />
     <Compile Include="Assets\Scripts\IState\AimModeLoopState.cs" />
     <Compile Include="Assets\Scripts\FootstepSound.cs" />
     <Compile Include="Assets\Scripts\YieldCache.cs" />
     <Compile Include="Assets\Scripts\IState\Enemy\EDeadState.cs" />
-    <Compile Include="Assets\Scripts\IState\CrouchWalkState.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Scripts\IState\CrouchState.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Inventory\UIInventorySlot.cs" />
-    <Compile Include="Assets\Scripts\Manager\ItemManager.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
-    <Compile Include="Assets\Scripts\GunController.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
-    <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\UIStatus.cs" />
-    <Compile Include="Assets\Scripts\UI\PopupUI.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Scripts\UI\UIHeader.cs" />
-    <Compile Include="Assets\Scripts\IState\AimModeStartState.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
-    <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
     <Compile Include="Assets\Scripts\Inventory\OtherItem.cs" />
-    <Compile Include="Assets\Scripts\UI\UIBuild.cs" />
     <Compile Include="Assets\Scripts\FollowTarget.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
     <Compile Include="Assets\Scripts\IState\RunState.cs" />
     <Compile Include="Assets\Scripts\IState\Enemy\EIdleState.cs" />
-    <Compile Include="Assets\Scripts\Manager\ObjectPoolManager.cs" />
     <Compile Include="Assets\Scripts\Inventory\Item.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
@@ -108,63 +89,31 @@
     <Compile Include="Assets\Scripts\Inventory\ItemInterface.cs" />
     <Compile Include="Assets\Scripts\Inventory\EquipmentItemData.cs" />
     <Compile Include="Assets\Scripts\UI\UIItemDescription.cs" />
-    <Compile Include="Assets\Scripts\ObstacleBuild.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
-    <Compile Include="Assets\Scripts\Rigging.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
-    <Compile Include="Assets\Scripts\Inventory\ItemDatabase.cs" />
     <Compile Include="Assets\Scripts\BrainCameraController.cs" />
-    <Compile Include="Assets\Scripts\Barricade.cs" />
-    <Compile Include="Assets\Scripts\Interface\IState.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
-    <Compile Include="Assets\Scripts\Inventory\OtherItemData.cs" />
     <Compile Include="Assets\Scripts\DropItem.cs" />
-    <Compile Include="Assets\Scripts\IState\IdleState.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
-    <Compile Include="Assets\Scripts\Interface\IAttack.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
-    <Compile Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Scripts\Flashlight.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Zombie_Animations\Scripts\SimpleCameraController.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
-    <Compile Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Scripts\KeyScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
-    <Compile Include="Assets\Scripts\Door.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
-    <Compile Include="Assets\Scripts\IState\BasicUpperState.cs" />
     <Compile Include="Assets\Scripts\Inventory\ItemData.cs" />
-    <Compile Include="Assets\Scripts\Inventory\PotionItem.cs" />
     <Compile Include="Assets\NOT_Lonely\SimpleFPController\SimpleFPController.cs" />
-    <Compile Include="Assets\Scripts\CinemachineCamera.cs" />
     <Compile Include="Assets\Scripts\Gravity.cs" />
     <Compile Include="Assets\Scripts\BulletHole.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Scripts\BuildSystem.cs" />
     <Compile Include="Assets\Scripts\Inventory\CountableItemData.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Scripts\IState\WalkState.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
-    <Compile Include="Assets\Scripts\Inventory\DragInventorySlot.cs" />
-    <Compile Include="Assets\Scripts\Interface\IHp.cs" />
-    <Compile Include="Assets\Scripts\IState\AimModeEndState.cs" />
     <Compile Include="Assets\Scripts\ZombieSounds.cs" />
     <Compile Include="Assets\Scripts\Inventory\EquipmentItem.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Inventory\UIInventory.cs" />
     <Compile Include="Assets\Scripts\UIGame.cs" />
     <Compile Include="Assets\Scripts\IState\Enemy\EnemyStateMachine.cs" />
-    <Compile Include="Assets\Scripts\Interface\IMovement.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\FieldOfView.cs" />
     <Compile Include="Assets\Scripts\IState\ReloadState.cs" />
@@ -174,14 +123,65 @@
     <Compile Include="Assets\Scripts\Inventory\CountableItem.cs" />
     <Compile Include="Assets\NOT_Lonely\Object Placement Tool\NL_PhysicsPlacer.cs" />
     <Compile Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Scripts\LightAnimation.cs" />
+    <Compile Include="Assets\Scripts\CrossHair.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\IState\PlayerStateMachine.cs" />
+    <Compile Include="Assets\Scripts\UI\UIBuildSlot.cs" />
+    <Compile Include="Assets\Scripts\IState\Enemy\EIdleToTrackingState.cs" />
+    <Compile Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Scripts\DoorScript.cs" />
+    <Compile Include="Assets\Scripts\PreviewObject.cs" />
+    <Compile Include="Assets\Scripts\HitPart.cs" />
+    <Compile Include="Assets\Scripts\IState\CrouchWalkState.cs" />
+    <Compile Include="Assets\Scripts\Manager\ItemManager.cs" />
+    <Compile Include="Assets\Scripts\GunController.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\UI\PopupUI.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
+    <Compile Include="Assets\Scripts\IState\AimModeStartState.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
+    <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
+    <Compile Include="Assets\Scripts\UI\UIBuild.cs" />
+    <Compile Include="Assets\Scripts\Manager\ObjectPoolManager.cs" />
+    <Compile Include="Assets\Scripts\ObstacleBuild.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
+    <Compile Include="Assets\Scripts\Rigging.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\Scripts\Inventory\ItemDatabase.cs" />
+    <Compile Include="Assets\Scripts\Barricade.cs" />
+    <Compile Include="Assets\Scripts\Interface\IState.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
+    <Compile Include="Assets\Scripts\Inventory\OtherItemData.cs" />
+    <Compile Include="Assets\Scripts\IState\IdleState.cs" />
+    <Compile Include="Assets\Scripts\Interface\IAttack.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
+    <Compile Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Scripts\Flashlight.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
+    <Compile Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Scripts\KeyScript.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
+    <Compile Include="Assets\Scripts\Door.cs" />
+    <Compile Include="Assets\Scripts\IState\BasicUpperState.cs" />
+    <Compile Include="Assets\Scripts\Inventory\PotionItem.cs" />
+    <Compile Include="Assets\Scripts\CinemachineCamera.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+    <Compile Include="Assets\Scripts\Inventory\DragInventorySlot.cs" />
+    <Compile Include="Assets\Scripts\Interface\IHp.cs" />
+    <Compile Include="Assets\Scripts\IState\AimModeEndState.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
+    <Compile Include="Assets\Scripts\Interface\IMovement.cs" />
     <Compile Include="Assets\Scripts\IState\Enemy\EAttackState.cs" />
     <Compile Include="Assets\Scripts\Manager\PopupUIManager.cs" />
-    <Compile Include="Assets\Scripts\CrossHair.cs" />
     <Compile Include="Assets\Scripts\Inventory\PotionItemData.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Inventory\UIDivItem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
-    <Compile Include="Assets\Scripts\IState\PlayerStateMachine.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -856,6 +856,9 @@
     <Reference Include="Unity.Animation.Rigging">
       <HintPath>Library\ScriptAssemblies\Unity.Animation.Rigging.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualEffectGraph.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualEffectGraph.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
@@ -924,6 +927,9 @@
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualEffectGraph.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualEffectGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
