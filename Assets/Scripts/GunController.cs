@@ -9,6 +9,7 @@ public class GunController : MonoBehaviour
 
     public event Action<IHp, float> OnTargetDamageHendler;
     public event Action OnFireHendler;
+    public event Action OnReloadHendler;
 
     public Gun CurrentGun; //현재 들고있는 총
 
@@ -70,7 +71,6 @@ public class GunController : MonoBehaviour
         {
             if(CurrentGun.CurrentBulletCount > 0)
             {
-                OnFireHendler();
                 Shoot();
             }
             else
@@ -109,6 +109,8 @@ public class GunController : MonoBehaviour
         Ray ray = new Ray(CurrentGun.MuzzleFlash.transform.position, fireDirection);
         float distance = CurrentGun.Range;
 
+        OnFireHendler?.Invoke();
+
         if (Physics.Raycast(ray, out hit, distance, _hitLayerMask))
         {
             Debug.Log("맞춤");
@@ -116,7 +118,7 @@ public class GunController : MonoBehaviour
             GameObject bulletHole = ObjectPoolManager.Instance.SpawnBulletHole(hit.point, bulletHoleRotation);
             bulletHole.transform.parent = hit.transform;
             if (hit.transform.GetComponent<IHp>() != null)
-               OnTargetDamageHendler(hit.transform.GetComponent<IHp>(), CurrentGun.Damage);
+               OnTargetDamageHendler?.Invoke(hit.transform.GetComponent<IHp>(), CurrentGun.Damage);
         }
     }
 
@@ -159,6 +161,7 @@ public class GunController : MonoBehaviour
                 CurrentGun.CarryBulletCount = 0;
             }
             _isReload = false;
+            OnReloadHendler?.Invoke();
         }
         else
         {
