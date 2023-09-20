@@ -2,20 +2,26 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Sky_night
-  m_Shader: {fileID: 106, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _SUNDISK_HIGH_QUALITY
+  m_Shader: {fileID: 4800000, guid: 0be2a07734ee87c47aa434985847d164, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _EMISSION
+  - _SUNDISK_HIGH_QUALITY
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -75,6 +81,7 @@ Material:
         m_Texture: {fileID: 2800000, guid: 16678a465b57ace40a6a6ed243ec9366, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AtmosphereThickness: 1
     - _BumpScale: 1
@@ -103,8 +110,7 @@ Material:
     - _SunIntensity: 6
     - _SunRadiusA: 4.46
     - _SunRadiusB: 2.63
-    - _SunSize: 0.032
-    - _SunSizeConvergence: 5
+    - _SunSize: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
@@ -117,3 +123,4 @@ Material:
     - _HorizonColor: {r: 0.04411763, g: 0.04411763, b: 0.04411763, a: 1}
     - _SkyColor: {r: 0.0051903124, g: 0.026888374, b: 0.058823526, a: 1}
     - _SkyTint: {r: 0.08088237, g: 0.08088237, b: 0.08088237, a: 1}
+  m_BuildTextureStacks: []

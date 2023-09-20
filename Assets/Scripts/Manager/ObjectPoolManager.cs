@@ -97,12 +97,26 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
         zombie.transform.rotation = rot;
     }
 
-    public IEnumerator ZombleDisable(Enemy enemy)
+    public IEnumerator ZombieDisable(Enemy enemy)
     {
         yield return YieldCache.WaitForSeconds(40);
         int zombieType = (int)enemy.ZombieType;
         _zombieStruct[zombieType].Pool.Enqueue(enemy.gameObject);
         enemy.gameObject.SetActive(false);
+    }
+
+    public int ZombieCounting()
+    {
+        int zombieCount = 0;
+        for(int i = 0, count = (int)ZombieType.Count; i <  count; i++)
+        {
+            GameObject[] obj = _zombieStruct[i].Parent.GetComponentsInChildren<GameObject>();
+            zombieCount += obj.Length - 1;
+        }
+
+        zombieCount -= (int)ZombieType.Count - 1;
+
+        return zombieCount;
     }
 
 }

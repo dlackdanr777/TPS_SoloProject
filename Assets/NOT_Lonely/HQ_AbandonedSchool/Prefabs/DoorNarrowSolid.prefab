@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 81
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4027093045467010
 Transform:
@@ -81,7 +81,7 @@ GameObject:
   m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 81
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4290045977357102
 Transform:
@@ -90,7 +90,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1327374635387866}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.11005526, z: 0, w: 0.9939255}
   m_LocalPosition: {x: -0.508269, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -98,7 +98,7 @@ Transform:
   - {fileID: 4027093045467010}
   m_Father: {fileID: 4795725551432742}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -12.637, z: 0}
 --- !u!65 &65969927483025520
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -290,7 +290,7 @@ Transform:
   - {fileID: 4795725551432742}
   - {fileID: 4500484949593516}
   m_Father: {fileID: 0}
-  m_RootOrder: 84
+  m_RootOrder: 93
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!111 &111956634575385480
 Animation:
@@ -303,7 +303,6 @@ Animation:
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 764ad00f4d34adc4bbd05990f05ca5c4, type: 3}
   m_Animations:
-  - {fileID: 7400000, guid: d68159fec66c7fe40bfbddaa7a6054c2, type: 2}
   - {fileID: 7400000, guid: 764ad00f4d34adc4bbd05990f05ca5c4, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 0
