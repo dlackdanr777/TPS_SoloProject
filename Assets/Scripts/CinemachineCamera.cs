@@ -33,7 +33,7 @@ public class CinemachineCamera : MonoBehaviour
         {
             transform.position = _target.transform.position;
             CameraShake();
-            if (!PopupUIManager.Instance.PopupEnable)
+            if (!PopupUIManager.PopupEnable)
             {
                 CameraRotate();
             }

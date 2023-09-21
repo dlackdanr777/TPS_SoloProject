@@ -1,7 +1,4 @@
 
-using System.Diagnostics;
-using static UnityEditor.Progress;
-
 public class PotionItem : CountableItem, IUsableItem
 {
     public PotionItemData PotionData { get; }

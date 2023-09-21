@@ -71,9 +71,9 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Inventory\UIInventorySlot.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
-    <Compile Include="Assets\Scripts\UIStatus.cs" />
     <Compile Include="Assets\Scripts\UI\UIHeader.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
+    <Compile Include="Assets\Scripts\FirstLoadingScene.cs" />
     <Compile Include="Assets\Scripts\Inventory\OtherItem.cs" />
     <Compile Include="Assets\Scripts\UI\UILose.cs" />
     <Compile Include="Assets\Scripts\FollowTarget.cs" />
@@ -109,11 +109,11 @@
     <Compile Include="Assets\Scripts\Inventory\CountableItemData.cs" />
     <Compile Include="Assets\Scripts\IState\WalkState.cs" />
     <Compile Include="Assets\Scripts\ZombieSounds.cs" />
+    <Compile Include="Assets\Scripts\UI\UILobbyScene.cs" />
     <Compile Include="Assets\Scripts\Inventory\EquipmentItem.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Inventory\UIInventory.cs" />
-    <Compile Include="Assets\Scripts\UIGame.cs" />
     <Compile Include="Assets\Scripts\IState\Enemy\EnemyStateMachine.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\FieldOfView.cs" />
@@ -153,11 +153,13 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Scripts\Inventory\ItemDatabase.cs" />
     <Compile Include="Assets\Scripts\Barricade.cs" />
+    <Compile Include="Assets\Scripts\LobbyScene.cs" />
     <Compile Include="Assets\Scripts\Interface\IState.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Scripts\Inventory\OtherItemData.cs" />
     <Compile Include="Assets\Scripts\IState\IdleState.cs" />
     <Compile Include="Assets\Scripts\Interface\IAttack.cs" />
+    <Compile Include="Assets\Scripts\UI\UIGame.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Scripts\Flashlight.cs" />
@@ -180,11 +182,13 @@
     <Compile Include="Assets\Scripts\Interface\IHp.cs" />
     <Compile Include="Assets\Scripts\IState\AimModeEndState.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
+    <Compile Include="Assets\Scripts\UI\UIStatus.cs" />
     <Compile Include="Assets\Scripts\Interface\IMovement.cs" />
     <Compile Include="Assets\Scripts\UI\UIWin.cs" />
     <Compile Include="Assets\Scripts\IState\Enemy\EAttackState.cs" />
     <Compile Include="Assets\Scripts\Manager\PopupUIManager.cs" />
     <Compile Include="Assets\Scripts\Inventory\PotionItemData.cs" />
+    <Compile Include="Assets\Scripts\Manager\LoadingSceneManager.cs" />
     <Compile Include="Assets\Scripts\Inventory\UIDivItem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
   </ItemGroup>

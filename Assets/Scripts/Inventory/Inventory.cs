@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class Inventory : MonoBehaviour
 {
@@ -277,6 +275,19 @@ public class Inventory : MonoBehaviour
 
     public void SubItem(Item item, int amount = 1)
     {
+        if (_inventoryItems.Contains(item))
+        {
+            item.Amount -= amount;
+            if (item.Amount <= 0)
+                RemoveItem(item);
+            else
+                UIInventory.GetSlotByIndex(item.SlotIndex).UpdateUI(item);
+        }
+    }
+
+    public void SubItemByID(int ID, int amount = 1)
+    {
+        Item item = _inventoryItems.Find(x => x.Data.ID == ID);
         if (_inventoryItems.Contains(item))
         {
             item.Amount -= amount;

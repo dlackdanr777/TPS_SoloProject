@@ -66,15 +66,16 @@ public class Player : MonoBehaviour, IHp, IAttack
 
     private void Awake()
     {
+        GameManager.Instance.Player = this;
         Machine = new PlayerStateMachine(this);
     }
 
     private void Start()
     {
-        GameManager.Instance.Player = this;
+        
         Init();
         ActionInit();
-        OnDisableAimHandler?.Invoke();
+        GunController.DisableCrossHair();
     }
 
 

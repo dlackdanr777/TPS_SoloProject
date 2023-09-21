@@ -34,6 +34,7 @@ public class PreviewObject : MonoBehaviour
 
     private void ChangeColor()
     {
+
         int itemCount = GameManager.Instance.Player.Inventory.FindItemCountByID(_itemID);
 
         if (_colliders.Count > 0 || itemCount < _itemAmount)

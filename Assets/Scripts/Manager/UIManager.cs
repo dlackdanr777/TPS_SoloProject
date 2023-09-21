@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class UIManager : SingletonHandler<UIManager>
 {
+    [SerializeField] private GameObject _uiManagerCanvas;
     [SerializeField] private TextMeshProUGUI _centerText;
     [SerializeField] private TextMeshProUGUI _aimRightText;
     private Coroutine ShowCenterTextRoutine;
 
     public void Start()
     {
+        DontDestroyOnLoad(_uiManagerCanvas);
         _centerText.alpha = 0;
         _aimRightText.alpha = 0;
     }

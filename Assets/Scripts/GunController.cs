@@ -31,6 +31,8 @@ public class GunController : MonoBehaviour
 
     private float _recoilMul; //반동 배수
 
+    private int _getCarryBulletCount => GameManager.Instance.Player.Inventory.FindItemCountByID(20);
+
 
     private void Start()
     {
@@ -44,6 +46,16 @@ public class GunController : MonoBehaviour
             FireStabilization();
             GunFireRateCalc();
             TryReload();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            SubCarryBullets(1);
+        }
+
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+            AddCarryBullets(1);
         }
     }
 
@@ -136,28 +148,41 @@ public class GunController : MonoBehaviour
         return mean + standard * (Mathf.Sqrt(-2.0f * Mathf.Log(x1)) * Mathf.Sin(2.0f * Mathf.PI * x2));
     }
 
+    public void EnableCrossHair() //크로스헤어를 활성화시키는 함수
+    {
+        _crossHair.Visibility();
+    }
+    public void DisableCrossHair() //크로스헤어를 비활성화 시키는 함수
+    {
+        _crossHair.Hidden();
+    }
+
+    public void SetRecoilMul(float value)
+    {
+        _recoilMul = value;
+    }
+
     private IEnumerator ReloadRoutine()
     {
-        if(CurrentGun.CarryBulletCount > 0)
+        if(_getCarryBulletCount > 0)
         {
-            Debug.Log("재장전중");
             _playerAnimator.SetTrigger("Reload");
             _isReload = true;
-            CurrentGun.CarryBulletCount += CurrentGun.CurrentBulletCount;
+            AddCarryBullets(CurrentGun.CurrentBulletCount);
             CurrentGun.CurrentBulletCount = 0;
             _audioSource.PlayOneShot(CurrentGun.ReloadSound);
 
             yield return new WaitForSeconds(CurrentGun.ReloadTime);
 
-            if(CurrentGun.CarryBulletCount >= CurrentGun.ReloadBulletCount)
+            if(_getCarryBulletCount >= CurrentGun.ReloadBulletCount)
             {
                 CurrentGun.CurrentBulletCount = CurrentGun.ReloadBulletCount;
-                CurrentGun.CarryBulletCount -= CurrentGun.ReloadBulletCount;
+                SubCarryBullets(CurrentGun.ReloadBulletCount);
             }
             else
             {
-                CurrentGun.CurrentBulletCount = CurrentGun.CarryBulletCount;
-                CurrentGun.CarryBulletCount = 0;
+                CurrentGun.CurrentBulletCount = _getCarryBulletCount;
+                SubCarryBullets(_getCarryBulletCount);
             }
             _isReload = false;
 
@@ -165,7 +190,7 @@ public class GunController : MonoBehaviour
         }
         else
         {
-            Debug.Log("보유한 총알수량이 부족합니다.");
+            UIManager.Instance.ShowCenterText("총알이 부족합니다.");
         }
     }
 
@@ -212,20 +237,14 @@ public class GunController : MonoBehaviour
         }
     }
 
-    public void EnableCrossHair() //크로스헤어를 활성화시키는 함수
+    private void SubCarryBullets(int value)
     {
-        _crossHair.Visibility();
-
-       
+        GameManager.Instance.Player.Inventory.SubItemByID(20, value);
     }
 
-    public void DisableCrossHair() //크로스헤어를 비활성화 시키는 함수
+    private void AddCarryBullets(int value)
     {
-        _crossHair.Hidden();
+        GameManager.Instance.Player.Inventory.AddItemByID(20, value);
     }
 
-    public void SetRecoilMul(float value)
-    {
-        _recoilMul = value;
-    }
 }

@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PopupUIManager : SingletonHandler<PopupUIManager>
+public class PopupUIManager : MonoBehaviour
 {
     public PopupUI UIInventory;
     public PopupUI UIBuild;
 
-    public bool PopupEnable;
+    static public bool PopupEnable;
     //Å°ÀÔ·Â
     private KeyCode EscapeKey = KeyCode.Escape;
     private KeyCode InventoryKey = KeyCode.I;

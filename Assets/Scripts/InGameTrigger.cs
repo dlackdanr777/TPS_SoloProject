@@ -8,6 +8,9 @@ public class InGameTrigger : MonoBehaviour
     void Start()
     {
         _ingame.enabled = false;
+        ObjectPoolManager.Instance.BulletHoleObjectPooling();
+        ObjectPoolManager.Instance.ZombieObjectPooling(ZombieType.Basic);
+        ObjectPoolManager.Instance.ZombieObjectPooling(ZombieType.Women);
     }
 
     private void OnTriggerEnter(Collider other)

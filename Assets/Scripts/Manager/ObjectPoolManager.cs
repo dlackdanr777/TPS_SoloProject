@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum ZombieType
@@ -31,14 +32,7 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
     [SerializeField] private ZombieStruct[] _zombieStruct;
 
 
-    private void Start()
-    {
-        BulletHoleObjectPooling();
-        ZombieObjectPooling(ZombieType.Basic);
-        ZombieObjectPooling(ZombieType.Women);
-    }
-
-    private void BulletHoleObjectPooling()
+    public void BulletHoleObjectPooling()
     {
         _bulletHolePool = new Queue<GameObject>();
        _bulletHoleParent = new GameObject("BulletHoleParent");
@@ -52,7 +46,7 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
         }
     }
 
-    private void ZombieObjectPooling(ZombieType zombieType)
+    public void ZombieObjectPooling(ZombieType zombieType)
     {
         _zombieStruct[(int)zombieType].Pool = new Queue<GameObject>();
         _zombieStruct[(int)zombieType].Parent = new GameObject(Enum.GetName(typeof(ZombieType), (int)zombieType) + " Zombie Parent======");

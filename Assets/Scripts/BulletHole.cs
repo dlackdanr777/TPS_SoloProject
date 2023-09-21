@@ -46,7 +46,6 @@ public class BulletHole : MonoBehaviour
         else if (transform.parent.tag == "Ground")
             _AudioSource.PlayOneShot(_groundClip);
 
-        Debug.Log(transform.parent.tag);
     }
 
     private void PlayParticle(int amount)

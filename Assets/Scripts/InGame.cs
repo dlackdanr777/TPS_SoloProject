@@ -37,12 +37,13 @@ public class InGame : MonoBehaviour
     private bool _roundClear;
 
 
-
+    private bool _isGameStoped;
     public void Start()
     {
         _currentRound = 1;
         _roundType = RoundType.Wait;
         SoundManager.Instance.PlayAudio(AudioType.Background, _bgMusic);
+        GameManager.Instance.CursorHidden();
     }
 
 
@@ -64,6 +65,21 @@ public class InGame : MonoBehaviour
         else
         {
             RoundClear();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape) && !PopupUIManager.PopupEnable)
+        {
+            if (_isGameStoped)
+            {
+                Time.timeScale = 1;
+                _uiGame.HiddenUIStop();
+            }
+            else
+            {         
+                Time.timeScale = 0;
+                _uiGame.ShowUIStop();
+            }
+            _isGameStoped = !_isGameStoped;
         }
     }
 
@@ -119,7 +135,6 @@ public class InGame : MonoBehaviour
     private void RoundStart(int round)
     {
         _currentTime = _rounds[round - 1].LimitTime;
-
         for(int i = 0; i < _rounds[round - 1].SpawnZombies.Length; i++)
         {
             for(int j = 0; j < _rounds[round - 1].SpawnZombies[i].SpawnCount; j++)
@@ -139,6 +154,7 @@ public class InGame : MonoBehaviour
         if(_enemyCount >= 0)
         {
             GameManager.Instance.GameEnd();
+            _uiGame.ShowUILose();
             //게임오버
         }
     }

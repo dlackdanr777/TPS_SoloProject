@@ -22,6 +22,7 @@ public class SoundManager : SingletonHandler<SoundManager>
     {
         _sourceParent = new GameObject("Source Parent");
         _source = new AudioSource[(int)AudioType.Langth];
+        DontDestroyOnLoad(_sourceParent);
 
         for (int i = 0, count = _source.Length; i < count; i++)
         {
@@ -30,7 +31,6 @@ public class SoundManager : SingletonHandler<SoundManager>
             _source[i] = obj.AddComponent<AudioSource>();
             _source[i].playOnAwake = false;
             _source[i].volume = 0.5f;
-            DontDestroyOnLoad(obj);
         }
 
         _source[(int)AudioType.Background].loop = true;
@@ -47,5 +47,10 @@ public class SoundManager : SingletonHandler<SoundManager>
         {
             _source[(int)type].PlayOneShot(clip);
         }
+    }
+
+    public void StopAudio(AudioType type)
+    {
+        _source[(int)type].Stop();
     }
 }

@@ -8,6 +8,10 @@ public class FlashLight : MonoBehaviour
 
     [SerializeField] private GameObject[] _flashLights;
 
+    [SerializeField] private AudioSource _audioSource;
+
+    [SerializeField] private AudioClip _flashClip;
+
     private bool _isEnable;
 
 
@@ -19,6 +23,8 @@ public class FlashLight : MonoBehaviour
                 DisableFlash();
             else
                 EnableFlash();
+
+            _audioSource.PlayOneShot(_flashClip);
         }
     }
 

@@ -8,7 +8,12 @@ public class UILose : MonoBehaviour
 
     private void Awake()
     {
-        _exitButton.onClick.AddListener(() => GameManager.Instance.LoadScene(SceneManager.GetActiveScene().name));
-        _exitButton.onClick.AddListener(() => Debug.Log("´­¸²"));
+        _exitButton.onClick.AddListener(onButtonClicked);
+    }
+
+    private void onButtonClicked()
+    {
+        Time.timeScale = 1;
+        LoadingSceneManager.LoadScene("LobbyScene");
     }
 }
