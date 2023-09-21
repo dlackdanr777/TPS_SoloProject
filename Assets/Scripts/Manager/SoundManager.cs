@@ -29,6 +29,8 @@ public class SoundManager : SingletonHandler<SoundManager>
             obj.transform.parent = _sourceParent.transform;
             _source[i] = obj.AddComponent<AudioSource>();
             _source[i].playOnAwake = false;
+            _source[i].volume = 0.5f;
+            DontDestroyOnLoad(obj);
         }
 
         _source[(int)AudioType.Background].loop = true;

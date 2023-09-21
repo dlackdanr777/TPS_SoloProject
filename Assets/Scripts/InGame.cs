@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InGame : MonoBehaviour
@@ -26,6 +24,8 @@ public class InGame : MonoBehaviour
     [SerializeField] private UIGame _uiGame;
     [SerializeField] private Transform _spawnPos;
     [SerializeField] private Rounds[] _rounds;
+
+    [SerializeField] private AudioClip _bgMusic;
     
     private RoundType _roundType;
     private int _enemyCount;
@@ -36,21 +36,21 @@ public class InGame : MonoBehaviour
 
     private bool _roundClear;
 
-    private void Awake()
-    {
-        GameManager.Instance.IsGameEnd = false;
-    }
+
 
     public void Start()
     {
         _currentRound = 1;
         _roundType = RoundType.Wait;
+        SoundManager.Instance.PlayAudio(AudioType.Background, _bgMusic);
     }
 
 
     private void OnDisable()
     {
         _uiGame.SetZombieCountText("학교를 수색하십시오");
+        GameManager.Instance.IsGameEnd = false;
+        SoundManager.Instance.PlayAudio(AudioType.Background, _bgMusic);
     }
 
 
