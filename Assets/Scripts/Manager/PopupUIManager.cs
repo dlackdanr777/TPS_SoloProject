@@ -101,7 +101,7 @@ public class PopupUIManager : MonoBehaviour
 
     private void CheckPopupEnabled()
     {
-        if (_activePopupList.Count <= 0)
+        if (_activePopupList.Count == 0)
         {
             GameManager.Instance.CursorHidden();
             PopupEnable = false;
@@ -112,6 +112,7 @@ public class PopupUIManager : MonoBehaviour
             PopupEnable = true;
         }
     }
+
 
     private void RefreshAllPopupDepth() //링크드 리스트 내의 모든 팝업의 순서를 재배치하는 함수
     {

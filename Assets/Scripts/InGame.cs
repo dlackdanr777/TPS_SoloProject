@@ -26,18 +26,19 @@ public class InGame : MonoBehaviour
     [SerializeField] private Rounds[] _rounds;
 
     [SerializeField] private AudioClip _bgMusic;
+
     
     private RoundType _roundType;
     private int _enemyCount;
     private int _currentRound;
     
-
     private float _currentTime;
 
     private bool _roundClear;
 
-
     private bool _isGameStoped;
+
+
     public void Start()
     {
         _currentRound = 1;
@@ -67,7 +68,7 @@ public class InGame : MonoBehaviour
             RoundClear();
         }
 
-        if(Input.GetKeyDown(KeyCode.Escape) && !PopupUIManager.PopupEnable)
+        if (Input.GetKeyDown(KeyCode.Escape) && !PopupUIManager.PopupEnable)
         {
             if (_isGameStoped)
             {
@@ -75,7 +76,7 @@ public class InGame : MonoBehaviour
                 _uiGame.HiddenUIStop();
             }
             else
-            {         
+            {
                 Time.timeScale = 0;
                 _uiGame.ShowUIStop();
             }

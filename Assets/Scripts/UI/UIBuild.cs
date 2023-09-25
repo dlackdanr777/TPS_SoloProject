@@ -26,6 +26,7 @@ public class UIBuild : PopupUI
             _buildSlot[i] = Instantiate(_slotPrefab, Vector3.zero, Quaternion.identity);
             _buildSlot[i].transform.parent = _gridLayout;
             _buildSlot[i].UpdateUI(_buildSystem.GetCraftItem(i));
+
             int index = i;
             _buildSlot[i].Button.onClick.AddListener(() => OnButtonClicked(index));
         }
