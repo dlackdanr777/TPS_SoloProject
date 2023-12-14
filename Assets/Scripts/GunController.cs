@@ -92,22 +92,26 @@ public class GunController : MonoBehaviour
     Vector3 fireDirection;
     public void Shoot() //총을 쏘는 함수
     {
-        _currentFireRate = CurrentGun.FireRate;
-        CurrentGun.CurrentBulletCount--; //탄약 감소
-        PlaySound(CurrentGun.FireSound);
-        CurrentGun.MuzzleFlash.Play();
-        _playerAnimator.SetTrigger("Fire");
+        _currentFireRate = CurrentGun.FireRate; //발사간의 딜레이를 현재 사용하는 총기의 딜레이로 설정한다
+        CurrentGun.CurrentBulletCount--; //총알을 감소시킨다
+        PlaySound(CurrentGun.FireSound); //발사 사운드 재생
+        CurrentGun.MuzzleFlash.Play(); //이펙트 재생
+        _playerAnimator.SetTrigger("Fire"); //애니메이터의 트리거를 설정한다.
 
-        float xError = GetRandomNormalDistribution(0f, _nowRecoil);
-        float yError = GetRandomNormalDistribution(0f, _nowRecoil);
-        fireDirection = _crossHair.transform.position - CurrentGun.MuzzleFlash.transform.position;
+        float xError = GetRandomNormalDistribution(0f, _nowRecoil); //정규분포도를 이용해 탄튐 거리x를 설정
+        float yError = GetRandomNormalDistribution(0f, _nowRecoil); //정규분포도를 이용해 탄튐 거리y를 설정
 
-        float targetDistance = Vector3.Distance(CurrentGun.MuzzleFlash.transform.position, _crossHair.transform.position);
+        //크로스헤어와 총구의 거리를 계산하고 최대사거리와 현재 거리의 비율을 계산한다.
+        float targetDistance = Vector3.Distance(CurrentGun.MuzzleFlash.transform.position, _crossHair.transform.position); 
         float distanceScale = targetDistance / CurrentGun.Range;
 
+        //위에서 계산한 값으로 총구와 탄착지점의 방향을 계산한다.
+        //거리 비율을 곱하여 거리가 가까워질수록 탄착 지점을 좁혀 원뿔형의 형태로 탄이 튀도록 한다.
+        fireDirection = _crossHair.transform.position - CurrentGun.MuzzleFlash.transform.position;
         fireDirection = Quaternion.AngleAxis(yError * distanceScale, Vector3.up) * fireDirection;
         fireDirection = Quaternion.AngleAxis(xError * distanceScale, Vector3.right) * fireDirection;
 
+        //총이 발사됬을때 설정한 반동값만큼 탄착지점의 넓이를 점차적으로 늘려 연속 발사시 명중률을 떨어트리게 한다.
         if(_nowRecoil < CurrentGun.MaxRecoil)
         {
             _nowRecoil += CurrentGun.Recoil;
@@ -119,14 +123,17 @@ public class GunController : MonoBehaviour
         Ray ray = new Ray(CurrentGun.MuzzleFlash.transform.position, fireDirection);
         float distance = CurrentGun.Range;
 
+        //대리자를 사용하여 이 클래스를 참조하는 클래스에서 발사함수에 코드를 추가할 수 있도록 한다.
         OnFireHendler?.Invoke();
 
+        //최종적으로 레이를 발사하여 물체에 맞았을 경우 풀링한 탄흔을 해당위치에 소환하고
+        //만약 IHp인터페이스를 가진 물체 였다면 액션을 수행하게 한다.
         if (Physics.Raycast(ray, out hit, distance, _hitLayerMask))
         {
-            Debug.Log("맞춤");
             Quaternion bulletHoleRotation = Quaternion.LookRotation(ray.direction);
             GameObject bulletHole = ObjectPoolManager.Instance.SpawnBulletHole(hit.point, bulletHoleRotation);
             bulletHole.transform.parent = hit.transform;
+
             if (hit.transform.GetComponent<IHp>() != null)
                OnTargetDamageHendler?.Invoke(hit.transform.GetComponent<IHp>(), CurrentGun.Damage);
         }

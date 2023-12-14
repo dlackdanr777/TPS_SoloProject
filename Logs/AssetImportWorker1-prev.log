@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2022.3/staging' branch; Version is '2022.3.4f1 (35713cd46cd7) revision 3502396'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22621) 64bit Professional' Language: 'ko' Physical Memory: 24464 MB
+OS: 'Windows 11  (10.0.22621) 64bit Professional' Language: 'ko' Physical Memory: 32656 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -15,7 +15,7 @@ D:/unity/TPS_SoloProject
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-59752
+64178
 Successfully changed project path to: D:/unity/TPS_SoloProject
 D:/unity/TPS_SoloProject
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,11 +49,11 @@ D:/unity/TPS_SoloProject
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [5872] Host "[IP] 192.168.0.11 [Port] 0 [Flags] 2 [Guid] 370313799 [EditorId] 370313799 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6L5JQJ2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [14828] Host "[IP] 192.168.0.8 [Port] 0 [Flags] 2 [Guid] 2757198098 [EditorId] 2757198098 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6L5JQJ2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [5872] Host "[IP] 192.168.0.11 [Port] 0 [Flags] 2 [Guid] 370313799 [EditorId] 370313799 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6L5JQJ2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [14828] Host "[IP] 192.168.0.8 [Port] 0 [Flags] 2 [Guid] 2757198098 [EditorId] 2757198098 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6L5JQJ2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 7.50 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 7.53 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.4f1 (35713cd46cd7)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity 2022.3.4f1/Editor/Data/Resources/UnitySubsystems
@@ -61,54 +61,53 @@ Initialize engine version: 2022.3.4f1 (35713cd46cd7)
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: Radeon RX 570 Series (ID=0x67df)
-    Vendor:   ATI
-    VRAM:     8135 MB
-    Driver:   31.0.14057.5006
-Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+    Renderer: NVIDIA GeForce RTX 4070 (ID=0x2786)
+    Vendor:   NVIDIA
+    VRAM:     12025 MB
+    Driver:   31.0.15.3742
 Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity 2022.3.4f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity 2022.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity 2022.3.4f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56420
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56568
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity 2022.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004875 seconds.
-- Loaded All Assemblies, in  0.311 seconds
+Registered in 0.004784 seconds.
+- Loaded All Assemblies, in  0.386 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.239 seconds
-Domain Reload Profiling: 549ms
-	BeginReloadAssembly (82ms)
+- Finished resetting the current domain, in  0.260 seconds
+Domain Reload Profiling: 644ms
+	BeginReloadAssembly (104ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (34ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (54ms)
-	LoadAllAssembliesAndSetupDomain (129ms)
-		LoadAssemblies (80ms)
+	RebuildCommonClasses (43ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (59ms)
+	LoadAllAssembliesAndSetupDomain (165ms)
+		LoadAssemblies (100ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (123ms)
-			TypeCache.Refresh (123ms)
-				TypeCache.ScanAssembly (113ms)
+		AnalyzeDomain (158ms)
+			TypeCache.Refresh (157ms)
+				TypeCache.ScanAssembly (144ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (240ms)
+	FinalizeReload (260ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (184ms)
+		SetupLoadedEditorAssemblies (201ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (8ms)
-			SetLoadedEditorAssemblies (8ms)
+			SetLoadedEditorAssemblies (7ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (123ms)
-			ProcessInitializeOnLoadMethodAttributes (43ms)
+			ProcessInitializeOnLoadAttributes (139ms)
+			ProcessInitializeOnLoadMethodAttributes (45ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -118,56 +117,55 @@ Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0.614 seconds
-Refreshing native plugins compatible for Editor in 2.12 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.648 seconds
+Refreshing native plugins compatible for Editor in 5.38 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 [MODES] ModeService[none].Initialize
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-TPS
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.602 seconds
-Domain Reload Profiling: 1215ms
-	BeginReloadAssembly (101ms)
+- Finished resetting the current domain, in  0.580 seconds
+Domain Reload Profiling: 1227ms
+	BeginReloadAssembly (107ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (18ms)
 	RebuildCommonClasses (25ms)
 	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (34ms)
-	LoadAllAssembliesAndSetupDomain (446ms)
-		LoadAssemblies (209ms)
+	initialDomainReloadingComplete (35ms)
+	LoadAllAssembliesAndSetupDomain (473ms)
+		LoadAssemblies (212ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (283ms)
-			TypeCache.Refresh (244ms)
-				TypeCache.ScanAssembly (228ms)
-			ScanForSourceGeneratedMonoScriptInfo (29ms)
-			ResolveRequiredComponents (10ms)
-	FinalizeReload (602ms)
+		AnalyzeDomain (311ms)
+			TypeCache.Refresh (278ms)
+				TypeCache.ScanAssembly (267ms)
+			ScanForSourceGeneratedMonoScriptInfo (22ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (580ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (436ms)
+		SetupLoadedEditorAssemblies (421ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (5ms)
-			SetLoadedEditorAssemblies (3ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (2ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (64ms)
-			ProcessInitializeOnLoadAttributes (301ms)
-			ProcessInitializeOnLoadMethodAttributes (57ms)
-			AfterProcessingInitializeOnLoad (5ms)
+			BeforeProcessingInitializeOnLoad (62ms)
+			ProcessInitializeOnLoadAttributes (294ms)
+			ProcessInitializeOnLoadMethodAttributes (52ms)
+			AfterProcessingInitializeOnLoad (6ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (5ms)
-Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
 Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 1.86 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 3.05 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5958 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 89 unused Assets / (1.6 MB). Loaded Objects now: 6420.
-Memory consumption went from 244.6 MB to 243.0 MB.
-Total: 4.704300 ms (FindLiveObjects: 0.470700 ms CreateObjectMapping: 0.368900 ms MarkObjects: 3.118200 ms  DeleteObjects: 0.745600 ms)
+Unloading 5962 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 89 unused Assets / (1.6 MB). Loaded Objects now: 6424.
+Memory consumption went from 245.3 MB to 243.7 MB.
+Total: 6.362000 ms (FindLiveObjects: 0.764500 ms CreateObjectMapping: 0.395600 ms MarkObjects: 4.434400 ms  DeleteObjects: 0.766800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -184,150 +182,77 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 156230.413570 seconds.
-  path: Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/Blazer_Blazer_shader_Diffuse.png
-  artifactKey: Guid(22552c15519454545913a4145c5b24e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/Blazer_Blazer_shader_Diffuse.png using Guid(22552c15519454545913a4145c5b24e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f17b0d58ee8d2a12eab632f73dc63ca') in 0.012476 seconds
+  Time since last request: 305396.873732 seconds.
+  path: Assets/Scripts/Manager/PopupUIManager.cs
+  artifactKey: Guid(0204d7d5913c0c743a580a97870a0933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Manager/PopupUIManager.cs using Guid(0204d7d5913c0c743a580a97870a0933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '978bc759f998762d6d29db1cab8e379d') in 0.002916 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
+Number of asset objects unloaded after import = 0
 ========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/Blazer_Blazer_shader_Emissive.png
-  artifactKey: Guid(3cee45f414be83b418823774e8392248) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/Blazer_Blazer_shader_Emissive.png using Guid(3cee45f414be83b418823774e8392248) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '023beed7d3d0824a52e85257ffe29a7c') in 0.001050 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/Browning_Browning_shader_Diffuse.png
-  artifactKey: Guid(2459b1b5859bc414891766b4e2b59978) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/Browning_Browning_shader_Diffuse.png using Guid(2459b1b5859bc414891766b4e2b59978) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd831c09282e92ca4d4a0afdd665f978') in 0.001534 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/Browning_Browning_shader_Roughness.png
-  artifactKey: Guid(40204cc0da0ada744a1c0e2c0ae04542) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/Browning_Browning_shader_Roughness.png using Guid(40204cc0da0ada744a1c0e2c0ae04542) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '382c63916394d7daa6dcefc4358143ed') in 0.001126 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/FederalRed_FederalRed_shader_OcclusionRoughMet.png
-  artifactKey: Guid(c08fa0ef6d8e260409078239d40c6c21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/FederalRed_FederalRed_shader_OcclusionRoughMet.png using Guid(c08fa0ef6d8e260409078239d40c6c21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c59ef3d0f64b5cbcd6378d47e547bc7f') in 0.001208 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/FederalRed_FederalRed_shader_Diffuse.png
-  artifactKey: Guid(9220669e7fd331f47b8b0641a95d6c73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/FederalRed_FederalRed_shader_Diffuse.png using Guid(9220669e7fd331f47b8b0641a95d6c73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0ffe6c102802a182afcce5b09eea5e2') in 0.001297 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/FederalUltra_FederalUltra_shader_Normal.png
-  artifactKey: Guid(c30088ece62beff46bfe87b6c819a6f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/FederalUltra_FederalUltra_shader_Normal.png using Guid(c30088ece62beff46bfe87b6c819a6f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ca5a8f921e68e7d086747f52d4efd9e') in 0.001051 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/BlazerBrass_BlazerBrass_shader_Metallic.png
-  artifactKey: Guid(c24b919cddc2a3441881c8e88db21d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/BlazerBrass_BlazerBrass_shader_Metallic.png using Guid(c24b919cddc2a3441881c8e88db21d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9223d01a8ea98a844d215e41a517dce5') in 0.001254 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/Browning_Browning_shader_Normal.png
-  artifactKey: Guid(c2d760e6b39d5e6438a9092ff7f4a5ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/Browning_Browning_shader_Normal.png using Guid(c2d760e6b39d5e6438a9092ff7f4a5ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59ad71dd8cbb957c977975974e363c0f') in 0.001301 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/FederalUltra_FederalUltra_shader_OcclusionRoughMet.png
-  artifactKey: Guid(8a9c79a936a880d438c9832b9bb6640c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/FederalUltra_FederalUltra_shader_OcclusionRoughMet.png using Guid(8a9c79a936a880d438c9832b9bb6640c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '034a24c47c046ddd9084482f07a4d7d5') in 0.001287 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/Blazer_Blazer_shader_Metallic.png
-  artifactKey: Guid(7486449f6fef7b54988704a2b617437a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/Blazer_Blazer_shader_Metallic.png using Guid(7486449f6fef7b54988704a2b617437a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd806026c6949d32f7524426b5a23d738') in 0.001232 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/FederalUltra_FederalUltra_shader_Roughness.png
-  artifactKey: Guid(7f8d0cbfb41c7eb428c404b31e3f86c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/FederalUltra_FederalUltra_shader_Roughness.png using Guid(7f8d0cbfb41c7eb428c404b31e3f86c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5d5af7c72c3f7310d7937ddc693b6cf') in 0.001353 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/FederalRed_FederalRed_shader_Metallic.png
-  artifactKey: Guid(b663cc389fe85764dbc3a2583c00914b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/FederalRed_FederalRed_shader_Metallic.png using Guid(b663cc389fe85764dbc3a2583c00914b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3df966688484b509529ed4968b39016b') in 0.001093 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/BlazerBrass_BlazerBrass_shader_OcclusionRoughMet.png
-  artifactKey: Guid(48d02bed00fb28e4cbf4b39b7c9687cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/BlazerBrass_BlazerBrass_shader_OcclusionRoughMet.png using Guid(48d02bed00fb28e4cbf4b39b7c9687cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f3ab4625554b5920ab6d2a4bf971683') in 0.001082 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/BlazerBrass_BlazerBrass_shader_Emissive.png
-  artifactKey: Guid(a3e5eb5ba54ce7e45b0faa6af127d94a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/BlazerBrass_BlazerBrass_shader_Emissive.png using Guid(a3e5eb5ba54ce7e45b0faa6af127d94a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2c606979e897ad48cf2e6c17c01c88a') in 0.001492 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/Browning_Browning_shader_Metallic.png
-  artifactKey: Guid(157084bff19e1ca45b52f62eff0250cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/Browning_Browning_shader_Metallic.png using Guid(157084bff19e1ca45b52f62eff0250cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f1c2343baaa49bae1b706073bfa4f33') in 0.001096 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/FederalWhite_FederalWhite_shader_Normal.png
-  artifactKey: Guid(6919a9e083ae9984a89fb9aae8439a52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/FederalWhite_FederalWhite_shader_Normal.png using Guid(6919a9e083ae9984a89fb9aae8439a52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1ab87bf59870ea483ab48286d07c4bf') in 0.001485 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/FederalRed_FederalRed_shader_Emissive.png
-  artifactKey: Guid(52cbed604fff8e2499f3e114a5f2ef03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/model/ammo-boxes-pack-low-poly-game-ready/source/AmmoBoxes/FederalRed_FederalRed_shader_Emissive.png using Guid(52cbed604fff8e2499f3e114a5f2ef03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d9d1c5148e1cdccbd33ccec9fdcb3eb') in 0.000843 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: 스레드 종료 또는 응용 프로그램 요청 때문에 I/O 작업이 취소되었습니다.
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\unity\TPS_SoloProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.594 seconds
+Refreshing native plugins compatible for Editor in 2.59 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-TPS
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.213 seconds
+Domain Reload Profiling: 1806ms
+	BeginReloadAssembly (136ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (45ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (399ms)
+		LoadAssemblies (201ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (249ms)
+			TypeCache.Refresh (233ms)
+				TypeCache.ScanAssembly (222ms)
+			ScanForSourceGeneratedMonoScriptInfo (5ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1214ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (547ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (100ms)
+			ProcessInitializeOnLoadAttributes (361ms)
+			ProcessInitializeOnLoadMethodAttributes (66ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (20ms)
+Shader 'NOT_Lonely/NOT_Lonely_PBRDecals': fallback shader 'Decal/Transparent Diffuse' not found
+Refreshing native plugins compatible for Editor in 3.65 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5777 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 52 unused Assets / (1.6 MB). Loaded Objects now: 6441.
+Memory consumption went from 211.7 MB to 210.1 MB.
+Total: 9.746700 ms (FindLiveObjects: 1.138400 ms CreateObjectMapping: 0.432500 ms MarkObjects: 6.377200 ms  DeleteObjects: 1.797000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 

@@ -109,7 +109,7 @@ public class Enemy : MonoBehaviour, IHp
         {
             if (!_isDead)
             {
-                StartCoroutine(ObjectPoolManager.Instance.ZombieDisable(this));
+                StartCoroutine(ObjectPoolManager.Instance.DisableZombie(this));
                 StartCoroutine(StartDeadParticle());
                 ZombieSounds.PlayZombieSoundClip(ZombieSounds.ZombieSoundType.Dead);
                 Navmesh.NaveMeshEnabled(false);

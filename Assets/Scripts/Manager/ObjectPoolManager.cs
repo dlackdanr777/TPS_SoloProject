@@ -48,8 +48,10 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
 
     public void ZombieObjectPooling(ZombieType zombieType)
     {
+        string parentName = Enum.GetName(typeof(ZombieType), (int)zombieType) + " Zombie Parent======";
+
         _zombieStruct[(int)zombieType].Pool = new Queue<GameObject>();
-        _zombieStruct[(int)zombieType].Parent = new GameObject(Enum.GetName(typeof(ZombieType), (int)zombieType) + " Zombie Parent======");
+        _zombieStruct[(int)zombieType].Parent = new GameObject(parentName);
 
         for (int i = 0, count = _zombieStruct[(int)zombieType].PoolCount; i < count; i++)
         {
@@ -63,11 +65,7 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
     public GameObject SpawnBulletHole( Vector3 pos, Quaternion rot)
     {
         GameObject bulletHole = _bulletHolePool.Dequeue();
-        if(bulletHole == null)
-        {
-            bulletHole = Instantiate(BulletHolePrefab, Vector3.zero, Quaternion.identity);
-            Debug.Log("½ºÆùÇÔ");
-        }
+
         bulletHole.SetActive(false);
         bulletHole.SetActive(true);
         bulletHole.transform.position = pos;
@@ -85,6 +83,7 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
             zombiePool.transform.parent = _zombieStruct[(int)zombieType].Parent.transform;
             zombiePool.SetActive(false);
         }
+
         GameObject zombie = _zombieStruct[(int)zombieType].Pool.Dequeue();
         zombie.SetActive(true);
         Enemy enemy = zombie.GetComponent<Enemy>();
@@ -95,7 +94,7 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
         enemy.Target = GameManager.Instance.Player.transform;
     }
 
-    public IEnumerator ZombieDisable(Enemy enemy)
+    public IEnumerator DisableZombie(Enemy enemy)
     {
         yield return YieldCache.WaitForSeconds(40);
         int zombieType = (int)enemy.ZombieType;

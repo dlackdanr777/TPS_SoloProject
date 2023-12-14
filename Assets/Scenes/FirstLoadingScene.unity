@@ -350,7 +350,7 @@ MonoBehaviour:
   _bulletHoleCount: 100
   _zombieStruct:
   - Type: 0
-    PoolCount: 10
+    PoolCount: 200
     Prefab: {fileID: 2866469778005338699, guid: 38e9d3b7cf0e7af49a16262152570320,
       type: 3}
     Parent: {fileID: 0}
