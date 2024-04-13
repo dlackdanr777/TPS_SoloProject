@@ -6,17 +6,17 @@ using UnityEngine;
 public class Attack : MonoBehaviour, IAttack
 {
 
-    public float damage => _damage;
-    public float attackRadius => _attackRadius;
-    public event Action OnTargetDamaged;
-    public event Action OnAttackHendler;
-
-
     List<Collider> _hitColliders = new List<Collider>();
     [SerializeField] private float _damage;
     [SerializeField] private float _attackRadius;
     [SerializeField] private LayerMask _attackLayerMask;
     [SerializeField] private LayerMask _obstacleMask;
+
+    public float Damage => _damage;
+    public float attackRadius => _attackRadius;
+    public event Action OnTargetDamaged;
+    public event Action OnAttackHendler;
+
 
     private Coroutine CheckPlayerAtAttackRangeRoutine;
 
@@ -28,11 +28,13 @@ public class Attack : MonoBehaviour, IAttack
         CheckPlayerAtAttackRangeRoutine = StartCoroutine(CheckPlayerAtAttackRange(1f));
     }
 
+
     private void OnDisable()
     {
         if (CheckPlayerAtAttackRangeRoutine != null)
             StopCoroutine(CheckPlayerAtAttackRangeRoutine);
     }
+
 
     public void TargetDamage(IHp iHp, float aomunt)
     {
@@ -42,6 +44,7 @@ public class Attack : MonoBehaviour, IAttack
             OnTargetDamaged?.Invoke();
         }
     }
+
  
     public bool GetCheckPlayerAtAttackRange()
     {
@@ -51,6 +54,7 @@ public class Attack : MonoBehaviour, IAttack
 
         return false;
     }
+
 
     private IEnumerator CheckPlayerAtAttackRange(float repeatCycle)
     {
@@ -76,10 +80,8 @@ public class Attack : MonoBehaviour, IAttack
                 }
             }
         }
-      
-
-
     }
+
 
     public void StartAttack()
     {
@@ -94,6 +96,7 @@ public class Attack : MonoBehaviour, IAttack
             }
         }
     }
+
 
     public void OnDrawGizmos()
     {

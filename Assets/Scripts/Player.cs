@@ -58,7 +58,7 @@ public class Player : MonoBehaviour, IHp, IAttack
     }
     public float maxHp => _maxHp;
     public float minHp => _minHp;
-    public float damage { get; }
+    public float Damage { get; }
 
     private float _hp;
     [SerializeField] private float _maxHp;

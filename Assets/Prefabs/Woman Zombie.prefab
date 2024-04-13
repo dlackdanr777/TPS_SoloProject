@@ -1813,7 +1813,7 @@ Transform:
   - {fileID: 31045558105143518}
   - {fileID: 6810745704057535398}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7988632609085529867
 Animator:
@@ -1989,18 +1989,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f178e2806fa4f824a9584eb3a2d1d29d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ZombieType: 0
   AudioSource: {fileID: 60317213656877745}
   Navmesh: {fileID: 3991719177391204701}
   Animator: {fileID: 7988632609085529867}
   ZombieSounds: {fileID: 5908635945709729218}
   FieldOfView: {fileID: 5949565129537125161}
   Attack: {fileID: 4842202720404019701}
-  Target: {fileID: 0}
   _capsuleCollider: {fileID: 547724573895937244}
   _deadBloodParticle: {fileID: 3652545600070327925}
-  _maxHp: 80
-  _minHp: 0
+  _zombieType: 1
+  _hpData: {fileID: 11400000, guid: 35e69344e52430f4f987f059e8e72804, type: 2}
+  Target: {fileID: 0}
 --- !u!114 &4842202720404019701
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,9 +2,44 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+
+/// <summary>몬스터와 관련된 컴포넌트, 정보를 관리하는 클래스</summary>
 public class Enemy : MonoBehaviour, IHp
 {
-    public ZombieType ZombieType;
+    public event Action<float> onHpChanged;
+    public event Action<object, float> OnHpRecoverd;
+    public event Action<object, float> OnHpDepleted;
+    public event Action<Vector3> OnRotatedHandler;
+    public event Action onHpMax;
+    public event Action onHpMin;
+    public event Action OnTargetDamaged;
+    public Action OnTargetLossHandler;
+    public Action OnTargetFollowedHandler;
+
+
+    [Header("Components")]
+    public AudioSource AudioSource;
+    public Navmesh Navmesh;
+    public Animator Animator;
+    public ZombieSounds ZombieSounds;
+    public FieldOfView FieldOfView;
+    public Attack Attack;  
+    [SerializeField] private CapsuleCollider _capsuleCollider;
+    [SerializeField] private ParticleSystem _deadBloodParticle;
+
+    [Space]
+    [Header("Status")]
+    [SerializeField] private ZombieType _zombieType;
+    public ZombieType ZombieType => _zombieType;
+
+    [SerializeField] private HpData _hpData;
+    private float _maxHp;
+    public float maxHp => _maxHp;
+
+    private float _minHp;
+    public float minHp => _minHp;
+
+    private float _hp;
     public float hp
     {
         get => _hp;
@@ -26,46 +61,18 @@ public class Enemy : MonoBehaviour, IHp
                 onHpMin?.Invoke();
         }
     }
-    public float maxHp => _maxHp;
-    public float minHp => _minHp;
 
-    public event Action<float> onHpChanged;
-    public event Action<object, float> OnHpRecoverd;
-    public event Action<object, float> OnHpDepleted;
-    public event Action<Vector3> OnRotatedHandler;
-    public event Action onHpMax;
-    public event Action onHpMin;
-    public event Action OnTargetDamaged;
-
-    public Action OnTargetLossHandler;
-    public Action OnTargetFollowedHandler;
-
-    public AudioSource AudioSource;
-    public Navmesh Navmesh;
-    public Animator Animator;
-    public ZombieSounds ZombieSounds;
-    public FieldOfView FieldOfView;
-    public Attack Attack;
-    
-    public Transform Target;
-
-    public bool IsDead => _isDead;
-
-    [SerializeField] private CapsuleCollider _capsuleCollider;
-    [SerializeField] private ParticleSystem _deadBloodParticle;
-
-    [SerializeField] private float _maxHp;
-    [SerializeField] private float _minHp = 0;
-    private float _hp;
-
+    [HideInInspector] public Transform Target;
     private bool _isDead;
-
+    public bool IsDead => _isDead;
     private EnemyStateMachine _machine;
+
 
     private void Awake()
     {
         _machine = new EnemyStateMachine(this);
     }
+
 
     private void Start()
     {
@@ -73,20 +80,22 @@ public class Enemy : MonoBehaviour, IHp
         ActionInit();
     }
 
+
     private void Update()
     {
-        if (!_isDead && !GameManager.Instance.IsGameEnd)
-        {
-            _machine.OnUpdate();
-        }
+        if (_isDead && GameManager.Instance.IsGameEnd)
+            return;
+
+        _machine.OnUpdate();
     }
+
 
     private void FixedUpdate()
     {
-        if (!_isDead && !GameManager.Instance.IsGameEnd)
-        {
-            _machine.OnFixedUpdate();
-        }
+        if (_isDead && GameManager.Instance.IsGameEnd)
+            return;
+
+        _machine.OnFixedUpdate();
     }
 
     private void OnEnable()
@@ -97,11 +106,15 @@ public class Enemy : MonoBehaviour, IHp
 
     private void Init()
     {
+        _maxHp = _hpData.MaxHp;
+        _minHp = _hpData.MinHp;
         _hp = _maxHp;
+
         _isDead = false;
         _capsuleCollider.enabled = true;
         _machine.ChangeState(_machine.IdleState);
     }
+
 
     private void ActionInit()
     {
@@ -126,11 +139,14 @@ public class Enemy : MonoBehaviour, IHp
         OnTargetLossHandler = () => { if (Target == null) Navmesh.StopNavMesh(); };
     }
 
+
+    /// <summary>사망 시 파티클을 실행하는 코루틴</summary>
     IEnumerator StartDeadParticle()
     {
         yield return YieldCache.WaitForSeconds(3);
         _deadBloodParticle.Emit(3);
     }
+
 
 
     public void RecoverHp(object subject, float value)
@@ -142,19 +158,20 @@ public class Enemy : MonoBehaviour, IHp
         }
     }
 
+
     public void DepleteHp(object subject, float value)
     {
-        if (!_isDead)
+        if (_isDead)
+            return;
+
+        if (subject is Player)
         {
-            hp -= value;
-            Debug.Log("피격되었습니다! 남은체력:" + _hp);
-            if(subject is Player)
-            {
-                Player player = (Player)subject;
-                Target = player.transform;
-            }
-            OnHpDepleted?.Invoke(subject, value);
+            Player player = (Player)subject;
+            Target = player.transform;
         }
+
+        hp -= value;
+        OnHpDepleted?.Invoke(subject, value);
     }
 
 }

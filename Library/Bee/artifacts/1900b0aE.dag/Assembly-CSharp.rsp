@@ -463,6 +463,7 @@
 "Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/PreviewObject.cs"
 "Assets/Scripts/Rigging.cs"
+"Assets/Scripts/ScriptableObject/HpData.cs"
 "Assets/Scripts/UI/PopupUI.cs"
 "Assets/Scripts/UI/UIBuild.cs"
 "Assets/Scripts/UI/UIBuildSlot.cs"

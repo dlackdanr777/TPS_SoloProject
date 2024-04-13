@@ -15,11 +15,14 @@ public class EnemyStateMachine
     public IState DeadState { get; private set; }
 
     private float _changeTimer;
+
+
     public EnemyStateMachine(Enemy enemy)
     {
         _enemy = enemy;
         StateInit();
     }
+
 
     public void OnUpdate()
     {
@@ -27,11 +30,13 @@ public class EnemyStateMachine
         CurrentState.OnUpdate();
     }
 
+
     public void OnFixedUpdate()
     {
         CurrentState.OnFixedUpdate();
     }
     
+
     private void StateInit()
     {
         IdleState = new EIdleState(_enemy, this);
@@ -41,6 +46,7 @@ public class EnemyStateMachine
         DeadState = new EDeadState(_enemy, this);
         CurrentState = IdleState;
     }
+
 
     public void ChangeState(IState nextState) //상태를 변환하는 함수(꼭이걸로 상태를 변화해야함)
     {
@@ -54,6 +60,7 @@ public class EnemyStateMachine
         nextState.OnStart(); //다음 상태의 OnStart를 호출
         CurrentState = nextState; //현재 상태를 다음 상태로 변환
     }
+
 
     public bool ChangeTrackingStateCondition()
     {
