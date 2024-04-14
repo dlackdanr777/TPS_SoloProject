@@ -22,7 +22,7 @@ public class UIGame : MonoBehaviour
     {
         _player = GameManager.Instance.Player;
         _player.onHpChanged += _hpBar.AmountChanged;
-        _hpBar.Init(_player.maxHp);
+        _hpBar.Init(_player.MaxHp);
 
         _player.GunController.OnFireHendler += ShowBulletCount;
         _player.GunController.OnReloadHendler += ShowBulletCount;

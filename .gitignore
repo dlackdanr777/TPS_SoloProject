@@ -73,3 +73,5 @@ crashlytics-build.properties
 Library/ArtifactDB
 Library/ArtifactDB
 /Library
+/Library
+/Library/Artifacts

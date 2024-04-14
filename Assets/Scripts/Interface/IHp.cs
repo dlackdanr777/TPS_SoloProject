@@ -5,8 +5,8 @@ using System;
 public interface IHp 
 {
     float hp { get; }
-    float maxHp { get; }
-    float minHp { get; }
+    float MaxHp { get; }
+    float MinHp { get; }
 
     event Action<float> onHpChanged;
     event Action<object, float> OnHpRecoverd;
