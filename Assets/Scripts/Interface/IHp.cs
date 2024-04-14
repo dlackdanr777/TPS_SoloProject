@@ -4,15 +4,15 @@ using System;
 /// <summary>체력 관련 인터페이스</summary>
 public interface IHp 
 {
-    float hp { get; }
+    float Hp { get; }
     float MaxHp { get; }
     float MinHp { get; }
 
-    event Action<float> onHpChanged;
+    event Action<float> OnHpChanged;
     event Action<object, float> OnHpRecoverd;
     event Action<object, float> OnHpDepleted;
-    event Action onHpMax;
-    event Action onHpMin;
+    event Action OnHpMax;
+    event Action OnHpMin;
 
     /// <summary>체력을 회복하는 함수</summary>
     void RecoverHp(object subject, float value);

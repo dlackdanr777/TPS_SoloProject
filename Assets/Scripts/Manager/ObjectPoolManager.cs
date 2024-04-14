@@ -3,20 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ZombieType
-{
-    Basic,
-    Women,
-    Heavy,
-    Count
-}
 
 public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
 {
     [Serializable]
     private struct ZombieStruct
     {
-        public ZombieType Type;
+        public EnemyType Type;
         public int PoolCount;
         public GameObject Prefab;
         [HideInInspector] public Queue<GameObject> Pool;
@@ -45,9 +38,9 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
         }
     }
 
-    public void ZombieObjectPooling(ZombieType zombieType)
+    public void ZombieObjectPooling(EnemyType zombieType)
     {
-        string parentName = Enum.GetName(typeof(ZombieType), (int)zombieType) + " Zombie Parent======";
+        string parentName = Enum.GetName(typeof(EnemyType), (int)zombieType) + " Zombie Parent======";
 
         _zombieStruct[(int)zombieType].Pool = new Queue<GameObject>();
         _zombieStruct[(int)zombieType].Parent = new GameObject(parentName);
@@ -73,7 +66,7 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
         return bulletHole;
     }
 
-    public void SpawnZombie(ZombieType zombieType, Vector3 pos, Quaternion rot)
+    public void SpawnZombie(EnemyType zombieType, Vector3 pos, Quaternion rot)
     {
         if(_zombieStruct[(int)zombieType].Pool.Count == 0)
         {
@@ -96,7 +89,7 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
     public IEnumerator DisableZombie(Enemy enemy)
     {
         yield return YieldCache.WaitForSeconds(40);
-        int zombieType = (int)enemy.ZombieType;
+        int zombieType = (int)enemy.EnemyType;
         _zombieStruct[zombieType].Pool.Enqueue(enemy.gameObject);
         enemy.gameObject.SetActive(false);
     }
@@ -104,7 +97,7 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
     public int ZombieCounting()
     {
         int zombieCount = 0;
-        for(int i = 0, count = (int)ZombieType.Count - 1; i <  count; i++)
+        for(int i = 0, count = (int)EnemyType.Count - 1; i <  count; i++)
         {
             Enemy[] objs = _zombieStruct[i].Parent.GetComponentsInChildren<Enemy>();
             zombieCount += objs.Length;

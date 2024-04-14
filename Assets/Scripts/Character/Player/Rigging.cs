@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
+
+/// <summary> 상체의 애니메이션 리깅을 조절하는 함수 </summary>
 public class Rigging : MonoBehaviour
 {
-    [Header("애니메이션 리깅")]
+    [Header("Components")]
     [SerializeField] private MultiAimConstraint _spineAim1;
     [SerializeField] private MultiAimConstraint _spineAim2;
     [SerializeField] private MultiAimConstraint _headAim;
@@ -12,28 +14,31 @@ public class Rigging : MonoBehaviour
     [SerializeField] private TwoBoneIKConstraint _secondHandGrabWeapon;
 
 
-
-    public void SetUpperRigWeight(float weight) //목표를 추적하는 뼈대의 가중치를 설정하는 함수
+    /// <summary> 목표를 추적하는 뼈대의 가중치를 설정하는 함수 </summary>
+    public void SetUpperRigWeight(float weight)
     {
-        if (_spineAim1.weight != weight)
-        {
-            float weightLerp = Mathf.Lerp(_spineAim1.weight, weight, Time.deltaTime * 10);
-            _spineAim1.weight = weightLerp;
-            _spineAim2.weight = weightLerp;
-            _headAim.weight = weightLerp;
-            _handAim.weight = weightLerp;
-            _secondHandGrabWeapon.weight = weightLerp;
-            _headCamera.weight = Mathf.Abs(weightLerp - 1);
-        }
+        if (_spineAim1.weight == weight)
+            return;
+
+        float weightLerp = Mathf.Lerp(_spineAim1.weight, weight, Time.deltaTime * 10);
+        _spineAim1.weight = weightLerp;
+        _spineAim2.weight = weightLerp;
+        _headAim.weight = weightLerp;
+        _handAim.weight = weightLerp;
+        _secondHandGrabWeapon.weight = weightLerp;
+        _headCamera.weight = Mathf.Abs(weightLerp - 1);
+
     }
 
+
+    /// <summary> 목표를 추적하는 뼈대의 가중치를 머리만 설정하는 함수 </summary>
     public void SetHeadRigWeight(float weight)
     {
-        if (_headAim.weight != weight)
-        {
-            float weightLerp = Mathf.Lerp(_headAim.weight, weight, Time.deltaTime * 10);
-            _headCamera.weight = weightLerp;
-            _headAim.weight = Mathf.Abs(weightLerp - 1);
-        }
+        if (_headAim.weight == weight)
+            return;
+
+        float weightLerp = Mathf.Lerp(_headAim.weight, weight, Time.deltaTime * 10);
+        _headCamera.weight = weightLerp;
+        _headAim.weight = Mathf.Abs(weightLerp - 1);
     }
 }

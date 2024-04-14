@@ -41,7 +41,7 @@ public class EnemyAttack : MonoBehaviour, IAttack
     /// <summary>해당 IHp를 가진 타겟에게 데미지를 주는 함수</summary>
     public void TargetDamage(IHp iHp, float aomunt)
     {
-        if (iHp.hp < iHp.MinHp)
+        if (iHp.Hp < iHp.MinHp)
             return;
 
         iHp.DepleteHp(this, aomunt);

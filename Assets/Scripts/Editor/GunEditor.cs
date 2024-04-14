@@ -27,7 +27,7 @@ public class GunEditor : Editor
         _gun.ReloadTime = EditorGUILayout.FloatField("재장전 시간(S)", _gun.ReloadTime);
 
         EditorGUILayout.Space();
-        _gun.Damage = EditorGUILayout.IntField("발당 데미지", _gun.Damage);
+        _gun.Damage = EditorGUILayout.FloatField("발당 데미지", _gun.Damage);
 
         EditorGUILayout.Space();
         _gun.MaxBulletCount = EditorGUILayout.IntField("탄창 최대 총알 수량", _gun.MaxBulletCount);

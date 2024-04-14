@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Barricade : MonoBehaviour, IHp
 {
-    public float hp
+    public float Hp
     {
         get => _hp;
         private set
@@ -19,11 +19,11 @@ public class Barricade : MonoBehaviour, IHp
                 value = _minHp;
 
             _hp = value;
-            onHpChanged?.Invoke(value);
+            OnHpChanged?.Invoke(value);
             if (_hp == _maxHp)
-                onHpMax?.Invoke();
+                OnHpMax?.Invoke();
             else if (_hp == _minHp)
-                onHpMin?.Invoke();
+                OnHpMin?.Invoke();
         }
     }
 
@@ -31,11 +31,11 @@ public class Barricade : MonoBehaviour, IHp
 
     public float MinHp => _minHp;
 
-    public event Action<float> onHpChanged;
+    public event Action<float> OnHpChanged;
     public event Action<object, float> OnHpRecoverd;
     public event Action<object, float> OnHpDepleted;
-    public event Action onHpMax;
-    public event Action onHpMin;
+    public event Action OnHpMax;
+    public event Action OnHpMin;
 
     private float _hp;
     [SerializeField] private float _maxHp;
@@ -45,12 +45,12 @@ public class Barricade : MonoBehaviour, IHp
     private bool _isBroken;
     public void Start()
     {
-        onHpMin += DestroyObject;
+        OnHpMin += DestroyObject;
     }
 
     public void OnEnable()
     {
-        hp = _maxHp;
+        Hp = _maxHp;
         _isBroken = false;
     }
 
@@ -68,8 +68,8 @@ public class Barricade : MonoBehaviour, IHp
 
     public void DepleteHp(object subject, float value)
     {
-        hp -= value;
-        Debug.Log("맞음" + hp);
+        Hp -= value;
+        Debug.Log("맞음" + Hp);
         OnHpDepleted?.Invoke(subject, value);
     }
 

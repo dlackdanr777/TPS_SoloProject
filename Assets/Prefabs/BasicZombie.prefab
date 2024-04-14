@@ -1304,8 +1304,7 @@ MonoBehaviour:
   Attack: {fileID: 2758386012689585671}
   _capsuleCollider: {fileID: 965168047732495755}
   _deadBloodParticle: {fileID: 4144078292747427626}
-  _zombieType: 0
-  _hpData: {fileID: 11400000, guid: 9b60bbc128597c342bc7fcbd0b10a98b, type: 2}
+  _enemyData: {fileID: 11400000, guid: 9b60bbc128597c342bc7fcbd0b10a98b, type: 2}
   Target: {fileID: 0}
 --- !u!114 &2758386012689585671
 MonoBehaviour:

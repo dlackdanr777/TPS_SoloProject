@@ -1,17 +1,19 @@
 using System;
 using UnityEngine;
 
+
+/// <summary> 플레이어의 움직임을 주는 클래스 </summary>
 public class PlayerMovement : MonoBehaviour, IMovement
 {
-    public float RunSpeedMul => _runSpeedMul;
-
-    [Header("컴포넌트")]
+    [Header("Components")]
     [SerializeField] private CharacterController _controller;
     [SerializeField] private Camera _mainCamera;
 
-    [Header("능력치")]
+    [Space]
+    [Header("Option")]
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _runSpeedMul;
+    public float RunSpeedMul => _runSpeedMul;
     [SerializeField] private float _rotateSpeed;
 
 
@@ -21,6 +23,7 @@ public class PlayerMovement : MonoBehaviour, IMovement
         moveDir = transform.TransformDirection(moveDir) * _moveSpeed * moveSpeedMul;
         _controller.Move(moveDir * Time.deltaTime);
     }
+
 
     public void Rotate()
     {

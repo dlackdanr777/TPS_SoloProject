@@ -8,15 +8,15 @@ public class HitPart : MonoBehaviour, IHp
     [SerializeField] private string _partName;
     [SerializeField] private float _multiple;
 
-    public float hp => _enemy.hp;
+    public float Hp => _enemy.Hp;
     public float MaxHp => _enemy.MaxHp;
     public float MinHp => _enemy.MinHp;
 
-    public event Action<float> onHpChanged;
+    public event Action<float> OnHpChanged;
     public event Action<object, float> OnHpRecoverd;
     public event Action<object, float> OnHpDepleted;
-    public event Action onHpMax;
-    public event Action onHpMin;
+    public event Action OnHpMax;
+    public event Action OnHpMin;
 
 
     public void DepleteHp(object subject, float value)

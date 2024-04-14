@@ -21,7 +21,7 @@ public class UIGame : MonoBehaviour
     public void Start()
     {
         _player = GameManager.Instance.Player;
-        _player.onHpChanged += _hpBar.AmountChanged;
+        _player.OnHpChanged += _hpBar.AmountChanged;
         _hpBar.Init(_player.MaxHp);
 
         _player.GunController.OnFireHendler += ShowBulletCount;
@@ -32,7 +32,7 @@ public class UIGame : MonoBehaviour
         _uiLose.gameObject.SetActive(false);
         _uiStop.gameObject.SetActive(false);
 
-        GameManager.Instance.Player.onHpMin += ShowUILose;
+        GameManager.Instance.Player.OnHpMin += ShowUILose;
     }
 
     public void SetGameTimerText(string text)

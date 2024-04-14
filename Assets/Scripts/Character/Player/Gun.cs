@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -14,7 +13,7 @@ public class Gun : MonoBehaviour
     public float RPM; //분당 발사속도
     public float ReloadTime; //재장전 시간
 
-    public int Damage; //총의 데미지
+
 
     public int MaxBulletCount; //총알의 최대 갯수
     public int ReloadBulletCount; //총알의 재장전 갯수
@@ -27,15 +26,20 @@ public class Gun : MonoBehaviour
     public AudioClip ReloadSound;
 
     public float FireRate; //총알 발사 간격
+    public float Damage; //총의 데미지
+
 
     public void Awake()
     {
         Anim = GetComponent<Animator>();
     }
 
+
     public void Start()
     {
         FireRate = 1 / (RPM / 60);
     }
+
+
 
 }

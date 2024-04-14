@@ -11,18 +11,17 @@ public class CrossHair : MonoBehaviour
     [SerializeField] private RectTransform _downCrossHair;
 
     [SerializeField] private Transform _aimCenter;
-
     [Space(10f)]
     [SerializeField] private Image[] _sideCrossHair;
-
     private bool _isVisibility;
-
     private Coroutine _SideCrossHairEnableRoutine;
 
-    private void Start()
+
+    public void Init(GunController gunController)
     {
-        GameManager.Instance.Player.OnTargetDamaged += SideCrossHairEnable;
+        gunController.OnTargetDamaged += SideCrossHairEnable;
     }
+
 
     private void FixedUpdate()
     {

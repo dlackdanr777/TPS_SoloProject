@@ -1,11 +1,26 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Player : MonoBehaviour, IHp, IAttack
+
+/// <summary> 플레이어 관련 데이터, 컴포넌트를 모아둔 클래스 </summary>
+public class Player : MonoBehaviour, IHp
 {
-    [Header("컴포넌트")]
+    public event Action OnHpMax;
+    public event Action OnHpMin;
+    public event Action<float> OnHpChanged;
+    public event Action<object, float> OnHpRecoverd;
+    public event Action<object, float> OnHpDepleted;
+    public Action<float, float, float> OnMovedHandler;
+    public Action<float> OnSetRecoilSizeHandler;
+    public Action OnRotateHandler;
+    public Action OnEnableAimHandler;
+    public Action OnDisableAimHandler;
+    public Action OnFollowAimHandler;
+    public Action OnFireHandler;
+
+
+    [Header("Components")]
     public Camera MainCamera;
     public CinemachineCamera PlayerCamera;
     public Animator Animator;
@@ -17,25 +32,15 @@ public class Player : MonoBehaviour, IHp, IAttack
     public PlayerStateMachine Machine;
     public CharacterController CharacterController;
     public AudioSource AudioSource;
-
-    public Dictionary<int, string> a;
-    public event Action onHpMax;
-    public event Action onHpMin;
-    public event Action<float> onHpChanged;
-    public event Action<object, float> OnHpRecoverd;
-    public event Action<object, float> OnHpDepleted;
-    public event Action OnTargetDamaged;
-    public Action<float, float, float> OnMovedHandler;
-    public Action<float> OnSetRecoilSizeHandler;
-    public Action OnRotateHandler;
-    public Action OnEnableAimHandler;
-    public Action OnDisableAimHandler;
-    public Action OnFollowAimHandler;
-    public Action OnFireHandler;
-
     [SerializeField] private AudioClip[] _hitSoundClips;
+    [SerializeField] private float _maxHp;
+    public float MaxHp => _maxHp;
+    [SerializeField] private float _minHp = 0;
+    public float MinHp => _minHp;
 
-    public float hp
+
+    private float _hp;
+    public float Hp
     {
          get => _hp;
         private set
@@ -45,24 +50,20 @@ public class Player : MonoBehaviour, IHp, IAttack
 
             if(value > _maxHp)
                 value = _maxHp;
+
             else if(value < _minHp)
                 value = _minHp;
 
             _hp = value;
-            onHpChanged?.Invoke(value);
+            OnHpChanged?.Invoke(value);
             if (_hp == _maxHp)
-                onHpMax?.Invoke();
+                OnHpMax?.Invoke();
+
             else if(_hp == _minHp)
-                onHpMin?.Invoke();
+                OnHpMin?.Invoke();
         }
     }
-    public float MaxHp => _maxHp;
-    public float MinHp => _minHp;
-    public float Damage { get; }
 
-    private float _hp;
-    [SerializeField] private float _maxHp;
-    [SerializeField] private float _minHp = 0;
 
     private void Awake()
     {
@@ -70,38 +71,40 @@ public class Player : MonoBehaviour, IHp, IAttack
         Machine = new PlayerStateMachine(this);
     }
 
+
     private void Start()
-    {
-        
+    {  
         Init();
         ActionInit();
         GunController.DisableCrossHair();
     }
 
 
+
     private void Update()
     {
-        if (!GameManager.Instance.IsGameEnd)
-        {
-            Machine.OnUpdate();
-            OnFollowAimHandler?.Invoke();
-            FlashLight.ControllFlash();
-        }
+        if (GameManager.Instance.IsGameEnd)
+            return;
 
+        Machine.OnUpdate();
+        OnFollowAimHandler?.Invoke();
+        FlashLight.ControllFlash();
     }
 
     private void FixedUpdate()
     {
-        if (!GameManager.Instance.IsGameEnd)
-        {
-            Machine.OnFixedUpdate();
-        }    
+        if (GameManager.Instance.IsGameEnd)
+            return;
+
+        Machine.OnFixedUpdate();
     }
+
 
     private void Init()
     {
         _hp = _maxHp;
     }
+
 
     private void ActionInit()
     {
@@ -121,10 +124,10 @@ public class Player : MonoBehaviour, IHp, IAttack
         OnFireHandler = GunController.TryFire;
         OnSetRecoilSizeHandler = GunController.SetRecoilMul;
 
-        GunController.OnTargetDamageHendler += TargetDamage;
+        GunController.OnTargetDamageHendler += GunController.TargetDamage;
         GunController.OnFireHendler += PlayerCamera.CameraShakeStart;
 
-        onHpMin += () =>
+        OnHpMin += () =>
         {
             if (!GameManager.Instance.IsGameEnd)
             {
@@ -137,27 +140,21 @@ public class Player : MonoBehaviour, IHp, IAttack
         };
     }
 
+
     public void RecoverHp(object subject, float value)
     {
-        hp += value;
+        Hp += value;
         OnHpRecoverd?.Invoke(subject, value);
     }
 
+
     public void DepleteHp(object subject, float value)
     {
-        hp -= value;
+        Hp -= value;
         int randIndex = Random.Range(0, _hitSoundClips.Length);
         AudioSource.PlayOneShot(_hitSoundClips[randIndex]);
         OnHpDepleted?.Invoke(subject, value);
     }
 
-    public void TargetDamage(IHp ihp, float aomunt)
-    {
-        if(ihp.hp > ihp.MinHp)
-        {
-            ihp.DepleteHp(this, aomunt);
-            OnTargetDamaged?.Invoke();
-        }    
-    }
 }
 

@@ -14,7 +14,7 @@ public class InGame : MonoBehaviour
     [Serializable]
     public struct SpawnZombie
     {
-        public ZombieType Type;
+        public EnemyType Type;
         public int SpawnCount;
     }
 

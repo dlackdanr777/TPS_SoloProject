@@ -3,71 +3,77 @@ using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class GunController : MonoBehaviour
-{
-    public bool IsReload => _isReload;
 
+/// <summary> Gun class를 관리, 총기 관련 기능을 가지고 있는 클래스 </summary>
+public class GunController : MonoBehaviour, IAttack
+{
     public event Action<IHp, float> OnTargetDamageHendler;
     public event Action OnFireHendler;
     public event Action OnReloadHendler;
+    public event Action OnTargetDamaged;
 
+    [Header("Components")]
     public Gun CurrentGun; //현재 들고있는 총
-
     [SerializeField] private CrossHair _crossHair;
-
     [SerializeField] private Animator _playerAnimator;
-
     [SerializeField] private Camera _mainCamera;
-
-    [SerializeField] private LayerMask _hitLayerMask;
-
     [SerializeField] private AudioSource _audioSource;
 
+    [Header("Option")]
+    [SerializeField] private LayerMask _hitLayerMask;
+
+
+    private Vector3 fireDirection;
+    private bool _isReload;
+    public bool IsReload => _isReload;
     private float _currentFireRate; // 이값이 0이어야 총 발사 가능
-
-    private bool _isReload = false;
-
     private float _nowRecoil; //현재 반동
-
     private float _recoilMul; //반동 배수
-
     private int _getCarryBulletCount => GameManager.Instance.Player.Inventory.FindItemCountByID(20);
+
+    public float Damage => CurrentGun.Damage;
 
 
     private void Start()
     {
         _nowRecoil = CurrentGun.MinRecoil;
+        _crossHair.Init(this);
     }
+
 
     private void Update()
     {
-        if (!GameManager.Instance.IsGameEnd)
-        {
-            FireStabilization();
-            GunFireRateCalc();
-            TryReload();
-        }
+        if (GameManager.Instance.IsGameEnd)
+            return;
 
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            SubCarryBullets(1);
-        }
-
-        else if (Input.GetKeyDown(KeyCode.X))
-        {
-            AddCarryBullets(1);
-        }
+        FireStabilization();
+        GunFireRateCalc();
+        TryReload();
     }
 
-    private void GunFireRateCalc()  
+
+    public void TargetDamage(IHp ihp, float aomunt)
     {
-        if(_currentFireRate > 0)
-        {
-            _currentFireRate -= Time.deltaTime;
-        }
+        if (ihp.Hp <= ihp.MinHp)
+            return;
+
+        ihp.DepleteHp(this, aomunt);
+        OnTargetDamaged?.Invoke();
     }
 
-    public void TryFire() //발사 입력을 받는 함수
+
+    /// <summary> 총기 발사 간격 쿨타임을 감소시키는 함수 </summary>
+    private void GunFireRateCalc()
+    {
+        if (_currentFireRate <= 0)
+            return;
+
+        _currentFireRate -= Time.deltaTime;
+    }
+
+
+    /// <summary> 좌클릭시 총을 발사하게 해주는 함수 </summary>
+    public void TryFire() 
     {
         if (Input.GetButton("Fire1") && _currentFireRate <= 0 && !_isReload)
         {
@@ -77,20 +83,22 @@ public class GunController : MonoBehaviour
 
     private void Fire()
     {
-        if(!_isReload)
+        if (_isReload)
+            return;
+
+        if (CurrentGun.CurrentBulletCount > 0)
         {
-            if(CurrentGun.CurrentBulletCount > 0)
-            {
-                Shoot();
-            }
-            else
-            {
-                StartCoroutine(ReloadRoutine());
-            }
+            Shoot();
+        }
+        else
+        {
+            StartCoroutine(ReloadRoutine());
         }
     }
-    Vector3 fireDirection;
-    public void Shoot() //총을 쏘는 함수
+
+
+    /// <summary> 방향, 탄착군을 계산하여 총알을 발사하는 함수 </summary>
+    public void Shoot()
     {
         _currentFireRate = CurrentGun.FireRate; //발사간의 딜레이를 현재 사용하는 총기의 딜레이로 설정한다
         CurrentGun.CurrentBulletCount--; //총알을 감소시킨다
@@ -140,6 +148,7 @@ public class GunController : MonoBehaviour
     }
 
 
+    /// <summary> 재장전을 시도하는 함수 </summary>
     public void TryReload()
     {
         if (Input.GetKeyDown(KeyCode.R) && !_isReload &&CurrentGun.CurrentBulletCount < CurrentGun.ReloadBulletCount)
@@ -148,27 +157,38 @@ public class GunController : MonoBehaviour
         }
     }
 
+
+    /// <summary> 탄착군을 계산해 반환하는 함수 </summary>
     public float GetRandomNormalDistribution(float mean, float standard)
     {
-        var x1 = Random.Range(0, 1f);
-        var x2 = Random.Range(0, 1f);
+        float x1 = Random.Range(0, 1f);
+        float x2 = Random.Range(0, 1f);
         return mean + standard * (Mathf.Sqrt(-2.0f * Mathf.Log(x1)) * Mathf.Sin(2.0f * Mathf.PI * x2));
     }
 
-    public void EnableCrossHair() //크로스헤어를 활성화시키는 함수
+    /// <summary> 크로스헤어 활성화 </summary>
+    public void EnableCrossHair()
     {
         _crossHair.Visibility();
     }
-    public void DisableCrossHair() //크로스헤어를 비활성화 시키는 함수
+
+
+    /// <summary> 크로스헤어 비활성화 </summary>
+    public void DisableCrossHair()
     {
         _crossHair.Hidden();
     }
 
+
+    /// <summary> 크로스헤어의 벌어짐 배수를 설정하는 함수 </summary>
     public void SetRecoilMul(float value)
     {
         _recoilMul = value;
     }
 
+
+
+    /// <summary> 재장전 코루틴 </summary>
     private IEnumerator ReloadRoutine()
     {
         if(_getCarryBulletCount > 0)
@@ -202,13 +222,16 @@ public class GunController : MonoBehaviour
     }
 
 
+    /// <summary> 사운드 재생 </summary>
     private void PlaySound(AudioClip clip)
     {
         _audioSource.clip = clip;
         _audioSource.PlayOneShot(clip);
     }
 
-    private void FireStabilization() //반동을 회복시키는 함수
+
+    /// <summary> 반동 범위를 감소시키는 함수 </summary>
+    private void FireStabilization()
     {
         if (_nowRecoil > CurrentGun.MinRecoil * _recoilMul)
             _nowRecoil -= CurrentGun.RecoilRecoveryAmount * Time.deltaTime;
@@ -217,6 +240,8 @@ public class GunController : MonoBehaviour
             _nowRecoil = CurrentGun.MinRecoil * _recoilMul;
     }
 
+
+    /// <summary> 크로스헤어가 화면을 따라올 수 있게 하는 함수 </summary>
     public void FollowCrossHair()
     {
         RaycastHit hit;
@@ -244,11 +269,15 @@ public class GunController : MonoBehaviour
         }
     }
 
+
+    /// <summary> 인벤토리 총알 감소 </summary>
     private void SubCarryBullets(int value)
     {
         GameManager.Instance.Player.Inventory.SubItemByID(20, value);
     }
 
+
+    /// <summary> 인벤토리 총알 추가 </summary>
     private void AddCarryBullets(int value)
     {
         GameManager.Instance.Player.Inventory.AddItemByID(20, value);

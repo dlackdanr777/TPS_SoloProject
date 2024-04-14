@@ -1,45 +1,48 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary> 손전등 클래스 </summary>
 public class FlashLight : MonoBehaviour
 {
-    public KeyCode InputKey = KeyCode.F;
-
+    [Header("Components")]
     [SerializeField] private GameObject[] _flashLights;
-
     [SerializeField] private AudioSource _audioSource;
-
     [SerializeField] private AudioClip _flashClip;
 
+    public KeyCode InputKey = KeyCode.F;
     private bool _isEnable;
 
 
+    /// <summary> 손전등을 키입력으로 조작하는 함수 </summary>
     public void ControllFlash()
     {
-        if (Input.GetKeyDown(InputKey))
-        {
-            if (_isEnable)
-                DisableFlash();
-            else
-                EnableFlash();
+        if (!Input.GetKeyDown(InputKey))
+            return;
 
-            _audioSource.PlayOneShot(_flashClip);
-        }
+        if (_isEnable)
+            DisableFlash();
+        else
+            EnableFlash();
+
+        _audioSource.PlayOneShot(_flashClip);
+
     }
 
 
     private void EnableFlash()
     {
-        foreach (var light in _flashLights)
+        foreach (GameObject light in _flashLights)
             light.SetActive(true);
+
         _isEnable = true;
     }
 
+
     private void DisableFlash()
     {
-        foreach (var light in _flashLights)
+        foreach (GameObject light in _flashLights)
             light.SetActive(false);
+
         _isEnable = false;
     }
 }
