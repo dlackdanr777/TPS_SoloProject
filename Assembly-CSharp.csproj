@@ -74,6 +74,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Scripts\Inventory\OtherItem.cs" />
     <Compile Include="Assets\Scripts\UI\UILose.cs" />
+    <Compile Include="Assets\Scripts\Interactive\Iinteractive.cs" />
     <Compile Include="Assets\Scripts\Character\Player\State\ReloadState.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
@@ -104,10 +105,10 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\HitPart.cs" />
     <Compile Include="Assets\Scripts\Character\Player\State\DeadState.cs" />
+    <Compile Include="Assets\Scripts\Interactive\InteractiveController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Scripts\Inventory\ItemData.cs" />
     <Compile Include="Assets\NOT_Lonely\SimpleFPController\SimpleFPController.cs" />
-    <Compile Include="Assets\Scripts\Camera\BrainCameraController.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\Navmesh.cs" />
     <Compile Include="Assets\Scripts\Character\Player\State\WalkState.cs" />
     <Compile Include="Assets\Scripts\ScriptableObject\EnemyData.cs" />
@@ -124,16 +125,16 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Inventory\UIInventory.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
-    <Compile Include="Assets\Scripts\Interface\Iinteractive.cs" />
     <Compile Include="Assets\Scripts\Character\Player\State\RunState.cs" />
+    <Compile Include="Assets\Scripts\Interactive\Door.cs" />
     <Compile Include="Assets\Scripts\Inventory\CountableItem.cs" />
     <Compile Include="Assets\NOT_Lonely\Object Placement Tool\NL_PhysicsPlacer.cs" />
     <Compile Include="Assets\Scripts\Build\BuildSystem.cs" />
     <Compile Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Scripts\LightAnimation.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\State\EIdleState.cs" />
-    <Compile Include="Assets\Scripts\Objects\DropItem.cs" />
     <Compile Include="Assets\Scripts\Scenes\InGame.cs" />
     <Compile Include="Assets\Scripts\Camera\CinemachineCamera.cs" />
+    <Compile Include="Assets\Scripts\Interactive\DropItem.cs" />
     <Compile Include="Assets\Scripts\Build\Barricade.cs" />
     <Compile Include="Assets\Scripts\UI\UIBuildSlot.cs" />
     <Compile Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Scripts\DoorScript.cs" />
@@ -193,7 +194,6 @@
     <Compile Include="Assets\Scripts\Scenes\LobbyScene.cs" />
     <Compile Include="Assets\Scripts\UI\UIWin.cs" />
     <Compile Include="Assets\Scripts\Manager\PopupUIManager.cs" />
-    <Compile Include="Assets\Scripts\Build\Door.cs" />
     <Compile Include="Assets\Scripts\Inventory\PotionItemData.cs" />
     <Compile Include="Assets\Scripts\Manager\LoadingSceneManager.cs" />
     <Compile Include="Assets\Scripts\Character\Player\State\CrouchWalkState.cs" />
