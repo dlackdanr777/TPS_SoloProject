@@ -124,8 +124,8 @@ public class Player : MonoBehaviour, IHp
         OnFireHandler = GunController.TryFire;
         OnSetRecoilSizeHandler = GunController.SetRecoilMul;
 
-        GunController.OnTargetDamageHendler += GunController.TargetDamage;
-        GunController.OnFireHendler += PlayerCamera.CameraShakeStart;
+        GunController.OnTargetDamageHandler += GunController.TargetDamage;
+        GunController.OnFireHandler += PlayerCamera.CameraShakeStart;
 
         OnHpMin += () =>
         {

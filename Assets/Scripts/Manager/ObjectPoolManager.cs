@@ -54,6 +54,7 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
         }
     }
 
+
     public GameObject SpawnBulletHole( Vector3 pos, Quaternion rot)
     {
         GameObject bulletHole = _bulletHolePool.Dequeue();
@@ -65,6 +66,8 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
         _bulletHolePool.Enqueue(bulletHole);
         return bulletHole;
     }
+
+
 
     public void SpawnZombie(EnemyType zombieType, Vector3 pos, Quaternion rot)
     {

@@ -1,19 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+
+/// <summary> 인벤토리 UI 관리 클래스 </summary>
 public class UIInventory : PopupUI
 {
+    [Header("Components")]
     [SerializeField] private Transform _gridLayout; //슬롯들을 자식으로 가지고있는 오브젝트
-
+    [SerializeField] private Button _sortButton;
     public UIDivItem UiDivItem;
-
     public UIItemDescription UiItemDescription;
 
     private UIInventorySlot[] _slots;
-
     private Inventory _inventory;
 
-    [SerializeField] private Button _sortButton;
+
 
     public  void Start()
     {
@@ -22,6 +23,7 @@ public class UIInventory : PopupUI
         SetSlots();
         UpdateUI();
     }
+
 
     private void SetSlots()
     {
@@ -33,6 +35,7 @@ public class UIInventory : PopupUI
         }
     }
 
+
     public UIInventorySlot GetSlotByIndex(int index)
     {
         if(index >= 0 && index < _slots.Length)
@@ -43,12 +46,14 @@ public class UIInventory : PopupUI
         return null;
     }
 
+
     public void SlotSwap(UIInventorySlot slotA, UIInventorySlot slotB)
     {
         Item tempItem = slotA._item;
         slotA.UpdateUI(slotB._item);
         slotB.UpdateUI(tempItem);
     }
+
 
     public void ChangeSlotItem(UIInventorySlot slot, Item item)
     {
@@ -69,12 +74,14 @@ public class UIInventory : PopupUI
         return -1;
     }
 
+
     public override void ChildSetActive(bool value)
     {
         UiDivItem.ChildSetActive(false);
         UiItemDescription.ChildSetActive(false);
         base.ChildSetActive(value);
     }
+
 
     public void UpdateUI()
     {
@@ -88,9 +95,9 @@ public class UIInventory : PopupUI
         }
     }
 
+
     public void UpdateSlotUI(UIInventorySlot slot)
     {
-
         slot.UpdateUI(slot._item);
     }
 

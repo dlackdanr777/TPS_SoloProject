@@ -7,9 +7,9 @@ using Random = UnityEngine.Random;
 /// <summary> Gun class를 관리, 총기 관련 기능을 가지고 있는 클래스 </summary>
 public class GunController : MonoBehaviour, IAttack
 {
-    public event Action<IHp, float> OnTargetDamageHendler;
-    public event Action OnFireHendler;
-    public event Action OnReloadHendler;
+    public event Action<IHp, float> OnTargetDamageHandler;
+    public event Action OnFireHandler;
+    public event Action OnReloadHandler;
     public event Action OnTargetDamaged;
 
     [Header("Components")]
@@ -132,7 +132,7 @@ public class GunController : MonoBehaviour, IAttack
         float distance = CurrentGun.Range;
 
         //대리자를 사용하여 이 클래스를 참조하는 클래스에서 발사함수에 코드를 추가할 수 있도록 한다.
-        OnFireHendler?.Invoke();
+        OnFireHandler?.Invoke();
 
         //최종적으로 레이를 발사하여 물체에 맞았을 경우 풀링한 탄흔을 해당위치에 소환하고
         //만약 IHp인터페이스를 가진 물체 였다면 액션을 수행하게 한다.
@@ -143,7 +143,7 @@ public class GunController : MonoBehaviour, IAttack
             bulletHole.transform.parent = hit.transform;
 
             if (hit.transform.GetComponent<IHp>() != null)
-               OnTargetDamageHendler?.Invoke(hit.transform.GetComponent<IHp>(), CurrentGun.Damage);
+               OnTargetDamageHandler?.Invoke(hit.transform.GetComponent<IHp>(), CurrentGun.Damage);
         }
     }
 
@@ -213,7 +213,7 @@ public class GunController : MonoBehaviour, IAttack
             }
             _isReload = false;
 
-            OnReloadHendler?.Invoke();
+            OnReloadHandler?.Invoke();
         }
         else
         {
@@ -248,19 +248,30 @@ public class GunController : MonoBehaviour, IAttack
         Ray ray = _mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f)); //카메라 정중앙에 레이를 위치시킨다
         float distance = CurrentGun.Range;
         Debug.DrawRay(CurrentGun.MuzzleFlash.transform.position, CurrentGun.MuzzleFlash.transform.forward * distance, Color.red);
+
+        //레이캐스트에 해당하는 레이어를 가진 오브젝트가 닿았을경우?
         if (Physics.Raycast(ray, out hit, distance, _hitLayerMask))
         {
             Vector3 hitPos = hit.point;
+
+            // 카메라 현재 위치와 hit point간의 거리를 계산
             float hitDistance = Vector3.Distance(_mainCamera.transform.position, hit.point);
+
+            // 크로스 헤어를 hit point에 위치하게 한다.
             _crossHair.transform.position = hitPos;
+
+            // 거리 / 총기 사거리 로 거리 비율(0~1)을 계산한 뒤 크로스 헤어의 크기 및 넓이를 조절한다
             float distanceScale = hitDistance / distance;
             _crossHair.transform.localScale = Vector3.one * distanceScale;
 
             _crossHair.CrossHairAeraSize(_nowRecoil * distanceScale);
             _crossHair.transform.LookAt(_mainCamera.transform.position);
         }
+
+        //아닐 경우?
         else
         {
+            //크로스 헤어를 카메라 앞쪽에 배치하고 현재 반동 수치만큼 넓이를 넓힌다.
             _crossHair.transform.position = _mainCamera.transform.position + _mainCamera.transform.forward * distance;
             _crossHair.transform.localScale = Vector3.one;
 

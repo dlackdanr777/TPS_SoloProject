@@ -12,6 +12,7 @@ public class PlayerStateMachine
     public bool RunEnable;
     public bool AimModeEnable;
 
+    //하체 상태
     public PlayerLowerState LowerCurrentState { get; private set; }
     public PlayerLowerState IdleState { get; private set; }
     public PlayerLowerState WalkState { get; private set; }
@@ -21,6 +22,7 @@ public class PlayerStateMachine
     public PlayerLowerState DeadState { get; private set; }
 
 
+    //상체 상태
     public PlayerUpperState UpperCurrentState { get; private set; }
     public PlayerUpperState BasicUpperState { get; private set; }
     public PlayerUpperState AimModeStartState { get; private set; }

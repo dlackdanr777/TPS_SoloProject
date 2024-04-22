@@ -42,25 +42,25 @@ public class FootstepSound : MonoBehaviour
         {
             foreach (Footstep footstep in _footstepArray)
             {
-                if (collider.CompareTag(footstep.FloorTagName))
+                if (!collider.CompareTag(footstep.FloorTagName))
+                    continue;
+
+                AudioClip clip;
+
+                if (stepTyep == StepTyep.walk)
                 {
-                    AudioClip clip;
-
-                    if (stepTyep == StepTyep.walk)
-                    {
-                        int randPlayIndex = Random.Range(0, footstep.WalkClip.Length);
-                        clip = footstep.WalkClip[randPlayIndex];
-                    }
-                    else
-                    {
-                        int randPlayIndex = Random.Range(0, footstep.RunClip.Length);
-                        clip = footstep.RunClip[randPlayIndex];
-                    }
-
-                    _audioSource.clip = clip;
-                    _audioSource.Play();
-                    return;
+                    int randPlayIndex = Random.Range(0, footstep.WalkClip.Length);
+                    clip = footstep.WalkClip[randPlayIndex];
                 }
+                else
+                {
+                    int randPlayIndex = Random.Range(0, footstep.RunClip.Length);
+                    clip = footstep.RunClip[randPlayIndex];
+                }
+
+                _audioSource.clip = clip;
+                _audioSource.Play();
+                return;
             }
         }
     }

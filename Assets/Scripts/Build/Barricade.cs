@@ -76,6 +76,5 @@ public class Barricade : MonoBehaviour, IHp
     public void RecoverHp(object subject, float value)
     {
         OnHpRecoverd?.Invoke(subject, value);
-        throw new NotImplementedException();
     }
 }

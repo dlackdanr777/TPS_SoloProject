@@ -24,8 +24,8 @@ public class UIGame : MonoBehaviour
         _player.OnHpChanged += _hpBar.AmountChanged;
         _hpBar.Init(_player.MaxHp);
 
-        _player.GunController.OnFireHendler += ShowBulletCount;
-        _player.GunController.OnReloadHendler += ShowBulletCount;
+        _player.GunController.OnFireHandler += ShowBulletCount;
+        _player.GunController.OnReloadHandler += ShowBulletCount;
         ShowBulletCount();
 
         _uiWin.gameObject.SetActive(false);

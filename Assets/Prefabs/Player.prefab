@@ -931,8 +931,8 @@ GameObject:
   - component: {fileID: 4989108906082655711}
   - component: {fileID: 8864538674774447885}
   - component: {fileID: 531780374460257705}
-  - component: {fileID: 214351321704623639}
   - component: {fileID: 4701354975139039835}
+  - component: {fileID: 214351321704623639}
   - component: {fileID: 7077004990589515892}
   m_Layer: 3
   m_Name: Player
@@ -962,7 +962,7 @@ Transform:
   - {fileID: 5833783743674774501}
   - {fileID: 7397935362141081953}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2747915191395908653
 Animator:
@@ -1184,10 +1184,10 @@ MonoBehaviour:
   _crossHair: {fileID: 0}
   _playerAnimator: {fileID: 2747915191395908653}
   _mainCamera: {fileID: 0}
+  _audioSource: {fileID: 714288123620438780}
   _hitLayerMask:
     serializedVersion: 2
     m_Bits: 24064
-  _audioSource: {fileID: 714288123620438780}
 --- !u!114 &8864538674774447885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1320,6 +1320,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIInventory: {fileID: 0}
+--- !u!114 &4701354975139039835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2270002637867429211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ce64a5ddd2d75a47846d22e4be769e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flashLights:
+  - {fileID: 5451862381800000008}
+  - {fileID: 6215502843639796519}
+  _audioSource: {fileID: 236307378837586688}
+  _flashClip: {fileID: 8300000, guid: 3e8f255e599d00948ad78bf164e40102, type: 3}
+  InputKey: 102
 --- !u!114 &214351321704623639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1338,24 +1356,6 @@ MonoBehaviour:
   _headCamera: {fileID: 3465483058564680857}
   _handAim: {fileID: 8393749759353920034}
   _secondHandGrabWeapon: {fileID: 7247377540321163410}
---- !u!114 &4701354975139039835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2270002637867429211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ce64a5ddd2d75a47846d22e4be769e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InputKey: 102
-  _flashLights:
-  - {fileID: 5451862381800000008}
-  - {fileID: 6215502843639796519}
-  _audioSource: {fileID: 236307378837586688}
-  _flashClip: {fileID: 8300000, guid: 3e8f255e599d00948ad78bf164e40102, type: 3}
 --- !u!114 &7077004990589515892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4688,7 +4688,6 @@ MonoBehaviour:
   RecoilRecoveryAmount: 0.5
   RPM: 700
   ReloadTime: 2
-  Damage: 10
   MaxBulletCount: 30
   ReloadBulletCount: 30
   CurrentBulletCount: 30
@@ -4698,6 +4697,7 @@ MonoBehaviour:
   FireSound: {fileID: 8300000, guid: 7b4146d6c90ded346a6f17023e697037, type: 3}
   ReloadSound: {fileID: 8300000, guid: 4e51f1100bc20ee4c9abe916ce2f0093, type: 3}
   FireRate: 0
+  Damage: 10
 --- !u!82 &714288123620438780
 AudioSource:
   m_ObjectHideFlags: 0
