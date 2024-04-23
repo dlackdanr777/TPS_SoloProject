@@ -16,8 +16,10 @@ public class UIBuild : PopupUI
     {
         SetSlots();
     }
+
     private void SetSlots()
     {
+        //건축물 정보 구조체 배열의 길이를 가져온다.
         int craftItemLength = _buildSystem.GetCraftItemLength();
         _buildSlot = new UIBuildSlot[craftItemLength];
 
@@ -31,6 +33,7 @@ public class UIBuild : PopupUI
             _buildSlot[i].Button.onClick.AddListener(() => OnButtonClicked(index));
         }
     }
+
 
     private void OnButtonClicked(int index)
     {

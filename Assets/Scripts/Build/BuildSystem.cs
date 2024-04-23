@@ -55,9 +55,9 @@ public class BuildSystem : MonoBehaviour
 
     public void SelectCraftItem(int index)
     {
-        if(index < 0 && index >= _craftItem.Length) { Debug.Log("인덱스범위 벗어남"); return; }
+        if (index < 0 && index >= _craftItem.Length) { Debug.Log("인덱스범위 벗어남"); return; }
 
-        if(_PreviewObj != null)
+        if (_PreviewObj != null)
             Destroy(_PreviewObj.gameObject);
 
 
@@ -76,49 +76,49 @@ public class BuildSystem : MonoBehaviour
         _buildingEnable = false;
     }
 
+
+    /// <summary>건축물 설치 시작했을때 주기적으로 불러오는 함수</summary>
     public void BuildEnable()
     {
-        if (_buildingEnable && _craftItemIndex != -1)
+        if (_buildingEnable && _craftItemIndex == -1)
+            return;
+
+        _ray = _camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+        if (!Physics.Raycast(_ray, out _hit, 10, _layerMask))
+            return;
+
+        Vector3 location = _hit.point;
+        location.Set(Mathf.Round(location.x * 10f) * 0.1f, location.y, Mathf.Round(location.z * 10f) * 0.1f);
+        _PreviewObj.transform.position = location;
+
+        int itemId = _craftItem[_craftItemIndex].NecessaryItemId;
+        int amount = _craftItem[_craftItemIndex].NecessaryItemAmount;
+        _PreviewObj.SetItem(itemId, amount);
+
+        if (Input.GetKeyDown(KeyCode.Q))
+            _PreviewObj.transform.eulerAngles -= Vector3.up * 30f;
+
+        else if (Input.GetKeyDown(KeyCode.E))
+            _PreviewObj.transform.eulerAngles += Vector3.up * 30f;
+
+
+        if (!Input.GetMouseButtonDown(0))
+            return;
+
+        if (!_PreviewObj.isBuildable())
         {
-            _ray = _camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
-            if (Physics.Raycast(_ray, out _hit, 10, _layerMask))
-            {
-                Vector3 location = _hit.point;
-                location.Set(Mathf.Round(location.x * 10f) * 0.1f, location.y, Mathf.Round(location.z * 10f) * 0.1f);
-                _PreviewObj.transform.position = location;
+            UIManager.Instance.ShowCenterText("그곳엔 건설할 수 없습니다.");
+            return;
+        }
 
-                int itemId = _craftItem[_craftItemIndex].NecessaryItemId;
-                int amount = _craftItem[_craftItemIndex].NecessaryItemAmount;
-                _PreviewObj.SetItem(itemId, amount);
-
-                if (Input.GetKeyDown(KeyCode.Q))
-                    _PreviewObj.transform.eulerAngles -= Vector3.up * 30f;
-
-                else if (Input.GetKeyDown(KeyCode.E))
-                    _PreviewObj.transform.eulerAngles += Vector3.up * 30f;
-
-
-                if (Input.GetMouseButtonDown(0))
-                {
-                    if (_PreviewObj.isBuildable())
-                    {
-                        if (GameManager.Instance.Player.Inventory.UseItemByID(itemId, amount))
-                        {
-                            Instantiate(_craftItem[_craftItemIndex].CraftPrefab, _PreviewObj.transform.position, _PreviewObj.transform.rotation);
-                            SoundManager.Instance.PlayAudio(AudioType.Effect, _buildSuccessClip);
-                        }              
-                        else
-                        {
-                            UIManager.Instance.ShowCenterText("건설 재료가 부족합니다.");
-                        }
-                    }
-                    else
-                    {
-                        UIManager.Instance.ShowCenterText("그곳엔 건설할 수 없습니다.");
-                    }
-                }
-
-            }
+        if (GameManager.Instance.Player.Inventory.UseItemByID(itemId, amount))
+        {
+            Instantiate(_craftItem[_craftItemIndex].CraftPrefab, _PreviewObj.transform.position, _PreviewObj.transform.rotation);
+            SoundManager.Instance.PlayAudio(AudioType.Effect, _buildSuccessClip);
+        }
+        else
+        {
+            UIManager.Instance.ShowCenterText("건설 재료가 부족합니다.");
         }
     }
 }

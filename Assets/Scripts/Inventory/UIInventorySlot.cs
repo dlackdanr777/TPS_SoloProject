@@ -125,24 +125,25 @@ public class UIInventorySlot : MonoBehaviour, IPointerClickHandler, IBeginDragHa
 
     public void OnDrop(PointerEventData eventData)
     {
-        if (eventData.button != PointerEventData.InputButton.Left) //만약 해당 스크립트가 들어있는 오브젝트를 좌클릭 했을경우
+        if (eventData.button != PointerEventData.InputButton.Left)
             return;
 
         if (DragInventorySlot.Instance.DragSlot == null)
             return;
 
-        if (DragInventorySlot.Instance.DragSlot == this)
-        {
-            if (_item != null)
+        if (DragInventorySlot.Instance.DragSlot != this)
+            return;
+
+        if (_item == null)
+            return;
+
+            if (_item.Data.ID == DragInventorySlot.Instance.DragSlot._item.Data.ID)
             {
-                if (_item.Data.ID == DragInventorySlot.Instance.DragSlot._item.Data.ID)
-                {
-                    GameManager.Instance.Player.Inventory.MergeItem(_item, DragInventorySlot.Instance.DragSlot._item);
-                    return;
-                }
+                GameManager.Instance.Player.Inventory.MergeItem(_item, DragInventorySlot.Instance.DragSlot._item);
+                return;
             }
-            _uiInventory.SlotSwap(this, DragInventorySlot.Instance.DragSlot);
-        }
+
+        _uiInventory.SlotSwap(this, DragInventorySlot.Instance.DragSlot);
     }
 
 

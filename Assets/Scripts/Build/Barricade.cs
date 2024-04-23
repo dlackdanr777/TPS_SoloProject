@@ -56,15 +56,13 @@ public class Barricade : MonoBehaviour, IHp
 
     private void DestroyObject()
     {
-        if (!_isBroken)
-        {
-            Vector3 pos = transform.position;
-            Quaternion rot = transform.rotation;
-            _isBroken = true;
-            Destroy(gameObject);
-        }
+        if (_isBroken)
+            return;
 
+        _isBroken = true;
+        Destroy(gameObject);
     }
+
 
     public void DepleteHp(object subject, float value)
     {
@@ -72,6 +70,7 @@ public class Barricade : MonoBehaviour, IHp
         Debug.Log("¸ÂÀ½" + Hp);
         OnHpDepleted?.Invoke(subject, value);
     }
+
 
     public void RecoverHp(object subject, float value)
     {

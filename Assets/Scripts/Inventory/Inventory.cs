@@ -350,10 +350,10 @@ public class Inventory : MonoBehaviour
         var itemIDs = _inventoryItems.Select(x => x.Data.ID).Distinct().ToArray(); //인벤토리에 있는 Item ID를 중복을 제거하고 뽑아낸다.
         foreach (var ID in itemIDs) //ID의 수만큼 반복한다.
         {
-            if (!(ItemManager.Instance.GetItemByID(ID) is CountableItem)) //만약 해당 아이템이면
+            if (!(ItemManager.Instance.GetItemByID(ID) is CountableItem)) //만약 갯수를 셀 수 있는 아이템이 아니라면
                 continue;
 
-            while (FindExtraAountCountByID(ID) > 1) //최대수량이 아닌 해당ID의 아이템 의 갯수가 1이상일때 반복 
+            while (1 < FindExtraAountCountByID(ID)) //최대수량이 아닌 해당ID의 아이템 의 갯수가 1이상일때 반복 
             {
                 List<Item> items = FindExtraAountListByID(ID); //최대수량이 아닌 아이템리스트를 뽑아내서
                 MergeItem(items[0], items[1]); //앞쪽부터 병합시킨다.
