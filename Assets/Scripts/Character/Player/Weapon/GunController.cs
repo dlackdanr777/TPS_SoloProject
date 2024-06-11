@@ -13,7 +13,7 @@ public class GunController : MonoBehaviour, IAttack
     public event Action OnTargetDamaged;
 
     [Header("Components")]
-    public Gun CurrentGun; //현재 들고있는 총
+    [SerializeField] private Gun _currentGun; //현재 들고있는 총
     [SerializeField] private CrossHair _crossHair;
     [SerializeField] private Animator _playerAnimator;
     [SerializeField] private Camera _mainCamera;
@@ -31,12 +31,14 @@ public class GunController : MonoBehaviour, IAttack
     private float _recoilMul; //반동 배수
     private int _getCarryBulletCount => GameManager.Instance.Player.Inventory.FindItemCountByID(20);
 
-    public float Damage => CurrentGun.Damage;
+    public float Damage => _currentGun.Damage;
+    public int MaxBulletCount => _currentGun.MaxBulletCount;
+    public int CurrentBulletCount => _currentGun.CurrentBulletCount;
 
 
     private void Start()
     {
-        _nowRecoil = CurrentGun.MinRecoil;
+        _nowRecoil = _currentGun.MinRecoil;
         _crossHair.Init(this);
     }
 
@@ -86,7 +88,7 @@ public class GunController : MonoBehaviour, IAttack
         if (_isReload)
             return;
 
-        if (CurrentGun.CurrentBulletCount > 0)
+        if (_currentGun.CurrentBulletCount > 0)
         {
             Shoot();
         }
@@ -100,36 +102,36 @@ public class GunController : MonoBehaviour, IAttack
     /// <summary> 방향, 탄착군을 계산하여 총알을 발사하는 함수 </summary>
     public void Shoot()
     {
-        _currentFireRate = CurrentGun.FireRate; //발사간의 딜레이를 현재 사용하는 총기의 딜레이로 설정한다
-        CurrentGun.CurrentBulletCount--; //총알을 감소시킨다
-        PlaySound(CurrentGun.FireSound); //발사 사운드 재생
-        CurrentGun.MuzzleFlash.Play(); //이펙트 재생
+        _currentFireRate = _currentGun.FireRate; //발사간의 딜레이를 현재 사용하는 총기의 딜레이로 설정한다
+        _currentGun.CurrentBulletCount--; //총알을 감소시킨다
+        PlaySound(_currentGun.FireSound); //발사 사운드 재생
+        _currentGun.MuzzleFlash.Play(); //이펙트 재생
         _playerAnimator.SetTrigger("Fire"); //애니메이터의 트리거를 설정한다.
 
         float xError = GetRandomNormalDistribution(0f, _nowRecoil); //정규분포도를 이용해 탄튐 거리x를 설정
         float yError = GetRandomNormalDistribution(0f, _nowRecoil); //정규분포도를 이용해 탄튐 거리y를 설정
 
         //크로스헤어와 총구의 거리를 계산하고 최대사거리와 현재 거리의 비율을 계산한다.
-        float targetDistance = Vector3.Distance(CurrentGun.MuzzleFlash.transform.position, _crossHair.transform.position); 
-        float distanceScale = targetDistance / CurrentGun.Range;
+        float targetDistance = Vector3.Distance(_currentGun.MuzzleFlash.transform.position, _crossHair.transform.position); 
+        float distanceScale = targetDistance / _currentGun.Range;
 
         //위에서 계산한 값으로 총구와 탄착지점의 방향을 계산한다.
         //거리 비율을 곱하여 거리가 가까워질수록 탄착 지점을 좁혀 원뿔형의 형태로 탄이 튀도록 한다.
-        fireDirection = _crossHair.transform.position - CurrentGun.MuzzleFlash.transform.position;
+        fireDirection = _crossHair.transform.position - _currentGun.MuzzleFlash.transform.position;
         fireDirection = Quaternion.AngleAxis(yError * distanceScale, Vector3.up) * fireDirection;
         fireDirection = Quaternion.AngleAxis(xError * distanceScale, Vector3.right) * fireDirection;
 
         //총이 발사됬을때 설정한 반동값만큼 탄착지점의 넓이를 점차적으로 늘려 연속 발사시 명중률을 떨어트리게 한다.
-        if(_nowRecoil < CurrentGun.MaxRecoil)
+        if(_nowRecoil < _currentGun.MaxRecoil)
         {
-            _nowRecoil += CurrentGun.Recoil;
-            if (_nowRecoil > CurrentGun.MaxRecoil)
-                _nowRecoil = CurrentGun.MaxRecoil;
+            _nowRecoil += _currentGun.Recoil;
+            if (_nowRecoil > _currentGun.MaxRecoil)
+                _nowRecoil = _currentGun.MaxRecoil;
         }
 
         RaycastHit hit;
-        Ray ray = new Ray(CurrentGun.MuzzleFlash.transform.position, fireDirection);
-        float distance = CurrentGun.Range;
+        Ray ray = new Ray(_currentGun.MuzzleFlash.transform.position, fireDirection);
+        float distance = _currentGun.Range;
 
         //대리자를 사용하여 이 클래스를 참조하는 클래스에서 발사함수에 코드를 추가할 수 있도록 한다.
         OnFireHandler?.Invoke();
@@ -143,7 +145,7 @@ public class GunController : MonoBehaviour, IAttack
             bulletHole.transform.parent = hit.transform;
 
             if (hit.transform.GetComponent<IHp>() != null)
-               OnTargetDamageHandler?.Invoke(hit.transform.GetComponent<IHp>(), CurrentGun.Damage);
+               OnTargetDamageHandler?.Invoke(hit.transform.GetComponent<IHp>(), _currentGun.Damage);
         }
     }
 
@@ -151,7 +153,7 @@ public class GunController : MonoBehaviour, IAttack
     /// <summary> 재장전을 시도하는 함수 </summary>
     public void TryReload()
     {
-        if (Input.GetKeyDown(KeyCode.R) && !_isReload &&CurrentGun.CurrentBulletCount < CurrentGun.ReloadBulletCount)
+        if (Input.GetKeyDown(KeyCode.R) && !_isReload &&_currentGun.CurrentBulletCount < _currentGun.ReloadBulletCount)
         {
             StartCoroutine(ReloadRoutine());
         }
@@ -195,20 +197,20 @@ public class GunController : MonoBehaviour, IAttack
         {
             _playerAnimator.SetTrigger("Reload");
             _isReload = true;
-            AddCarryBullets(CurrentGun.CurrentBulletCount);
-            CurrentGun.CurrentBulletCount = 0;
-            _audioSource.PlayOneShot(CurrentGun.ReloadSound);
+            AddCarryBullets(_currentGun.CurrentBulletCount);
+            _currentGun.CurrentBulletCount = 0;
+            _audioSource.PlayOneShot(_currentGun.ReloadSound);
 
-            yield return new WaitForSeconds(CurrentGun.ReloadTime);
+            yield return new WaitForSeconds(_currentGun.ReloadTime);
 
-            if(_getCarryBulletCount >= CurrentGun.ReloadBulletCount)
+            if(_getCarryBulletCount >= _currentGun.ReloadBulletCount)
             {
-                CurrentGun.CurrentBulletCount = CurrentGun.ReloadBulletCount;
-                SubCarryBullets(CurrentGun.ReloadBulletCount);
+                _currentGun.CurrentBulletCount = _currentGun.ReloadBulletCount;
+                SubCarryBullets(_currentGun.ReloadBulletCount);
             }
             else
             {
-                CurrentGun.CurrentBulletCount = _getCarryBulletCount;
+                _currentGun.CurrentBulletCount = _getCarryBulletCount;
                 SubCarryBullets(_getCarryBulletCount);
             }
             _isReload = false;
@@ -233,11 +235,11 @@ public class GunController : MonoBehaviour, IAttack
     /// <summary> 반동 범위를 감소시키는 함수 </summary>
     private void FireStabilization()
     {
-        if (_nowRecoil > CurrentGun.MinRecoil * _recoilMul)
-            _nowRecoil -= CurrentGun.RecoilRecoveryAmount * Time.deltaTime;
+        if (_nowRecoil > _currentGun.MinRecoil * _recoilMul)
+            _nowRecoil -= _currentGun.RecoilRecoveryAmount * Time.deltaTime;
 
-        if (_nowRecoil < CurrentGun.MinRecoil * _recoilMul)
-            _nowRecoil = CurrentGun.MinRecoil * _recoilMul;
+        if (_nowRecoil < _currentGun.MinRecoil * _recoilMul)
+            _nowRecoil = _currentGun.MinRecoil * _recoilMul;
     }
 
 
@@ -246,8 +248,8 @@ public class GunController : MonoBehaviour, IAttack
     {
         RaycastHit hit;
         Ray ray = _mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f)); //카메라 정중앙에 레이를 위치시킨다
-        float distance = CurrentGun.Range;
-        Debug.DrawRay(CurrentGun.MuzzleFlash.transform.position, CurrentGun.MuzzleFlash.transform.forward * distance, Color.red);
+        float distance = _currentGun.Range;
+        Debug.DrawRay(_currentGun.MuzzleFlash.transform.position, _currentGun.MuzzleFlash.transform.forward * distance, Color.red);
 
         //레이캐스트에 해당하는 레이어를 가진 오브젝트가 닿았을경우?
         if (Physics.Raycast(ray, out hit, distance, _hitLayerMask))

@@ -32,6 +32,7 @@ public class PreviewObject : MonoBehaviour
         _itemAmount = Amount;
     }
 
+    /// <summary> 겹치는 오브젝트가 있는지, 재료 아이템 보유 여부를 판단해 색을 변경하는 함수 </summary>
     private void ChangeColor()
     {
         int itemCount = GameManager.Instance.Player.Inventory.FindItemCountByID(_itemID);
@@ -42,12 +43,13 @@ public class PreviewObject : MonoBehaviour
             SetColor(_greenMaterial);
     }
 
-
+    /// <summary> 오브젝트의 마테리얼들을 변경하는 함수 </summary>
     private void SetColor(Material mat)
     {
         foreach (var renderer in _renderers)
             renderer.material = mat;
     }
+
 
     private void OnTriggerEnter(Collider other)
     {

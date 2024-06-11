@@ -10,10 +10,7 @@ public class AimModeStartState : PlayerUpperState
     }
 
 
-    public override void OnUpdate()
-    {
-
-    }
+    public override void OnUpdate(){}
 
 
     public override void OnFixedUpdate()
@@ -24,10 +21,7 @@ public class AimModeStartState : PlayerUpperState
     }
 
 
-    public override void OnExit()
-    {
-
-    }
+    public override void OnExit(){}
 
 
     public override void OnStateUpdate()

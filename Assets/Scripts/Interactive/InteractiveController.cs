@@ -25,11 +25,15 @@ public class InteractiveController : MonoBehaviour
     {
         _ray = _camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 
+        // 카메라 앞으로 레이를 쏜다.
+        //만약 hit된 오브젝트가 없을 경우
         if (!Physics.Raycast(_ray, out _hit, _rayDistance, _layerMask))
         {
+            //변수가 null일경우 종료
             if (_interactive == null)
                 return;
 
+            //아닐경우 비활성화 함수를 실행후 null로 변경
             _interactive.DisableInteraction();
             _interactive = null;
             return;
@@ -41,6 +45,7 @@ public class InteractiveController : MonoBehaviour
         if (_hit.transform.GetComponent<Iinteractive>() == null)
             return;
 
+        //해당 오브젝트에서 Iinteractive 인터페이스를 참조후 활성화 함수 실행
         _interactive = _hit.transform.GetComponent<Iinteractive>();
         _interactive.EnableInteraction();
     }

@@ -69,8 +69,8 @@ public class UIGame : MonoBehaviour
 
     private void ShowBulletCount()
     {
-        _maxbulletCount = _player.GunController.CurrentGun.MaxBulletCount;
-        _currentBulletCount = _player.GunController.CurrentGun.CurrentBulletCount;
+        _maxbulletCount = _player.GunController.MaxBulletCount;
+        _currentBulletCount = _player.GunController.CurrentBulletCount;
 
         _bulletCountText.text = _currentBulletCount + " / " + _maxbulletCount;
     }

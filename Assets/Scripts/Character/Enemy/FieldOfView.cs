@@ -49,28 +49,33 @@ public class FieldOfView : MonoBehaviour
     {
         while (true)
         {
+            yield return YieldCache.WaitForSeconds(1f);
             _hitTargetList.Clear();
+
+            //OverlapSphere를 사용, 현재 오브젝트의 일정 범위내의 지정한 레이어를 가진 오브젝트를 탐지
             Vector3 myPos = transform.position + Vector3.up;
             Vector3 lookDir = AngleToDir(transform.eulerAngles.y);
             _targets = Physics.OverlapSphere(myPos, _viewRadius, _targetMask);
 
-            if (_targets.Length != 0)
+            if (_targets.Length == 0)
+                continue;
+
+            //탐지한 오브젝트를 반복문으로 돌린다.
+            foreach (Collider EnemyColli in _targets)
             {
-                foreach (Collider EnemyColli in _targets)
+                //감지된 오브젝트의 위치와 거리, 방향을 계산하고, 지정한 시야각 안에 들어온 상태라면 리스트에 추가한다.
+                Vector3 targetPos = EnemyColli.transform.position + Vector3.up * 1.5f;
+                float targetDistance = Vector3.Distance(myPos, targetPos);
+                Vector3 targetDir = (targetPos - myPos).normalized;
+
+                float targetAngle = Mathf.Acos(Vector3.Dot(lookDir, targetDir)) * Mathf.Rad2Deg;
+
+                if (targetAngle <= _viewAngle * 0.5f && !Physics.Raycast(myPos, targetDir, targetDistance, _obstacleMask))
                 {
-                    Vector3 targetPos = EnemyColli.transform.position + Vector3.up * 1.5f;
-                    float targetDistance = Vector3.Distance(myPos, targetPos);
-                    Vector3 targetDir = (targetPos - myPos).normalized;
-
-                    float targetAngle = Mathf.Acos(Vector3.Dot(lookDir, targetDir)) * Mathf.Rad2Deg;
-
-                    if (targetAngle <= _viewAngle * 0.5f && !Physics.Raycast(myPos, targetDir, targetDistance, _obstacleMask))
-                    {
-                        _hitTargetList.Add(EnemyColli);
-                    }
+                    _hitTargetList.Add(EnemyColli);
                 }
             }
-            yield return YieldCache.WaitForSeconds(1f);
+
         }
     }
 

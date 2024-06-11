@@ -347,8 +347,8 @@ public class Inventory : MonoBehaviour
     /// <summary> 인벤토리를 정렬하는 함수 </summary>
     public void SortInventory()
     {
-        var itemIDs = _inventoryItems.Select(x => x.Data.ID).Distinct().ToArray(); //인벤토리에 있는 Item ID를 중복을 제거하고 뽑아낸다.
-        foreach (var ID in itemIDs) //ID의 수만큼 반복한다.
+        int[] itemIDs = _inventoryItems.Select(x => x.Data.ID).Distinct().ToArray(); //인벤토리에 있는 Item ID를 중복을 제거하고 뽑아낸다.
+        foreach (int ID in itemIDs) //ID의 수만큼 반복한다.
         {
             if (!(ItemManager.Instance.GetItemByID(ID) is CountableItem)) //만약 갯수를 셀 수 있는 아이템이 아니라면
                 continue;

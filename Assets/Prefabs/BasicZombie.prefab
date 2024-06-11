@@ -691,7 +691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e3d18e051d0764c89b5da089a3f62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemy: {fileID: 1727509648781147750}
+  _enemy: {fileID: 0}
   _partName: Body
   _multiple: 1
 --- !u!1 &1925682874860199077
@@ -1120,7 +1120,7 @@ Transform:
   - {fileID: 8000551673483934187}
   - {fileID: 6483457950167241386}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &8316129803491266194
 Animator:
@@ -1299,7 +1299,7 @@ MonoBehaviour:
   AudioSource: {fileID: 8389139103176532207}
   Navmesh: {fileID: 7345855696676998947}
   Animator: {fileID: 8316129803491266194}
-  ZombieSounds: {fileID: 7913423427151874699}
+  EnemySounds: {fileID: 0}
   FieldOfView: {fileID: 5480065800101087677}
   Attack: {fileID: 2758386012689585671}
   _capsuleCollider: {fileID: 965168047732495755}
@@ -1574,7 +1574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e3d18e051d0764c89b5da089a3f62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemy: {fileID: 1727509648781147750}
+  _enemy: {fileID: 0}
   _partName: Body
   _multiple: 1
 --- !u!1 &3103164550780003388
@@ -2585,7 +2585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e3d18e051d0764c89b5da089a3f62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemy: {fileID: 1727509648781147750}
+  _enemy: {fileID: 0}
   _partName: Body
   _multiple: 1
 --- !u!1 &4799056834328999041

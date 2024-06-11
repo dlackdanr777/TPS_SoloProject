@@ -65,11 +65,14 @@ public class EnemyAttack : MonoBehaviour, IAttack
     {
         foreach (Collider collider in _hitColliderList)
         {
+            //다수 타격은 하지 않기에 리스트속 IHp를 가진 오브젝트 하나만 공격 후 함수를 종료 한다
+
             if (!collider.TryGetComponent(out IHp iHp))
                 continue;
 
             iHp.DepleteHp(this, _damage);
             OnAttackHendler?.Invoke();
+
 
             return;
         }
@@ -99,9 +102,10 @@ public class EnemyAttack : MonoBehaviour, IAttack
             if (Targets.Length <= 0)
                 continue;
 
-            //타겟이 있을경우 해당 타겟 전부 순회하며 공격 가능 리스트에 넣는다. 
+            //타겟이 있을경우 해당 타겟 전부 순회. 
             foreach (Collider EnemyColli in Targets)
             {
+                //해당 타겟으로 레이를 쏴 장애물이 있는지 확인 후 없을 경우 공격 리스트에 추가
                 Vector3 targetPos = EnemyColli.transform.position + Vector3.up;
                 Vector3 targetDir = (targetPos - myPos).normalized;
                 float targetDistance = Vector3.Distance(targetPos, myPos);
