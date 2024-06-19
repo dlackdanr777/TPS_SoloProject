@@ -13,7 +13,7 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
         public int PoolCount;
         public GameObject Prefab;
         [HideInInspector] public Queue<GameObject> Pool;
-        [HideInInspector] public GameObject Parent;
+        [HideInInspector] public Transform Parent;
     }
 
     [SerializeField] private GameObject BulletHolePrefab;
@@ -24,10 +24,19 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
     [SerializeField] private ZombieStruct[] _zombieStruct;
 
 
+    public override void Awake()
+    {
+        base.Awake();
+        BulletHoleObjectPooling();
+        ZombieObjectPooling(EnemyType.Basic);
+    }
+
+
     public void BulletHoleObjectPooling()
     {
         _bulletHolePool = new Queue<GameObject>();
-       _bulletHoleParent = new GameObject("BulletHoleParent");
+        _bulletHoleParent = new GameObject("BulletHoleParent");
+        _bulletHoleParent.transform.parent = transform;
 
         for(int i = 0, count = _bulletHoleCount; i < count; i++)
         {
@@ -38,19 +47,19 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
         }
     }
 
-    public void ZombieObjectPooling(EnemyType zombieType)
+    private void ZombieObjectPooling(EnemyType zombieType)
     {
         string parentName = Enum.GetName(typeof(EnemyType), (int)zombieType) + " Zombie Parent======";
 
         _zombieStruct[(int)zombieType].Pool = new Queue<GameObject>();
-        _zombieStruct[(int)zombieType].Parent = new GameObject(parentName);
+        _zombieStruct[(int)zombieType].Parent = new GameObject(parentName).transform;
+        _zombieStruct[(int)zombieType].Parent.transform.parent = transform;
 
         for (int i = 0, count = _zombieStruct[(int)zombieType].PoolCount; i < count; i++)
         {
-            GameObject zombie = Instantiate(_zombieStruct[(int)zombieType].Prefab, Vector3.zero, Quaternion.identity);
-            zombie.transform.parent = _zombieStruct[(int)zombieType].Parent.transform;
+            GameObject zombie = Instantiate(_zombieStruct[(int)zombieType].Prefab, _zombieStruct[(int)zombieType].Parent);
             _zombieStruct[(int)zombieType].Pool.Enqueue(zombie);
-            zombie.SetActive(false);
+            zombie.gameObject.SetActive(false);
         }
     }
 
@@ -71,16 +80,17 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
 
     public void SpawnZombie(EnemyType zombieType, Vector3 pos, Quaternion rot)
     {
+        GameObject zombie;
         if(_zombieStruct[(int)zombieType].Pool.Count == 0)
         {
-            GameObject zombiePool = Instantiate(_zombieStruct[(int)zombieType].Prefab, pos, rot);
-            _zombieStruct[(int)zombieType].Pool.Enqueue(zombiePool);
-            zombiePool.transform.parent = _zombieStruct[(int)zombieType].Parent.transform;
-            zombiePool.SetActive(false);
+            zombie = Instantiate(_zombieStruct[(int)zombieType].Prefab, _zombieStruct[(int)zombieType].Parent);
+            _zombieStruct[(int)zombieType].Pool.Enqueue(zombie);
+            zombie.gameObject.SetActive(false);
+            return;
         }
 
-        GameObject zombie = _zombieStruct[(int)zombieType].Pool.Dequeue();
-        zombie.SetActive(true);
+        zombie = _zombieStruct[(int)zombieType].Pool.Dequeue();
+        zombie.gameObject.SetActive(true);
         Enemy enemy = zombie.GetComponent<Enemy>();
         enemy.Navmesh.NaveMeshEnabled(false);
         zombie.transform.position = pos;
@@ -89,7 +99,7 @@ public class ObjectPoolManager : SingletonHandler<ObjectPoolManager>
         enemy.Target = GameManager.Instance.Player.transform;
     }
 
-    public IEnumerator DisableZombie(Enemy enemy)
+    public IEnumerator DisableZombie(Enemy enemy) 
     {
         yield return YieldCache.WaitForSeconds(40);
         int zombieType = (int)enemy.EnemyType;

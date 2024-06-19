@@ -351,12 +351,7 @@ MonoBehaviour:
   _zombieStruct:
   - Type: 0
     PoolCount: 200
-    Prefab: {fileID: 2866469778005338699, guid: 38e9d3b7cf0e7af49a16262152570320,
-      type: 3}
-    Parent: {fileID: 0}
-  - Type: 1
-    PoolCount: 10
-    Prefab: {fileID: 3329346125740517128, guid: d4789f9f51769ed4a8ffbc896725b1a0,
+    Prefab: {fileID: 7968869922128788305, guid: 8dd5c4e3ea5219c4eb524a70f833ae7a,
       type: 3}
     Parent: {fileID: 0}
 --- !u!4 &748229323

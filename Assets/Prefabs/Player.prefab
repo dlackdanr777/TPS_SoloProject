@@ -934,6 +934,7 @@ GameObject:
   - component: {fileID: 4701354975139039835}
   - component: {fileID: 214351321704623639}
   - component: {fileID: 7077004990589515892}
+  - component: {fileID: 5361558989535649019}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -962,7 +963,7 @@ Transform:
   - {fileID: 5833783743674774501}
   - {fileID: 7397935362141081953}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2747915191395908653
 Animator:
@@ -1180,7 +1181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f823639952f18de49b052f959f3de95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentGun: {fileID: 4711831282633937646}
+  _currentGun: {fileID: 4711831282633937646}
   _crossHair: {fileID: 0}
   _playerAnimator: {fileID: 2747915191395908653}
   _mainCamera: {fileID: 0}
@@ -1372,6 +1373,97 @@ MonoBehaviour:
   - m_Rig: {fileID: 4076872926101916792}
     m_Active: 1
   m_Effectors: []
+--- !u!114 &5361558989535649019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2270002637867429211}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneShape: 1
+  drawBones: 1
+  drawTripods: 0
+  boneSize: 1
+  tripodSize: 1
+  boneColor: {r: 0, g: 0, b: 1, a: 0.5}
+  m_Transforms:
+  - {fileID: 902577610963557593}
+  - {fileID: 2679416879464668630}
+  - {fileID: 974429812225162999}
+  - {fileID: 5460944103648776575}
+  - {fileID: 6392736960180718540}
+  - {fileID: 45158731005699962}
+  - {fileID: 4308841966362318620}
+  - {fileID: 7696848274951616838}
+  - {fileID: 3078885039087231773}
+  - {fileID: 6837751017311685976}
+  - {fileID: 3638569272799906456}
+  - {fileID: 6522901971162463579}
+  - {fileID: 6247545452199148029}
+  - {fileID: 481836952669544465}
+  - {fileID: 7801907694599514767}
+  - {fileID: 8215085221251732397}
+  - {fileID: 627308392518304207}
+  - {fileID: 1313275532540853440}
+  - {fileID: 4343854912575359202}
+  - {fileID: 4816920345618022198}
+  - {fileID: 1558848851048147066}
+  - {fileID: 3102600458152878445}
+  - {fileID: 5905038298500509112}
+  - {fileID: 7006252175646140161}
+  - {fileID: 551652916330815220}
+  - {fileID: 7013203834893550099}
+  - {fileID: 3164019234273616540}
+  - {fileID: 5018745611781646114}
+  - {fileID: 4428618119791949268}
+  - {fileID: 4084822018263006432}
+  - {fileID: 8684240592410805496}
+  - {fileID: 8230808267711723544}
+  - {fileID: 7701710467711119347}
+  - {fileID: 7836032565517368126}
+  - {fileID: 5816751898752155707}
+  - {fileID: 6001120407043002246}
+  - {fileID: 2870132164975308951}
+  - {fileID: 4391477230105554007}
+  - {fileID: 467564317277358786}
+  - {fileID: 7026058336967615623}
+  - {fileID: 2976275612138240344}
+  - {fileID: 414753349146121854}
+  - {fileID: 3774666991765750262}
+  - {fileID: 3481563431061346007}
+  - {fileID: 2022656327076592129}
+  - {fileID: 2973523515766145786}
+  - {fileID: 100749218834311292}
+  - {fileID: 1115388518504629629}
+  - {fileID: 7137808256618916121}
+  - {fileID: 5915623555761163457}
+  - {fileID: 6590331155408076432}
+  - {fileID: 6534643770531810125}
+  - {fileID: 3980744622869618878}
+  - {fileID: 2241905762704209593}
+  - {fileID: 6543310756241050835}
+  - {fileID: 6854597134637957360}
+  - {fileID: 2473366393554770668}
+  - {fileID: 1279060741813479382}
+  - {fileID: 181963330620465723}
+  - {fileID: 8235410048372972791}
+  - {fileID: 1520968131235973669}
+  - {fileID: 264744576417992156}
+  - {fileID: 5222506806948467400}
+  - {fileID: 5513290781791417660}
+  - {fileID: 3459564069493847683}
+  - {fileID: 2301576452857245214}
+  - {fileID: 7122046380556196621}
+  - {fileID: 7019657947707390103}
+  - {fileID: 250950106265972238}
+  - {fileID: 7564891141921316574}
+  - {fileID: 3134250847543730000}
+  - {fileID: 6684940540576232267}
 --- !u!1 &2322259166978626263
 GameObject:
   m_ObjectHideFlags: 0
@@ -4084,7 +4176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c430f382484144e925c097c2d33cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 0
+  m_Weight: 1
   m_Data:
     m_ConstrainedObject: {fileID: 7137808256618916121}
     m_SourceObjects:

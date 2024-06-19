@@ -12,7 +12,7 @@ public class EIdleState : EnemyState
     public override void OnStart()
     {
         _playSoundTime = Random.Range(8f, 15f);
-        _enemy.Animator.SetBool("IsWalking", false);
+        _enemy.MeshController.Play("Idle");
         _enemy.OnTargetLossHandler();
     }
 

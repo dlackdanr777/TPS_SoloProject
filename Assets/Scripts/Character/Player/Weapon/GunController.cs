@@ -7,7 +7,6 @@ using Random = UnityEngine.Random;
 /// <summary> Gun class를 관리, 총기 관련 기능을 가지고 있는 클래스 </summary>
 public class GunController : MonoBehaviour, IAttack
 {
-    public event Action<IHp, float> OnTargetDamageHandler;
     public event Action OnFireHandler;
     public event Action OnReloadHandler;
     public event Action OnTargetDamaged;
@@ -56,9 +55,6 @@ public class GunController : MonoBehaviour, IAttack
 
     public void TargetDamage(IHp ihp, float aomunt)
     {
-        if (ihp.Hp <= ihp.MinHp)
-            return;
-
         ihp.DepleteHp(this, aomunt);
         OnTargetDamaged?.Invoke();
     }
@@ -143,9 +139,11 @@ public class GunController : MonoBehaviour, IAttack
             Quaternion bulletHoleRotation = Quaternion.LookRotation(ray.direction);
             GameObject bulletHole = ObjectPoolManager.Instance.SpawnBulletHole(hit.point, bulletHoleRotation);
             bulletHole.transform.parent = hit.transform;
-
             if (hit.transform.GetComponent<IHp>() != null)
-               OnTargetDamageHandler?.Invoke(hit.transform.GetComponent<IHp>(), _currentGun.Damage);
+            {
+                TargetDamage(hit.transform.GetComponent<IHp>(), _currentGun.Damage);
+            }
+
         }
     }
 

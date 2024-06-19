@@ -1,4 +1,5 @@
 
+using System.Diagnostics;
 /// <summary>조준중인 상태를 정의한 상태 클래스 </summary>
 public class AimModeLoopState : PlayerUpperState
 {
@@ -21,7 +22,6 @@ public class AimModeLoopState : PlayerUpperState
     public override void OnFixedUpdate()
     {
         _player.OnRotateHandler?.Invoke();
-
     }
 
 
@@ -34,6 +34,9 @@ public class AimModeLoopState : PlayerUpperState
     public override void OnStateUpdate()
     {
         if (!_machine.AimModeEnable || _player.GunController.IsReload)
+        {
             _machine.ChangeState(_machine.AimModeEndState);
+        }
+
     }
 }

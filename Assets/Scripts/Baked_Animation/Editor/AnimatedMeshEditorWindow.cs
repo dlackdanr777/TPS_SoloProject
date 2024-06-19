@@ -1,4 +1,3 @@
-using Codice.Client.Common;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,10 +37,10 @@ public class AnimatedMeshEditorWindow : EditorWindow
         _name = EditorGUILayout.TextField("Name", _name);
         _animationFPS = EditorGUILayout.IntSlider("Animation FPS", _animationFPS, 1, 100);
         _optimize = EditorGUILayout.Toggle("Optimize", _optimize);
-        _dryRun = EditorGUILayout.Toggle("Dry Run" , _dryRun);
+        _dryRun = EditorGUILayout.Toggle("Dry Run", _dryRun);
 
         GUI.enabled = newModel != null && animator.runtimeAnimatorController != null;
-        if(GUILayout.Button("Generate ScriptableObjects"))
+        if (GUILayout.Button("Generate ScriptableObjects"))
         {
             if (newModel == null)
                 return;
@@ -51,87 +50,12 @@ public class AnimatedMeshEditorWindow : EditorWindow
 
             //애니메이터의 클립들을 구워 스크립터블 오브젝트 형태로 저장하는 코루틴 실행
             EditorCoroutineUtility.StartCoroutine(GenerateModel(animator, _dryRun), this);
-            //GenerateModel(animator, _dryRun);
         }
 
         GUI.enabled = true;
-        if(GUILayout.Button("Clear progress bar"))
+        if (GUILayout.Button("Clear progress bar"))
             EditorUtility.ClearProgressBar();
 
-    }
-
-
-    /// <summary>애니메이션들을 구워 스크립터블 오브젝트 형태로 저장시키는 함수</summary>
-    private IEnumerator GenerateModels(Animator animator, bool dryRun)
-    {
-        //스크립터블 오브젝트를 생성한다.
-        AnimatedMeshScriptableObject scriptableObject = CreateInstance<AnimatedMeshScriptableObject>();
-        scriptableObject.AnimationFPS = _animationFPS;
-
-        int clipIndex = 1;
-
-        string parentFolder = BASE_PATH + _name + "/";
-
-        //애니메이터에 등록된 클립들을 반복한다.
-        foreach(AnimationClip clip in animator.runtimeAnimatorController.animationClips)
-        {
-            //진행 바를 보여준다.
-            EditorUtility.DisplayProgressBar("Processing Animations", $"Processing animation {clip.name} ({clipIndex / animator.runtimeAnimatorController.animationClips.Length})", clipIndex / (float)animator.runtimeAnimatorController.animationClips.Length);
-
-            List<Mesh> meshes = new List<Mesh>();
-            AnimatedMeshScriptableObject.Animation animation = new AnimatedMeshScriptableObject.Animation();
-            animation.Name = clip.name;
-            float increment = 1f / _animationFPS;
-            animator.Play(clip.name);
-
-            //fps *  clip.length 만큼 반복한다.
-            for(float time = increment, length = clip.length; time < length; time += increment)
-            {
-                //애니메이터를 수동으로 실행한다.
-                animator.Update(increment);
-
-                if(_dryRun)
-                    yield return new WaitForSeconds(increment);
-
-                foreach (SkinnedMeshRenderer skinnedMeshRenderer in _animatedModel.GetComponentsInChildren<SkinnedMeshRenderer>())
-                {
-                    Mesh mesh = new Mesh();
-
-                    //현재 스킨 메시 렌더러의 상태를 고정된 메시로 변환
-                    skinnedMeshRenderer.BakeMesh(mesh, true);
-
-                    if (_optimize)
-                        mesh.Optimize();
-
-                    if (!_dryRun)
-                    {
-                        //만약 해당 경로에 폴더가 존재하지 않으면?
-                        if (!AssetDatabase.IsValidFolder(parentFolder + clip.name + $"/{skinnedMeshRenderer.name}"))
-                            System.IO.Directory.CreateDirectory(parentFolder + clip.name + $"/{skinnedMeshRenderer.name}");//폴더를 생성한다.
-
-                        AssetDatabase.CreateAsset(mesh, parentFolder + clip.name + $"/{skinnedMeshRenderer.name}/{time:N4}.asset");
-                    }
-
-                    meshes.Add(mesh);
-                }
-            }
-
-            Debug.Log($"Setting {clip.name} to have {meshes.Count} meshes");
-            animation.Meshes = meshes;
-            scriptableObject.Animations.Add(animation);
-            clipIndex++;
-        }
-
-        EditorUtility.ClearProgressBar();
-
-        if (!_dryRun)
-        {
-            Debug.Log($"Creating asset with {scriptableObject.Animations.Count} animations and {scriptableObject.Animations.Sum((item) => item.Meshes.Count)} meshes");
-            EditorUtility.SetDirty(scriptableObject);
-            AssetDatabase.CreateAsset(scriptableObject, BASE_PATH + _name + ".asset");
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
-        }
     }
 
 
@@ -154,9 +78,9 @@ public class AnimatedMeshEditorWindow : EditorWindow
             {
                 //진행 바를 보여준다.
                 EditorUtility.DisplayProgressBar("Processing Animations", $"Processing animation {clip.name} ({clipIndex / animator.runtimeAnimatorController.animationClips.Length})", clipIndex / (float)animator.runtimeAnimatorController.animationClips.Length);
-
-                List<Mesh> meshes = new List<Mesh>();
                 AnimatedMeshScriptableObject.Animation animation = new AnimatedMeshScriptableObject.Animation();
+                List<AnimatedMeshScriptableObject.MeshData> meshDatas = new List<AnimatedMeshScriptableObject.MeshData>();
+
                 animation.Name = clip.name;
                 float increment = 1f / _animationFPS;
                 animator.Play(clip.name);
@@ -170,13 +94,16 @@ public class AnimatedMeshEditorWindow : EditorWindow
                     if (_dryRun)
                         yield return new WaitForSeconds(increment);
 
-                    Mesh mesh = new Mesh();
+                    AnimatedMeshScriptableObject.MeshData meshData = new AnimatedMeshScriptableObject.MeshData();
+                    meshData.VertexList = new List<Vector3>();
+                    meshData.NomalList = new List<Vector3>();
 
                     //현재 스킨 메시 렌더러의 상태를 고정된 메시로 변환
-                    skinnedMeshRenderer.BakeMesh(mesh);
+                    meshData.Mesh = new Mesh();
+                    skinnedMeshRenderer.BakeMesh(meshData.Mesh);
 
                     if (_optimize)
-                        mesh.Optimize();
+                        meshData.Mesh.Optimize();
 
                     if (!_dryRun)
                     {
@@ -184,30 +111,33 @@ public class AnimatedMeshEditorWindow : EditorWindow
                         if (!AssetDatabase.IsValidFolder(parentFolder + clip.name + $"/{skinnedMeshRenderer.name}"))
                             System.IO.Directory.CreateDirectory(parentFolder + clip.name + $"/{skinnedMeshRenderer.name}");//폴더를 생성한다.
 
-                        AssetDatabase.CreateAsset(mesh, parentFolder + clip.name + $"/{skinnedMeshRenderer.name}/{time:N4}.asset");
+                        AssetDatabase.CreateAsset(meshData.Mesh, parentFolder + clip.name + $"/{skinnedMeshRenderer.name}/{time:N4}.asset");
                     }
 
-                    meshes.Add(mesh);
+                    meshData.VertexList = meshData.Mesh.vertices.ToList();
+                    meshData.NomalList = meshData.Mesh.normals.ToList();
+                    meshDatas.Add( meshData );
                 }
 
-                Debug.Log($"Setting {clip.name} to have {meshes.Count} meshes");
-                animation.Meshes = meshes;
+                Debug.Log($"Setting {clip.name} to have {meshDatas.Count} meshes");
+                animation.MeshDataList = meshDatas;
                 scriptableObject.Animations.Add(animation);
                 clipIndex++;
             }
 
             if (!_dryRun)
             {
-                Debug.Log($"Creating asset with {scriptableObject.Animations.Count} animations and {scriptableObject.Animations.Sum((item) => item.Meshes.Count)} meshes");
+                Debug.Log($"Creating asset with {scriptableObject.Animations.Count} animations and {scriptableObject.Animations.Sum((item) => item.MeshDataList.Count)} meshes");
                 EditorUtility.SetDirty(scriptableObject);
-                AssetDatabase.CreateAsset(scriptableObject, BASE_PATH + skinnedMeshRenderer.name + _name + ".asset");
+                AssetDatabase.CreateAsset(scriptableObject, BASE_PATH + skinnedMeshRenderer.name +" " + _name + ".asset");
                 AssetDatabase.SaveAssets();
                 AssetDatabase.Refresh();
             }
 
         }
-        
+
         EditorUtility.ClearProgressBar();
     }
+
 
 }

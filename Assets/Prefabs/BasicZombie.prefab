@@ -1120,7 +1120,7 @@ Transform:
   - {fileID: 8000551673483934187}
   - {fileID: 6483457950167241386}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &8316129803491266194
 Animator:
@@ -1299,7 +1299,7 @@ MonoBehaviour:
   AudioSource: {fileID: 8389139103176532207}
   Navmesh: {fileID: 7345855696676998947}
   Animator: {fileID: 8316129803491266194}
-  EnemySounds: {fileID: 0}
+  EnemySounds: {fileID: 7913423427151874699}
   FieldOfView: {fileID: 5480065800101087677}
   Attack: {fileID: 2758386012689585671}
   _capsuleCollider: {fileID: 965168047732495755}

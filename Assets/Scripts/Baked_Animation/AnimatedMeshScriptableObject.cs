@@ -13,7 +13,15 @@ public class AnimatedMeshScriptableObject : ScriptableObject
     public struct Animation
     {
         public string Name;
-        public List<Mesh> Meshes;
+        public List<MeshData> MeshDataList;
+    }
+
+    [Serializable]
+    public struct MeshData
+    {
+        public Mesh Mesh;
+        public List<Vector3> VertexList;
+        public List<Vector3> NomalList;
     }
 
 }

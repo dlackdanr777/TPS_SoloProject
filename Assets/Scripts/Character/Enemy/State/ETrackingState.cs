@@ -13,7 +13,7 @@ public class ETrackingState : EnemyState
 
     public override void OnStart()
     {
-        _enemy.Animator.SetBool("IsWalking", true);
+        _enemy.MeshController.Play("Walk");
     }
 
     public override void OnUpdate()

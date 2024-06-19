@@ -6,20 +6,37 @@ public class EAttackState : EnemyState
 {
     private float _playSoundTime = 10;
     private float _playSoundTimer;
+    private bool[] _useAttack;
+
 
     public EAttackState(Enemy enemy, EnemyStateMachine machine) : base(enemy, machine){}
 
 
     public override void OnStart()
     {
-        _enemy.Animator.SetBool("IsAttack", true);
+        _useAttack = new bool[_enemy.AttackIndex.Length];
+        _enemy.MeshController.Play("Attack");
         _enemy.EnemySounds.PlayZombieSoundClip(EnemySoundType.Attack);
     }
 
 
     public override void OnUpdate()
     {
+        if (_enemy.MeshController.GetIndex() <= 0)
+        {
+            for (int i = 0, cnt = _useAttack.Length; i < cnt; ++i)
+                _useAttack[i] = false;
+        }
 
+        for (int i = 0, cnt = _enemy.AttackIndex.Length; i < cnt; ++i)
+        {
+            if (!_useAttack[i] && _enemy.AttackIndex[i] == _enemy.MeshController.GetIndex())
+            {
+                _useAttack[i] = true;
+                _enemy.Attack.StartAttack();
+            }
+
+        }
     }
 
 
@@ -39,7 +56,7 @@ public class EAttackState : EnemyState
 
     public override void OnExit()
     {
-        _enemy.Animator.SetBool("IsAttack", false);
+        _enemy.MeshController.Play("Idle");
     }
 
 

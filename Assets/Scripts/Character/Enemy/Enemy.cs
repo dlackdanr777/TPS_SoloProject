@@ -19,10 +19,10 @@ public class Enemy : MonoBehaviour, IHp
     [Header("Components")]
     public AudioSource AudioSource;
     public Navmesh Navmesh;
-    public Animator Animator;
     public EnemySounds EnemySounds;
     public FieldOfView FieldOfView;
-    public EnemyAttack Attack;  
+    public EnemyAttack Attack;
+    public AnimatedMeshController MeshController;
     [SerializeField] private CapsuleCollider _capsuleCollider;
     [SerializeField] private ParticleSystem _deadBloodParticle;
 
@@ -34,28 +34,11 @@ public class Enemy : MonoBehaviour, IHp
     public float MaxHp => _enemyData.MaxHp;
     public float MinHp => _enemyData.MinHp;
 
+    [SerializeField] private int[] _attackIndex;
+    public int[] AttackIndex => _attackIndex;
+
     private float _hp;
-    public float Hp
-    {
-        get => _hp;
-        private set
-        {
-            if (_hp == value)
-                return;
-
-            if (value > MaxHp)
-                value = MaxHp;
-            else if (value < MinHp)
-                value = MinHp;
-
-            _hp = value;
-            OnHpChanged?.Invoke(value);
-            if (_hp == MaxHp)
-                OnHpMax?.Invoke();
-            else if (_hp == MinHp)
-                OnHpMin?.Invoke();
-        }
-    }
+    public float Hp => _hp;
 
     private bool _isDead;
     public bool IsDead => _isDead;
@@ -68,7 +51,7 @@ public class Enemy : MonoBehaviour, IHp
         if (_isDead)
             return;
 
-        Hp += value;
+        _hp += value;
         OnHpRecoverd?.Invoke(subject, value);
     }
 
@@ -84,7 +67,15 @@ public class Enemy : MonoBehaviour, IHp
             Target = player.transform;
         }
 
-        Hp -= value;
+        _hp -= value;
+
+        if (_hp < 0)
+        {
+            value = MinHp;
+            OnHpMin?.Invoke();
+        }
+
+        OnHpChanged?.Invoke(value);
         OnHpDepleted?.Invoke(subject, value);
     }
 
@@ -132,6 +123,7 @@ public class Enemy : MonoBehaviour, IHp
         _isDead = false;
         _capsuleCollider.enabled = true;
         _machine.ChangeState(_machine.IdleState);
+        MeshController.Play("Idle");
     }
 
 
@@ -148,7 +140,7 @@ public class Enemy : MonoBehaviour, IHp
                 _capsuleCollider.enabled = false;
                 _machine.ChangeState(_machine.DeadState);
 
-                Animator.SetTrigger("Dead");
+                MeshController.Play("Die");
                 Target = null;
                 _isDead = true;
             }

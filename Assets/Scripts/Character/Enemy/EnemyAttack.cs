@@ -73,7 +73,6 @@ public class EnemyAttack : MonoBehaviour, IAttack
             iHp.DepleteHp(this, _damage);
             OnAttackHendler?.Invoke();
 
-
             return;
         }
     }

@@ -16,7 +16,7 @@ public class EIdleToTrackingState : EnemyState
     public override void OnStart()
     {
         _enemy.EnemySounds.PlayZombieSoundClip(EnemySoundType.Detection);
-        _enemy.Animator.SetBool("IsWalking", false);
+        _enemy.MeshController.Play("Walk");
 
         _rotateTime = Random.Range(0.3f, 1f);
         _transitionTime = Random.Range(3f, 4f);

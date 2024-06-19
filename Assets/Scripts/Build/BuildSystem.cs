@@ -80,7 +80,7 @@ public class BuildSystem : MonoBehaviour
     /// <summary>건축물 설치 시작했을때 주기적으로 불러오는 함수</summary>
     public void BuildEnable()
     {
-        if (_buildingEnable && _craftItemIndex == -1)
+        if (!_buildingEnable || _craftItemIndex == -1)
             return;
 
         //카메라에서 레이를 쏴 맞은 특정 레이어를 가진 오브젝트가 없을 경우 return

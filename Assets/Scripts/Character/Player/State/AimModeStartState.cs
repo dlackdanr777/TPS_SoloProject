@@ -1,4 +1,5 @@
 
+using UnityEngine;
 /// <summary>조준 상태가 시작한 상태를 정의한 상태 클래스 </summary>
 public class AimModeStartState : PlayerUpperState
 {
@@ -27,6 +28,9 @@ public class AimModeStartState : PlayerUpperState
     public override void OnStateUpdate()
     {
         if (_player.PlayerCamera.ZoomIn())
+        {
             _machine.ChangeState(_machine.AimModeLoopState);
+        }
+
     }
 }

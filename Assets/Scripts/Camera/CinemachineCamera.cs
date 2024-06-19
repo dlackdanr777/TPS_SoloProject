@@ -70,7 +70,7 @@ public class CinemachineCamera : MonoBehaviour
 
         _mainVitualCamera.gameObject.SetActive(false);
         _zoomVitualCamera.gameObject.SetActive(true);
-        return false;
+        return true;
 
     }
 
