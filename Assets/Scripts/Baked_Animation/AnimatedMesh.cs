@@ -51,6 +51,14 @@ public class AnimatedMesh : MonoBehaviour
         return _meshDataList[_animationIndex].VertexList;
     }
 
+    public List<Vector3> GetMeshNomalList()
+    {
+        if (_meshDataList == null)
+            throw new Exception("버텍스 정보가 없습니다.");
+
+        return _meshDataList[_animationIndex].NomalList;
+    }
+
     public Vector3 GetMeshVertex(int index)
     {
         if (_meshDataList == null)

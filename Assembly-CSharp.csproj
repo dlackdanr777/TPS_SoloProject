@@ -198,6 +198,7 @@
     <Compile Include="Assets\Scripts\Manager\LoadingSceneManager.cs" />
     <Compile Include="Assets\Scripts\Character\Player\State\CrouchWalkState.cs" />
     <Compile Include="Assets\Scripts\Inventory\UIDivItem.cs" />
+    <Compile Include="Assets\Scripts\Character\Enemy\HeadHitPart.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\Baked_Animation\AnimatedMeshScriptableObject.cs" />
   </ItemGroup>

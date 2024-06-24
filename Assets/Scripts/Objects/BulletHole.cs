@@ -45,13 +45,29 @@ public class BulletHole : MonoBehaviour
 
         if (transform.parent.CompareTag("HitPart") || transform.parent.CompareTag("Enemy"))
         {
-            if (transform.parent.TryGetComponent(out _meshFilter))
+            Transform tr = transform;
+
+            while (tr != null)
             {
-                _animatedMesh = transform.parent.GetComponent<AnimatedMesh>();
-                _isAttachedToMesh = true;
-                // 메시의 정점 중 하나를 초기 위치로 설정 (가장 가까운 정점 찾기)
-                _initialVertexIndex = FindClosestVertexIndex(transform.position, _meshFilter, _animatedMesh);
+                if (tr.GetComponent<MeshFilter>() == null)
+                {
+                    tr = tr.parent;
+                    continue;
+                }
+
+                _meshFilter = tr.GetComponent<MeshFilter>();
+                break;
+
             }
+
+            if (tr == null)
+                yield break;
+
+            transform.parent = tr;
+            _animatedMesh = transform.parent.GetComponent<AnimatedMesh>();
+            _isAttachedToMesh = true;
+            // 메시의 정점 중 하나를 초기 위치로 설정 (가장 가까운 정점 찾기)
+            _initialVertexIndex = FindClosestVertexIndex(transform.position, _meshFilter, _animatedMesh);
 
             _AudioSource.PlayOneShot(_hitPartClip);
             PlayParticle(2);

@@ -402,6 +402,7 @@
 "Assets/Scripts/Character/Enemy/EnemyState.cs"
 "Assets/Scripts/Character/Enemy/EnemyType.cs"
 "Assets/Scripts/Character/Enemy/FieldOfView.cs"
+"Assets/Scripts/Character/Enemy/HeadHitPart.cs"
 "Assets/Scripts/Character/Enemy/HitPart.cs"
 "Assets/Scripts/Character/Enemy/Navmesh.cs"
 "Assets/Scripts/Character/Enemy/State/EAttackState.cs"
